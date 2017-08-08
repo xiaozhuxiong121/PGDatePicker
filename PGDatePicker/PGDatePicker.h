@@ -39,7 +39,7 @@ typedef NS_ENUM(NSInteger, PGDatePickerMode) {
 
 - (void)setDate:(NSDate *)date animated:(BOOL)animated; // if animated is YES, animate the wheels of time to display the new date
 
-+ (PGDatePicker *)show;
+- (void)show;
 @end
 
 @protocol PGDatePickerDelegate <NSObject>
