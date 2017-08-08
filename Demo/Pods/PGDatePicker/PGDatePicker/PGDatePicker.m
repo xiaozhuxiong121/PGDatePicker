@@ -478,10 +478,10 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             NSInteger row = [pickerView selectedRowInComponent:0];
             NSString *str = [[pickerView titleForSelectedRow:row inComponent:0] componentsSeparatedByString:@"月"].firstObject;
             dateComponents.month = [str integerValue];
-            NSString *str2 = [[pickerView titleForSelectedRow:row inComponent:0] componentsSeparatedByString:@"月"].lastObject;
+             NSString *str2 = [[pickerView titleForSelectedRow:row inComponent:0] componentsSeparatedByString:@"月"].lastObject;
             NSString *str3 = [str2 componentsSeparatedByString:@"日"].firstObject;
             dateComponents.day = [str3 integerValue];
-            NSString *str4 = [str2 componentsSeparatedByString:@"日"].lastObject;
+             NSString *str4 = [str2 componentsSeparatedByString:@"日"].lastObject;
             str4 = [str4 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             dateComponents.weekday = [self weekDayMappingFrom:str4];
         }

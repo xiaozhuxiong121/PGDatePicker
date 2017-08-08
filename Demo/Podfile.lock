@@ -1,0 +1,18 @@
+PODS:
+  - PGDatePicker (1.0.1):
+    - PGPickerView
+  - PGPickerView (1.1.0)
+  - Reveal-SDK (9)
+
+DEPENDENCIES:
+  - PGDatePicker
+  - Reveal-SDK
+
+SPEC CHECKSUMS:
+  PGDatePicker: 58e14ef749d4447b6faa414b6290151dd65878d4
+  PGPickerView: c67149937b3ac0441139a23fbcafe0e095a400a1
+  Reveal-SDK: d977a1ec41e7c076025c1005da6e6d7c1b8ed254
+
+PODFILE CHECKSUM: be37405bbd1d14deafeac308037fc46ba38845e7
+
+COCOAPODS: 1.2.1
