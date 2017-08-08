@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "NSDate+PGCategory.h"
-#import "NSObject+ChineseCalendar.h"
 #import "UIColor+PGHex.h"
 #import "NSCalendar+PGCurrent.h"
 #import <PGPickerView/PGPickerView.h>
