@@ -14,8 +14,6 @@
 		862DEB8F1F395BEC00B5AB4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 862DEB8D1F395BEC00B5AB4C /* Main.storyboard */; };
 		862DEB911F395BEC00B5AB4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 862DEB901F395BEC00B5AB4C /* Assets.xcassets */; };
 		862DEB941F395BEC00B5AB4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 862DEB921F395BEC00B5AB4C /* LaunchScreen.storyboard */; };
-		862DEB9F1F395BEC00B5AB4C /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DEB9E1F395BEC00B5AB4C /* DemoTests.m */; };
-		862DEBAA1F395BEC00B5AB4C /* DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DEBA91F395BEC00B5AB4C /* DemoUITests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +46,7 @@
 		862DEB931F395BEC00B5AB4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		862DEB951F395BEC00B5AB4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		862DEB9A1F395BEC00B5AB4C /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		862DEB9E1F395BEC00B5AB4C /* DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoTests.m; sourceTree = "<group>"; };
-		862DEBA01F395BEC00B5AB4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		862DEBA51F395BEC00B5AB4C /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		862DEBA91F395BEC00B5AB4C /* DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUITests.m; sourceTree = "<group>"; };
-		862DEBAB1F395BEC00B5AB4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C1AD5D00F6F1B3FE88BE451 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C0D416FA7DDF5516D2FB42 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,8 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				862DEB831F395BEC00B5AB4C /* Demo */,
-				862DEB9D1F395BEC00B5AB4C /* DemoTests */,
-				862DEBA81F395BEC00B5AB4C /* DemoUITests */,
 				862DEB821F395BEC00B5AB4C /* Products */,
 				A665A7AB72AB1E4CC9E7B989 /* Pods */,
 				76E425FCB9183F27C48DA47F /* Frameworks */,
@@ -135,24 +127,6 @@
 				862DEB851F395BEC00B5AB4C /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		862DEB9D1F395BEC00B5AB4C /* DemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				862DEB9E1F395BEC00B5AB4C /* DemoTests.m */,
-				862DEBA01F395BEC00B5AB4C /* Info.plist */,
-			);
-			path = DemoTests;
-			sourceTree = "<group>";
-		};
-		862DEBA81F395BEC00B5AB4C /* DemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				862DEBA91F395BEC00B5AB4C /* DemoUITests.m */,
-				862DEBAB1F395BEC00B5AB4C /* Info.plist */,
-			);
-			path = DemoUITests;
 			sourceTree = "<group>";
 		};
 		A665A7AB72AB1E4CC9E7B989 /* Pods */ = {
@@ -361,7 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				862DEB9F1F395BEC00B5AB4C /* DemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +342,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				862DEBAA1F395BEC00B5AB4C /* DemoUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +565,7 @@
 				862DEBB01F395BEC00B5AB4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		862DEBB11F395BEC00B5AB4C /* Build configuration list for PBXNativeTarget "DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -601,6 +574,7 @@
 				862DEBB31F395BEC00B5AB4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		862DEBB41F395BEC00B5AB4C /* Build configuration list for PBXNativeTarget "DemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -609,6 +583,7 @@
 				862DEBB61F395BEC00B5AB4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
