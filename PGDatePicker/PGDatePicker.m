@@ -24,6 +24,7 @@
 @property (nonatomic, weak) PGPickerView *pickerView;
 @property (nonatomic, strong) NSDateComponents *minimumComponents;
 @property (nonatomic, strong) NSDateComponents *maximumComponents;
+@property (nonatomic, strong) NSDateComponents *selectedComponents;
 @property (nonatomic, strong) NSArray *yearList;
 @property (nonatomic, strong) NSArray *monthList;
 @property (nonatomic, strong) NSArray *dayList;
@@ -94,6 +95,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     
     CGRect frame = CGRectMake(0, CGRectGetMaxY(view.frame), kScreenWidth, height);
     self.frame = frame;
+    self.backgroundColor = [UIColor whiteColor];
     [window addSubview:self];
     
     UILabel *label = [[UILabel alloc]init];
@@ -113,7 +115,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     UIButton *confirm = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth - 60, 0, 50, height1)];
     [confirm setTitle:@"确定" forState:UIControlStateNormal];
     [confirm setTitleColor:[UIColor colorWithHexString:@"#69BDFF"] forState:UIControlStateNormal];
-    [confirm addTarget:self action:@selector(cancelButtonHandler) forControlEvents:UIControlEventTouchUpInside];
+    [confirm addTarget:self action:@selector(confirmButtonHandler) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:confirm];
     self.confirmButton = confirm;
     
@@ -144,6 +146,13 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         [self.dismissView removeFromSuperview];
         [self removeFromSuperview];
     }];
+}
+
+- (void)confirmButtonHandler {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(datePicker:didSelectDate:)]) {
+        [self.delegate datePicker:self didSelectDate:self.selectedComponents];
+    }
+    [self cancelButtonHandler];
 }
 
 - (void)selectYear:(NSUInteger)year month:(NSUInteger)month day:(NSUInteger)day hour:(NSInteger)hour minute:(NSInteger)minute animated:(BOOL)animated {
@@ -506,9 +515,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         default:
             break;
     }
-    if (self.delegate && [self.delegate respondsToSelector:@selector(datePicker:didSelectDate:)]) {
-        [self.delegate datePicker:self didSelectDate:dateComponents];
-    }
+    
+    self.selectedComponents = dateComponents;
 }
 
 - (NSString *)pickerView:(PGPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
