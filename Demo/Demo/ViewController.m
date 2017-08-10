@@ -62,6 +62,20 @@
     datePicker.datePickerMode = PGDatePickerModeDate;
 }
 
+- (IBAction)styleHandler:(id)sender {
+    PGDatePicker *datePicker = [[PGDatePicker alloc]init];
+    datePicker.delegate = self;
+    [datePicker show];
+    datePicker.titleLabel.text = @"PGDatePicker";
+    datePicker.lineBackgroundColor = [UIColor redColor]; //设置线条的颜色
+    datePicker.titleColorForSelectedRow = [UIColor redColor]; //设置选中行的颜色
+    datePicker.titleColorForOtherRow = [UIColor blackColor]; //设置为选中行的颜色
+    [datePicker.cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [datePicker.confirmButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    datePicker.datePickerMode = PGDatePickerModeDate;
+}
+
+
 
 #pragma PGDatePickerDelegate
 - (void)datePicker:(PGDatePicker *)datePicker didSelectDate:(NSDateComponents *)dateComponents {
