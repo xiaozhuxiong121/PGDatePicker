@@ -11,7 +11,7 @@
 # Installation with CocoaPods
 
 ```
-pod 'PGDatePicker'
+pod 'PGDatePicker', '~> 1.0.5'
 ```
 
 # Usage
@@ -26,7 +26,20 @@ datePicker.datePickerMode = PGDatePickerModeYear;
     NSLog(@"dateComponents = %@", dateComponents);
 }
 ```
+# set style
+```
+//设置线条的颜色
+datePicker.lineBackgroundColor = [UIColor redColor]; 
+//设置选中行的字体颜色
+datePicker.titleColorForSelectedRow = [UIColor redColor]; 
+//设置未选中行的字体颜色
+datePicker.titleColorForOtherRow = [UIColor blackColor]; 
+//设置取消按钮的字体颜色
+[datePicker.cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//设置确定按钮的字体颜色
+[datePicker.confirmButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
 
+```
 
 # LICENSE
 
