@@ -8,13 +8,13 @@
 ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg) 
  [![](https://img.shields.io/badge/jianshu-piggybear-red.svg)](http://www.jianshu.com/u/3740632b2002)
 ![PGDatePicker](PGDatePicker.gif)
-# Installation with CocoaPods
+# CocoaPods安装
 
 ```
 pod 'PGDatePicker', '~> 1.0.5'
 ```
 
-# Usage
+# 使用
 ```
 PGDatePicker *datePicker = [[PGDatePicker alloc]init];
 datePicker.delegate = self;
@@ -26,7 +26,19 @@ datePicker.datePickerMode = PGDatePickerModeYear;
     NSLog(@"dateComponents = %@", dateComponents);
 }
 ```
-# set style
+# 设置Date
+> 建议用NSDate+PGCategory类所定义的方法去设置  
+
+```
++ (NSDate *)setYear:(NSUInteger)year;
++ (NSDate *)setYear:(NSUInteger)year month:(NSUInteger)month;
++ (NSDate *)setYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day;
++ (NSDate *)setMonth:(NSUInteger)month day:(NSUInteger)day hour:(NSInteger)hour minute:(NSInteger)minute;
++ (NSDate *)setHour:(NSInteger)hour minute:(NSInteger)minute;
+```  
+比如：```datePicker.maximumDate = [NSDate setYear:2017];```
+
+# 设置样式
 ```
 //设置线条的颜色
 datePicker.lineBackgroundColor = [UIColor redColor]; 
@@ -41,6 +53,6 @@ datePicker.titleColorForOtherRow = [UIColor blackColor];
 
 ```
 
-# LICENSE
+# 许可证
 
-PGDatePicker is released under an MIT license. See [LICENSE](LICENSE) for more information.
+PGNetworkHelper 使用 MIT 许可证，详情见 [LICENSE](LICENSE) 文件。
