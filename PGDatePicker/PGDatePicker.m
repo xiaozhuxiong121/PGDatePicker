@@ -69,8 +69,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     NSInteger day = [self howManyDaysWithMonthInThisYear:[self.calendar currentComponents].year withMonth:[self.calendar currentComponents].month];
     [self setDayListForMonthDays:day];
     PGPickerView *pickerView = [[PGPickerView alloc]initWithFrame:self.bounds];
-    pickerView.lineBackgroundColor = [UIColor colorWithHexString:@"#69BDFF"];
-    pickerView.titleColorForSelectedRow = [UIColor colorWithHexString:@"#69BDFF"];
+    pickerView.lineBackgroundColor = self.lineBackgroundColor;
+    pickerView.titleColorForSelectedRow = self.titleColorForSelectedRow;
+    pickerView.titleColorForOtherRow = self.titleColorForOtherRow;
     pickerView.delegate = self;
     pickerView.dataSource = self;
     [self addSubview:pickerView];
@@ -84,6 +85,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 }
 
 - (void)show {
+    self.lineBackgroundColor = [UIColor colorWithHexString:@"#69BDFF"];
+    self.titleColorForSelectedRow = [UIColor colorWithHexString:@"#69BDFF"];
+    self.titleColorForOtherRow = [UIColor grayColor];
     CGFloat height = 250;
     CGFloat height1 = 40;
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];

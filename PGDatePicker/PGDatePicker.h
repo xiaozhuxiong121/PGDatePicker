@@ -30,6 +30,10 @@ typedef NS_ENUM(NSInteger, PGDatePickerMode) {
 @property (nonatomic, weak) UIButton *confirmButton;
 @property (nonatomic, weak) UILabel *titleLabel;
 
+@property (nonatomic, strong)UIColor *titleColorForSelectedRow;
+@property (nonatomic, strong)UIColor *titleColorForOtherRow;
+@property(nonatomic, strong) UIColor *lineBackgroundColor;          
+
 @property (nonatomic, strong) NSLocale   *locale;   // default is [NSLocale currentLocale]. setting nil returns to default
 @property (nonatomic, copy)   NSCalendar *calendar; // default is [NSCalendar currentCalendar]. setting nil returns to default
 @property (nonatomic, strong) NSTimeZone *timeZone; // default is nil. use current time zone or time zone from calendar
