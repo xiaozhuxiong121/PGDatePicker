@@ -36,6 +36,7 @@
 @property (nonatomic, assign) NSInteger components;
 @property (nonatomic, weak) UIView *headerView;
 @property (nonatomic, weak) UIView *dismissView;
+@property (nonatomic, assign) BOOL isCurrent;
 
 - (NSInteger)rowsInComponent:(NSInteger)component;
 @end
@@ -397,6 +398,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (void)pickerView:(PGPickerView *)pickerView title:(NSString *)title didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
      NSDateComponents *dateComponents = [self.calendar components:self.unitFlags fromDate:[NSDate date]];
+    NSDateComponents *currentComponents = [self.calendar components:self.unitFlags fromDate:[NSDate date]];
     if (self.datePickerMode == PGDatePickerModeDate) {
         if (component != 2) {
             NSInteger row = [pickerView selectedRowInComponent:0];
@@ -456,6 +458,16 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 NSInteger row = [pickerView selectedRowInComponent:1];
                 NSString *str = [[pickerView titleForSelectedRow:row inComponent:1] componentsSeparatedByString:@"月"].firstObject;
                 dateComponents.month = [str integerValue];
+            }
+            if (_isSetDate) {
+                if (component != 0) {
+                    return;
+                }else {
+                    _isSetDate = false;
+                }
+            }
+            
+            if (component == 0) {
                 if (self.minimumComponents.year == dateComponents.year) {
                     NSInteger index = 12 - self.minimumComponents.month;
                     if (index < 0) {
@@ -481,12 +493,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                     self.monthList = months;
                 }
                  [self.pickerView reloadComponent:1];
-            }
-            if (_isSetDate) {
-                if (component != 0) {
-                    return;
-                }else {
-                    _isSetDate = false;
+                if (!self.isCurrent && currentComponents.year == dateComponents.year) {
+                    self.isCurrent = true;
+                    [self.pickerView selectRow:currentComponents.month - 1 inComponent:1 animated:false];
                 }
             }
         }
@@ -527,6 +536,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                     self.monthList = months;
                 }
                 [self.pickerView reloadComponent:1];
+                if (!self.isCurrent) {
+                    self.isCurrent = true;
+                    [self.pickerView selectRow:currentComponents.month - 1 inComponent:1 animated:false];
+                    [self.pickerView selectRow:currentComponents.day - 1 inComponent:2 animated:false];
+                }
             }
             {
                 NSInteger row = [pickerView selectedRowInComponent:2];
