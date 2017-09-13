@@ -36,6 +36,7 @@
 @property (nonatomic, assign) NSInteger components;
 @property (nonatomic, weak) UIView *headerView;
 @property (nonatomic, weak) UIView *dismissView;
+@property (nonatomic, assign) BOOL isCurrent;
 
 - (NSInteger)rowsInComponent:(NSInteger)component;
 @end
@@ -396,19 +397,48 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 }
 
 - (void)pickerView:(PGPickerView *)pickerView title:(NSString *)title didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+     NSDateComponents *dateComponents = [self.calendar components:self.unitFlags fromDate:[NSDate date]];
+    NSDateComponents *currentComponents = [self.calendar components:self.unitFlags fromDate:[NSDate date]];
     if (self.datePickerMode == PGDatePickerModeDate) {
         if (component != 2) {
+            NSInteger row = [pickerView selectedRowInComponent:0];
+            NSString *str = [[pickerView titleForSelectedRow:row inComponent:0] componentsSeparatedByString:@"年"].firstObject;
+            dateComponents.year = [str integerValue];
+            
             NSString *yearString = [pickerView titleForSelectedRow:row inComponent:0];
             yearString = [yearString stringByReplacingOccurrencesOfString:@"年" withString:@""];
             NSString *monthString = [pickerView titleForSelectedRow:row inComponent:1];
             monthString = [monthString stringByReplacingOccurrencesOfString:@"月" withString:@""];
             NSInteger day = [self howManyDaysWithMonthInThisYear:[yearString integerValue] withMonth:[monthString integerValue]];
             [self setDayListForMonthDays:day];
+            
+            if (self.minimumComponents.year == dateComponents.year) {
+                NSInteger index = day - self.minimumComponents.day;
+                if (index < 0) {
+                    NSAssert(index < 0, @"minimumDate can not greater than maximumDate");
+                }
+                NSMutableArray *days = [NSMutableArray arrayWithCapacity:index];
+                for (NSUInteger i = self.minimumComponents.day; i <= day; i++) {
+                    [days addObject:[@(i) stringValue]];
+                }
+                self.dayList = days;
+            }else if (self.maximumComponents.year == dateComponents.year) {
+                NSInteger index = self.maximumComponents.day;
+                NSMutableArray *days = [NSMutableArray arrayWithCapacity:index];
+                for (NSUInteger i = 1; i <= self.maximumComponents.day; i++) {
+                    [days addObject:[@(i) stringValue]];
+                }
+                self.dayList = days;
+            }else{
+                NSMutableArray *days = [NSMutableArray arrayWithCapacity:day];
+                for (NSUInteger i = 1; i <= day; i++) {
+                    [days addObject:[@(i) stringValue]];
+                }
+                self.dayList = days;
+            }
             [self.pickerView reloadComponent:2];
         }
-        
     }
-    NSDateComponents *dateComponents = [self.calendar components:self.unitFlags fromDate:[NSDate date]];
     switch (self.datePickerMode) {
         case PGDatePickerModeYear:
         {
@@ -436,6 +466,38 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                     _isSetDate = false;
                 }
             }
+            
+            if (component == 0) {
+                if (self.minimumComponents.year == dateComponents.year) {
+                    NSInteger index = 12 - self.minimumComponents.month;
+                    if (index < 0) {
+                        NSAssert(index < 0, @"minimumDate can not greater than maximumDate");
+                    }
+                    NSMutableArray *months = [NSMutableArray arrayWithCapacity:index];
+                    for (NSUInteger i = self.minimumComponents.month; i <= 12; i++) {
+                        [months addObject:[@(i) stringValue]];
+                    }
+                    self.monthList = months;
+                }else if (self.maximumComponents.year == dateComponents.year) {
+                    NSInteger index = self.maximumComponents.month;
+                    NSMutableArray *months = [NSMutableArray arrayWithCapacity:index];
+                    for (NSUInteger i = 1; i <= self.maximumComponents.month; i++) {
+                        [months addObject:[@(i) stringValue]];
+                    }
+                    self.monthList = months;
+                }else{
+                    NSMutableArray *months = [NSMutableArray arrayWithCapacity:12];
+                    for (NSUInteger i = 1; i <= 12; i++) {
+                        [months addObject:[@(i) stringValue]];
+                    }
+                    self.monthList = months;
+                }
+                 [self.pickerView reloadComponent:1];
+                if (!self.isCurrent && currentComponents.year == dateComponents.year) {
+                    self.isCurrent = true;
+                    [self.pickerView selectRow:currentComponents.month - 1 inComponent:1 animated:false];
+                }
+            }
         }
             break;
         case PGDatePickerModeDate:
@@ -449,6 +511,36 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 NSInteger row = [pickerView selectedRowInComponent:1];
                 NSString *str = [[pickerView titleForSelectedRow:row inComponent:1] componentsSeparatedByString:@"月"].firstObject;
                 dateComponents.month = [str integerValue];
+                if (self.minimumComponents.year == dateComponents.year) {
+                    NSInteger index = 12 - self.minimumComponents.month;
+                    if (index < 0) {
+                        NSAssert(index < 0, @"minimumDate can not greater than maximumDate");
+                    }
+                    NSMutableArray *months = [NSMutableArray arrayWithCapacity:index];
+                    for (NSUInteger i = self.minimumComponents.month; i <= 12; i++) {
+                        [months addObject:[@(i) stringValue]];
+                    }
+                    self.monthList = months;
+                }else if (self.maximumComponents.year == dateComponents.year) {
+                    NSInteger index = self.maximumComponents.month;
+                    NSMutableArray *months = [NSMutableArray arrayWithCapacity:index];
+                    for (NSUInteger i = 1; i <= self.maximumComponents.month; i++) {
+                        [months addObject:[@(i) stringValue]];
+                    }
+                    self.monthList = months;
+                }else{
+                    NSMutableArray *months = [NSMutableArray arrayWithCapacity:12];
+                    for (NSUInteger i = 1; i <= 12; i++) {
+                        [months addObject:[@(i) stringValue]];
+                    }
+                    self.monthList = months;
+                }
+                [self.pickerView reloadComponent:1];
+                if (!self.isCurrent) {
+                    self.isCurrent = true;
+                    [self.pickerView selectRow:currentComponents.month - 1 inComponent:1 animated:false];
+                    [self.pickerView selectRow:currentComponents.day - 1 inComponent:2 animated:false];
+                }
             }
             {
                 NSInteger row = [pickerView selectedRowInComponent:2];

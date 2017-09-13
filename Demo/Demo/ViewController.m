@@ -23,13 +23,18 @@
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
+    datePicker.minimumDate = [NSDate setYear:2015];
+    datePicker.maximumDate = [NSDate setYear:2020];
     datePicker.datePickerMode = PGDatePickerModeYear;
+    
 }
 
 - (IBAction)yearAndMonthHandler:(id)sender {
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
+    datePicker.minimumDate = [NSDate setYear:2015 month:5];
+    datePicker.maximumDate = [NSDate setYear:2020 month:10];
     datePicker.datePickerMode = PGDatePickerModeYearAndMonth;
 }
 
@@ -37,6 +42,8 @@
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
+    datePicker.minimumDate = [NSDate setYear:2015 month:5 day:10];
+    datePicker.maximumDate = [NSDate setYear:2020 month:10 day:20];
     datePicker.datePickerMode = PGDatePickerModeDate;
 }
 
@@ -79,8 +86,6 @@
     [datePicker.confirmButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     datePicker.datePickerMode = PGDatePickerModeDate;
 }
-
-
 
 #pragma PGDatePickerDelegate
 - (void)datePicker:(PGDatePicker *)datePicker didSelectDate:(NSDateComponents *)dateComponents {
