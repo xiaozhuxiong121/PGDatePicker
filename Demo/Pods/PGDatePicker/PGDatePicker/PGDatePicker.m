@@ -11,8 +11,8 @@
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
-#define kTableViewHeight 250
-#define kTableViewCellHeight 50
+#define kTableViewHeight 220
+#define kTableViewCellHeight 44
 
 @interface PGDatePicker()<PGPickerViewDelegate, PGPickerViewDataSource>{
     NSDate *_setDate;
@@ -52,7 +52,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         [window bringSubviewToFront:self];
         [window bringSubviewToFront:self.headerView];
         [window bringSubviewToFront:self.dismissView];
-        CGFloat height = 250;
+        CGFloat height = kTableViewHeight;
         CGFloat height1 = 40;
         [UIView animateWithDuration:0.3 animations:^{
             self.headerView.frame = CGRectMake(0, kScreenHeight - height - height1, kScreenWidth, height1);
@@ -89,7 +89,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     self.lineBackgroundColor = [UIColor colorWithHexString:@"#69BDFF"];
     self.titleColorForSelectedRow = [UIColor colorWithHexString:@"#69BDFF"];
     self.titleColorForOtherRow = [UIColor grayColor];
-    CGFloat height = 250;
+    CGFloat height = kTableViewHeight;
     CGFloat height1 = 40;
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
     
@@ -141,7 +141,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (void)cancelButtonHandler {
     self.dismissView.hidden = true;
-    CGFloat height = 250;
+    CGFloat height = kTableViewHeight;
     CGFloat height1 = 40;
     [UIView animateWithDuration:0.3 animations:^{
         self.headerView.frame = CGRectMake(0, kScreenHeight, kScreenWidth, height1);
@@ -393,7 +393,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 #pragma mark - PGPickerViewDelegate
 - (CGFloat)rowHeightInPickerView:(PGPickerView *)pickerView {
-    return 50;
+    return kTableViewCellHeight;
 }
 
 - (void)pickerView:(PGPickerView *)pickerView title:(NSString *)title didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
