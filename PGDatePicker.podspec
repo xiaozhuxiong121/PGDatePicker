@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PGDatePicker"
-  s.version      = "1.0.8"
+  s.version      = "1.1.0"
   s.summary      = "日期选择器"
   s.homepage     = "https://github.com/xiaozhuxiong121/PGDatePicker"
   s.license      = "MIT"
@@ -11,7 +11,10 @@ Pod::Spec.new do |s|
   s.frameworks   = "UIKit"
   s.requires_arc = true
 
-  s.dependency 'PGPickerView'
+  s.subspec 'PGPickerView' do |ss|
+    ss.source_files = "PGDatePicker", "PGDatePicker/PGPickerView/*.{h,m}"
+    ss.public_header_files = "PGDatePicker", "PGDatePicker/PGPickerView/*.{h}"
+  end
 end
  
  
