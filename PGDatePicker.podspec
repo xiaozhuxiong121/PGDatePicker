@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.subspec 'PGPickerView' do |ss|
-    ss.source_files = "PGDatePicker", "PGDatePicker/PGPickerView/*.{h,m}"
-    ss.public_header_files = "PGDatePicker", "PGDatePicker/PGPickerView/*.{h}"
+    ss.source_files = "PGDatePicker/PGPickerView/*.{h,m}"
+    ss.public_header_files = "PGDatePicker/PGPickerView/*.{h}"
   end
 end
  
