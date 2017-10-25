@@ -56,6 +56,9 @@ datePicker.titleColorForOtherRow = [UIColor blackColor];
 
 ```
 
+# Swift的使用
+[查看使用文档](Swift.md) 
+
 # 许可证
 
 PGNetworkHelper 使用 MIT 许可证，详情见 [LICENSE](LICENSE) 文件。
