@@ -98,7 +98,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     [window addSubview:view];
     self.headerView = view;
     
-    CGRect frame = CGRectMake(0, CGRectGetMaxY(view.frame), kScreenWidth, height);
+    CGRect frame = CGRectMake(0, CGRectGetMaxY (view.frame), kScreenWidth, height);
     self.frame = frame;
     self.backgroundColor = [UIColor whiteColor];
     [window addSubview:self];
@@ -466,7 +466,6 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                     _isSetDate = false;
                 }
             }
-            
             if (component == 0) {
                 if (self.minimumComponents.year == dateComponents.year) {
                     NSInteger index = 12 - self.minimumComponents.month;
