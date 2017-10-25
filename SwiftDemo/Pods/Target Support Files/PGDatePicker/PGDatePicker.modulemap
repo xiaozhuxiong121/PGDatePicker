@@ -1,0 +1,6 @@
+framework module PGDatePicker {
+  umbrella header "PGDatePicker-umbrella.h"
+
+  export *
+  module * { export * }
+}
