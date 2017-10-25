@@ -14,7 +14,7 @@
 # CocoaPods安装
 
 ```
-pod 'PGDatePicker', '~> 1.0.8’
+pod 'PGDatePicker', '>= 1.1.0'
 ```
 
 # 使用
@@ -55,6 +55,9 @@ datePicker.titleColorForOtherRow = [UIColor blackColor];
 [datePicker.confirmButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
 
 ```
+
+# Swift的使用
+[查看使用文档](Swift.md) 
 
 # 许可证
 

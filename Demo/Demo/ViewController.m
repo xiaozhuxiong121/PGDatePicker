@@ -9,7 +9,9 @@
 #import "ViewController.h"
 #import "PGDatePicker.h"
 
-@interface ViewController ()<PGDatePickerDelegate>
+@interface ViewController ()<PGDatePickerDelegate> {
+    PGDatePicker *datePicker;
+}
 
 @end
 
@@ -26,10 +28,12 @@
     datePicker.minimumDate = [NSDate setYear:2015];
     datePicker.maximumDate = [NSDate setYear:2020];
     datePicker.datePickerMode = PGDatePickerModeYear;
+    
+    [datePicker setDate:[NSDate date] animated:true];
 }
 
 - (IBAction)yearAndMonthHandler:(id)sender {
-    PGDatePicker *datePicker = [[PGDatePicker alloc]init];
+    datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
 //    datePicker.minimumDate = [NSDate setYear:2015 month:5];
@@ -44,6 +48,7 @@
     datePicker.minimumDate = [NSDate setYear:2015 month:5 day:10];
     datePicker.maximumDate = [NSDate setYear:2020 month:10 day:20];
     datePicker.datePickerMode = PGDatePickerModeDate;
+    [datePicker setDate:[NSDate dateWithTimeIntervalSinceNow:86400] animated:true];
 }
 
 - (IBAction)timeHandler:(id)sender {
