@@ -10,7 +10,7 @@
 #import "NSDate+PGCategory.h"
 #import "UIColor+PGHex.h"
 #import "NSCalendar+PGCurrent.h"
-#import <PGPickerView/PGPickerView.h>
+#import "PGPickerView.h"
 
 typedef NS_ENUM(NSInteger, PGDatePickerMode) {
     PGDatePickerModeYear, //年

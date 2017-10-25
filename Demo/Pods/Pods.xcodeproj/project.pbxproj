@@ -7,134 +7,115 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BEAC51BFEDD78842EFBE2863EE58D0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		0D940BC0DB08EF571D7132B6576DA78F /* PGPickerColumnView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8737C41B3F6BB0C855BF74F751EAD240 /* PGPickerColumnView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		16F7C85A5720A5A1784BE76C6E9D9273 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		3063086806A54682D28D044BE3D0A52F /* NSDate+PGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 957A2A1DDD370F15F4F90147D108F9B9 /* NSDate+PGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		38380B92723583CFF9E2592E67669939 /* NSCalendar+PGCurrent.h in Headers */ = {isa = PBXBuildFile; fileRef = 7981867AD2F705A5308130F6BD96A8CA /* NSCalendar+PGCurrent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		39D1BF24E2F20572CDA4E9DDC53C3F8A /* UIColor+PGHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 48010429966F71E3E177BB97B89BDC65 /* UIColor+PGHex.m */; };
-		3C2E7596CD7022BDFF84FE368DB58DBF /* PGDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 817C9E4762F0BDA41CD25BD1AF91DC60 /* PGDatePickerView.m */; };
-		3D6B24004D48E91989F52D0EE1875672 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		4DF10185EE677E3312A7EDE8A5E8F3A5 /* Pods-Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA944E1D5D966DBCA7EB7C661855A95 /* Pods-Demo-dummy.m */; };
-		591E8383CC2C08920E967925258EAE70 /* PGPickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5434AB77C69509416F74572BA5E99D25 /* PGPickerView-dummy.m */; };
-		6F386308F76CCCD37AB95CB8CC97B3BC /* PGDatePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 218ADA6B663906C14CFE27EC51ED7AAB /* PGDatePicker-dummy.m */; };
-		7CD32C129F59E008D7EA18E7E4C7CFC0 /* PGPickerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74CC1EBCB22CD1F02753D33B3A834C35 /* PGPickerTableView.m */; };
-		877B6AA2B503296569A47E0B777047AE /* PGPickerViewMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A0E9BBB3E90E554E6F18876B01BF93C2 /* PGPickerViewMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		88E097C9E0E3FF2E567B49CBC3660944 /* PGPickerViewConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 90C40F7E5F321A2682AB34D97162E85F /* PGPickerViewConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8EF4C14A634B191C95FFDEC6408D298C /* UIColor+PGHex.h in Headers */ = {isa = PBXBuildFile; fileRef = 5152ED0362C0A32FC2069F248A6757CA /* UIColor+PGHex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		94ECFD4F4CA3ACE9E84E6A6A5D119E82 /* PGPickerTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = CB999B85AFA6A4FAD79AC1C009B45E39 /* PGPickerTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9913F5AA08F3BF58A415868465737A87 /* PGPickerColumnCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AEA9A454094160DBF5D783F01572BEA /* PGPickerColumnCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A328B5EE77BEF12B558D0AA2A90EAFEF /* PGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7B6524CF5EED35E57D312F2D80C634 /* PGDatePicker.m */; };
-		A9800DB81D247FCEC1D4B4C098D23A60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
-		AF726654F737153DD053D48DB48DF5E7 /* PGPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = EF72861E606CF6C9F5E47F19F1ECBE03 /* PGPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B9AB207B557E3CEC5DD5215C6B69C6CC /* PGPickerColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = C55BC54CC9FD9C10B10C0E0BC2F83F79 /* PGPickerColumnView.m */; };
-		C4F9793AE46BCBA7F51CE57CCD604A22 /* PGPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8A8DBC53DD7AD2AF02448A67C4A864 /* PGPickerView.m */; };
-		CA115E45E264617BEBE2903342C53C2F /* PGDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0E21AD0138BC96B108A5FA37482461 /* PGDatePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D09AB994328DCD8CC994C34D8370EB4B /* PGDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = EA81F6FBAE8B1DE1910855D7BB9D7EBC /* PGDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D65F570CD81AB36CB29B8278CEC90AB5 /* PGPickerColumnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C858C608DAEAED5458049B15513FDD6 /* PGPickerColumnCell.m */; };
-		DD2768A9D1F6898712084AE3352FB1E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
-		E12A8AE6ACAA7D92FF277737C0DCCDE1 /* PGPickerViewConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 21C077523703A7B99DFACE9A7E15AC6D /* PGPickerViewConfig.m */; };
-		E16C6A767E787B3C8213B38D8C0730CE /* NSCalendar+PGCurrent.m in Sources */ = {isa = PBXBuildFile; fileRef = F93FA1A70DAE183B2B03EC43AFB2EAE9 /* NSCalendar+PGCurrent.m */; };
-		F6CCB4F0E2FA50B228D85B326A46388B /* NSDate+PGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7006E0E1D016D5BBF6ED9B29B1D0E275 /* NSDate+PGCategory.m */; };
+		029DEB1AE8E4876A53E277D9FEB93775 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		0A893411260470695F0E69A5752D61CD /* PGDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E9B15C095EF85C61AD41E4E4FBC58C0 /* PGDatePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E3504A42C5D61CE85BCCA2DF8F4AA2D /* PGPickerViewConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = E7ACB4BBF065E1481E73AA961DA00E0D /* PGPickerViewConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A42203375DA964A23EE73E181906B31 /* PGDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 756919B2C7A3CA418C3EF980D2428C4B /* PGDatePickerView.m */; };
+		3EAEA0EC93B9928311D0DC60B26A15A3 /* NSCalendar+PGCurrent.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B681D4BF128427D2ACD83D035A72D1F /* NSCalendar+PGCurrent.m */; };
+		540A3710C896B037BDD065899DF2F4E1 /* PGPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F2F901A88A4D24247FBD90FECB86F1 /* PGPickerView.m */; };
+		5A152E3A3D711713FBDEDBBF6F6D3703 /* PGPickerColumnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B593D45069B619F92D9E7A43A77030E /* PGPickerColumnCell.m */; };
+		64F1F971D350326A6EFBFF886D3B9FDC /* PGDatePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F306E84DDE7A034E4C7B5924B67EB94C /* PGDatePicker-dummy.m */; };
+		7140B07B7074F57BC1295C92002846D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
+		72ABA85E2C02F63E990CE41F9A13AB71 /* PGPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = CEFCE86DB7B545ABB0636136B9B65678 /* PGPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		751DE7CE438939808DF7028DD0CA25A8 /* PGPickerViewConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6F08AE4C16E961F7756AED9AF68F65 /* PGPickerViewConfig.m */; };
+		7B5D959FAA3DF8CA2F2D3B36B4B536A5 /* NSDate+PGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F8C7A07BA1F077C8B0B0FC59B860252 /* NSDate+PGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		85506EC9E8F27E10452F3C1FE4EC0DF7 /* PGPickerColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C501C69484A430CEBF4D54EB5E9D66A /* PGPickerColumnView.m */; };
+		8742820C692C7776A38FFB267A0D1F80 /* PGPickerTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 63BFF6BDA9815DFD81577DDBAAF5FC33 /* PGPickerTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8AFD016C5442E5C1570ED0EC9A4D31CA /* PGPickerViewMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A6540AF434F7E10DBCE2430A4528C99E /* PGPickerViewMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98A951255473142F201D6381C81360ED /* NSCalendar+PGCurrent.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A2F4D2172861F4D5520909B440E4728 /* NSCalendar+PGCurrent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A7444F029C8D4E981702759CE4764817 /* NSDate+PGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BD15A5423A1387E9AEE447615F8104 /* NSDate+PGCategory.m */; };
+		B2C9458EB05A4ECC34EEE35ED060198E /* PGDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B3516F67626322CB62E288DBE9208C3 /* PGDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4AD287EAE9431103895813775979FEF /* PGPickerColumnView.h in Headers */ = {isa = PBXBuildFile; fileRef = C225B1B8A75A358025B1B6CF1FBF0BD1 /* PGPickerColumnView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D668C468B7D72B7E3D0CF4353E10A38D /* UIColor+PGHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A91B8BCAB4C3C3CC20CCC9C86CEB83B /* UIColor+PGHex.m */; };
+		DB5C5415CA0DF3559F680663BB402B66 /* UIColor+PGHex.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D3CC8416F91DA68044066696D968261 /* UIColor+PGHex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2E65AFC422A3DBC7961EDCF56D0F936 /* PGPickerColumnCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C2614899072A2280010378181D1C0F1 /* PGPickerColumnCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F43AA5DC0C56B68CBA528F3B7422D04D /* PGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F105A445001CF7CC838C713096973A /* PGDatePicker.m */; };
+		F4B436C33414BCC2AC9B1738BACDA24B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
+		F6A7DCD64E8E74966405F11798C4E21D /* PGPickerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C097DDF37A1C830AC919B51197893692 /* PGPickerTableView.m */; };
+		F722D9C3940328EF5BB3049A69A4F2D4 /* Pods-Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA944E1D5D966DBCA7EB7C661855A95 /* Pods-Demo-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7A82A3509EBB4BFEE576958C8374B230 /* PBXContainerItemProxy */ = {
+		B215B310322BC100AB02BB2F0A406505 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AEDC24A7188785133768B880C9383BD0;
+			remoteGlobalIDString = 9556BBB7F518EF2CB2820BC44125D2B0;
 			remoteInfo = PGDatePicker;
-		};
-		DCD532CFEAC4909A29B2C1D8CE66C144 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 98198F5D7031AFDFEB9E4C7ECF2ED7AD;
-			remoteInfo = PGPickerView;
-		};
-		E2BD89634155A85FB6EB74F65FFF91D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 98198F5D7031AFDFEB9E4C7ECF2ED7AD;
-			remoteInfo = PGPickerView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0AA4CC1D789DA2783447C62D0F699C77 /* Pods-Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Demo-acknowledgements.plist"; sourceTree = "<group>"; };
-		218ADA6B663906C14CFE27EC51ED7AAB /* PGDatePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker-dummy.m"; sourceTree = "<group>"; };
-		21C077523703A7B99DFACE9A7E15AC6D /* PGPickerViewConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerViewConfig.m; path = PGPickerView/PGPickerViewConfig.m; sourceTree = "<group>"; };
-		48010429966F71E3E177BB97B89BDC65 /* UIColor+PGHex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PGHex.m"; path = "PGDatePicker/UIColor+PGHex.m"; sourceTree = "<group>"; };
-		4AEA9A454094160DBF5D783F01572BEA /* PGPickerColumnCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerColumnCell.h; path = PGPickerView/PGPickerColumnCell.h; sourceTree = "<group>"; };
-		5152ED0362C0A32FC2069F248A6757CA /* UIColor+PGHex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+PGHex.h"; path = "PGDatePicker/UIColor+PGHex.h"; sourceTree = "<group>"; };
-		51A06E5CAC40FBC675DE15AEE7998E86 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Demo.a"; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		531F816BFB2DB60475A16361995AF9AA /* libPGDatePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPGDatePicker.a; path = libPGDatePicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5434AB77C69509416F74572BA5E99D25 /* PGPickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PGPickerView-dummy.m"; sourceTree = "<group>"; };
-		5B96C11B6BFAE52EB32C0C27F39FA465 /* PGDatePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker-prefix.pch"; sourceTree = "<group>"; };
+		0F8C7A07BA1F077C8B0B0FC59B860252 /* NSDate+PGCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+PGCategory.h"; path = "PGDatePicker/NSDate+PGCategory.h"; sourceTree = "<group>"; };
+		17F2F901A88A4D24247FBD90FECB86F1 /* PGPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerView.m; path = PGPickerView/PGPickerView.m; sourceTree = "<group>"; };
+		1B3516F67626322CB62E288DBE9208C3 /* PGDatePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGDatePicker.h; path = PGDatePicker/PGDatePicker.h; sourceTree = "<group>"; };
+		4A91B8BCAB4C3C3CC20CCC9C86CEB83B /* UIColor+PGHex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PGHex.m"; path = "PGDatePicker/UIColor+PGHex.m"; sourceTree = "<group>"; };
+		4C501C69484A430CEBF4D54EB5E9D66A /* PGPickerColumnView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerColumnView.m; path = PGPickerView/PGPickerColumnView.m; sourceTree = "<group>"; };
+		4D3CC8416F91DA68044066696D968261 /* UIColor+PGHex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+PGHex.h"; path = "PGDatePicker/UIColor+PGHex.h"; sourceTree = "<group>"; };
+		53A5B5FE3009EF6F014057704CAF8063 /* PGDatePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PGDatePicker.xcconfig; sourceTree = "<group>"; };
+		5E9B15C095EF85C61AD41E4E4FBC58C0 /* PGDatePickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGDatePickerView.h; path = PGDatePicker/PGDatePickerView.h; sourceTree = "<group>"; };
+		63BFF6BDA9815DFD81577DDBAAF5FC33 /* PGPickerTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerTableView.h; path = PGPickerView/PGPickerTableView.h; sourceTree = "<group>"; };
+		664DDBC6571C8EE86D241E22C81D8EB1 /* PGDatePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker-prefix.pch"; sourceTree = "<group>"; };
 		6F5DD532ECDA969984034D51B0F56454 /* Pods-Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6FBD289615C34D0EDC314EDB75DF2E3E /* PGDatePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PGDatePicker.xcconfig; sourceTree = "<group>"; };
-		7006E0E1D016D5BBF6ED9B29B1D0E275 /* NSDate+PGCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+PGCategory.m"; path = "PGDatePicker/NSDate+PGCategory.m"; sourceTree = "<group>"; };
-		74CC1EBCB22CD1F02753D33B3A834C35 /* PGPickerTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerTableView.m; path = PGPickerView/PGPickerTableView.m; sourceTree = "<group>"; };
-		7981867AD2F705A5308130F6BD96A8CA /* NSCalendar+PGCurrent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSCalendar+PGCurrent.h"; path = "PGDatePicker/NSCalendar+PGCurrent.h"; sourceTree = "<group>"; };
+		75527BE63DF28D8C91AB392A6A7A12FA /* libPGDatePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPGDatePicker.a; path = libPGDatePicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		756919B2C7A3CA418C3EF980D2428C4B /* PGDatePickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGDatePickerView.m; path = PGDatePicker/PGDatePickerView.m; sourceTree = "<group>"; };
 		7E61E2F2E514A86FEC211F0AD10D8AC1 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		817C9E4762F0BDA41CD25BD1AF91DC60 /* PGDatePickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGDatePickerView.m; path = PGDatePicker/PGDatePickerView.m; sourceTree = "<group>"; };
-		8737C41B3F6BB0C855BF74F751EAD240 /* PGPickerColumnView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerColumnView.h; path = PGPickerView/PGPickerColumnView.h; sourceTree = "<group>"; };
-		90C40F7E5F321A2682AB34D97162E85F /* PGPickerViewConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerViewConfig.h; path = PGPickerView/PGPickerViewConfig.h; sourceTree = "<group>"; };
+		8B681D4BF128427D2ACD83D035A72D1F /* NSCalendar+PGCurrent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSCalendar+PGCurrent.m"; path = "PGDatePicker/NSCalendar+PGCurrent.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		957A2A1DDD370F15F4F90147D108F9B9 /* NSDate+PGCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+PGCategory.h"; path = "PGDatePicker/NSDate+PGCategory.h"; sourceTree = "<group>"; };
-		95A5AF499DCA2650FE8E51CFAD5B3CBF /* PGPickerView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PGPickerView.xcconfig; sourceTree = "<group>"; };
-		9C858C608DAEAED5458049B15513FDD6 /* PGPickerColumnCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerColumnCell.m; path = PGPickerView/PGPickerColumnCell.m; sourceTree = "<group>"; };
-		A0E9BBB3E90E554E6F18876B01BF93C2 /* PGPickerViewMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerViewMacros.h; path = PGPickerView/PGPickerViewMacros.h; sourceTree = "<group>"; };
-		AE7B6524CF5EED35E57D312F2D80C634 /* PGDatePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGDatePicker.m; path = PGDatePicker/PGDatePicker.m; sourceTree = "<group>"; };
+		96F105A445001CF7CC838C713096973A /* PGDatePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGDatePicker.m; path = PGDatePicker/PGDatePicker.m; sourceTree = "<group>"; };
+		9A2F4D2172861F4D5520909B440E4728 /* NSCalendar+PGCurrent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSCalendar+PGCurrent.h"; path = "PGDatePicker/NSCalendar+PGCurrent.h"; sourceTree = "<group>"; };
+		9B593D45069B619F92D9E7A43A77030E /* PGPickerColumnCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerColumnCell.m; path = PGPickerView/PGPickerColumnCell.m; sourceTree = "<group>"; };
+		9C2614899072A2280010378181D1C0F1 /* PGPickerColumnCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerColumnCell.h; path = PGPickerView/PGPickerColumnCell.h; sourceTree = "<group>"; };
+		A6540AF434F7E10DBCE2430A4528C99E /* PGPickerViewMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerViewMacros.h; path = PGPickerView/PGPickerViewMacros.h; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B8E024BEEA59BE561BDB0E5694F5F48C /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Demo.a"; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA98EAACDAFB971DF9EDCF9DEA28BE22 /* Pods-Demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Demo-frameworks.sh"; sourceTree = "<group>"; };
 		BC6F318B8C726435B2FF8566E7AC50B9 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
-		BDB2F459E7206A9A899324C76B0378A6 /* libPGPickerView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPGPickerView.a; path = libPGPickerView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF0E21AD0138BC96B108A5FA37482461 /* PGDatePickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGDatePickerView.h; path = PGDatePicker/PGDatePickerView.h; sourceTree = "<group>"; };
-		C55BC54CC9FD9C10B10C0E0BC2F83F79 /* PGPickerColumnView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerColumnView.m; path = PGPickerView/PGPickerColumnView.m; sourceTree = "<group>"; };
-		CB999B85AFA6A4FAD79AC1C009B45E39 /* PGPickerTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerTableView.h; path = PGPickerView/PGPickerTableView.h; sourceTree = "<group>"; };
-		CCAA02EA0971D0D0EBA0125B339B55D9 /* PGPickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGPickerView-prefix.pch"; sourceTree = "<group>"; };
+		C097DDF37A1C830AC919B51197893692 /* PGPickerTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerTableView.m; path = PGPickerView/PGPickerTableView.m; sourceTree = "<group>"; };
+		C225B1B8A75A358025B1B6CF1FBF0BD1 /* PGPickerColumnView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerColumnView.h; path = PGPickerView/PGPickerColumnView.h; sourceTree = "<group>"; };
+		CEFCE86DB7B545ABB0636136B9B65678 /* PGPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerView.h; path = PGPickerView/PGPickerView.h; sourceTree = "<group>"; };
+		D1BD15A5423A1387E9AEE447615F8104 /* NSDate+PGCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+PGCategory.m"; path = "PGDatePicker/NSDate+PGCategory.m"; sourceTree = "<group>"; };
 		D25544B348B28F2BBA3D9053B844D7D4 /* Pods-Demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Demo-resources.sh"; sourceTree = "<group>"; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		DCA944E1D5D966DBCA7EB7C661855A95 /* Pods-Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Demo-dummy.m"; sourceTree = "<group>"; };
-		EA81F6FBAE8B1DE1910855D7BB9D7EBC /* PGDatePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGDatePicker.h; path = PGDatePicker/PGDatePicker.h; sourceTree = "<group>"; };
-		ED8A8DBC53DD7AD2AF02448A67C4A864 /* PGPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerView.m; path = PGPickerView/PGPickerView.m; sourceTree = "<group>"; };
-		EF72861E606CF6C9F5E47F19F1ECBE03 /* PGPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerView.h; path = PGPickerView/PGPickerView.h; sourceTree = "<group>"; };
-		F93FA1A70DAE183B2B03EC43AFB2EAE9 /* NSCalendar+PGCurrent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSCalendar+PGCurrent.m"; path = "PGDatePicker/NSCalendar+PGCurrent.m"; sourceTree = "<group>"; };
+		E7ACB4BBF065E1481E73AA961DA00E0D /* PGPickerViewConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerViewConfig.h; path = PGPickerView/PGPickerViewConfig.h; sourceTree = "<group>"; };
+		EA6F08AE4C16E961F7756AED9AF68F65 /* PGPickerViewConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerViewConfig.m; path = PGPickerView/PGPickerViewConfig.m; sourceTree = "<group>"; };
+		F306E84DDE7A034E4C7B5924B67EB94C /* PGDatePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0E2C1553AB2683920B61F1B694F1F911 /* Frameworks */ = {
+		4835D9E6B01EA764C5BD9B2F24770939 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BEAC51BFEDD78842EFBE2863EE58D0F /* Foundation.framework in Frameworks */,
-				DD2768A9D1F6898712084AE3352FB1E6 /* UIKit.framework in Frameworks */,
+				F4B436C33414BCC2AC9B1738BACDA24B /* Foundation.framework in Frameworks */,
+				7140B07B7074F57BC1295C92002846D5 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		467E19BCD593BBACC4F36B49F677C9FA /* Frameworks */ = {
+		499A622AFC7F94CE196F8E8BC81580B7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16F7C85A5720A5A1784BE76C6E9D9273 /* Foundation.framework in Frameworks */,
-				A9800DB81D247FCEC1D4B4C098D23A60 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D163099478FE3164FF24EC9B8F622F4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D6B24004D48E91989F52D0EE1875672 /* Foundation.framework in Frameworks */,
+				029DEB1AE8E4876A53E277D9FEB93775 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0317D00B6D5B89EE5F6CFA05CAB30AC8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				53A5B5FE3009EF6F014057704CAF8063 /* PGDatePicker.xcconfig */,
+				F306E84DDE7A034E4C7B5924B67EB94C /* PGDatePicker-dummy.m */,
+				664DDBC6571C8EE86D241E22C81D8EB1 /* PGDatePicker-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PGDatePicker";
+			sourceTree = "<group>";
+		};
 		105A24935BC6A33BE66754CE51C36C31 /* Pods-Demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,27 +129,6 @@
 			);
 			name = "Pods-Demo";
 			path = "Target Support Files/Pods-Demo";
-			sourceTree = "<group>";
-		};
-		2AF763831CC05AD00A7C2E34667DA97A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				531F816BFB2DB60475A16361995AF9AA /* libPGDatePicker.a */,
-				BDB2F459E7206A9A899324C76B0378A6 /* libPGPickerView.a */,
-				51A06E5CAC40FBC675DE15AEE7998E86 /* libPods-Demo.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		4286EC90C300893F4A8F15C0CC5EB6B9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				95A5AF499DCA2650FE8E51CFAD5B3CBF /* PGPickerView.xcconfig */,
-				5434AB77C69509416F74572BA5E99D25 /* PGPickerView-dummy.m */,
-				CCAA02EA0971D0D0EBA0125B339B55D9 /* PGPickerView-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/PGPickerView";
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -193,69 +153,65 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				B1DE97ACCF04E3D40FDC42BD4DEE7F86 /* Pods */,
-				2AF763831CC05AD00A7C2E34667DA97A /* Products */,
+				EBFCA5BB41580CD6AA172B284BD04469 /* Pods */,
+				E210336A05199A43C0A28B191D261D8B /* Products */,
 				F64792801741A31D953EA71E1A34CBCA /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8C3013156FC98D92E7A524AC553BC505 /* PGPickerView */ = {
+		846867C522921181D1CAC3444302FBB6 /* PGDatePicker */ = {
 			isa = PBXGroup;
 			children = (
-				4AEA9A454094160DBF5D783F01572BEA /* PGPickerColumnCell.h */,
-				9C858C608DAEAED5458049B15513FDD6 /* PGPickerColumnCell.m */,
-				8737C41B3F6BB0C855BF74F751EAD240 /* PGPickerColumnView.h */,
-				C55BC54CC9FD9C10B10C0E0BC2F83F79 /* PGPickerColumnView.m */,
-				CB999B85AFA6A4FAD79AC1C009B45E39 /* PGPickerTableView.h */,
-				74CC1EBCB22CD1F02753D33B3A834C35 /* PGPickerTableView.m */,
-				EF72861E606CF6C9F5E47F19F1ECBE03 /* PGPickerView.h */,
-				ED8A8DBC53DD7AD2AF02448A67C4A864 /* PGPickerView.m */,
-				90C40F7E5F321A2682AB34D97162E85F /* PGPickerViewConfig.h */,
-				21C077523703A7B99DFACE9A7E15AC6D /* PGPickerViewConfig.m */,
-				A0E9BBB3E90E554E6F18876B01BF93C2 /* PGPickerViewMacros.h */,
-				4286EC90C300893F4A8F15C0CC5EB6B9 /* Support Files */,
-			);
-			name = PGPickerView;
-			path = PGPickerView;
-			sourceTree = "<group>";
-		};
-		8CC00943E8DEE9D27EC50747DE8597B0 /* PGDatePicker */ = {
-			isa = PBXGroup;
-			children = (
-				7981867AD2F705A5308130F6BD96A8CA /* NSCalendar+PGCurrent.h */,
-				F93FA1A70DAE183B2B03EC43AFB2EAE9 /* NSCalendar+PGCurrent.m */,
-				957A2A1DDD370F15F4F90147D108F9B9 /* NSDate+PGCategory.h */,
-				7006E0E1D016D5BBF6ED9B29B1D0E275 /* NSDate+PGCategory.m */,
-				EA81F6FBAE8B1DE1910855D7BB9D7EBC /* PGDatePicker.h */,
-				AE7B6524CF5EED35E57D312F2D80C634 /* PGDatePicker.m */,
-				BF0E21AD0138BC96B108A5FA37482461 /* PGDatePickerView.h */,
-				817C9E4762F0BDA41CD25BD1AF91DC60 /* PGDatePickerView.m */,
-				5152ED0362C0A32FC2069F248A6757CA /* UIColor+PGHex.h */,
-				48010429966F71E3E177BB97B89BDC65 /* UIColor+PGHex.m */,
-				C329C47FD4D08D26ADD739075CAEC438 /* Support Files */,
+				9A2F4D2172861F4D5520909B440E4728 /* NSCalendar+PGCurrent.h */,
+				8B681D4BF128427D2ACD83D035A72D1F /* NSCalendar+PGCurrent.m */,
+				0F8C7A07BA1F077C8B0B0FC59B860252 /* NSDate+PGCategory.h */,
+				D1BD15A5423A1387E9AEE447615F8104 /* NSDate+PGCategory.m */,
+				1B3516F67626322CB62E288DBE9208C3 /* PGDatePicker.h */,
+				96F105A445001CF7CC838C713096973A /* PGDatePicker.m */,
+				5E9B15C095EF85C61AD41E4E4FBC58C0 /* PGDatePickerView.h */,
+				756919B2C7A3CA418C3EF980D2428C4B /* PGDatePickerView.m */,
+				4D3CC8416F91DA68044066696D968261 /* UIColor+PGHex.h */,
+				4A91B8BCAB4C3C3CC20CCC9C86CEB83B /* UIColor+PGHex.m */,
+				F4ED2095B3387DB6EA5E3A93DB7909AE /* PGPickerView */,
+				0317D00B6D5B89EE5F6CFA05CAB30AC8 /* Support Files */,
 			);
 			name = PGDatePicker;
 			path = PGDatePicker;
 			sourceTree = "<group>";
 		};
-		B1DE97ACCF04E3D40FDC42BD4DEE7F86 /* Pods */ = {
+		E210336A05199A43C0A28B191D261D8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8CC00943E8DEE9D27EC50747DE8597B0 /* PGDatePicker */,
-				8C3013156FC98D92E7A524AC553BC505 /* PGPickerView */,
+				75527BE63DF28D8C91AB392A6A7A12FA /* libPGDatePicker.a */,
+				B8E024BEEA59BE561BDB0E5694F5F48C /* libPods-Demo.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBFCA5BB41580CD6AA172B284BD04469 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				846867C522921181D1CAC3444302FBB6 /* PGDatePicker */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C329C47FD4D08D26ADD739075CAEC438 /* Support Files */ = {
+		F4ED2095B3387DB6EA5E3A93DB7909AE /* PGPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				6FBD289615C34D0EDC314EDB75DF2E3E /* PGDatePicker.xcconfig */,
-				218ADA6B663906C14CFE27EC51ED7AAB /* PGDatePicker-dummy.m */,
-				5B96C11B6BFAE52EB32C0C27F39FA465 /* PGDatePicker-prefix.pch */,
+				9C2614899072A2280010378181D1C0F1 /* PGPickerColumnCell.h */,
+				9B593D45069B619F92D9E7A43A77030E /* PGPickerColumnCell.m */,
+				C225B1B8A75A358025B1B6CF1FBF0BD1 /* PGPickerColumnView.h */,
+				4C501C69484A430CEBF4D54EB5E9D66A /* PGPickerColumnView.m */,
+				63BFF6BDA9815DFD81577DDBAAF5FC33 /* PGPickerTableView.h */,
+				C097DDF37A1C830AC919B51197893692 /* PGPickerTableView.m */,
+				CEFCE86DB7B545ABB0636136B9B65678 /* PGPickerView.h */,
+				17F2F901A88A4D24247FBD90FECB86F1 /* PGPickerView.m */,
+				E7ACB4BBF065E1481E73AA961DA00E0D /* PGPickerViewConfig.h */,
+				EA6F08AE4C16E961F7756AED9AF68F65 /* PGPickerViewConfig.m */,
+				A6540AF434F7E10DBCE2430A4528C99E /* PGPickerViewMacros.h */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/PGDatePicker";
+			name = PGPickerView;
 			sourceTree = "<group>";
 		};
 		F64792801741A31D953EA71E1A34CBCA /* Targets Support Files */ = {
@@ -269,85 +225,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		48107E9322C89C1B52D5BB1DB296B846 /* Headers */ = {
+		4862FF2BB6A34701A66076D9FCD2EAE9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9913F5AA08F3BF58A415868465737A87 /* PGPickerColumnCell.h in Headers */,
-				0D940BC0DB08EF571D7132B6576DA78F /* PGPickerColumnView.h in Headers */,
-				94ECFD4F4CA3ACE9E84E6A6A5D119E82 /* PGPickerTableView.h in Headers */,
-				AF726654F737153DD053D48DB48DF5E7 /* PGPickerView.h in Headers */,
-				88E097C9E0E3FF2E567B49CBC3660944 /* PGPickerViewConfig.h in Headers */,
-				877B6AA2B503296569A47E0B777047AE /* PGPickerViewMacros.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E0E8E7F4A15799DAB31D07AFBA371971 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				38380B92723583CFF9E2592E67669939 /* NSCalendar+PGCurrent.h in Headers */,
-				3063086806A54682D28D044BE3D0A52F /* NSDate+PGCategory.h in Headers */,
-				D09AB994328DCD8CC994C34D8370EB4B /* PGDatePicker.h in Headers */,
-				CA115E45E264617BEBE2903342C53C2F /* PGDatePickerView.h in Headers */,
-				8EF4C14A634B191C95FFDEC6408D298C /* UIColor+PGHex.h in Headers */,
+				98A951255473142F201D6381C81360ED /* NSCalendar+PGCurrent.h in Headers */,
+				7B5D959FAA3DF8CA2F2D3B36B4B536A5 /* NSDate+PGCategory.h in Headers */,
+				B2C9458EB05A4ECC34EEE35ED060198E /* PGDatePicker.h in Headers */,
+				0A893411260470695F0E69A5752D61CD /* PGDatePickerView.h in Headers */,
+				E2E65AFC422A3DBC7961EDCF56D0F936 /* PGPickerColumnCell.h in Headers */,
+				B4AD287EAE9431103895813775979FEF /* PGPickerColumnView.h in Headers */,
+				8742820C692C7776A38FFB267A0D1F80 /* PGPickerTableView.h in Headers */,
+				72ABA85E2C02F63E990CE41F9A13AB71 /* PGPickerView.h in Headers */,
+				0E3504A42C5D61CE85BCCA2DF8F4AA2D /* PGPickerViewConfig.h in Headers */,
+				8AFD016C5442E5C1570ED0EC9A4D31CA /* PGPickerViewMacros.h in Headers */,
+				DB5C5415CA0DF3559F680663BB402B66 /* UIColor+PGHex.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		98198F5D7031AFDFEB9E4C7ECF2ED7AD /* PGPickerView */ = {
+		9556BBB7F518EF2CB2820BC44125D2B0 /* PGDatePicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 36CA6208B029E494A7F295FA9C7CFE7F /* Build configuration list for PBXNativeTarget "PGPickerView" */;
+			buildConfigurationList = 69C71536DFD9FFABC2CE4C5908B70663 /* Build configuration list for PBXNativeTarget "PGDatePicker" */;
 			buildPhases = (
-				7D07EA184E8063C8C35F44F85C91B627 /* Sources */,
-				467E19BCD593BBACC4F36B49F677C9FA /* Frameworks */,
-				48107E9322C89C1B52D5BB1DB296B846 /* Headers */,
+				EA2317E58AC615E4466864245CD61E74 /* Sources */,
+				4835D9E6B01EA764C5BD9B2F24770939 /* Frameworks */,
+				4862FF2BB6A34701A66076D9FCD2EAE9 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = PGPickerView;
-			productName = PGPickerView;
-			productReference = BDB2F459E7206A9A899324C76B0378A6 /* libPGPickerView.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		AEDC24A7188785133768B880C9383BD0 /* PGDatePicker */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A05CD5FD3511275A33D53D4C9915C890 /* Build configuration list for PBXNativeTarget "PGDatePicker" */;
-			buildPhases = (
-				D73EA378B13CC9E94BC9940B62BB895E /* Sources */,
-				0E2C1553AB2683920B61F1B694F1F911 /* Frameworks */,
-				E0E8E7F4A15799DAB31D07AFBA371971 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CB6EAD805A649F0D00C9C8977445C55F /* PBXTargetDependency */,
 			);
 			name = PGDatePicker;
 			productName = PGDatePicker;
-			productReference = 531F816BFB2DB60475A16361995AF9AA /* libPGDatePicker.a */;
+			productReference = 75527BE63DF28D8C91AB392A6A7A12FA /* libPGDatePicker.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		B51F27CDD25894418B06EEB0DFB0DFC4 /* Pods-Demo */ = {
+		B7068D47A59CA38B659F46A563C6C269 /* Pods-Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 51A1C0CB768DCD1F17B5BAFCAB2000B5 /* Build configuration list for PBXNativeTarget "Pods-Demo" */;
+			buildConfigurationList = 6410DDD8F7CBFE02BCCE6C0BBB119A8A /* Build configuration list for PBXNativeTarget "Pods-Demo" */;
 			buildPhases = (
-				B1084E1D5ED15E8D3EBE63EC83037972 /* Sources */,
-				6D163099478FE3164FF24EC9B8F622F4 /* Frameworks */,
+				C25CD1F0D73E0305DEFD984D0AEED7D0 /* Sources */,
+				499A622AFC7F94CE196F8E8BC81580B7 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1988126D9D04887FF50D5D624D9D6B00 /* PBXTargetDependency */,
-				86FCA2640C3AE6BB17B88F679295D73E /* PBXTargetDependency */,
+				8049E3A73425206F06DAF3273DEF63C3 /* PBXTargetDependency */,
 			);
 			name = "Pods-Demo";
 			productName = "Pods-Demo";
-			productReference = 51A06E5CAC40FBC675DE15AEE7998E86 /* libPods-Demo.a */;
+			productReference = B8E024BEEA59BE561BDB0E5694F5F48C /* libPods-Demo.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -367,142 +297,204 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 2AF763831CC05AD00A7C2E34667DA97A /* Products */;
+			productRefGroup = E210336A05199A43C0A28B191D261D8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AEDC24A7188785133768B880C9383BD0 /* PGDatePicker */,
-				98198F5D7031AFDFEB9E4C7ECF2ED7AD /* PGPickerView */,
-				B51F27CDD25894418B06EEB0DFB0DFC4 /* Pods-Demo */,
+				9556BBB7F518EF2CB2820BC44125D2B0 /* PGDatePicker */,
+				B7068D47A59CA38B659F46A563C6C269 /* Pods-Demo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7D07EA184E8063C8C35F44F85C91B627 /* Sources */ = {
+		C25CD1F0D73E0305DEFD984D0AEED7D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D65F570CD81AB36CB29B8278CEC90AB5 /* PGPickerColumnCell.m in Sources */,
-				B9AB207B557E3CEC5DD5215C6B69C6CC /* PGPickerColumnView.m in Sources */,
-				7CD32C129F59E008D7EA18E7E4C7CFC0 /* PGPickerTableView.m in Sources */,
-				591E8383CC2C08920E967925258EAE70 /* PGPickerView-dummy.m in Sources */,
-				C4F9793AE46BCBA7F51CE57CCD604A22 /* PGPickerView.m in Sources */,
-				E12A8AE6ACAA7D92FF277737C0DCCDE1 /* PGPickerViewConfig.m in Sources */,
+				F722D9C3940328EF5BB3049A69A4F2D4 /* Pods-Demo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1084E1D5ED15E8D3EBE63EC83037972 /* Sources */ = {
+		EA2317E58AC615E4466864245CD61E74 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DF10185EE677E3312A7EDE8A5E8F3A5 /* Pods-Demo-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D73EA378B13CC9E94BC9940B62BB895E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E16C6A767E787B3C8213B38D8C0730CE /* NSCalendar+PGCurrent.m in Sources */,
-				F6CCB4F0E2FA50B228D85B326A46388B /* NSDate+PGCategory.m in Sources */,
-				6F386308F76CCCD37AB95CB8CC97B3BC /* PGDatePicker-dummy.m in Sources */,
-				A328B5EE77BEF12B558D0AA2A90EAFEF /* PGDatePicker.m in Sources */,
-				3C2E7596CD7022BDFF84FE368DB58DBF /* PGDatePickerView.m in Sources */,
-				39D1BF24E2F20572CDA4E9DDC53C3F8A /* UIColor+PGHex.m in Sources */,
+				3EAEA0EC93B9928311D0DC60B26A15A3 /* NSCalendar+PGCurrent.m in Sources */,
+				A7444F029C8D4E981702759CE4764817 /* NSDate+PGCategory.m in Sources */,
+				64F1F971D350326A6EFBFF886D3B9FDC /* PGDatePicker-dummy.m in Sources */,
+				F43AA5DC0C56B68CBA528F3B7422D04D /* PGDatePicker.m in Sources */,
+				3A42203375DA964A23EE73E181906B31 /* PGDatePickerView.m in Sources */,
+				5A152E3A3D711713FBDEDBBF6F6D3703 /* PGPickerColumnCell.m in Sources */,
+				85506EC9E8F27E10452F3C1FE4EC0DF7 /* PGPickerColumnView.m in Sources */,
+				F6A7DCD64E8E74966405F11798C4E21D /* PGPickerTableView.m in Sources */,
+				540A3710C896B037BDD065899DF2F4E1 /* PGPickerView.m in Sources */,
+				751DE7CE438939808DF7028DD0CA25A8 /* PGPickerViewConfig.m in Sources */,
+				D668C468B7D72B7E3D0CF4353E10A38D /* UIColor+PGHex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1988126D9D04887FF50D5D624D9D6B00 /* PBXTargetDependency */ = {
+		8049E3A73425206F06DAF3273DEF63C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PGDatePicker;
-			target = AEDC24A7188785133768B880C9383BD0 /* PGDatePicker */;
-			targetProxy = 7A82A3509EBB4BFEE576958C8374B230 /* PBXContainerItemProxy */;
-		};
-		86FCA2640C3AE6BB17B88F679295D73E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PGPickerView;
-			target = 98198F5D7031AFDFEB9E4C7ECF2ED7AD /* PGPickerView */;
-			targetProxy = DCD532CFEAC4909A29B2C1D8CE66C144 /* PBXContainerItemProxy */;
-		};
-		CB6EAD805A649F0D00C9C8977445C55F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PGPickerView;
-			target = 98198F5D7031AFDFEB9E4C7ECF2ED7AD /* PGPickerView */;
-			targetProxy = E2BD89634155A85FB6EB74F65FFF91D5 /* PBXContainerItemProxy */;
+			target = 9556BBB7F518EF2CB2820BC44125D2B0 /* PGDatePicker */;
+			targetProxy = B215B310322BC100AB02BB2F0A406505 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		178AEBB2B26E3FFBE1E3DEFCE9C5BE3D /* Debug */ = {
+		01A12BFDA8F3D693F7F0BA8D6A14279E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FBD289615C34D0EDC314EDB75DF2E3E /* PGDatePicker.xcconfig */;
+			baseConfigurationReference = 7E61E2F2E514A86FEC211F0AD10D8AC1 /* Pods-Demo.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4841C1DAF129075A157A7100D1FF47E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53A5B5FE3009EF6F014057704CAF8063 /* PGDatePicker.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				GCC_PREFIX_HEADER = "Target Support Files/PGDatePicker/PGDatePicker-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		1C7D17A37D091C98D2F0DD886C3A9320 /* Debug */ = {
+		B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -510,165 +502,46 @@
 			};
 			name = Debug;
 		};
-		34FE9531DA9AF2820790339988D5FF41 /* Release */ = {
+		E61FC1E15B75E527637E788F482FA7AE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC6F318B8C726435B2FF8566E7AC50B9 /* Pods-Demo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		A3C523F8BE674EF2087CCDD8DCE71B72 /* Debug */ = {
+		FCF6631574EF7B421B9451DD0AE0029E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E61E2F2E514A86FEC211F0AD10D8AC1 /* Pods-Demo.debug.xcconfig */;
+			baseConfigurationReference = 53A5B5FE3009EF6F014057704CAF8063 /* PGDatePicker.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		C3C262446F0406464A86A5ECFA2E09F8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC6F318B8C726435B2FF8566E7AC50B9 /* Pods-Demo.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		E35AC5226481FC9B54516C8BE35AE9C2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95A5AF499DCA2650FE8E51CFAD5B3CBF /* PGPickerView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PGPickerView/PGPickerView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-			};
-			name = Debug;
-		};
-		E487E72D52210D9AC5D5DFC36A33B312 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95A5AF499DCA2650FE8E51CFAD5B3CBF /* PGPickerView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PGPickerView/PGPickerView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-			};
-			name = Release;
-		};
-		F9D59171BB10172AC99374A01182CD97 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FBD289615C34D0EDC314EDB75DF2E3E /* PGDatePicker.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/PGDatePicker/PGDatePicker-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -678,35 +551,26 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C7D17A37D091C98D2F0DD886C3A9320 /* Debug */,
-				34FE9531DA9AF2820790339988D5FF41 /* Release */,
+				E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */,
+				B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		36CA6208B029E494A7F295FA9C7CFE7F /* Build configuration list for PBXNativeTarget "PGPickerView" */ = {
+		6410DDD8F7CBFE02BCCE6C0BBB119A8A /* Build configuration list for PBXNativeTarget "Pods-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E35AC5226481FC9B54516C8BE35AE9C2 /* Debug */,
-				E487E72D52210D9AC5D5DFC36A33B312 /* Release */,
+				01A12BFDA8F3D693F7F0BA8D6A14279E /* Debug */,
+				E61FC1E15B75E527637E788F482FA7AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		51A1C0CB768DCD1F17B5BAFCAB2000B5 /* Build configuration list for PBXNativeTarget "Pods-Demo" */ = {
+		69C71536DFD9FFABC2CE4C5908B70663 /* Build configuration list for PBXNativeTarget "PGDatePicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A3C523F8BE674EF2087CCDD8DCE71B72 /* Debug */,
-				C3C262446F0406464A86A5ECFA2E09F8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A05CD5FD3511275A33D53D4C9915C890 /* Build configuration list for PBXNativeTarget "PGDatePicker" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				178AEBB2B26E3FFBE1E3DEFCE9C5BE3D /* Debug */,
-				F9D59171BB10172AC99374A01182CD97 /* Release */,
+				4841C1DAF129075A157A7100D1FF47E6 /* Debug */,
+				FCF6631574EF7B421B9451DD0AE0029E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
