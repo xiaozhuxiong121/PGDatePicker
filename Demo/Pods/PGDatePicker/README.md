@@ -1,5 +1,5 @@
 # PGDatePicker
-日期选择器，支持年、年月、年月日、时分、年月周 时分等
+日期选择器，支持年、年月、年月日、时分、月日周 时分等
 > 由于使用UIPickerView的话，列表会有个弧度，所以这里用了[PGPickerView](https://github.com/xiaozhuxiong121/PGPickerView)  
 
 ![](F734F5F9-FB12-4BA7-B43E-B39D0FF1DA3B.png)  
@@ -14,7 +14,7 @@
 # CocoaPods安装
 
 ```
-pod 'PGDatePicker', '>= 1.1.0'
+pod 'PGDatePicker', '>= 1.1.1'
 ```
 
 # 使用

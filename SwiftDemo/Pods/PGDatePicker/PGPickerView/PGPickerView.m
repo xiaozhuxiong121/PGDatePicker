@@ -163,6 +163,12 @@
     [self createColumnViewAtComponent:component];
 }
 
+- (void)reloadComponent:(NSInteger)component currentRow:(void(^)(NSInteger row))block {
+    [self createColumnViewAtComponent:component];
+    PGPickerColumnView *view = [self columnViewInComponent:component];
+    block(view.currentRow);
+}
+
 - (void)reloadAllComponents {
     [self setupColumnView];
 }

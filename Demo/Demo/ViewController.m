@@ -48,7 +48,6 @@
     datePicker.minimumDate = [NSDate setYear:2015 month:5 day:10];
     datePicker.maximumDate = [NSDate setYear:2020 month:10 day:20];
     datePicker.datePickerMode = PGDatePickerModeDate;
-    [datePicker setDate:[NSDate dateWithTimeIntervalSinceNow:86400] animated:true];
 }
 
 - (IBAction)timeHandler:(id)sender {

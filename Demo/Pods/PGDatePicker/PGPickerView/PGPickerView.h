@@ -29,6 +29,7 @@
 // Reloading whole view or single component
 - (void)reloadAllComponents;
 - (void)reloadComponent:(NSInteger)component;
+- (void)reloadComponent:(NSInteger)component currentRow:(void(^)(NSInteger row))block;
 @end
 
 @protocol PGPickerViewDataSource<NSObject>

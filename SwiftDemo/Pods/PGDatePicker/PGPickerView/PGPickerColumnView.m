@@ -155,6 +155,8 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
 - (void)setDatas:(NSArray *)datas {
     _datas = datas;
     [self.tableView reloadData];
+    NSInteger index =  self.tableView.contentOffset.y / kCellHeight + 0.5;
+    self.currentRow = index;
 }
 
 - (void)setSelectedRow:(NSUInteger)selectedRow {
