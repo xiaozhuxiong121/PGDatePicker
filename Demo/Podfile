@@ -3,5 +3,4 @@ platform :ios, ‘8.0’
 
 target 'Demo' do
 pod 'PGDatePicker', '>= 1.1.4'
-pod 'Reveal-SDK', '~> 10’, :configurations => ['Debug’]
 end
