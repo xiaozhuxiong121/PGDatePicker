@@ -62,10 +62,6 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     [self setupPickerView];
 }
 
-- (void)dealloc {
-    [self.titleLabel removeObserver:self forKeyPath:@"text"];
-}
-
 - (void)setupPickerView {
     NSInteger day = [self howManyDaysWithMonthInThisYear:[self.calendar currentComponents].year withMonth:[self.calendar currentComponents].month];
     [self setDayListForMonthDays:day];
@@ -149,6 +145,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     } completion:^(BOOL finished) {
         [self.headerView removeFromSuperview];
         [self.dismissView removeFromSuperview];
+        [self.titleLabel removeObserver:self forKeyPath:@"text"];
         [self removeFromSuperview];
     }];
 }

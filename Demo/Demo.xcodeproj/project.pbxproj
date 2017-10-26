@@ -14,6 +14,11 @@
 		862DEB8F1F395BEC00B5AB4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 862DEB8D1F395BEC00B5AB4C /* Main.storyboard */; };
 		862DEB911F395BEC00B5AB4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 862DEB901F395BEC00B5AB4C /* Assets.xcassets */; };
 		862DEB941F395BEC00B5AB4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 862DEB921F395BEC00B5AB4C /* LaunchScreen.storyboard */; };
+		865B222A1FA18F5E00E503ED /* NSCalendar+PGCurrent.m in Sources */ = {isa = PBXBuildFile; fileRef = 865B22211FA18F5D00E503ED /* NSCalendar+PGCurrent.m */; };
+		865B222B1FA18F5E00E503ED /* NSDate+PGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 865B22231FA18F5D00E503ED /* NSDate+PGCategory.m */; };
+		865B222C1FA18F5E00E503ED /* PGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 865B22251FA18F5D00E503ED /* PGDatePicker.m */; };
+		865B222D1FA18F5E00E503ED /* PGDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 865B22271FA18F5D00E503ED /* PGDatePickerView.m */; };
+		865B222E1FA18F5E00E503ED /* UIColor+PGHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 865B22291FA18F5D00E503ED /* UIColor+PGHex.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,16 @@
 		862DEB951F395BEC00B5AB4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		862DEB9A1F395BEC00B5AB4C /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		862DEBA51F395BEC00B5AB4C /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		865B22201FA18F5D00E503ED /* NSCalendar+PGCurrent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+PGCurrent.h"; sourceTree = "<group>"; };
+		865B22211FA18F5D00E503ED /* NSCalendar+PGCurrent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+PGCurrent.m"; sourceTree = "<group>"; };
+		865B22221FA18F5D00E503ED /* NSDate+PGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+PGCategory.h"; sourceTree = "<group>"; };
+		865B22231FA18F5D00E503ED /* NSDate+PGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+PGCategory.m"; sourceTree = "<group>"; };
+		865B22241FA18F5D00E503ED /* PGDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDatePicker.h; sourceTree = "<group>"; };
+		865B22251FA18F5D00E503ED /* PGDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDatePicker.m; sourceTree = "<group>"; };
+		865B22261FA18F5D00E503ED /* PGDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDatePickerView.h; sourceTree = "<group>"; };
+		865B22271FA18F5D00E503ED /* PGDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDatePickerView.m; sourceTree = "<group>"; };
+		865B22281FA18F5D00E503ED /* UIColor+PGHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PGHex.h"; sourceTree = "<group>"; };
+		865B22291FA18F5D00E503ED /* UIColor+PGHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PGHex.m"; sourceTree = "<group>"; };
 		8C1AD5D00F6F1B3FE88BE451 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C0D416FA7DDF5516D2FB42 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +123,7 @@
 		862DEB831F395BEC00B5AB4C /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				865B221F1FA18F5D00E503ED /* PGDatePicker */,
 				862DEB871F395BEC00B5AB4C /* AppDelegate.h */,
 				862DEB881F395BEC00B5AB4C /* AppDelegate.m */,
 				862DEB8A1F395BEC00B5AB4C /* ViewController.h */,
@@ -127,6 +143,24 @@
 				862DEB851F395BEC00B5AB4C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		865B221F1FA18F5D00E503ED /* PGDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				865B22201FA18F5D00E503ED /* NSCalendar+PGCurrent.h */,
+				865B22211FA18F5D00E503ED /* NSCalendar+PGCurrent.m */,
+				865B22221FA18F5D00E503ED /* NSDate+PGCategory.h */,
+				865B22231FA18F5D00E503ED /* NSDate+PGCategory.m */,
+				865B22241FA18F5D00E503ED /* PGDatePicker.h */,
+				865B22251FA18F5D00E503ED /* PGDatePicker.m */,
+				865B22261FA18F5D00E503ED /* PGDatePickerView.h */,
+				865B22271FA18F5D00E503ED /* PGDatePickerView.m */,
+				865B22281FA18F5D00E503ED /* UIColor+PGHex.h */,
+				865B22291FA18F5D00E503ED /* UIColor+PGHex.m */,
+			);
+			name = PGDatePicker;
+			path = ../../PGDatePicker;
 			sourceTree = "<group>";
 		};
 		A665A7AB72AB1E4CC9E7B989 /* Pods */ = {
@@ -331,8 +365,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				865B222C1FA18F5E00E503ED /* PGDatePicker.m in Sources */,
 				862DEB8C1F395BEC00B5AB4C /* ViewController.m in Sources */,
+				865B222A1FA18F5E00E503ED /* NSCalendar+PGCurrent.m in Sources */,
 				862DEB891F395BEC00B5AB4C /* AppDelegate.m in Sources */,
+				865B222D1FA18F5E00E503ED /* PGDatePickerView.m in Sources */,
+				865B222B1FA18F5E00E503ED /* NSDate+PGCategory.m in Sources */,
+				865B222E1FA18F5E00E503ED /* UIColor+PGHex.m in Sources */,
 				862DEB861F395BEC00B5AB4C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

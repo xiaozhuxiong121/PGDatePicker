@@ -10,6 +10,8 @@
  [![](https://img.shields.io/badge/jianshu-piggybear-red.svg)](http://www.jianshu.com/u/3740632b2002)
 ![PGDatePicker](PGDatePicker.gif)    
 
+# Swift的使用
+[查看使用文档](Swift.md) 
 
 # CocoaPods安装
 
@@ -56,9 +58,6 @@ datePicker.titleColorForOtherRow = [UIColor blackColor];
 
 ```
 
-# Swift的使用
-[查看使用文档](Swift.md) 
-
 # 许可证
 
-PGNetworkHelper 使用 MIT 许可证，详情见 [LICENSE](LICENSE) 文件。
+PGDatePicker 使用 MIT 许可证，详情见 [LICENSE](LICENSE) 文件。
