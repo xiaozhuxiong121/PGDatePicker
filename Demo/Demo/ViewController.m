@@ -9,9 +9,7 @@
 #import "ViewController.h"
 #import "PGDatePicker.h"
 
-@interface ViewController ()<PGDatePickerDelegate> {
-    PGDatePicker *datePicker;
-}
+@interface ViewController ()<PGDatePickerDelegate>
 
 @end
 
@@ -33,7 +31,7 @@
 }
 
 - (IBAction)yearAndMonthHandler:(id)sender {
-    datePicker = [[PGDatePicker alloc]init];
+    PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
 //    datePicker.minimumDate = [NSDate setYear:2015 month:5];
