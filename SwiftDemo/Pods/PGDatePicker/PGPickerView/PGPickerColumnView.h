@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSArray<UIColor *> *viewBackgroundColors;
 @property (nonatomic, assign) NSUInteger selectedRow;
 @property (nonatomic, assign) NSUInteger currentRow;
+@property (nonatomic, copy) NSString *currentString;
 @property (nonatomic, copy) NSString *titleForSelectedRow;
 @property (nonatomic, strong) UIColor *titleColorForSelectedRow;
 @property (nonatomic, strong) UIColor *titleColorForOtherRow;

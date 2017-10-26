@@ -140,6 +140,14 @@
     return nil;
 }
 
+- (NSString *)currentTitleInComponent:(NSInteger)component {
+    PGPickerColumnView *view = [self columnViewInComponent:component];
+    if (view) {
+        return view.currentString;
+    }
+    return nil;
+}
+
 - (void)selectRow:(NSInteger)row inComponent:(NSInteger)component animated:(BOOL)animated {
     PGPickerColumnView *view = [self columnViewInComponent:component];
     [view selectRow:row animated:animated];

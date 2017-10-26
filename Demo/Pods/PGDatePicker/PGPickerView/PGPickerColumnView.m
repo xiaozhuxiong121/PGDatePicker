@@ -150,6 +150,15 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
     return cell;
 }
 
+#pragma mark - Getter
+
+- (NSString *)currentString {
+    NSInteger index =  self.tableView.contentOffset.y / kCellHeight + 0.5;
+    self.currentRow = index;
+    NSAttributedString *attriString = self.datas[index];
+    return attriString.string;
+}
+
 #pragma mark - Setter
 
 - (void)setDatas:(NSArray *)datas {
