@@ -26,6 +26,7 @@
 
 - (NSInteger)selectedRowInComponent:(NSInteger)component;// returns selected row. -1 if nothing selected
 - (NSString *)titleForSelectedRow:(NSInteger)row inComponent:(NSInteger)component;
+- (NSString *)currentTitleInComponent:(NSInteger)component;
 // Reloading whole view or single component
 - (void)reloadAllComponents;
 - (void)reloadComponent:(NSInteger)component;

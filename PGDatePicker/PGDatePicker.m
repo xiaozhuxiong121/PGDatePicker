@@ -151,6 +151,39 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 }
 
 - (void)confirmButtonHandler {
+    switch (self.datePickerMode) {
+        case PGDatePickerModeYearAndMonth:
+        {
+            NSString *yearString = [self.pickerView currentTitleInComponent:0];
+            yearString = [yearString componentsSeparatedByString:@"年"].firstObject;
+            
+            NSString *monthString = [self.pickerView currentTitleInComponent:1];
+            monthString = [monthString componentsSeparatedByString:@"月"].firstObject;
+            
+            self.selectedComponents.year = [yearString integerValue];
+            self.selectedComponents.month = [monthString integerValue];
+        }
+            break;
+        case PGDatePickerModeDate:
+        {
+            NSString *yearString = [self.pickerView currentTitleInComponent:0];
+            yearString = [yearString componentsSeparatedByString:@"年"].firstObject;
+            
+            NSString *monthString = [self.pickerView currentTitleInComponent:1];
+            monthString = [monthString componentsSeparatedByString:@"月"].firstObject;
+            
+            NSString *dayString = [self.pickerView currentTitleInComponent:2];
+            dayString = [dayString componentsSeparatedByString:@"日"].firstObject;
+            
+            self.selectedComponents.year = [yearString integerValue];
+            self.selectedComponents.month = [monthString integerValue];
+            self.selectedComponents.day = [dayString integerValue];
+        }
+            break;
+            
+        default:
+            break;
+    }
     if (self.delegate && [self.delegate respondsToSelector:@selector(datePicker:didSelectDate:)]) {
         [self.delegate datePicker:self didSelectDate:self.selectedComponents];
     }
@@ -307,7 +340,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     }
     NSInteger index = maxDay - minDay;
     if (index < 0) {
-        NSLog(@"minimumDate can not greater than maximumDate");
+//        NSLog(@"minimumDate can not greater than maximumDate");
         minDay = 1;
         maxDay = day;
         [self.maximumComponents setDay:day];
@@ -400,7 +433,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         if (self.minimumComponents.year == dateComponents.year && self.minimumComponents.month == dateComponents.month) {
             NSInteger index = day - self.minimumComponents.day;
             if (index < 0) {
-                NSAssert(index < 0, @"minimumDate can not greater than maximumDate");
+//                NSAssert(index < 0, @"minimumDate can not greater than maximumDate");
             }
             NSMutableArray *days = [NSMutableArray arrayWithCapacity:index];
             for (NSUInteger i = self.minimumComponents.day; i <= day; i++) {
@@ -473,7 +506,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (self.minimumComponents.year == dateComponents.year) {
                     NSInteger index = 12 - self.minimumComponents.month;
                     if (index < 0) {
-                        NSAssert(index < 0, @"minimumDate can not greater than maximumDate");
+//                        NSAssert(index < 0, @"minimumDate can not greater than maximumDate");
                     }
                     NSMutableArray *months = [NSMutableArray arrayWithCapacity:index];
                     for (NSUInteger i = self.minimumComponents.month; i <= 12; i++) {
@@ -516,7 +549,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (self.minimumComponents.year == dateComponents.year) {
                     NSInteger index = 12 - self.minimumComponents.month;
                     if (index < 0) {
-                        NSAssert(index < 0, @"minimumDate can not greater than maximumDate");
+//                        NSAssert(index < 0, @"minimumDate can not greater than maximumDate");
                     }
                     NSMutableArray *months = [NSMutableArray arrayWithCapacity:index];
                     for (NSUInteger i = self.minimumComponents.month; i <= 12; i++) {
@@ -736,7 +769,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (!_yearList) {
         NSInteger index = self.maximumComponents.year - self.minimumComponents.year;
         if (index < 0) {
-            NSLog(@"minimumDate can not greater than maximumDate");
+//            NSLog(@"minimumDate can not greater than maximumDate");
             return _yearList;
         }
         NSMutableArray *years = [NSMutableArray arrayWithCapacity:index];
@@ -752,7 +785,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (!_monthList) {
         NSInteger index = self.maximumComponents.month - self.minimumComponents.month;
         if (index < 0) {
-            NSLog(@"minimumDate can not greater than maximumDate");
+//            NSLog(@"minimumDate can not greater than maximumDate");
             return _monthList;
         }
         NSMutableArray *months = [NSMutableArray arrayWithCapacity:index];
@@ -768,7 +801,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (!_hourList) {
         NSInteger index = self.maximumComponents.hour - self.minimumComponents.hour;
         if (index < 0) {
-            NSLog(@"minimumDate can not greater than maximumDate");
+//            NSLog(@"minimumDate can not greater than maximumDate");
             return _hourList;
         }
         NSMutableArray *hours = [NSMutableArray arrayWithCapacity:index];
@@ -784,7 +817,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (!_minuteList) {
         NSInteger index = self.maximumComponents.minute - self.minimumComponents.minute;
         if (index < 0) {
-            NSLog(@"minimumDate can not greater than maximumDate");
+//            NSLog(@"minimumDate can not greater than maximumDate");
             return _minuteList;
         }
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
@@ -800,7 +833,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (!_secondList) {
         NSInteger index = self.maximumComponents.second - self.minimumComponents.second;
         if (index < 0) {
-            NSLog(@"minimumDate can not greater than maximumDate");
+//            NSLog(@"minimumDate can not greater than maximumDate");
             return _secondList;
         }
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
@@ -830,7 +863,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 }
                 NSInteger index = maxDay - minDay;
                 if (index < 0) {
-                    NSLog(@"minimumDate can not greater than maximumDate");
+//                    NSLog(@"minimumDate can not greater than maximumDate");
                     minDay = 1;
                     maxDay = day;
                 }
