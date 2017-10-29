@@ -77,10 +77,20 @@ class ViewController: UIViewController {
         datePicker.titleColorForSelectedRow = UIColor.red
         //设置未选中行的字体颜色
         datePicker.titleColorForOtherRow = UIColor.black
+        
         //设置取消按钮的字体颜色
-        datePicker.cancelButton.setTitleColor(UIColor.black, for: .normal)
+        datePicker.cancelButtonTextColor = UIColor.black
+        //设置取消按钮的字
+        datePicker.cancelButtonText = "Cancel"
+        //设置取消按钮的字体大小
+        datePicker.cancelButtonFont = UIFont.boldSystemFont(ofSize: 17)
+        
         //设置确定按钮的字体颜色
-        datePicker.confirmButton.setTitleColor(UIColor.red, for: .normal)
+        datePicker.confirmButtonTextColor = UIColor.red
+        //设置确定按钮的字
+        datePicker.confirmButtonText = "Sure"
+        //设置确定按钮的字体大小
+        datePicker.confirmButtonFont = UIFont.boldSystemFont(ofSize: 17)
         datePicker.datePickerMode = .date
     }
 }

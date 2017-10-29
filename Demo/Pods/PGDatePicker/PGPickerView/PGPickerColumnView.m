@@ -74,9 +74,9 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
     _isSelectRow = !_layoutedSubViews;
     _selectRowAnimation = animated;
     if (_layoutedSubViews) {
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] animated:animated scrollPosition:UITableViewScrollPositionTop];
         self.selectedRow = row;
         _beginning = true;
-        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] animated:animated scrollPosition:UITableViewScrollPositionTop];
     }
 }
 
