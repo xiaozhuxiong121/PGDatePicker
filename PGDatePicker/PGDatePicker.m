@@ -56,6 +56,20 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         [window bringSubviewToFront:self.headerView];
         [window bringSubviewToFront:self.dismissView];
         CGFloat height = kTableViewHeight;
+        
+        
+        CGFloat width =  [self.cancelButtonText sizeWithAttributes:@{NSFontAttributeName: self.cancelButtonFont}].width;
+        self.cancelButton.titleLabel.font = self.cancelButtonFont;
+        [self.cancelButton setTitle:self.cancelButtonText forState:UIControlStateNormal];
+        [self.cancelButton setTitleColor:self.cancelButtonTextColor forState:UIControlStateNormal];
+        self.cancelButton.frame = CGRectMake(10, 0, width, kHeaderViewHeight);
+        
+        CGFloat confirmWidth =  [self.confirmButtonText sizeWithAttributes:@{NSFontAttributeName: self.confirmButtonFont}].width;
+        self.confirmButton.frame = CGRectMake(kScreenWidth - confirmWidth - 10, 0, confirmWidth, kHeaderViewHeight);
+        self.confirmButton.titleLabel.font = self.confirmButtonFont;
+        [self.confirmButton setTitle:self.confirmButtonText forState:UIControlStateNormal];
+        [self.confirmButton setTitleColor:self.confirmButtonTextColor forState:UIControlStateNormal];
+        
         [UIView animateWithDuration:0.3 animations:^{
             self.headerView.frame = CGRectMake(0, kScreenHeight - height - kHeaderViewHeight, kScreenWidth, kHeaderViewHeight);
             self.frame = CGRectMake(0, CGRectGetMaxY(self.headerView.frame), kScreenWidth, height);
@@ -80,92 +94,6 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     }else {
         [self.pickerView selectRow:0 inComponent:0 animated:false];
     }
-}
-
-- (UILabel *)titleLabel {
-    if (!_titleLabel) {
-        UILabel *label = [[UILabel alloc]init];
-        [self.headerView addSubview:label];
-        label.textColor = [UIColor colorWithHexString:@"#848484"];
-        label.font = [UIFont boldSystemFontOfSize:17];
-        [label addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:nil];
-        _titleLabel = label;
-    }
-    return _titleLabel;
-}
-
-- (UIView *)headerView {
-    if (!_headerView) {
-        UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, kHeaderViewHeight)];
-        view.backgroundColor = [UIColor colorWithHexString:@"#F1EDF6"];
-        [window addSubview:view];
-        _headerView = view;
-    }
-    return _headerView;
-}
-
-- (UIColor *)lineBackgroundColor {
-    if (!_lineBackgroundColor) {
-        _lineBackgroundColor = [UIColor colorWithHexString:@"#69BDFF"];
-    }
-    return _lineBackgroundColor;
-}
-
-- (UIColor *)titleColorForOtherRow {
-    if (!_titleColorForOtherRow) {
-        _titleColorForOtherRow = [UIColor grayColor];
-    }
-    return _titleColorForOtherRow;
-}
-
-- (UIColor *)titleColorForSelectedRow {
-    if (!_titleColorForSelectedRow) {
-        _titleColorForSelectedRow = [UIColor colorWithHexString:@"#69BDFF"];
-    }
-    return _titleColorForSelectedRow;
-}
-
-- (UIFont *)cancelButtonFont {
-    if (!_cancelButtonFont) {
-        _cancelButtonFont = [UIFont systemFontOfSize:17];
-    }
-    return _cancelButtonFont;
-}
-
-- (NSString *)cancelButtonText {
-    if (!_cancelButtonText) {
-        _cancelButtonText = @"取消";
-    }
-    return _cancelButtonText;
-}
-
-- (UIColor *)cancelButtonTextColor {
-    if (!_cancelButtonTextColor) {
-        _cancelButtonTextColor = [UIColor grayColor];
-    }
-    return _cancelButtonTextColor;
-}
-
-- (UIFont *)confirmButtonFont {
-    if (!_confirmButtonFont) {
-        _confirmButtonFont = [UIFont systemFontOfSize:17];
-    }
-    return _confirmButtonFont;
-}
-
-- (NSString *)confirmButtonText {
-    if (!_confirmButtonText) {
-        _confirmButtonText = @"确定";
-    }
-    return _confirmButtonText;
-}
-
-- (UIColor *)confirmButtonTextColor {
-    if (!_confirmButtonTextColor) {
-        _confirmButtonTextColor = [UIColor colorWithHexString:@"#69BDFF"];
-    }
-    return _confirmButtonTextColor;
 }
 
 - (void)show {
@@ -1093,5 +1021,92 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     }
     return 0;
 }
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        UILabel *label = [[UILabel alloc]init];
+        [self.headerView addSubview:label];
+        label.textColor = [UIColor colorWithHexString:@"#848484"];
+        label.font = [UIFont boldSystemFontOfSize:17];
+        [label addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:nil];
+        _titleLabel = label;
+    }
+    return _titleLabel;
+}
+
+- (UIView *)headerView {
+    if (!_headerView) {
+        UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, kHeaderViewHeight)];
+        view.backgroundColor = [UIColor colorWithHexString:@"#F1EDF6"];
+        [window addSubview:view];
+        _headerView = view;
+    }
+    return _headerView;
+}
+
+- (UIColor *)lineBackgroundColor {
+    if (!_lineBackgroundColor) {
+        _lineBackgroundColor = [UIColor colorWithHexString:@"#69BDFF"];
+    }
+    return _lineBackgroundColor;
+}
+
+- (UIColor *)titleColorForOtherRow {
+    if (!_titleColorForOtherRow) {
+        _titleColorForOtherRow = [UIColor grayColor];
+    }
+    return _titleColorForOtherRow;
+}
+
+- (UIColor *)titleColorForSelectedRow {
+    if (!_titleColorForSelectedRow) {
+        _titleColorForSelectedRow = [UIColor colorWithHexString:@"#69BDFF"];
+    }
+    return _titleColorForSelectedRow;
+}
+
+- (UIFont *)cancelButtonFont {
+    if (!_cancelButtonFont) {
+        _cancelButtonFont = [UIFont systemFontOfSize:17];
+    }
+    return _cancelButtonFont;
+}
+
+- (NSString *)cancelButtonText {
+    if (!_cancelButtonText) {
+        _cancelButtonText = @"取消";
+    }
+    return _cancelButtonText;
+}
+
+- (UIColor *)cancelButtonTextColor {
+    if (!_cancelButtonTextColor) {
+        _cancelButtonTextColor = [UIColor grayColor];
+    }
+    return _cancelButtonTextColor;
+}
+
+- (UIFont *)confirmButtonFont {
+    if (!_confirmButtonFont) {
+        _confirmButtonFont = [UIFont systemFontOfSize:17];
+    }
+    return _confirmButtonFont;
+}
+
+- (NSString *)confirmButtonText {
+    if (!_confirmButtonText) {
+        _confirmButtonText = @"确定";
+    }
+    return _confirmButtonText;
+}
+
+- (UIColor *)confirmButtonTextColor {
+    if (!_confirmButtonTextColor) {
+        _confirmButtonTextColor = [UIColor colorWithHexString:@"#69BDFF"];
+    }
+    return _confirmButtonTextColor;
+}
+
 @end
 
