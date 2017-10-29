@@ -26,8 +26,14 @@ typedef NS_ENUM(NSInteger, PGDatePickerMode) {
 @property (nonatomic, weak) id<PGDatePickerDelegate> delegate;
 @property (nonatomic, assign) PGDatePickerMode datePickerMode; // default is PGDatePickerModeYear
 
-@property (nonatomic, weak) UIButton *cancelButton;
-@property (nonatomic, weak) UIButton *confirmButton;
+@property (nonatomic, copy) NSString *cancelButtonText;
+@property (nonatomic, copy) UIFont *cancelButtonFont;
+@property (nonatomic, copy) UIColor *cancelButtonTextColor;
+
+@property (nonatomic, copy) NSString *confirmButtonText;
+@property (nonatomic, copy) UIFont *confirmButtonFont;
+@property (nonatomic, copy) UIColor *confirmButtonTextColor;
+
 @property (nonatomic, weak) UILabel *titleLabel;
 
 @property (nonatomic, strong)UIColor *titleColorForSelectedRow;
