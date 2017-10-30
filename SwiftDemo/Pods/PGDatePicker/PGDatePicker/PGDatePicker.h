@@ -16,7 +16,10 @@ typedef NS_ENUM(NSInteger, PGDatePickerMode) {
     PGDatePickerModeYear, //年
     PGDatePickerModeYearAndMonth, //年月
     PGDatePickerModeDate, //年月日
+     PGDatePickerModeDateHourMinute, //年月日时分
+    PGDatePickerModeDateHourMinuteSecond, //年月日时分秒
     PGDatePickerModeTime, //时分
+    PGDatePickerModeTimeAndSecond, //时分秒
     PGDatePickerModeDateAndTime, //月日周 时分
 };
 
@@ -47,7 +50,7 @@ typedef NS_ENUM(NSInteger, PGDatePickerMode) {
 @property (nonatomic, strong) NSDate *minimumDate; // specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer mode
 @property (nonatomic, strong) NSDate *maximumDate; // default is nil
 
-- (void)setDate:(NSDate *)date animated:(BOOL)animated; // if animated is YES, animate the wheels of time to display the new date
+- (void)setDate:(NSDate *)date;
 
 - (void)show;
 @end

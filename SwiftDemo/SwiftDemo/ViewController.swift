@@ -11,12 +11,6 @@ import PGDatePicker
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-
-
     @IBAction func yearHandler(_ sender: Any) {
         let datePicker = PGDatePicker()
         datePicker.delegate = self
@@ -44,11 +38,32 @@ class ViewController: UIViewController {
         datePicker.datePickerMode = .date
     }
     
+    @IBAction func dateHourMinuteHandler(_ sender: Any) {
+        let datePicker = PGDatePicker()
+        datePicker.delegate = self
+        datePicker.show()
+        datePicker.datePickerMode = .dateHourMinute
+    }
+    
+    @IBAction func dateHourMinuteSecondHandler(_ sender: Any) {
+        let datePicker = PGDatePicker()
+        datePicker.delegate = self
+        datePicker.show()
+        datePicker.datePickerMode = .dateHourMinuteSecond
+    }
+    
     @IBAction func timeHandler(_ sender: Any) {
         let datePicker = PGDatePicker()
         datePicker.delegate = self
         datePicker.show()
         datePicker.datePickerMode = .time
+    }
+    
+    @IBAction func timeAndSecondHandler(_ sender: Any) {
+        let datePicker = PGDatePicker()
+        datePicker.delegate = self
+        datePicker.show()
+        datePicker.datePickerMode = .timeAndSecond
     }
     
     @IBAction func dateAndTimeHandler(_ sender: Any) {

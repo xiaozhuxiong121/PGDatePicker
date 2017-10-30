@@ -2,5 +2,5 @@
 platform :ios, ‘8.0’
 
 target 'Demo' do
-pod 'PGDatePicker', '>= 1.2.1'
+pod 'PGDatePicker', '>= 1.3.0'
 end

@@ -46,7 +46,7 @@
     [self bringSubviewToFront:self.upLine];
 }
 
-- (PGPickerColumnView *)createColumnViewAtComponent:(NSUInteger)component {
+- (PGPickerColumnView *)createColumnViewAtComponent:(NSUInteger)component refresh:(BOOL)refresh {
     CGFloat width = kWidth / _numberOfComponents;
     NSUInteger row = [self.dataSource pickerView:self numberOfRowsInComponent:component];
     NSMutableArray *datas = [NSMutableArray arrayWithCapacity:row];
@@ -90,6 +90,7 @@
     view.component = component;
     view.titleColorForSelectedRow = self.titleColorForSelectedRow;
     view.titleColorForOtherRow = self.titleColorForOtherRow;
+    view.refresh = refresh;
     view.datas = datas;
     return view;
 }
@@ -97,7 +98,7 @@
 - (void)setupColumnView {
     NSMutableArray *columnViewList = [NSMutableArray arrayWithCapacity:_numberOfComponents];
     for (int i = 0; i < _numberOfComponents; i++) {
-        PGPickerColumnView *view = [self createColumnViewAtComponent:i];
+        PGPickerColumnView *view = [self createColumnViewAtComponent:i refresh:false];
         [columnViewList addObject:view];
     }
     self.columnViewList = columnViewList;
@@ -150,7 +151,9 @@
 
 - (void)selectRow:(NSInteger)row inComponent:(NSInteger)component animated:(BOOL)animated {
     PGPickerColumnView *view = [self columnViewInComponent:component];
-    [view selectRow:row animated:animated];
+    if (view) {
+     [view selectRow:row animated:animated];
+    }
 }
 
 - (PGPickerColumnView *)columnViewInComponent:(NSUInteger)component {
@@ -168,13 +171,11 @@
 }
 
 - (void)reloadComponent:(NSInteger)component {
-    [self createColumnViewAtComponent:component];
+    [self createColumnViewAtComponent:component refresh:false];
 }
 
-- (void)reloadComponent:(NSInteger)component currentRow:(void(^)(NSInteger row))block {
-    [self createColumnViewAtComponent:component];
-    PGPickerColumnView *view = [self columnViewInComponent:component];
-    block(view.currentRow);
+- (void)reloadComponent:(NSInteger)component refresh:(BOOL)refresh {
+    [self createColumnViewAtComponent:component refresh:refresh];
 }
 
 - (void)reloadAllComponents {
