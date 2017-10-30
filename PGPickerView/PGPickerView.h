@@ -23,14 +23,13 @@
 
 // selection. in this case, it means showing the appropriate row in the middle
 - (void)selectRow:(NSInteger)row inComponent:(NSInteger)component animated:(BOOL)animated;// scrolls the specified row to center.
-
 - (NSInteger)selectedRowInComponent:(NSInteger)component;// returns selected row. -1 if nothing selected
 - (NSString *)titleForSelectedRow:(NSInteger)row inComponent:(NSInteger)component;
 - (NSString *)currentTitleInComponent:(NSInteger)component;
 // Reloading whole view or single component
 - (void)reloadAllComponents;
 - (void)reloadComponent:(NSInteger)component;
-- (void)reloadComponent:(NSInteger)component currentRow:(void(^)(NSInteger row))block;
+- (void)reloadComponent:(NSInteger)component refresh:(BOOL)refresh;
 @end
 
 @protocol PGPickerViewDataSource<NSObject>

@@ -45,12 +45,8 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
     [super layoutSubviews];
     _layoutedSubViews = true;
     if (_isSelectRow) {
-        if (!_selectRowAnimation) {
-            self.selectedRow = _selectedRow;
-        }
-        _beginning = true;
-        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:_selectedRow inSection:0] animated:_selectRowAnimation scrollPosition:UITableViewScrollPositionTop];
         _isSelectRow = false;
+        [self selectRow:_selectedRow animated:_selectRowAnimation];
     }
 }
 
@@ -122,6 +118,14 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
     return [PGPickerViewConfig instance].tableViewHeightForRow;
 }
 
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger index =  self.tableView.contentOffset.y / kCellHeight + 0.5;
+    if (self.datas.count > index && self.refresh) {
+        self.refresh = false;
+        [self selectRow:index animated:true];
+    }
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.datas.count + 4;
@@ -154,8 +158,10 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
 
 - (NSString *)currentString {
     NSInteger index =  self.tableView.contentOffset.y / kCellHeight + 0.5;
-    self.currentRow = index;
-    NSAttributedString *attriString = self.datas[index];
+    NSAttributedString *attriString = [[NSAttributedString alloc]initWithString:@""];
+    if (self.datas.count > index) {
+      attriString = self.datas[index];
+    }
     return attriString.string;
 }
 
@@ -164,8 +170,6 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
 - (void)setDatas:(NSArray *)datas {
     _datas = datas;
     [self.tableView reloadData];
-    NSInteger index =  self.tableView.contentOffset.y / kCellHeight + 0.5;
-    self.currentRow = index;
 }
 
 - (void)setSelectedRow:(NSUInteger)selectedRow {
