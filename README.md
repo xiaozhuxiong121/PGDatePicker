@@ -11,28 +11,28 @@
 ![PGDatePicker](PGDatePicker.gif)    
 
 # 年份
-![year](Images/年.tiff)
+![year](Images/年.jpg)
 
 # 年月
-![year](Images/年月.tiff)
+![year](Images/年月.jpg)
 
 # 年月日
-![year](Images/年月日.tiff)
+![year](Images/年月日.jpg)
 
 # 年月日时分
-![year](Images/年月日时分.tiff)
+![year](Images/年月日时分.jpg)
 
 # 年月日时分秒
-![year](Images/年月日时分秒.tiff)
+![year](Images/年月日时分秒.jpg)
 
 # 时分
-![year](Images/时分.tiff)
+![year](Images/时分.jpg)
 
 # 时分秒
-![year](Images/时分秒.tiff)
+![year](Images/时分秒.jpg)
 
 # 月日周 时分
-![year](Images/月日周时分.tiff)
+![year](Images/月日周时分.jpg)
 
 # Swift的使用
 [查看使用文档](Swift.md) 
