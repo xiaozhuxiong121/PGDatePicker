@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01EDB872205677A2765F515B5A2A8EC7 /* NSBundle+PGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7076CAA0F9E58FC342A2F718DE520021 /* NSBundle+PGDatePicker.m */; };
+		01EDB872205677A2765F515B5A2A8EC7 /* NSBundle+PGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCC79FB6F95434E787E34BB92028C9F /* NSBundle+PGDatePicker.m */; };
 		029DEB1AE8E4876A53E277D9FEB93775 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		13A60B1BEB62F783775227B8C458F24B /* NSBundle+PGDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FA0D972A4E1CADA44A09715D00385EF /* NSBundle+PGDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		152C45A6C3A7624BE61D0ECE63400289 /* PGDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DDD411972C0F18FAA5F1B43A3F119C3 /* PGDatePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1B92B3B4FF9A19AC3B1E1E09FFBA7977 /* PGPickerViewMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = E5B98383B894C0F6CEA3DD887DDAE56D /* PGPickerViewMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		293B21C283033D6046CA4113D1371756 /* NSDate+PGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F9A4DF68CCC2A7D26A89447D60CFF42 /* NSDate+PGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3851ED11F22B58D05AA512F4D5348105 /* PGPickerColumnView.h in Headers */ = {isa = PBXBuildFile; fileRef = C95C5F87D5B65A74FF560B5AAA144F78 /* PGPickerColumnView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		45BB3D5BEA1BFA984F4C8ED172F3B826 /* PGPickerColumnCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E8F5A37A554E8FA1C9E77410D2FDD7A /* PGPickerColumnCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		509F90BCD4DEEA2A7E3B9FD720048F60 /* UIColor+PGHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 31116A8E99C73D8CE8B466E31565C887 /* UIColor+PGHex.m */; };
-		54ACD18C11AB51A025948D7891FAFC9B /* NSCalendar+PGCurrent.m in Sources */ = {isa = PBXBuildFile; fileRef = 51261459BAADD29B22EE44DAA27D0CA8 /* NSCalendar+PGCurrent.m */; };
-		68BA5C3164D307877178CA46FC94D146 /* PGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1FB431A1A23BDEF783FA45DE5F96D8 /* PGDatePicker.m */; };
+		13A60B1BEB62F783775227B8C458F24B /* NSBundle+PGDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B2CC5A4CD07E87456F73E142D1448CC /* NSBundle+PGDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		152C45A6C3A7624BE61D0ECE63400289 /* PGDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 455E9C333868CD90A96F99E7D0CF4181 /* PGDatePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B92B3B4FF9A19AC3B1E1E09FFBA7977 /* PGPickerViewMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB3C1BF6BF13BACBD7B815D86658DD5 /* PGPickerViewMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		293B21C283033D6046CA4113D1371756 /* NSDate+PGCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = C6DAEBDB4C23C8A194C430A236235626 /* NSDate+PGCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3851ED11F22B58D05AA512F4D5348105 /* PGPickerColumnView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E0D3B034A702DFA21770416D8A6EDD9 /* PGPickerColumnView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45BB3D5BEA1BFA984F4C8ED172F3B826 /* PGPickerColumnCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 159D6110413AC34EF3B7341626D45823 /* PGPickerColumnCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		509F90BCD4DEEA2A7E3B9FD720048F60 /* UIColor+PGHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A4EC824B7FDE53443AAB7644BEDFF /* UIColor+PGHex.m */; };
+		54ACD18C11AB51A025948D7891FAFC9B /* NSCalendar+PGCurrent.m in Sources */ = {isa = PBXBuildFile; fileRef = D00565B1A04532A40A69C4DA222E69B6 /* NSCalendar+PGCurrent.m */; };
+		68BA5C3164D307877178CA46FC94D146 /* PGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3738B1B9A188AD315DDC9264ED4CBA6D /* PGDatePicker.m */; };
 		6EF4CF3B00403F45E7082CC92EE7789D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		7547232301BF1C6918DA0DD9E7EAE80A /* PGPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 582919846A3AFD8CF7F4B1E7E0F01772 /* PGPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		792553257E48264095DD9F10D094A955 /* NSDate+PGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 321C3101156B31CBB02E67C0EB8602D5 /* NSDate+PGCategory.m */; };
-		A8C6797ADE91AE234C9E4852F52714E5 /* UIColor+PGHex.h in Headers */ = {isa = PBXBuildFile; fileRef = A6B2D771528ACF0225E3BEF35B3DB3EC /* UIColor+PGHex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA1EC7D60E0848AF6C339D96359BC67A /* PGDatePickerMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 435CB77451D5080A47A5CDBC97E6EAB1 /* PGDatePickerMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AC1FF252E9B7225626D677DF3EDDA003 /* PGDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 217A691E3A76F2B945A0B71C6E3C0D86 /* PGDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF41B644D05AE16ACA33351E604E560A /* PGPickerColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B4BC7D00AFBC0C286E68838547DABE /* PGPickerColumnView.m */; };
-		C7089D4A334CC75498CFCFAC65B95BC5 /* PGPickerTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 72207333ADEC628EDA4CCAC2A4C1CBCD /* PGPickerTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D1E096C7654623AAB9CACEB3672E546D /* NSCalendar+PGCurrent.h in Headers */ = {isa = PBXBuildFile; fileRef = 683A7DE5FE2FE5E6CB32220A6B423C27 /* NSCalendar+PGCurrent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E64536B3B14602A43647BE1FBFE46CCF /* PGPickerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3363F3DBEA1A48CF48A7DCA49845511 /* PGPickerTableView.m */; };
+		7547232301BF1C6918DA0DD9E7EAE80A /* PGPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 76B18E346F495FC04904CD12A910435E /* PGPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		792553257E48264095DD9F10D094A955 /* NSDate+PGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 061B20D57411A795F0EDE2AD6B2DE48C /* NSDate+PGCategory.m */; };
+		A8C6797ADE91AE234C9E4852F52714E5 /* UIColor+PGHex.h in Headers */ = {isa = PBXBuildFile; fileRef = DB0910E3F470ED1AEE0B37A8B12D4DB9 /* UIColor+PGHex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA1EC7D60E0848AF6C339D96359BC67A /* PGDatePickerMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A14C375EB77DE3B3F12496F2FD9529B /* PGDatePickerMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC1FF252E9B7225626D677DF3EDDA003 /* PGDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 0181531F3860ACC01F05DE1D74070DD2 /* PGDatePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF41B644D05AE16ACA33351E604E560A /* PGPickerColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 857BDB9E8182BC47587DE4B95996743E /* PGPickerColumnView.m */; };
+		C7089D4A334CC75498CFCFAC65B95BC5 /* PGPickerTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 894E959C575C43E5E3E7F348DA467855 /* PGPickerTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1E096C7654623AAB9CACEB3672E546D /* NSCalendar+PGCurrent.h in Headers */ = {isa = PBXBuildFile; fileRef = 959EC220F9E99AF9CF50CE283435641D /* NSCalendar+PGCurrent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E64536B3B14602A43647BE1FBFE46CCF /* PGPickerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B29819A542CD89E3388ECAA296DE67D /* PGPickerTableView.m */; };
 		EB6A1113F95D36BF2D8AAD969A454D5D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
-		EDEB591EF382B14D7E893587D35F3726 /* PGDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF20900B651B34420B60AE0BF09BC4B /* PGDatePickerView.m */; };
-		F6FB14CB85528AD1E629AE1363F76EBB /* PGPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A7BD6FD92E13F5D02686A0E359BC2B /* PGPickerView.m */; };
+		EDEB591EF382B14D7E893587D35F3726 /* PGDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 570DEE46BA1728ED769FBA28B9E2F919 /* PGDatePickerView.m */; };
+		F6FB14CB85528AD1E629AE1363F76EBB /* PGPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 676C352AD5D14DE004CA80DF93277D7E /* PGPickerView.m */; };
 		F722D9C3940328EF5BB3049A69A4F2D4 /* Pods-Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA944E1D5D966DBCA7EB7C661855A95 /* Pods-Demo-dummy.m */; };
-		F73FC6CC525412A6E85967B348118272 /* PGDatePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 73490A15A44E47D63C4BDCF649707041 /* PGDatePicker-dummy.m */; };
-		F93121A3060510305024CB0B8C091BDE /* PGPickerColumnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5927CF40EF69E0ADCB6B7D77BD893C02 /* PGPickerColumnCell.m */; };
+		F73FC6CC525412A6E85967B348118272 /* PGDatePicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0035EFBF677493EE7E5726C2283006 /* PGDatePicker-dummy.m */; };
+		F93121A3060510305024CB0B8C091BDE /* PGPickerColumnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA73E6875076C325CCB2FA39E244312 /* PGPickerColumnCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,45 +47,44 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0181531F3860ACC01F05DE1D74070DD2 /* PGDatePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGDatePicker.h; path = PGDatePicker/PGDatePicker.h; sourceTree = "<group>"; };
+		061B20D57411A795F0EDE2AD6B2DE48C /* NSDate+PGCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+PGCategory.m"; path = "PGDatePicker/NSDate+PGCategory.m"; sourceTree = "<group>"; };
 		0AA4CC1D789DA2783447C62D0F699C77 /* Pods-Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Demo-acknowledgements.plist"; sourceTree = "<group>"; };
-		217A691E3A76F2B945A0B71C6E3C0D86 /* PGDatePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGDatePicker.h; path = PGDatePicker/PGDatePicker.h; sourceTree = "<group>"; };
-		31116A8E99C73D8CE8B466E31565C887 /* UIColor+PGHex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PGHex.m"; path = "PGDatePicker/UIColor+PGHex.m"; sourceTree = "<group>"; };
-		321C3101156B31CBB02E67C0EB8602D5 /* NSDate+PGCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+PGCategory.m"; path = "PGDatePicker/NSDate+PGCategory.m"; sourceTree = "<group>"; };
-		3FA0D972A4E1CADA44A09715D00385EF /* NSBundle+PGDatePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+PGDatePicker.h"; path = "PGDatePicker/NSBundle+PGDatePicker.h"; sourceTree = "<group>"; };
-		435CB77451D5080A47A5CDBC97E6EAB1 /* PGDatePickerMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGDatePickerMacros.h; path = PGDatePicker/PGDatePickerMacros.h; sourceTree = "<group>"; };
-		51261459BAADD29B22EE44DAA27D0CA8 /* NSCalendar+PGCurrent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSCalendar+PGCurrent.m"; path = "PGDatePicker/NSCalendar+PGCurrent.m"; sourceTree = "<group>"; };
-		582919846A3AFD8CF7F4B1E7E0F01772 /* PGPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerView.h; path = PGPickerView/PGPickerView.h; sourceTree = "<group>"; };
-		5927CF40EF69E0ADCB6B7D77BD893C02 /* PGPickerColumnCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerColumnCell.m; path = PGPickerView/PGPickerColumnCell.m; sourceTree = "<group>"; };
-		683A7DE5FE2FE5E6CB32220A6B423C27 /* NSCalendar+PGCurrent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSCalendar+PGCurrent.h"; path = "PGDatePicker/NSCalendar+PGCurrent.h"; sourceTree = "<group>"; };
+		0B29819A542CD89E3388ECAA296DE67D /* PGPickerTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerTableView.m; path = PGPickerView/PGPickerTableView.m; sourceTree = "<group>"; };
+		0B2CC5A4CD07E87456F73E142D1448CC /* NSBundle+PGDatePicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+PGDatePicker.h"; path = "PGDatePicker/NSBundle+PGDatePicker.h"; sourceTree = "<group>"; };
+		159D6110413AC34EF3B7341626D45823 /* PGPickerColumnCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerColumnCell.h; path = PGPickerView/PGPickerColumnCell.h; sourceTree = "<group>"; };
+		1C8A4EC824B7FDE53443AAB7644BEDFF /* UIColor+PGHex.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PGHex.m"; path = "PGDatePicker/UIColor+PGHex.m"; sourceTree = "<group>"; };
+		3738B1B9A188AD315DDC9264ED4CBA6D /* PGDatePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGDatePicker.m; path = PGDatePicker/PGDatePicker.m; sourceTree = "<group>"; };
+		3EB93F29CBE3D5D927DB7F8D2DE32D41 /* PGDatePicker.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = PGDatePicker.bundle; path = PGDatePicker/PGDatePicker.bundle; sourceTree = "<group>"; };
+		455E9C333868CD90A96F99E7D0CF4181 /* PGDatePickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGDatePickerView.h; path = PGDatePicker/PGDatePickerView.h; sourceTree = "<group>"; };
+		4E0035EFBF677493EE7E5726C2283006 /* PGDatePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker-dummy.m"; sourceTree = "<group>"; };
+		570DEE46BA1728ED769FBA28B9E2F919 /* PGDatePickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGDatePickerView.m; path = PGDatePicker/PGDatePickerView.m; sourceTree = "<group>"; };
+		676C352AD5D14DE004CA80DF93277D7E /* PGPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerView.m; path = PGPickerView/PGPickerView.m; sourceTree = "<group>"; };
+		6E0D3B034A702DFA21770416D8A6EDD9 /* PGPickerColumnView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerColumnView.h; path = PGPickerView/PGPickerColumnView.h; sourceTree = "<group>"; };
 		6F5DD532ECDA969984034D51B0F56454 /* Pods-Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7076CAA0F9E58FC342A2F718DE520021 /* NSBundle+PGDatePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+PGDatePicker.m"; path = "PGDatePicker/NSBundle+PGDatePicker.m"; sourceTree = "<group>"; };
-		72207333ADEC628EDA4CCAC2A4C1CBCD /* PGPickerTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerTableView.h; path = PGPickerView/PGPickerTableView.h; sourceTree = "<group>"; };
-		73490A15A44E47D63C4BDCF649707041 /* PGDatePicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker-dummy.m"; sourceTree = "<group>"; };
 		75527BE63DF28D8C91AB392A6A7A12FA /* libPGDatePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libPGDatePicker.a; path = libPGDatePicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AF20900B651B34420B60AE0BF09BC4B /* PGDatePickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGDatePickerView.m; path = PGDatePicker/PGDatePickerView.m; sourceTree = "<group>"; };
+		76B18E346F495FC04904CD12A910435E /* PGPickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerView.h; path = PGPickerView/PGPickerView.h; sourceTree = "<group>"; };
+		7AB3C1BF6BF13BACBD7B815D86658DD5 /* PGPickerViewMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerViewMacros.h; path = PGPickerView/PGPickerViewMacros.h; sourceTree = "<group>"; };
 		7E61E2F2E514A86FEC211F0AD10D8AC1 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		7E8F5A37A554E8FA1C9E77410D2FDD7A /* PGPickerColumnCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerColumnCell.h; path = PGPickerView/PGPickerColumnCell.h; sourceTree = "<group>"; };
-		84545A1C30863DB87B70CB6076FCB7AE /* PGDatePicker.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = PGDatePicker.bundle; path = PGDatePicker/PGDatePicker.bundle; sourceTree = "<group>"; };
-		8F9A4DF68CCC2A7D26A89447D60CFF42 /* NSDate+PGCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+PGCategory.h"; path = "PGDatePicker/NSDate+PGCategory.h"; sourceTree = "<group>"; };
+		8330DA7424968C7E9A0D919440FEE073 /* PGDatePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PGDatePicker.xcconfig; sourceTree = "<group>"; };
+		84EC13419B776902C196526E032E8523 /* PGDatePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker-prefix.pch"; sourceTree = "<group>"; };
+		857BDB9E8182BC47587DE4B95996743E /* PGPickerColumnView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerColumnView.m; path = PGPickerView/PGPickerColumnView.m; sourceTree = "<group>"; };
+		894E959C575C43E5E3E7F348DA467855 /* PGPickerTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerTableView.h; path = PGPickerView/PGPickerTableView.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95A7BD6FD92E13F5D02686A0E359BC2B /* PGPickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerView.m; path = PGPickerView/PGPickerView.m; sourceTree = "<group>"; };
-		9DDD411972C0F18FAA5F1B43A3F119C3 /* PGDatePickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGDatePickerView.h; path = PGDatePicker/PGDatePickerView.h; sourceTree = "<group>"; };
-		A6B2D771528ACF0225E3BEF35B3DB3EC /* UIColor+PGHex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+PGHex.h"; path = "PGDatePicker/UIColor+PGHex.h"; sourceTree = "<group>"; };
+		959EC220F9E99AF9CF50CE283435641D /* NSCalendar+PGCurrent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSCalendar+PGCurrent.h"; path = "PGDatePicker/NSCalendar+PGCurrent.h"; sourceTree = "<group>"; };
+		9A14C375EB77DE3B3F12496F2FD9529B /* PGDatePickerMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGDatePickerMacros.h; path = PGDatePicker/PGDatePickerMacros.h; sourceTree = "<group>"; };
 		B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B8E024BEEA59BE561BDB0E5694F5F48C /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Demo.a"; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA98EAACDAFB971DF9EDCF9DEA28BE22 /* Pods-Demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Demo-frameworks.sh"; sourceTree = "<group>"; };
-		BAF88683669B57788647B9C771D95B9D /* PGDatePicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker-prefix.pch"; sourceTree = "<group>"; };
 		BC6F318B8C726435B2FF8566E7AC50B9 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
-		BE1FB431A1A23BDEF783FA45DE5F96D8 /* PGDatePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGDatePicker.m; path = PGDatePicker/PGDatePicker.m; sourceTree = "<group>"; };
-		C0B4BC7D00AFBC0C286E68838547DABE /* PGPickerColumnView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerColumnView.m; path = PGPickerView/PGPickerColumnView.m; sourceTree = "<group>"; };
-		C95C5F87D5B65A74FF560B5AAA144F78 /* PGPickerColumnView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerColumnView.h; path = PGPickerView/PGPickerColumnView.h; sourceTree = "<group>"; };
+		C6DAEBDB4C23C8A194C430A236235626 /* NSDate+PGCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+PGCategory.h"; path = "PGDatePicker/NSDate+PGCategory.h"; sourceTree = "<group>"; };
+		D00565B1A04532A40A69C4DA222E69B6 /* NSCalendar+PGCurrent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSCalendar+PGCurrent.m"; path = "PGDatePicker/NSCalendar+PGCurrent.m"; sourceTree = "<group>"; };
 		D25544B348B28F2BBA3D9053B844D7D4 /* Pods-Demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Demo-resources.sh"; sourceTree = "<group>"; };
-		D28C2955AE2BECC8D31C8FBF43E8D8D1 /* PGDatePicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PGDatePicker.xcconfig; sourceTree = "<group>"; };
-		D3363F3DBEA1A48CF48A7DCA49845511 /* PGPickerTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerTableView.m; path = PGPickerView/PGPickerTableView.m; sourceTree = "<group>"; };
 		D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DB0910E3F470ED1AEE0B37A8B12D4DB9 /* UIColor+PGHex.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+PGHex.h"; path = "PGDatePicker/UIColor+PGHex.h"; sourceTree = "<group>"; };
 		DCA944E1D5D966DBCA7EB7C661855A95 /* Pods-Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Demo-dummy.m"; sourceTree = "<group>"; };
-		E5B98383B894C0F6CEA3DD887DDAE56D /* PGPickerViewMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGPickerViewMacros.h; path = PGPickerView/PGPickerViewMacros.h; sourceTree = "<group>"; };
-		FAF41BB61B68AD3FC64B469081C33445 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = "RevealServer-10/iOS/RevealServer.framework"; sourceTree = "<group>"; };
+		DCCC79FB6F95434E787E34BB92028C9F /* NSBundle+PGDatePicker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+PGDatePicker.m"; path = "PGDatePicker/NSBundle+PGDatePicker.m"; sourceTree = "<group>"; };
+		EAA73E6875076C325CCB2FA39E244312 /* PGPickerColumnCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGPickerColumnCell.m; path = PGPickerView/PGPickerColumnCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,15 +108,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0AEDC0A19FA27CBC9E29E580096E3F4D /* Support Files */ = {
+		04A8A07DA2B82092913CFAC65DDC68E4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D28C2955AE2BECC8D31C8FBF43E8D8D1 /* PGDatePicker.xcconfig */,
-				73490A15A44E47D63C4BDCF649707041 /* PGDatePicker-dummy.m */,
-				BAF88683669B57788647B9C771D95B9D /* PGDatePicker-prefix.pch */,
+				3EB93F29CBE3D5D927DB7F8D2DE32D41 /* PGDatePicker.bundle */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/PGDatePicker";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		105A24935BC6A33BE66754CE51C36C31 /* Pods-Demo */ = {
@@ -135,28 +131,47 @@
 			path = "Target Support Files/Pods-Demo";
 			sourceTree = "<group>";
 		};
-		3F85932CF159A2E82DFF4710C0424FC9 /* PGDatePicker */ = {
+		419760C3694D5F9C34E930EF900A390C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				3FA0D972A4E1CADA44A09715D00385EF /* NSBundle+PGDatePicker.h */,
-				7076CAA0F9E58FC342A2F718DE520021 /* NSBundle+PGDatePicker.m */,
-				683A7DE5FE2FE5E6CB32220A6B423C27 /* NSCalendar+PGCurrent.h */,
-				51261459BAADD29B22EE44DAA27D0CA8 /* NSCalendar+PGCurrent.m */,
-				8F9A4DF68CCC2A7D26A89447D60CFF42 /* NSDate+PGCategory.h */,
-				321C3101156B31CBB02E67C0EB8602D5 /* NSDate+PGCategory.m */,
-				217A691E3A76F2B945A0B71C6E3C0D86 /* PGDatePicker.h */,
-				BE1FB431A1A23BDEF783FA45DE5F96D8 /* PGDatePicker.m */,
-				435CB77451D5080A47A5CDBC97E6EAB1 /* PGDatePickerMacros.h */,
-				9DDD411972C0F18FAA5F1B43A3F119C3 /* PGDatePickerView.h */,
-				7AF20900B651B34420B60AE0BF09BC4B /* PGDatePickerView.m */,
-				A6B2D771528ACF0225E3BEF35B3DB3EC /* UIColor+PGHex.h */,
-				31116A8E99C73D8CE8B466E31565C887 /* UIColor+PGHex.m */,
-				DBDF205C59E7A02863048A8D9FD2953E /* PGPickerView */,
-				BE1A9CF5C4D350BB538CCD4AB8E74AD7 /* Resources */,
-				0AEDC0A19FA27CBC9E29E580096E3F4D /* Support Files */,
+				8330DA7424968C7E9A0D919440FEE073 /* PGDatePicker.xcconfig */,
+				4E0035EFBF677493EE7E5726C2283006 /* PGDatePicker-dummy.m */,
+				84EC13419B776902C196526E032E8523 /* PGDatePicker-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PGDatePicker";
+			sourceTree = "<group>";
+		};
+		423FAEE9DB766A0DCC454574A4D7579A /* PGDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				0B2CC5A4CD07E87456F73E142D1448CC /* NSBundle+PGDatePicker.h */,
+				DCCC79FB6F95434E787E34BB92028C9F /* NSBundle+PGDatePicker.m */,
+				959EC220F9E99AF9CF50CE283435641D /* NSCalendar+PGCurrent.h */,
+				D00565B1A04532A40A69C4DA222E69B6 /* NSCalendar+PGCurrent.m */,
+				C6DAEBDB4C23C8A194C430A236235626 /* NSDate+PGCategory.h */,
+				061B20D57411A795F0EDE2AD6B2DE48C /* NSDate+PGCategory.m */,
+				0181531F3860ACC01F05DE1D74070DD2 /* PGDatePicker.h */,
+				3738B1B9A188AD315DDC9264ED4CBA6D /* PGDatePicker.m */,
+				9A14C375EB77DE3B3F12496F2FD9529B /* PGDatePickerMacros.h */,
+				455E9C333868CD90A96F99E7D0CF4181 /* PGDatePickerView.h */,
+				570DEE46BA1728ED769FBA28B9E2F919 /* PGDatePickerView.m */,
+				DB0910E3F470ED1AEE0B37A8B12D4DB9 /* UIColor+PGHex.h */,
+				1C8A4EC824B7FDE53443AAB7644BEDFF /* UIColor+PGHex.m */,
+				DF6DCE3906B53194F5D753F2CA92E336 /* PGPickerView */,
+				04A8A07DA2B82092913CFAC65DDC68E4 /* Resources */,
+				419760C3694D5F9C34E930EF900A390C /* Support Files */,
 			);
 			name = PGDatePicker;
 			path = PGDatePicker;
+			sourceTree = "<group>";
+		};
+		424DEE1D6ED7638A0DA86FA4D3540377 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				423FAEE9DB766A0DCC454574A4D7579A /* PGDatePicker */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -176,63 +191,29 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		5821EA8EA1C962902D467AF253BD1768 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3F85932CF159A2E82DFF4710C0424FC9 /* PGDatePicker */,
-				D2C91ECBAADB788750CA19548140F2C3 /* Reveal-SDK */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		6BADFEE14D80E132C279320CD6DF290B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FAF41BB61B68AD3FC64B469081C33445 /* RevealServer.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				5821EA8EA1C962902D467AF253BD1768 /* Pods */,
+				424DEE1D6ED7638A0DA86FA4D3540377 /* Pods */,
 				E210336A05199A43C0A28B191D261D8B /* Products */,
 				F64792801741A31D953EA71E1A34CBCA /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		BE1A9CF5C4D350BB538CCD4AB8E74AD7 /* Resources */ = {
+		DF6DCE3906B53194F5D753F2CA92E336 /* PGPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				84545A1C30863DB87B70CB6076FCB7AE /* PGDatePicker.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		D2C91ECBAADB788750CA19548140F2C3 /* Reveal-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				6BADFEE14D80E132C279320CD6DF290B /* Frameworks */,
-			);
-			name = "Reveal-SDK";
-			path = "Reveal-SDK";
-			sourceTree = "<group>";
-		};
-		DBDF205C59E7A02863048A8D9FD2953E /* PGPickerView */ = {
-			isa = PBXGroup;
-			children = (
-				7E8F5A37A554E8FA1C9E77410D2FDD7A /* PGPickerColumnCell.h */,
-				5927CF40EF69E0ADCB6B7D77BD893C02 /* PGPickerColumnCell.m */,
-				C95C5F87D5B65A74FF560B5AAA144F78 /* PGPickerColumnView.h */,
-				C0B4BC7D00AFBC0C286E68838547DABE /* PGPickerColumnView.m */,
-				72207333ADEC628EDA4CCAC2A4C1CBCD /* PGPickerTableView.h */,
-				D3363F3DBEA1A48CF48A7DCA49845511 /* PGPickerTableView.m */,
-				582919846A3AFD8CF7F4B1E7E0F01772 /* PGPickerView.h */,
-				95A7BD6FD92E13F5D02686A0E359BC2B /* PGPickerView.m */,
-				E5B98383B894C0F6CEA3DD887DDAE56D /* PGPickerViewMacros.h */,
+				159D6110413AC34EF3B7341626D45823 /* PGPickerColumnCell.h */,
+				EAA73E6875076C325CCB2FA39E244312 /* PGPickerColumnCell.m */,
+				6E0D3B034A702DFA21770416D8A6EDD9 /* PGPickerColumnView.h */,
+				857BDB9E8182BC47587DE4B95996743E /* PGPickerColumnView.m */,
+				894E959C575C43E5E3E7F348DA467855 /* PGPickerTableView.h */,
+				0B29819A542CD89E3388ECAA296DE67D /* PGPickerTableView.m */,
+				76B18E346F495FC04904CD12A910435E /* PGPickerView.h */,
+				676C352AD5D14DE004CA80DF93277D7E /* PGPickerView.m */,
+				7AB3C1BF6BF13BACBD7B815D86658DD5 /* PGPickerViewMacros.h */,
 			);
 			name = PGPickerView;
 			sourceTree = "<group>";
@@ -471,7 +452,7 @@
 		};
 		8D1A4CA8867D9ADDECF1346D5C54B8D6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D28C2955AE2BECC8D31C8FBF43E8D8D1 /* PGDatePicker.xcconfig */;
+			baseConfigurationReference = 8330DA7424968C7E9A0D919440FEE073 /* PGDatePicker.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -542,7 +523,7 @@
 		};
 		D03129F6BC7B06A5AB86604CE2C42502 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D28C2955AE2BECC8D31C8FBF43E8D8D1 /* PGDatePicker.xcconfig */;
+			baseConfigurationReference = 8330DA7424968C7E9A0D919440FEE073 /* PGDatePicker.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
