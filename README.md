@@ -1,5 +1,6 @@
 # PGDatePicker
-日期选择器，支持年、年月、年月日、年月日时分、年月日时分秒、时分、时分秒、月日周 时分等
+日期选择器，支持年、年月、年月日、年月日时分、年月日时分秒、时分、时分秒、月日周 时分等，内置了3种样式。
+
 > 由于使用UIPickerView的话，列表会有个弧度，所以这里用了[PGPickerView](https://github.com/xiaozhuxiong121/PGPickerView)  
 
 ![](F734F5F9-FB12-4BA7-B43E-B39D0FF1DA3B.png)  
@@ -9,6 +10,14 @@
 ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg) 
  [![](https://img.shields.io/badge/jianshu-piggybear-red.svg)](http://www.jianshu.com/u/3740632b2002)
 ![PGDatePicker](PGDatePicker.gif)    
+# 样式1
+![year](Images/样式1.png)
+# 样式2
+![year](Images/样式2.png)
+# 样式3
+![year](Images/样式3.png)
+
+> 只显示中间的文字，设置```middleText```为```true```即可，默认是```false```
 
 # 年份
 ![year](Images/年.jpg)
@@ -34,7 +43,7 @@
 # 月日周 时分
 ![year](Images/月日周时分.jpg)
 
-# Swift的使用
+# Swift使用
 [查看使用文档](Swift.md) 
 
 # CocoaPods安装
