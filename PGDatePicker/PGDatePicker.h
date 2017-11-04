@@ -23,11 +23,31 @@ typedef NS_ENUM(NSInteger, PGDatePickerMode) {
     PGDatePickerModeDateAndTime, //月日周 时分
 };
 
+typedef NS_ENUM(NSUInteger, PGDatePickerType) {
+    PGDatePickerType1,
+    PGDatePickerType2,
+    PGDatePickerType3,
+};
+
 @protocol PGDatePickerDelegate;
 
 @interface PGDatePicker : UIControl
 @property (nonatomic, weak) id<PGDatePickerDelegate> delegate;
 @property (nonatomic, assign) PGDatePickerMode datePickerMode; // default is PGDatePickerModeYear
+@property(nonatomic, assign) PGDatePickerType datePickerType;
+
+/*
+ 默认是false
+ 如果设置为true，则不用按下确定按钮也可以得到选中的日期
+ 每次滑动都会自动执行PGDatePickerDelegate代理方法，得到选中的日期
+ */
+@property(nonatomic, assign) BOOL autoSelected;
+/*
+ 默认是false
+ 如果设置为true，只会显示中间的文字，其他行的文字则不会显示
+ */
+@property(nonatomic, assign) BOOL middleText;
+@property(nonatomic, copy) UIColor *middleTextColor;
 
 @property (nonatomic, copy) NSString *cancelButtonText;
 @property (nonatomic, copy) UIFont *cancelButtonFont;

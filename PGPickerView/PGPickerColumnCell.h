@@ -10,4 +10,5 @@
 
 @interface PGPickerColumnCell : UITableViewCell
 @property (nonatomic, weak) UILabel *label;
+@property (nonatomic, assign) BOOL isSelected;
 @end
