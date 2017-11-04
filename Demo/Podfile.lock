@@ -1,14 +1,17 @@
 PODS:
-  - PGDatePicker (1.3.0):
-    - PGDatePicker/PGPickerView (= 1.3.0)
-  - PGDatePicker/PGPickerView (1.3.0)
+  - PGDatePicker (1.4.0):
+    - PGDatePicker/PGPickerView (= 1.4.0)
+  - PGDatePicker/PGPickerView (1.4.0)
+  - Reveal-SDK (10)
 
 DEPENDENCIES:
-  - PGDatePicker (>= 1.2.1)
+  - PGDatePicker (>= 1.4.0)
+  - Reveal-SDK (~> 10)
 
 SPEC CHECKSUMS:
-  PGDatePicker: aafc61dac1a9ce872bb4574ae1a7b983a8ab0c53
+  PGDatePicker: 91bad8d0433b2dc73d5d24924dd2b98ce5f6b8be
+  Reveal-SDK: 7869ddf1f902cabbb07a1f0dd06bd25861a126f7
 
-PODFILE CHECKSUM: 9571bba2257be2ef4adb53542191a4d27078e4ec
+PODFILE CHECKSUM: d98f8ab304169bbf62dd6f4e040952ab76c7eaf6
 
 COCOAPODS: 1.2.1

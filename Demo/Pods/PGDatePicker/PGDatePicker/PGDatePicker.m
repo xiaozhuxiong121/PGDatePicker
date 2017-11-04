@@ -8,12 +8,8 @@
 
 #import "PGDatePicker.h"
 #import "PGDatePickerView.h"
-
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
-#define kScreenHeight [UIScreen mainScreen].bounds.size.height
-#define kTableViewHeight 220
-#define kTableViewCellHeight 44
-#define kHeaderViewHeight 40
+#import "NSBundle+PGDatePicker.h"
+#import "PGDatePickerMacros.h"
 
 @interface PGDatePicker()<PGPickerViewDelegate, PGPickerViewDataSource>{
     NSDate *_setDate;
@@ -42,6 +38,34 @@
 @property (nonatomic, weak) UIView *dismissView;
 @property (nonatomic, assign) BOOL isCurrent;
 
+@property (nonatomic, copy) NSString *yearString;
+@property (nonatomic, copy) NSString *monthString;
+@property (nonatomic, copy) NSString *dayString;
+@property (nonatomic, copy) NSString *hourString;
+@property (nonatomic, copy) NSString *minuteString;
+@property (nonatomic, copy) NSString *secondString;
+@property (nonatomic, copy) NSString *mondayString;
+@property (nonatomic, copy) NSString *tuesdayString;
+@property (nonatomic, copy) NSString *wednesdayString;
+@property (nonatomic, copy) NSString *thursdayString;
+@property (nonatomic, copy) NSString *fridayString;
+@property (nonatomic, copy) NSString *saturdayString;
+@property (nonatomic, copy) NSString *sundayString;
+
+@property (nonatomic, copy) NSString *middleYearString;
+@property (nonatomic, copy) NSString *middleMonthString;
+@property (nonatomic, copy) NSString *middleDayString;
+@property (nonatomic, copy) NSString *middleHourString;
+@property (nonatomic, copy) NSString *middleMinuteString;
+@property (nonatomic, copy) NSString *middleSecondString;
+@property (nonatomic, copy) NSString *middleMondayString;
+@property (nonatomic, copy) NSString *middleTuesdayString;
+@property (nonatomic, copy) NSString *middleWednesdayString;
+@property (nonatomic, copy) NSString *middleThursdayString;
+@property (nonatomic, copy) NSString *middleFridayString;
+@property (nonatomic, copy) NSString *middleSaturdayString;
+@property (nonatomic, copy) NSString *middleSundayString;
+
 - (NSInteger)rowsInComponent:(NSInteger)component;
 @end
 
@@ -57,7 +81,6 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         [window bringSubviewToFront:self.headerView];
         [window bringSubviewToFront:self.dismissView];
         CGFloat height = kTableViewHeight;
-        
         CGFloat width =  [self.cancelButtonText sizeWithAttributes:@{NSFontAttributeName: self.cancelButtonFont}].width;
         self.cancelButton.titleLabel.font = self.cancelButtonFont;
         [self.cancelButton setTitle:self.cancelButtonText forState:UIControlStateNormal];
@@ -82,9 +105,12 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     NSInteger day = [self howManyDaysWithMonthInThisYear:self.currentComponents.year withMonth:self.currentComponents.month];
     [self setDayListForMonthDays:day];
     PGPickerView *pickerView = [[PGPickerView alloc]initWithFrame:self.bounds];
+    pickerView.middleText = self.middleText;
+    pickerView.textColor = self.middleTextColor;
     pickerView.lineBackgroundColor = self.lineBackgroundColor;
     pickerView.titleColorForSelectedRow = self.titleColorForSelectedRow;
     pickerView.titleColorForOtherRow = self.titleColorForOtherRow;
+    pickerView.pickerViewType = (PGPickerViewType)self.datePickerType;
     pickerView.delegate = self;
     pickerView.dataSource = self;
     [self addSubview:pickerView];
@@ -155,21 +181,28 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 }
 
 - (void)confirmButtonHandler {
+    if (self.autoSelected == false) {
+        [self selectedDateLogic];
+    }
+    [self cancelButtonHandler];
+}
+
+- (void)selectedDateLogic {
     switch (self.datePickerMode) {
         case PGDatePickerModeYear:
         {
             NSString *yearString = [self.pickerView currentTitleInComponent:0];
-            yearString = [yearString componentsSeparatedByString:@"年"].firstObject;
+            yearString = [yearString componentsSeparatedByString:self.yearString].firstObject;
             self.selectedComponents.year = [yearString integerValue];
         }
             break;
         case PGDatePickerModeYearAndMonth:
         {
             NSString *yearString = [self.pickerView currentTitleInComponent:0];
-            yearString = [yearString componentsSeparatedByString:@"年"].firstObject;
+            yearString = [yearString componentsSeparatedByString:self.yearString].firstObject;
             
             NSString *monthString = [self.pickerView currentTitleInComponent:1];
-            monthString = [monthString componentsSeparatedByString:@"月"].firstObject;
+            monthString = [monthString componentsSeparatedByString:self.monthString].firstObject;
             
             self.selectedComponents.year = [yearString integerValue];
             self.selectedComponents.month = [monthString integerValue];
@@ -178,13 +211,13 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         case PGDatePickerModeDate:
         {
             NSString *yearString = [self.pickerView currentTitleInComponent:0];
-            yearString = [yearString componentsSeparatedByString:@"年"].firstObject;
+            yearString = [yearString componentsSeparatedByString:self.yearString].firstObject;
             
             NSString *monthString = [self.pickerView currentTitleInComponent:1];
-            monthString = [monthString componentsSeparatedByString:@"月"].firstObject;
+            monthString = [monthString componentsSeparatedByString:self.monthString].firstObject;
             
             NSString *dayString = [self.pickerView currentTitleInComponent:2];
-            dayString = [dayString componentsSeparatedByString:@"日"].firstObject;
+            dayString = [dayString componentsSeparatedByString:self.dayString].firstObject;
             
             self.selectedComponents.year = [yearString integerValue];
             self.selectedComponents.month = [monthString integerValue];
@@ -194,60 +227,60 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         case PGDatePickerModeDateHourMinute:
         {
             NSString *yearString = [self.pickerView currentTitleInComponent:0];
-            yearString = [yearString componentsSeparatedByString:@"年"].firstObject;
+            yearString = [yearString componentsSeparatedByString:self.yearString].firstObject;
             self.selectedComponents.year = [yearString integerValue];
             
             NSString *monthString = [self.pickerView currentTitleInComponent:1];
-            monthString = [monthString componentsSeparatedByString:@"月"].firstObject;
+            monthString = [monthString componentsSeparatedByString:self.monthString].firstObject;
             self.selectedComponents.month = [monthString integerValue];
             
             NSString *dayString = [self.pickerView currentTitleInComponent:2];
-            dayString = [dayString componentsSeparatedByString:@"日"].firstObject;
+            dayString = [dayString componentsSeparatedByString:self.dayString].firstObject;
             self.selectedComponents.day = [dayString integerValue];
             
             NSString *hourString = [self.pickerView currentTitleInComponent:3];
-            hourString = [hourString componentsSeparatedByString:@"时"].firstObject;
+            hourString = [hourString componentsSeparatedByString:self.hourString].firstObject;
             self.selectedComponents.hour = [hourString integerValue];
             
             NSString *minuteString = [self.pickerView currentTitleInComponent:4];
-            minuteString = [minuteString componentsSeparatedByString:@"分"].firstObject;
+            minuteString = [minuteString componentsSeparatedByString:self.minuteString].firstObject;
             self.selectedComponents.minute = [minuteString integerValue];
         }
             break;
         case PGDatePickerModeDateHourMinuteSecond:
         {
             NSString *yearString = [self.pickerView currentTitleInComponent:0];
-            yearString = [yearString componentsSeparatedByString:@"年"].firstObject;
+            yearString = [yearString componentsSeparatedByString:self.yearString].firstObject;
             self.selectedComponents.year = [yearString integerValue];
             
             NSString *monthString = [self.pickerView currentTitleInComponent:1];
-            monthString = [monthString componentsSeparatedByString:@"月"].firstObject;
+            monthString = [monthString componentsSeparatedByString:self.monthString].firstObject;
             self.selectedComponents.month = [monthString integerValue];
             
             NSString *dayString = [self.pickerView currentTitleInComponent:2];
-            dayString = [dayString componentsSeparatedByString:@"日"].firstObject;
+            dayString = [dayString componentsSeparatedByString:self.dayString].firstObject;
             self.selectedComponents.day = [dayString integerValue];
             
             NSString *hourString = [self.pickerView currentTitleInComponent:3];
-            hourString = [hourString componentsSeparatedByString:@"时"].firstObject;
+            hourString = [hourString componentsSeparatedByString:self.hourString].firstObject;
             self.selectedComponents.hour = [hourString integerValue];
             
             NSString *minuteString = [self.pickerView currentTitleInComponent:4];
-            minuteString = [minuteString componentsSeparatedByString:@"分"].firstObject;
+            minuteString = [minuteString componentsSeparatedByString:self.minuteString].firstObject;
             self.selectedComponents.minute = [minuteString integerValue];
             
             NSString *secondString = [self.pickerView currentTitleInComponent:5];
-            secondString = [secondString componentsSeparatedByString:@"秒"].firstObject;
+            secondString = [secondString componentsSeparatedByString:self.secondString].firstObject;
             self.selectedComponents.second = [secondString integerValue];
         }
             break;
         case PGDatePickerModeTime:
         {
             NSString *hourString = [self.pickerView currentTitleInComponent:0];
-            hourString = [hourString componentsSeparatedByString:@"时"].firstObject;
+            hourString = [hourString componentsSeparatedByString:self.hourString].firstObject;
             
             NSString *minuteString = [self.pickerView currentTitleInComponent:1];
-            minuteString = [minuteString componentsSeparatedByString:@"分"].firstObject;
+            minuteString = [minuteString componentsSeparatedByString:self.minuteString].firstObject;
             
             self.selectedComponents.hour = [hourString integerValue];
             self.selectedComponents.minute = [minuteString integerValue];
@@ -256,35 +289,35 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         case PGDatePickerModeTimeAndSecond:
         {
             NSString *hourString = [self.pickerView currentTitleInComponent:0];
-            hourString = [hourString componentsSeparatedByString:@"时"].firstObject;
+            hourString = [hourString componentsSeparatedByString:self.hourString].firstObject;
             self.selectedComponents.hour = [hourString integerValue];
             
             NSString *minuteString = [self.pickerView currentTitleInComponent:1];
-            minuteString = [minuteString componentsSeparatedByString:@"分"].firstObject;
+            minuteString = [minuteString componentsSeparatedByString:self.minuteString].firstObject;
             self.selectedComponents.minute = [minuteString integerValue];
             
             NSString *secondString = [self.pickerView currentTitleInComponent:2];
-            secondString = [secondString componentsSeparatedByString:@"秒"].firstObject;
+            secondString = [secondString componentsSeparatedByString:self.secondString].firstObject;
             self.selectedComponents.second = [secondString integerValue];
         }
             break;
         case PGDatePickerModeDateAndTime:
         {
             NSString *string = [self.pickerView currentTitleInComponent:0];
-            NSString *str = [string componentsSeparatedByString:@"月"].firstObject;
+            NSString *str = [string componentsSeparatedByString:self.monthString].firstObject;
             self.selectedComponents.month = [str integerValue];
-            NSString *str2 = [string componentsSeparatedByString:@"月"].lastObject;
-            NSString *str3 = [str2 componentsSeparatedByString:@"日"].firstObject;
+            NSString *str2 = [string componentsSeparatedByString:self.monthString].lastObject;
+            NSString *str3 = [str2 componentsSeparatedByString:self.dayString].firstObject;
             self.selectedComponents.day = [str3 integerValue];
-            NSString *str4 = [str2 componentsSeparatedByString:@"日"].lastObject;
+            NSString *str4 = [str2 componentsSeparatedByString:self.dayString].lastObject;
             str4 = [str4 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             self.selectedComponents.weekday = [self weekDayMappingFrom:str4];
             
             NSString *hourString = [self.pickerView currentTitleInComponent:1];
-            hourString = [hourString componentsSeparatedByString:@"时"].firstObject;
+            hourString = [hourString componentsSeparatedByString:self.hourString].firstObject;
             
             NSString *minuteString = [self.pickerView currentTitleInComponent:2];
-            minuteString = [minuteString componentsSeparatedByString:@"分"].firstObject;
+            minuteString = [minuteString componentsSeparatedByString:self.minuteString].firstObject;
             
             self.selectedComponents.hour = [hourString integerValue];
             self.selectedComponents.minute = [minuteString integerValue];
@@ -296,8 +329,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (self.delegate && [self.delegate respondsToSelector:@selector(datePicker:didSelectDate:)]) {
         [self.delegate datePicker:self didSelectDate:self.selectedComponents];
     }
-    [self cancelButtonHandler];
 }
+
 
 - (NSInteger)rowsInComponent:(NSInteger)component {
     switch (self.datePickerMode) {
@@ -369,7 +402,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         case PGDatePickerModeTimeAndSecond:
         {
             if (component == 0) {
-                 return self.hourList.count;
+                return self.hourList.count;
             }
             if (component == 1) {
                 return self.minuteList.count;
@@ -388,7 +421,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             }
             return self.dateAndTimeList.count;
         }
-
+            
         default:
             break;
     }
@@ -426,19 +459,19 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 - (NSString *)weekMappingFrom:(NSInteger)weekDay {
     switch (weekDay) {
         case 1:
-            return @"周日";
+            return self.sundayString;
         case 2:
-            return @"周一";
+            return self.mondayString;
         case 3:
-            return @"周二";
+            return self.tuesdayString;
         case 4:
-            return @"周三";
+            return self.wednesdayString;
         case 5:
-            return @"周四";
+            return self.thursdayString;
         case 6:
-            return @"周五";
+            return self.fridayString;
         case 7:
-            return @"周六";
+            return self.saturdayString;
         default:
             break;
     }
@@ -446,25 +479,25 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 }
 
 - (NSInteger)weekDayMappingFrom:(NSString *)weekString {
-    if ([weekString isEqualToString:@"周日"]) {
+    if ([weekString isEqualToString:self.sundayString]) {
         return 1;
     }
-    if ([weekString isEqualToString:@"周一"]) {
+    if ([weekString isEqualToString:self.mondayString]) {
         return 2;
     }
-    if ([weekString isEqualToString:@"周二"]) {
+    if ([weekString isEqualToString:self.tuesdayString]) {
         return 3;
     }
-    if ([weekString isEqualToString:@"周三"]) {
+    if ([weekString isEqualToString:self.wednesdayString]) {
         return 4;
     }
-    if ([weekString isEqualToString:@"周四"]) {
+    if ([weekString isEqualToString:self.thursdayString]) {
         return 5;
     }
-    if ([weekString isEqualToString:@"周五"]) {
+    if ([weekString isEqualToString:self.fridayString]) {
         return 6;
     }
-    if ([weekString isEqualToString:@"周六"]) {
+    if ([weekString isEqualToString:self.saturdayString]) {
         return 7;
     }
     return 0;
@@ -472,10 +505,10 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (BOOL)setDayListLogic:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     BOOL tmp = refresh;
-    NSString *yearString = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:@"年"].firstObject;
+    NSString *yearString = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:self.yearString].firstObject;
     dateComponents.year = [yearString integerValue];
     
-    NSString *monthString = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:@"月"].firstObject;
+    NSString *monthString = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:self.monthString].firstObject;
     dateComponents.month = [monthString integerValue];
     
     NSInteger day = [self howManyDaysWithMonthInThisYear:[yearString integerValue] withMonth:[monthString integerValue]];
@@ -535,13 +568,13 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 }
 
 - (BOOL)setHourListLogic2:(PGPickerView *)pickerView dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
-    NSString *yearString = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:@"年"].firstObject;
+    NSString *yearString = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:self.yearString].firstObject;
     dateComponents.year = [yearString integerValue];
     
-    NSString *monthString = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:@"月"].firstObject;
+    NSString *monthString = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:self.monthString].firstObject;
     dateComponents.month = [monthString integerValue];
     
-    NSString *dayString = [[self.pickerView currentTitleInComponent:2] componentsSeparatedByString:@"日"].firstObject;
+    NSString *dayString = [[self.pickerView currentTitleInComponent:2] componentsSeparatedByString:self.dayString].firstObject;
     dateComponents.day = [dayString integerValue];
     
     BOOL tmp = refresh;
@@ -573,9 +606,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return tmp;
 }
 
-- (void)setMinuteListLogic:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents {
+- (BOOL)setMinuteListLogic:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     NSInteger length = 59;
+    BOOL tmp = refresh;
     if (self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day && self.minimumComponents.hour == dateComponents.hour) {
+        refresh = true;
         NSInteger index = length - self.minimumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
         for (NSUInteger i = self.minimumComponents.minute; i <= length; i++) {
@@ -583,6 +618,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         }
         self.minuteList = minutes;
     }else if (self.maximumComponents.month == dateComponents.month && self.maximumComponents.day == dateComponents.day && self.maximumComponents.hour == dateComponents.hour) {
+        refresh = true;
         NSInteger index = self.maximumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
         for (NSUInteger i = 0; i <= self.maximumComponents.minute; i++) {
@@ -590,26 +626,28 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         }
         self.minuteList = minutes;
     }else{
+        refresh = false;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:length];
         for (NSUInteger i = 0; i <= length; i++) {
             [minutes addObject:[@(i) stringValue]];
         }
         self.minuteList = minutes;
     }
+    return tmp;
 }
 
 - (BOOL)setMinuteListLogic2:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     BOOL tmp = refresh;
-    NSString *yearString = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:@"年"].firstObject;
+    NSString *yearString = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:self.yearString].firstObject;
     dateComponents.year = [yearString integerValue];
     
-    NSString *monthString = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:@"月"].firstObject;
+    NSString *monthString = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:self.monthString].firstObject;
     dateComponents.month = [monthString integerValue];
     
-    NSString *dayString = [[self.pickerView currentTitleInComponent:2] componentsSeparatedByString:@"日"].firstObject;
+    NSString *dayString = [[self.pickerView currentTitleInComponent:2] componentsSeparatedByString:self.dayString].firstObject;
     dateComponents.day = [dayString integerValue];
     
-    NSString *hourString = [[self.pickerView currentTitleInComponent:3] componentsSeparatedByString:@"时"].firstObject;
+    NSString *hourString = [[self.pickerView currentTitleInComponent:3] componentsSeparatedByString:self.hourString].firstObject;
     dateComponents.hour = [hourString integerValue];
     
     NSInteger length = 59;
@@ -640,7 +678,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (BOOL)setMinuteListLogic3:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     BOOL tmp = refresh;
-
+    
     NSInteger length = 59;
     if (self.minimumComponents.hour == dateComponents.hour) {
         NSInteger index = length - self.minimumComponents.minute;
@@ -669,10 +707,10 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (BOOL)setSecondListLogic:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     BOOL tmp = refresh;
-    NSString *hourString = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:@"时"].firstObject;
+    NSString *hourString = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:self.hourString].firstObject;
     dateComponents.hour = [hourString integerValue];
     
-    NSString *minuteString = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:@"分"].firstObject;
+    NSString *minuteString = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:self.minuteString].firstObject;
     dateComponents.minute = [minuteString integerValue];
     
     NSInteger length = 59;
@@ -703,19 +741,19 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (BOOL)setSecondListLogic2:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     BOOL tmp = refresh;
-    NSString *yearString = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:@"年"].firstObject;
+    NSString *yearString = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:self.yearString].firstObject;
     dateComponents.year = [yearString integerValue];
     
-    NSString *monthString = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:@"月"].firstObject;
+    NSString *monthString = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:self.monthString].firstObject;
     dateComponents.month = [monthString integerValue];
     
-    NSString *dayString = [[self.pickerView currentTitleInComponent:2] componentsSeparatedByString:@"日"].firstObject;
+    NSString *dayString = [[self.pickerView currentTitleInComponent:2] componentsSeparatedByString:self.dayString].firstObject;
     dateComponents.day = [dayString integerValue];
     
-    NSString *hourString = [[self.pickerView currentTitleInComponent:3] componentsSeparatedByString:@"时"].firstObject;
+    NSString *hourString = [[self.pickerView currentTitleInComponent:3] componentsSeparatedByString:self.hourString].firstObject;
     dateComponents.hour = [hourString integerValue];
     
-    NSString *minuteString = [[self.pickerView currentTitleInComponent:4] componentsSeparatedByString:@"分"].firstObject;
+    NSString *minuteString = [[self.pickerView currentTitleInComponent:4] componentsSeparatedByString:self.minuteString].firstObject;
     dateComponents.minute = [minuteString integerValue];
     
     NSInteger length = 59;
@@ -796,7 +834,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     switch (self.datePickerMode) {
         case PGDatePickerModeYear:
         {
-            NSString *str = [title componentsSeparatedByString:@"年"].firstObject;
+            NSString *str = [title componentsSeparatedByString:self.yearString].firstObject;
             dateComponents.year = [str integerValue];
             if (!self.isCurrent) {
                 self.isCurrent = true;
@@ -810,10 +848,10 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             break;
         case PGDatePickerModeYearAndMonth:
         {
-            NSString *str = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:@"年"].firstObject;
+            NSString *str = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:self.yearString].firstObject;
             dateComponents.year = [str integerValue];
             if (component == 0) {
-                BOOL refresh = [self setMonthListLogic:dateComponents refresh:false];
+                BOOL refresh = [self setMonthListLogic:dateComponents refresh:true];
                 [self.pickerView reloadComponent:1 refresh:refresh];
             }
             if (!self.isCurrent) {
@@ -833,10 +871,10 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             break;
         case PGDatePickerModeDate:
         {
-            NSString *str = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:@"年"].firstObject;
+            NSString *str = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:self.yearString].firstObject;
             dateComponents.year = [str integerValue];
             if (component == 0) {
-                NSString *str = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:@"月"].firstObject;
+                NSString *str = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:self.monthString].firstObject;
                 dateComponents.month = [str integerValue];
                 BOOL refresh = [self setMonthListLogic:dateComponents refresh:true];
                 [self.pickerView reloadComponent:1 refresh:refresh];
@@ -867,10 +905,10 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             break;
         case PGDatePickerModeDateHourMinute:
         {
-            NSString *str = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:@"年"].firstObject;
+            NSString *str = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:self.yearString].firstObject;
             dateComponents.year = [str integerValue];
             if (component == 0) {
-                NSString *monthString = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:@"月"].firstObject;
+                NSString *monthString = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:self.monthString].firstObject;
                 dateComponents.month = [monthString integerValue];
                 BOOL refresh = [self setMonthListLogic:dateComponents refresh:true];
                 [self.pickerView reloadComponent:1 refresh:refresh];
@@ -978,11 +1016,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             break;
         case PGDatePickerModeTime:
         {
-            NSString *str = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:@"时"].firstObject;
+            NSString *str = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:self.hourString].firstObject;
             dateComponents.hour = [str integerValue];
             if (component == 0) {
-                [self setMinuteListLogic:pickerView component:component dateComponents:dateComponents];
-                [self.pickerView reloadComponent:1];
+                BOOL refresh = [self setMinuteListLogic:pickerView component:component dateComponents:dateComponents refresh:true];
+                [self.pickerView reloadComponent:1 refresh:refresh];
             }
             if (!self.isCurrent) {
                 self.isCurrent = true;
@@ -1001,7 +1039,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             break;
         case PGDatePickerModeTimeAndSecond:
         {
-            NSString *str = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:@"时"].firstObject;
+            NSString *str = [[self.pickerView currentTitleInComponent:0] componentsSeparatedByString:self.hourString].firstObject;
             dateComponents.hour = [str integerValue];
             if (component == 0) {
                 BOOL refresh = [self setMinuteListLogic3:pickerView component:component dateComponents:dateComponents refresh:true];
@@ -1034,12 +1072,12 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         case PGDatePickerModeDateAndTime:
         {
             NSString *string = [self.pickerView currentTitleInComponent:0];
-            NSString *str = [string componentsSeparatedByString:@"月"].firstObject;
+            NSString *str = [string componentsSeparatedByString:self.monthString].firstObject;
             dateComponents.month = [str integerValue];
-            NSString *str2 = [string componentsSeparatedByString:@"月"].lastObject;
-            NSString *str3 = [str2 componentsSeparatedByString:@"日"].firstObject;
+            NSString *str2 = [string componentsSeparatedByString:self.monthString].lastObject;
+            NSString *str3 = [str2 componentsSeparatedByString:self.dayString].firstObject;
             dateComponents.day = [str3 integerValue];
-            NSString *str4 = [str2 componentsSeparatedByString:@"日"].lastObject;
+            NSString *str4 = [str2 componentsSeparatedByString:self.dayString].lastObject;
             str4 = [str4 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             dateComponents.weekday = [self weekDayMappingFrom:str4];
             if (component == 0) {
@@ -1049,12 +1087,12 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (component != 2) {
                 NSString *hourString = [[self.pickerView currentTitleInComponent:1] componentsSeparatedByString:@"时"].firstObject;
                 dateComponents.hour = [hourString integerValue];
-                [self setMinuteListLogic:pickerView component:component dateComponents:dateComponents];
-                [self.pickerView reloadComponent:2];
+                BOOL refresh = [self setMinuteListLogic:pickerView component:component dateComponents:dateComponents refresh:false];
+                [self.pickerView reloadComponent:2 refresh:refresh];
             }
             if (!self.isCurrent) {
                 self.isCurrent = true;
-                NSString *string = [NSString stringWithFormat:@"%ld月%ld日 %@ ", currentComponents.month, currentComponents.day, [self weekMappingFrom:currentComponents.weekday]];
+                NSString *string = [NSString stringWithFormat:@"%ld%@%ld%@ %@ ", currentComponents.month, self.monthString, currentComponents.day, self.dayString, [self weekMappingFrom:currentComponents.weekday]];
                 NSInteger row = [self.dateAndTimeList indexOfObject:string];
                 [self.pickerView selectRow:row inComponent:0 animated:false];
                 {
@@ -1073,94 +1111,97 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         default:
             break;
     }
+    if (self.autoSelected) {
+        [self selectedDateLogic];
+    }
 }
 
 - (NSString *)pickerView:(PGPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     switch (self.datePickerMode) {
         case PGDatePickerModeYear:
-            return [self.yearList[row] stringByAppendingString:@"年"];
+            return [self.yearList[row] stringByAppendingString:self.yearString];
         case PGDatePickerModeYearAndMonth:
         {
             if (component == 1) {
-                return [self.monthList[row] stringByAppendingString:@"月"];
+                return [self.monthList[row] stringByAppendingString:self.monthString];
             }
-            return [self.yearList[row] stringByAppendingString:@"年"];
+            return [self.yearList[row] stringByAppendingString:self.yearString];
         }
         case PGDatePickerModeDate:
         {
             if (component == 1) {
-                return [self.monthList[row] stringByAppendingString:@"月"];
+                return [self.monthList[row] stringByAppendingString:self.monthString];
             }
             if (component == 2) {
-                return [self.dayList[row] stringByAppendingString:@"日"];
+                return [self.dayList[row] stringByAppendingString:self.dayString];
             }
-            return [self.yearList[row] stringByAppendingString:@"年"];
+            return [self.yearList[row] stringByAppendingString:self.yearString];
         }
         case PGDatePickerModeDateHourMinute:
         {
             if (component == 0) {
-                return [self.yearList[row] stringByAppendingString:@"年"];
+                return [self.yearList[row] stringByAppendingString:self.yearString];
             }
             if (component == 1) {
-                return [self.monthList[row] stringByAppendingString:@"月"];
+                return [self.monthList[row] stringByAppendingString:self.monthString];
             }
             if (component == 2) {
-                return [self.dayList[row] stringByAppendingString:@"日"];
+                return [self.dayList[row] stringByAppendingString:self.dayString];
             }
             if (component == 3) {
-                return [self.hourList[row] stringByAppendingString:@"时"];
+                return [self.hourList[row] stringByAppendingString:self.hourString];
             }
             if (component == 4) {
-                return [self.minuteList[row] stringByAppendingString:@"分"];
+                return [self.minuteList[row] stringByAppendingString:self.minuteString];
             }
         }
         case PGDatePickerModeDateHourMinuteSecond:
         {
             if (component == 0) {
-                return [self.yearList[row] stringByAppendingString:@"年"];
+                return [self.yearList[row] stringByAppendingString:self.yearString];
             }
             if (component == 1) {
-                return [self.monthList[row] stringByAppendingString:@"月"];
+                return [self.monthList[row] stringByAppendingString:self.monthString];
             }
             if (component == 2) {
-                return [self.dayList[row] stringByAppendingString:@"日"];
+                return [self.dayList[row] stringByAppendingString:self.dayString];
             }
             if (component == 3) {
-                return [self.hourList[row] stringByAppendingString:@"时"];
+                return [self.hourList[row] stringByAppendingString:self.hourString];
             }
             if (component == 4) {
-                return [self.minuteList[row] stringByAppendingString:@"分"];
+                return [self.minuteList[row] stringByAppendingString:self.minuteString];
             }
             if (component == 5) {
-                return [self.secondList[row] stringByAppendingString:@"秒"];
+                return [self.secondList[row] stringByAppendingString:self.secondString];
             }
         }
         case PGDatePickerModeTime:
         {
             if (component == 1) {
-                return [self.minuteList[row] stringByAppendingString:@"分"];
+                return [self.minuteList[row] stringByAppendingString:self.minuteString];
             }
-            return [self.hourList[row] stringByAppendingString:@"时"];
+            return [self.hourList[row] stringByAppendingString:self.hourString];
         }
         case PGDatePickerModeTimeAndSecond:
         {
             if (component == 0) {
-                return [self.hourList[row] stringByAppendingString:@"时"];
+                return [self.hourList[row] stringByAppendingString:self.hourString];
             }
             if (component == 1) {
-                return [self.minuteList[row] stringByAppendingString:@"分"];
+                return [self.minuteList[row] stringByAppendingString:self.minuteString];
             }
             if (component == 2) {
-                return [self.secondList[row] stringByAppendingString:@"秒"];
+                return [self.secondList[row] stringByAppendingString:self.secondString];
             }
         }
         case PGDatePickerModeDateAndTime:
         {
             if (component == 1) {
-                return [self.hourList[row] stringByAppendingString:@"时"];
+                return [self.hourList[row] stringByAppendingString:self.hourString];
             }
             if (component == 2) {
-                return [self.minuteList[row] stringByAppendingString:@"分"];
+                return [self.minuteList[row] stringByAppendingString:self.minuteString];
             }
             return self.dateAndTimeList[row];
         }
@@ -1168,6 +1209,204 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             break;
     }
     return @"";
+}
+
+- (NSString *)pickerView:(PGPickerView *)pickerView textForcomponent:(NSInteger)component {
+    switch (self.datePickerMode) {
+        case PGDatePickerModeYear:
+            return self.middleYearString;
+        case PGDatePickerModeYearAndMonth:
+        {
+            if (component == 1) {
+                return self.middleMonthString;
+            }
+            return self.middleYearString;
+        }
+        case PGDatePickerModeDate:
+        {
+            if (component == 1) {
+                return self.middleMonthString;
+            }
+            if (component == 2) {
+                return self.middleDayString;
+            }
+            return self.middleYearString;
+        }
+        case PGDatePickerModeDateHourMinute:
+        {
+            if (component == 0) {
+                return self.middleYearString;
+            }
+            if (component == 1) {
+                return self.middleMonthString;
+            }
+            if (component == 2) {
+                return self.middleDayString;
+            }
+            if (component == 3) {
+                return self.middleHourString;
+            }
+            if (component == 4) {
+                return self.middleMinuteString;
+            }
+        }
+        case PGDatePickerModeDateHourMinuteSecond:
+        {
+            if (component == 0) {
+                return self.middleYearString;
+            }
+            if (component == 1) {
+                return self.middleMonthString;
+            }
+            if (component == 2) {
+                return self.middleDayString;
+            }
+            if (component == 3) {
+                return self.middleHourString;
+            }
+            if (component == 4) {
+                return self.middleMinuteString;
+            }
+            if (component == 5) {
+                return self.middleSecondString;
+            }
+        }
+        case PGDatePickerModeTime:
+        {
+            if (component == 1) {
+                return self.middleMinuteString;
+            }
+            return self.middleHourString;
+        }
+        case PGDatePickerModeTimeAndSecond:
+        {
+            if (component == 0) {
+                return self.middleHourString;
+            }
+            if (component == 1) {
+                return self.middleMinuteString;
+            }
+            if (component == 2) {
+                return self.middleSecondString;
+            }
+        }
+        case PGDatePickerModeDateAndTime:
+        {
+            if (component == 1) {
+                return self.middleHourString;
+            }
+            if (component == 2) {
+                return self.middleMinuteString;
+            }
+            return @"";
+        }
+        default:
+            break;
+    }
+    return @"";
+}
+
+- (CGFloat)pickerView:(PGPickerView *)pickerView textSpaceForcomponent:(NSInteger)component {
+    switch (self.datePickerMode) {
+        case PGDatePickerModeYear:
+            return 20;
+        case PGDatePickerModeYearAndMonth:
+        {
+            if (component == 0) {
+                return 20;
+            }
+            if (component == 1) {
+                return 10;
+            }
+        }
+        case PGDatePickerModeDate:
+        {
+            if (component == 0) {
+                return 22;
+            }
+            if (component == 1) {
+                return 10;
+            }
+            if (component == 2) {
+                return 10;
+            }
+        }
+        case PGDatePickerModeDateHourMinute:
+        {
+            if (component == 0) {
+                return 20;
+            }
+            if (component == 1) {
+                return 10;
+            }
+            if (component == 2) {
+                return 10;
+            }
+            if (component == 3) {
+                return 10;
+            }
+            if (component == 4) {
+                return 10;
+            }
+        }
+        case PGDatePickerModeDateHourMinuteSecond:
+        {
+            if (component == 0) {
+                return 17;
+            }
+            if (component == 1) {
+                return 10;
+            }
+            if (component == 2) {
+                return 10;
+            }
+            if (component == 3) {
+                return 10;
+            }
+            if (component == 4) {
+                return 10;
+            }
+            if (component == 5) {
+                return 13;
+            }
+        }
+        case PGDatePickerModeTime:
+        {
+            if (component == 0) {
+                return 17;
+            }
+            if (component == 1) {
+                return 13;
+            }
+        }
+        case PGDatePickerModeTimeAndSecond:
+        {
+            if (component == 0) {
+                return 17;
+            }
+            if (component == 1) {
+                return 13;
+            }
+            if (component == 2) {
+                return 13;
+            }
+        }
+        case PGDatePickerModeDateAndTime:
+        {
+            if (component == 0) {
+                return 17;
+            }
+            if (component == 1) {
+                return 13;
+            }
+            if (component == 2) {
+                return 13;
+            }
+        }
+        default:
+            break;
+    }
+    return 0;
 }
 
 #pragma mark - Setter
@@ -1329,7 +1568,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             }
             [self.dayList enumerateObjectsUsingBlock:^(NSString*  _Nonnull day, NSUInteger idx, BOOL * _Nonnull stop) {
                 NSInteger weekDay = [self.calendar component:NSCalendarUnitWeekday fromDate:[NSDate setYear:self.currentComponents.year month:[month integerValue] day:[day integerValue]]];
-                NSString *string = [NSString stringWithFormat:@"%@月%@日 %@ ", month, day, [self weekMappingFrom:weekDay]];
+                
+                NSString *string = [NSString stringWithFormat:@"%@%@%@%@ %@ ", month, self.monthString, day, self.dayString, [self weekMappingFrom:weekDay]];
                 [array addObject:string];
             }];
         }
@@ -1413,6 +1653,13 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return _titleColorForSelectedRow;
 }
 
+- (UIColor *)middleTextColor {
+    if (!_middleTextColor) {
+        _middleTextColor = [UIColor grayColor];
+    }
+    return _middleTextColor;
+}
+
 - (UIFont *)cancelButtonFont {
     if (!_cancelButtonFont) {
         _cancelButtonFont = [UIFont systemFontOfSize:17];
@@ -1422,7 +1669,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSString *)cancelButtonText {
     if (!_cancelButtonText) {
-        _cancelButtonText = @"取消";
+        _cancelButtonText = [NSBundle localizedStringForKey:@"cancelButtonText"];
     }
     return _cancelButtonText;
 }
@@ -1443,7 +1690,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSString *)confirmButtonText {
     if (!_confirmButtonText) {
-        _confirmButtonText = @"确定";
+        _confirmButtonText = [NSBundle localizedStringForKey:@"confirmButtonText"];
     }
     return _confirmButtonText;
 }
@@ -1453,6 +1700,127 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         _confirmButtonTextColor = [UIColor colorWithHexString:@"#69BDFF"];
     }
     return _confirmButtonTextColor;
+}
+
+- (NSString *)yearString {
+    if (!_yearString) {
+        if (self.middleText) {
+            _yearString = @"";
+            self.middleYearString = [NSBundle localizedStringForKey:@"yearString"];
+        }else {
+            _yearString = [NSBundle localizedStringForKey:@"yearString"];
+        }
+    }
+    return _yearString;
+}
+
+- (NSString *)monthString {
+    if (!_monthString) {
+        if (self.middleText) {
+            _monthString = @"";
+            self.middleMonthString = [NSBundle localizedStringForKey:@"monthString"];
+        }else {
+            _monthString = [NSBundle localizedStringForKey:@"monthString"];
+        }
+    }
+    return _monthString;
+}
+
+- (NSString *)dayString {
+    if (!_dayString) {
+        if (self.middleText) {
+            _dayString = @"";
+            self.middleDayString = [NSBundle localizedStringForKey:@"dayString"];
+        }else {
+            _dayString = [NSBundle localizedStringForKey:@"dayString"];
+        }
+    }
+    return _dayString;
+}
+
+- (NSString *)hourString {
+    if (!_hourString) {
+        if (self.middleText) {
+            _hourString = @"";
+            self.middleHourString = [NSBundle localizedStringForKey:@"hourString"];
+        }else {
+            _hourString = [NSBundle localizedStringForKey:@"hourString"];
+        }
+    }
+    return _hourString;
+}
+
+- (NSString *)minuteString {
+    if (!_minuteString) {
+        if (self.middleText) {
+            _minuteString = @"";
+            self.middleMinuteString = [NSBundle localizedStringForKey:@"minuteString"];
+        }else {
+            _minuteString = [NSBundle localizedStringForKey:@"minuteString"];
+        }
+    }
+    return _minuteString;
+}
+
+- (NSString *)secondString {
+    if (!_secondString) {
+        if (self.middleText) {
+            _secondString = @"";
+            self.middleSecondString = [NSBundle localizedStringForKey:@"secondString"];
+        }else {
+            _secondString = [NSBundle localizedStringForKey:@"secondString"];
+        }
+    }
+    return _secondString;
+}
+
+- (NSString *)mondayString {
+    if (!_mondayString) {
+        _mondayString = [NSBundle localizedStringForKey:@"mondayString"];
+    }
+    return _mondayString;
+}
+
+- (NSString *)tuesdayString {
+    if (!_tuesdayString) {
+        _tuesdayString = [NSBundle localizedStringForKey:@"tuesdayString"];
+    }
+    return _tuesdayString;
+}
+
+- (NSString *)wednesdayString {
+    if (!_wednesdayString) {
+        _wednesdayString = [NSBundle localizedStringForKey:@"wednesdayString"];
+    }
+    return _wednesdayString;
+}
+
+- (NSString *)thursdayString {
+    if (!_thursdayString) {
+        _thursdayString = [NSBundle localizedStringForKey:@"thursdayString"];
+    }
+    return _thursdayString;
+}
+
+- (NSString *)fridayString {
+    if (!_fridayString) {
+        _fridayString = [NSBundle localizedStringForKey:@"fridayString"];
+    }
+    return _fridayString;
+}
+
+- (NSString *)saturdayString {
+    if (!_saturdayString) {
+        _saturdayString = [NSBundle localizedStringForKey:@"saturdayString"];
+    }
+    return _saturdayString;
+}
+
+- (NSString *)sundayString {
+    if (!_sundayString) {
+        _sundayString = [NSBundle localizedStringForKey:@"sundayString"];
+    }
+    return _sundayString;
 }
 
 @end

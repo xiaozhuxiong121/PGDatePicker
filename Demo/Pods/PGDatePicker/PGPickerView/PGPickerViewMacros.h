@@ -12,4 +12,5 @@
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kLineHeight 0.5
+#define kCellHeight 44
 #endif /* PGPickerViewMacros_h */

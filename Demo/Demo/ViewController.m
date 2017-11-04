@@ -23,8 +23,8 @@
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
-//    datePicker.minimumDate = [NSDate setYear:2015];
-//    datePicker.maximumDate = [NSDate setYear:2030];
+    datePicker.minimumDate = [NSDate setYear:2015];
+    datePicker.maximumDate = [NSDate setYear:2030];
     datePicker.datePickerMode = PGDatePickerModeYear;
 }
 
@@ -32,8 +32,8 @@
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
-//    datePicker.minimumDate = [NSDate setYear:2015 month:5];
-//    datePicker.maximumDate = [NSDate setYear:2020 month:10];
+    datePicker.minimumDate = [NSDate setYear:2015 month:5];
+    datePicker.maximumDate = [NSDate setYear:2020 month:10];
     datePicker.datePickerMode = PGDatePickerModeYearAndMonth;
 }
 
@@ -41,6 +41,9 @@
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
+    datePicker.autoSelected = true;
+    datePicker.middleText = true;
+    datePicker.datePickerType = PGPickerViewType3;
 //    datePicker.minimumDate = [NSDate setYear:2015 month:8 day:5];
 //    datePicker.maximumDate = [NSDate setYear:2020 month:10 day:20];
     datePicker.datePickerMode = PGDatePickerModeDate;
@@ -58,6 +61,8 @@
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
+    datePicker.middleText = true;
+    datePicker.datePickerType = PGPickerViewType2;
     datePicker.datePickerMode = PGDatePickerModeDateHourMinute;
 //    datePicker.minimumDate = [NSDate setYear:2015 month:5 day:10 hour:18 minute:6];
 //    datePicker.maximumDate = [NSDate setYear:2020 month:11 day:27 hour:22 minute:30];
@@ -67,6 +72,8 @@
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
+    datePicker.middleText = true;
+    datePicker.datePickerType = PGPickerViewType3;
     datePicker.datePickerMode = PGDatePickerModeDateHourMinuteSecond;
 //    datePicker.minimumDate = [NSDate setYear:2015 month:5 day:10 hour:18 minute:6 second:10];
 //    datePicker.maximumDate = [NSDate setYear:2020 month:11 day:27 hour:22 minute:30 second:40];
@@ -84,6 +91,7 @@
 - (IBAction)timeAndSecondHandler:(id)sender {
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
+//    datePicker.middleText = true;
 //    datePicker.minimumDate = [NSDate setHour:10 minute:10 second:10];
 //    datePicker.maximumDate = [NSDate setHour:23 minute:20 second:40];
     [datePicker show];
@@ -93,6 +101,7 @@
 - (IBAction)dateAndTimeHandler:(id)sender {
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
+//    datePicker.middleText = true;
 //    datePicker.minimumDate = [NSDate setMonth:10 day:10 hour:18 minute:6];
 //    datePicker.maximumDate = [NSDate setMonth:11 day:27 hour:22 minute:30];
     [datePicker show];

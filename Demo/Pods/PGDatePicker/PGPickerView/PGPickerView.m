@@ -9,9 +9,10 @@
 #import "PGPickerView.h"
 #import "PGPickerViewMacros.h"
 #import "PGPickerColumnView.h"
-#import "PGPickerViewConfig.h"
 
-@interface PGPickerView()<PGPickerColumnViewDelegate>
+@interface PGPickerView()<PGPickerColumnViewDelegate> {
+    NSInteger _tableViewHeightForRow;
+}
 @property (nonatomic, weak) UIView *upLine;
 @property (nonatomic, weak) UIView *downLine;
 @property (nonatomic, assign) NSUInteger numberOfRows;
@@ -105,8 +106,31 @@
 }
 
 - (void)setupView {
-    CGFloat upLinePosY = kHeight / 2 - [PGPickerViewConfig instance].tableViewHeightForRow / 2 - kLineHeight;
-    CGFloat downLinePosY = kHeight / 2 + [PGPickerViewConfig instance].tableViewHeightForRow / 2 - kLineHeight;
+    if (self.middleText) {
+        [self setupTextLogic];
+    }
+    switch (self.pickerViewType) {
+        case PGPickerViewType1:
+        {
+            [self setupLineView1];
+            return;
+        }
+        case PGPickerViewType2:
+        {
+            [self setupLineView2];
+            return;
+        }
+        case PGPickerViewType3:
+        {
+            [self setupLineView3];
+            return;
+        }
+    }
+}
+
+- (void)setupLineView1 {
+    CGFloat upLinePosY = kHeight / 2 - _tableViewHeightForRow / 2 - kLineHeight;
+    CGFloat downLinePosY = kHeight / 2 + _tableViewHeightForRow / 2 - kLineHeight;
     UIView *upLine = [[UIView alloc]initWithFrame:CGRectMake(0, upLinePosY, kWidth, kLineHeight)];
     upLine.backgroundColor = self.lineBackgroundColor;
     [self addSubview:upLine];
@@ -116,6 +140,56 @@
     downLine.backgroundColor = self.lineBackgroundColor;
     [self addSubview:downLine];
     self.downLine = downLine;
+}
+
+- (void)setupLineView2 {
+    CGFloat upLinePosY = kHeight / 2 - _tableViewHeightForRow / 2 - kLineHeight;
+    CGFloat downLinePosY = kHeight / 2 + _tableViewHeightForRow / 2 - kLineHeight;
+    CGFloat lineWidth = (self.frame.size.width / _numberOfComponents) - 20;
+    CGFloat space = (self.frame.size.width / _numberOfComponents);
+    CGFloat lineHeight = 1.5;
+    for (int i = 0; i < _numberOfComponents; i++) {
+        UIView *upLine = [[UIView alloc]initWithFrame:CGRectMake(10 + space * i, upLinePosY, lineWidth, lineHeight)];
+        upLine.backgroundColor = self.lineBackgroundColor;
+        [self addSubview:upLine];
+        self.upLine = upLine;
+        
+        UIView *downLine = [[UIView alloc]initWithFrame:CGRectMake(10 + space * i, downLinePosY, lineWidth, lineHeight)];
+        downLine.backgroundColor = self.lineBackgroundColor;
+        [self addSubview:downLine];
+        self.downLine = downLine;
+    }
+}
+
+- (void)setupLineView3 {
+    CGFloat space = (self.frame.size.width / _numberOfComponents);
+    [self setupLineView2];
+    for (int i = 0; i < _numberOfComponents; i++) {
+        if (i != _numberOfComponents - 1) {
+            UIView *verticalLine = [[UIView alloc]initWithFrame:CGRectMake(space * (i+1), 0, 0.5, kHeight)];
+            verticalLine.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.6];
+            [self addSubview:verticalLine];
+        }
+    }
+}
+
+- (void)setupTextLogic {
+    CGFloat lineWidth = (self.frame.size.width / _numberOfComponents);
+    CGFloat space = 10;
+    for (int i = 0; i < _numberOfComponents; i++) {
+        UILabel *label = [[UILabel alloc]init];
+        if ([self.delegate respondsToSelector:@selector(pickerView:textSpaceForcomponent:)]) {
+            space = [self.delegate pickerView:self textSpaceForcomponent:i];
+        }
+        label.frame = CGRectMake(lineWidth / 2 + lineWidth * i + space, kHeight / 2 - 15, 30, 30);
+        NSString *text = @"";
+        if ([self.delegate respondsToSelector:@selector(pickerView:textForcomponent:)]) {
+            text = [self.delegate pickerView:self textForcomponent:i];
+        }
+        label.text = text;
+        label.textColor = self.textColor;
+        [self addSubview:label];
+    }
 }
 
 - (NSInteger)numberOfRowsInComponent:(NSInteger)component {
@@ -152,7 +226,7 @@
 - (void)selectRow:(NSInteger)row inComponent:(NSInteger)component animated:(BOOL)animated {
     PGPickerColumnView *view = [self columnViewInComponent:component];
     if (view) {
-     [view selectRow:row animated:animated];
+        [view selectRow:row animated:false];
     }
 }
 
@@ -196,6 +270,15 @@
 }
 
 #pragma mark - Setter
+- (void)setDelegate:(id<PGPickerViewDelegate>)delegate {
+    _delegate = delegate;
+    if (delegate && [delegate respondsToSelector:@selector(rowHeightInPickerView:)]) {
+        _tableViewHeightForRow = [delegate rowHeightInPickerView:self];
+    }else {
+        _tableViewHeightForRow = 44;
+    }
+}
+
 - (void)setDataSource:(id<PGPickerViewDataSource>)dataSource {
     _dataSource = dataSource;
     if (dataSource && [dataSource respondsToSelector:@selector(numberOfComponentsInPickerView:)]) {
@@ -203,15 +286,6 @@
     }
     [self setupColumnView];
     [self setupView];
-}
-
-- (void)setDelegate:(id<PGPickerViewDelegate>)delegate {
-    _delegate = delegate;
-    if (delegate && [delegate respondsToSelector:@selector(rowHeightInPickerView:)]) {
-        [PGPickerViewConfig instance].tableViewHeightForRow = [delegate rowHeightInPickerView:self];
-    }else {
-        [PGPickerViewConfig instance].tableViewHeightForRow = 50;
-    }
 }
 
 - (void)setLineBackgroundColor:(UIColor *)lineBackgroundColor {
