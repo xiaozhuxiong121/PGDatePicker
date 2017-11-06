@@ -1,5 +1,6 @@
 # PGDatePicker
-日期选择器，支持年、年月、年月日、时分、月日周 时分等
+日期选择器，支持年、年月、年月日、年月日时分、年月日时分秒、时分、时分秒、月日周 时分等，内置了3种样式。
+
 > 由于使用UIPickerView的话，列表会有个弧度，所以这里用了[PGPickerView](https://github.com/xiaozhuxiong121/PGPickerView)  
 
 ![](F734F5F9-FB12-4BA7-B43E-B39D0FF1DA3B.png)  
@@ -9,14 +10,46 @@
 ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg) 
  [![](https://img.shields.io/badge/jianshu-piggybear-red.svg)](http://www.jianshu.com/u/3740632b2002)
 ![PGDatePicker](PGDatePicker.gif)    
+# 样式1
+![year](Images/样式1.png)
+# 样式2
+![year](Images/样式2.png)
+# 样式3
+![year](Images/样式3.png)
 
-# Swift的使用
+> 只显示中间的文字，设置```middleText```为```true```即可，默认是```false```
+
+# 年份
+![year](Images/年.jpg)
+
+# 年月
+![year](Images/年月.jpg)
+
+# 年月日
+![year](Images/年月日.jpg)
+
+# 年月日时分
+![year](Images/年月日时分.jpg)
+
+# 年月日时分秒
+![year](Images/年月日时分秒.jpg)
+
+# 时分
+![year](Images/时分.jpg)
+
+# 时分秒
+![year](Images/时分秒.jpg)
+
+# 月日周 时分
+![year](Images/月日周时分.jpg)
+
+# Swift使用
 [查看使用文档](Swift.md) 
 
 # CocoaPods安装
 
 ```
-pod 'PGDatePicker', '>= 1.2.1'
+pod 'PGDatePicker', '>= 1.4.0'
 ```
 
 # 使用
@@ -31,15 +64,20 @@ datePicker.datePickerMode = PGDatePickerModeYear;
     NSLog(@"dateComponents = %@", dateComponents);
 }
 ```
+> 如果不设置```minimumDate```和```maximumDate```默认是无穷小和无穷大
+
 # 设置Date
 > 建议用NSDate+PGCategory类所定义的方法去设置  
 
 ```
-+ (NSDate *)setYear:(NSUInteger)year;
-+ (NSDate *)setYear:(NSUInteger)year month:(NSUInteger)month;
++ (NSDate *)setYear:(NSInteger)year;
++ (NSDate *)setYear:(NSInteger)year month:(NSInteger)month;
 + (NSDate *)setYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day;
-+ (NSDate *)setMonth:(NSUInteger)month day:(NSUInteger)day hour:(NSInteger)hour minute:(NSInteger)minute;
++ (NSDate *)setYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute;
++ (NSDate *)setYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second;
 + (NSDate *)setHour:(NSInteger)hour minute:(NSInteger)minute;
++ (NSDate *)setHour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second;
++ (NSDate *)setMonth:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute;
 ```  
 比如：```datePicker.maximumDate = [NSDate setYear:2017];```
 

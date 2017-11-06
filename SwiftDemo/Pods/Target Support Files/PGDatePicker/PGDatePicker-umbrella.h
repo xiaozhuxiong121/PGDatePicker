@@ -10,16 +10,17 @@
 #endif
 #endif
 
+#import "NSBundle+PGDatePicker.h"
 #import "NSCalendar+PGCurrent.h"
 #import "NSDate+PGCategory.h"
 #import "PGDatePicker.h"
+#import "PGDatePickerMacros.h"
 #import "PGDatePickerView.h"
 #import "UIColor+PGHex.h"
 #import "PGPickerColumnCell.h"
 #import "PGPickerColumnView.h"
 #import "PGPickerTableView.h"
 #import "PGPickerView.h"
-#import "PGPickerViewConfig.h"
 #import "PGPickerViewMacros.h"
 
 FOUNDATION_EXPORT double PGDatePickerVersionNumber;
