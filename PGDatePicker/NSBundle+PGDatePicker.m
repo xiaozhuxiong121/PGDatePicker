@@ -7,8 +7,17 @@
 //
 
 #import "NSBundle+PGDatePicker.h"
+#import "PGDatePicker.h"
 
 @implementation NSBundle (PGDatePicker)
+
++ (instancetype)safeBundle {
+    static NSBundle *bundle = nil;
+    if (bundle == nil) {
+        bundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[PGDatePicker class]] pathForResource:@"PGDatePicker" ofType:@"bundle"]];
+    }
+    return bundle;
+}
 
 + (NSString *)localizedStringForKey:(NSString *)key {
     return [self localizedStringForKey:key value:nil];
@@ -29,8 +38,7 @@
         } else {
             language = @"en";
         }
-        NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:@"PGDatePicker" withExtension:@"bundle"];
-        bundle = [NSBundle bundleWithURL:bundleURL];
+        bundle = [NSBundle bundleWithPath:[[NSBundle safeBundle] pathForResource:language ofType:@"lproj"]];
     }
     value = [bundle localizedStringForKey:key value:value table:nil];
     return [[NSBundle mainBundle] localizedStringForKey:key value:value table:nil];
