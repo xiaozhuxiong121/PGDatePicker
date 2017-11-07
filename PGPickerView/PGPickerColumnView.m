@@ -123,21 +123,25 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
 
 - (void)selectRow:(NSInteger)row animated:(BOOL)animated {
     NSInteger count = self.datas.count + self.upTableViewOffsetForRow + 1;
-    if (self.datas.count == 0 || self.datas.count == 1 || count <= row) {
+    if (self.datas.count == 0 || count <= row) {
         return;
     }
     _selectedRow = row;
     _isSelectRow = !_layoutedSubViews;
     if (_layoutedSubViews) {
-        NSInteger index = row + 1;
-        [self.upTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:row + 1 inSection:0] animated:animated scrollPosition:UITableViewScrollPositionTop];
-        [self.downTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:row + 1 inSection:0] animated:animated scrollPosition:UITableViewScrollPositionTop];
-        if (self.datas.count <= row) {
-            row = self.datas.count - 1;
+        if (self.datas.count == 1) {
+            [self.centerTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:animated scrollPosition:UITableViewScrollPositionTop];
+        }else{
+            NSInteger index = row + 1;
+            [self.upTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:row + 1 inSection:0] animated:animated scrollPosition:UITableViewScrollPositionTop];
+            [self.downTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:row + 1 inSection:0] animated:animated scrollPosition:UITableViewScrollPositionTop];
+            if (self.datas.count <= row) {
+                row = self.datas.count - 1;
+            }
+            [self.centerTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] animated:animated scrollPosition:UITableViewScrollPositionTop];
+            self.upTableView.contentOffset = CGPointMake(0, kCellHeight * index);
+            self.downTableView.contentOffset = CGPointMake(0, kCellHeight * index);
         }
-        [self.centerTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] animated:animated scrollPosition:UITableViewScrollPositionTop];
-        self.upTableView.contentOffset = CGPointMake(0, kCellHeight * index);
-        self.downTableView.contentOffset = CGPointMake(0, kCellHeight * index);
         self.selectedRow = row;
         _beginning = true;
     }
@@ -304,7 +308,7 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
     NSInteger count = self.datas.count + self.upTableViewOffsetForRow + 1;
     if (count > index && self.refresh) {
         self.refresh = false;
-        [self selectRow:index animated:true];
+        [self selectRow:index animated:false];
     }
 }
 
@@ -381,6 +385,17 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
     [self.upTableView reloadData];
     [self.downTableView reloadData];
     [self.centerTableView reloadData];
+    
+    if (!self.refresh) {
+        return;
+    }
+    
+    NSInteger index =  self.centerTableView.contentOffset.y / kCellHeight + 0.5;
+    NSInteger count = self.datas.count + self.upTableViewOffsetForRow + 1;
+    if (count > index && self.refresh && index == 0) {
+        self.refresh = false;
+        [self selectRow:index animated:false];
+    }
 }
 
 - (void)setSelectedRow:(NSUInteger)selectedRow {
