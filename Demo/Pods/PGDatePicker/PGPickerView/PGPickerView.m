@@ -148,6 +148,18 @@
     CGFloat lineWidth = (self.frame.size.width / _numberOfComponents) - 20;
     CGFloat space = (self.frame.size.width / _numberOfComponents);
     CGFloat lineHeight = 1.5;
+    if (_numberOfComponents == 1) {
+        UIView *upLine = [[UIView alloc]initWithFrame:CGRectMake(self.frame.size.width / 2 - 40, upLinePosY, 90, lineHeight)];
+        upLine.backgroundColor = self.lineBackgroundColor;
+        [self addSubview:upLine];
+        self.upLine = upLine;
+        
+        UIView *downLine = [[UIView alloc]initWithFrame:CGRectMake(self.frame.size.width / 2 - 40, downLinePosY, 90, lineHeight)];
+        downLine.backgroundColor = self.lineBackgroundColor;
+        [self addSubview:downLine];
+        self.downLine = downLine;
+        return;
+    }
     for (int i = 0; i < _numberOfComponents; i++) {
         UIView *upLine = [[UIView alloc]initWithFrame:CGRectMake(10 + space * i, upLinePosY, lineWidth, lineHeight)];
         upLine.backgroundColor = self.lineBackgroundColor;
@@ -176,6 +188,18 @@
 - (void)setupTextLogic {
     CGFloat lineWidth = (self.frame.size.width / _numberOfComponents);
     CGFloat space = 10;
+    if (_numberOfComponents == 1) {
+        UILabel *label = [[UILabel alloc]init];
+        label.frame = CGRectMake(self.frame.size.width / 2 + 30, kHeight / 2 - 15, 30, 30);
+        NSString *text = @"";
+        if ([self.delegate respondsToSelector:@selector(pickerView:textForcomponent:)]) {
+            text = [self.delegate pickerView:self textForcomponent:0];
+        }
+        label.text = text;
+        label.textColor = self.textColor;
+        [self addSubview:label];
+        return;
+    }
     for (int i = 0; i < _numberOfComponents; i++) {
         UILabel *label = [[UILabel alloc]init];
         if ([self.delegate respondsToSelector:@selector(pickerView:textSpaceForcomponent:)]) {

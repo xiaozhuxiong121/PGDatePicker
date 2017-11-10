@@ -4,5 +4,5 @@ use_frameworks!
 platform :ios, '8.0'
 
 target 'SwiftDemo' do
- pod 'PGDatePicker', '>= 1.4.1'
+ pod 'PGDatePicker', '>= 1.4.3'
 end
