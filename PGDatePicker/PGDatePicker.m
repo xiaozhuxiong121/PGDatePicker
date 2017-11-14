@@ -1813,7 +1813,6 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (!_yearString) {
         if (self.middleText) {
             _yearString = @"";
-            self.middleYearString = [NSBundle localizedStringForKey:@"yearString"];
         }else {
             _yearString = [NSBundle localizedStringForKey:@"yearString"];
         }
@@ -1821,11 +1820,17 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return _yearString;
 }
 
+- (NSString *)middleYearString {
+    if (!_middleYearString) {
+         _middleYearString = [NSBundle localizedStringForKey:@"yearString"];
+    }
+    return _middleYearString;
+}
+
 - (NSString *)monthString {
     if (!_monthString) {
         if (self.middleText) {
             _monthString = @"";
-            self.middleMonthString = [NSBundle localizedStringForKey:@"monthString"];
         }else {
             _monthString = [NSBundle localizedStringForKey:@"monthString"];
         }
@@ -1833,11 +1838,17 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return _monthString;
 }
 
+- (NSString *)middleMonthString {
+    if (!_middleMonthString) {
+        _middleMonthString = [NSBundle localizedStringForKey:@"monthString"];
+    }
+    return _middleMonthString;
+}
+
 - (NSString *)dayString {
     if (!_dayString) {
         if (self.middleText) {
             _dayString = @"";
-            self.middleDayString = [NSBundle localizedStringForKey:@"dayString"];
         }else {
             _dayString = [NSBundle localizedStringForKey:@"dayString"];
         }
@@ -1845,11 +1856,17 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return _dayString;
 }
 
+- (NSString *)middleDayString {
+    if (!_middleDayString) {
+        _middleDayString = [NSBundle localizedStringForKey:@"dayString"];
+    }
+    return _middleDayString;
+}
+
 - (NSString *)hourString {
     if (!_hourString) {
         if (self.middleText) {
             _hourString = @"";
-            self.middleHourString = [NSBundle localizedStringForKey:@"hourString"];
         }else {
             _hourString = [NSBundle localizedStringForKey:@"hourString"];
         }
@@ -1857,11 +1874,17 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return _hourString;
 }
 
+- (NSString *)middleHourString {
+    if (!_middleHourString) {
+        _middleHourString = [NSBundle localizedStringForKey:@"hourString"];
+    }
+    return _middleHourString;
+}
+
 - (NSString *)minuteString {
     if (!_minuteString) {
         if (self.middleText) {
             _minuteString = @"";
-            self.middleMinuteString = [NSBundle localizedStringForKey:@"minuteString"];
         }else {
             _minuteString = [NSBundle localizedStringForKey:@"minuteString"];
         }
@@ -1869,16 +1892,29 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return _minuteString;
 }
 
+- (NSString *)middleMinuteString {
+    if (!_middleMinuteString) {
+        _middleMinuteString = [NSBundle localizedStringForKey:@"minuteString"];
+    }
+    return _middleMinuteString;
+}
+
 - (NSString *)secondString {
     if (!_secondString) {
         if (self.middleText) {
             _secondString = @"";
-            self.middleSecondString = [NSBundle localizedStringForKey:@"secondString"];
         }else {
             _secondString = [NSBundle localizedStringForKey:@"secondString"];
         }
     }
     return _secondString;
+}
+
+- (NSString *)middleSecondString {
+    if (!_middleSecondString) {
+        _middleSecondString = [NSBundle localizedStringForKey:@"secondString"];
+    }
+    return _middleSecondString;
 }
 
 - (NSString *)mondayString {
