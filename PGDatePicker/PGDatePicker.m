@@ -946,6 +946,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.year >= self.minimumComponents.year) {
+                    if (currentComponents.year > self.maximumComponents.year) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.year];
                     NSInteger row = [self.yearList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -964,6 +967,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.year >= self.minimumComponents.year) {
+                    if (currentComponents.year > self.maximumComponents.year) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.year];
                     NSInteger row = [self.yearList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -993,6 +999,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.year >= self.minimumComponents.year) {
+                    if (currentComponents.year > self.maximumComponents.year) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.year];
                     NSInteger row = [self.yearList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -1035,6 +1044,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.year >= self.minimumComponents.year) {
+                    if (currentComponents.year > self.maximumComponents.year) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.year];
                     NSInteger row = [self.yearList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -1089,6 +1101,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.year >= self.minimumComponents.year) {
+                    if (currentComponents.year > self.maximumComponents.year) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.year];
                     NSInteger row = [self.yearList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -1132,6 +1147,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.hour >= self.minimumComponents.hour) {
+                    if (currentComponents.hour > self.maximumComponents.hour) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.hour];
                     NSInteger row = [self.hourList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -1159,6 +1177,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.hour >= self.minimumComponents.hour) {
+                    if (currentComponents.hour > self.maximumComponents.hour) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.hour];
                     NSInteger row = [self.hourList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -1199,6 +1220,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             }
             if (!self.isCurrent) {
                 self.isCurrent = true;
+                if (currentComponents.month > self.maximumComponents.month) {
+                    currentComponents = self.maximumComponents;
+                }
                 NSString *string = [NSString stringWithFormat:@"%ld%@%ld%@ %@ ", currentComponents.month, self.monthString, currentComponents.day, self.dayString, [self weekMappingFrom:currentComponents.weekday]];
                 NSInteger row = [self.dateAndTimeList indexOfObject:string];
                 [self.pickerView selectRow:row inComponent:0 animated:false];
