@@ -946,6 +946,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.year >= self.minimumComponents.year) {
+                    if (currentComponents.year > self.maximumComponents.year) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.year];
                     NSInteger row = [self.yearList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -964,6 +967,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.year >= self.minimumComponents.year) {
+                    if (currentComponents.year > self.maximumComponents.year) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.year];
                     NSInteger row = [self.yearList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -993,6 +999,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.year >= self.minimumComponents.year) {
+                    if (currentComponents.year > self.maximumComponents.year) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.year];
                     NSInteger row = [self.yearList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -1035,6 +1044,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.year >= self.minimumComponents.year) {
+                    if (currentComponents.year > self.maximumComponents.year) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.year];
                     NSInteger row = [self.yearList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -1089,6 +1101,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.year >= self.minimumComponents.year) {
+                    if (currentComponents.year > self.maximumComponents.year) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.year];
                     NSInteger row = [self.yearList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -1132,6 +1147,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.hour >= self.minimumComponents.hour) {
+                    if (currentComponents.hour > self.maximumComponents.hour) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.hour];
                     NSInteger row = [self.hourList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -1159,6 +1177,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (!self.isCurrent) {
                 self.isCurrent = true;
                 if (currentComponents.hour >= self.minimumComponents.hour) {
+                    if (currentComponents.hour > self.maximumComponents.hour) {
+                        currentComponents = self.maximumComponents;
+                    }
                     NSString *string = [NSString stringWithFormat:@"%ld", currentComponents.hour];
                     NSInteger row = [self.hourList indexOfObject:string];
                     [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -1199,6 +1220,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             }
             if (!self.isCurrent) {
                 self.isCurrent = true;
+                if (currentComponents.month > self.maximumComponents.month) {
+                    currentComponents = self.maximumComponents;
+                }
                 NSString *string = [NSString stringWithFormat:@"%ld%@%ld%@ %@ ", currentComponents.month, self.monthString, currentComponents.day, self.dayString, [self weekMappingFrom:currentComponents.weekday]];
                 NSInteger row = [self.dateAndTimeList indexOfObject:string];
                 [self.pickerView selectRow:row inComponent:0 animated:false];
@@ -1813,7 +1837,6 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (!_yearString) {
         if (self.middleText) {
             _yearString = @"";
-            self.middleYearString = [NSBundle localizedStringForKey:@"yearString"];
         }else {
             _yearString = [NSBundle localizedStringForKey:@"yearString"];
         }
@@ -1821,11 +1844,17 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return _yearString;
 }
 
+- (NSString *)middleYearString {
+    if (!_middleYearString) {
+         _middleYearString = [NSBundle localizedStringForKey:@"yearString"];
+    }
+    return _middleYearString;
+}
+
 - (NSString *)monthString {
     if (!_monthString) {
         if (self.middleText) {
             _monthString = @"";
-            self.middleMonthString = [NSBundle localizedStringForKey:@"monthString"];
         }else {
             _monthString = [NSBundle localizedStringForKey:@"monthString"];
         }
@@ -1833,11 +1862,17 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return _monthString;
 }
 
+- (NSString *)middleMonthString {
+    if (!_middleMonthString) {
+        _middleMonthString = [NSBundle localizedStringForKey:@"monthString"];
+    }
+    return _middleMonthString;
+}
+
 - (NSString *)dayString {
     if (!_dayString) {
         if (self.middleText) {
             _dayString = @"";
-            self.middleDayString = [NSBundle localizedStringForKey:@"dayString"];
         }else {
             _dayString = [NSBundle localizedStringForKey:@"dayString"];
         }
@@ -1845,11 +1880,17 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return _dayString;
 }
 
+- (NSString *)middleDayString {
+    if (!_middleDayString) {
+        _middleDayString = [NSBundle localizedStringForKey:@"dayString"];
+    }
+    return _middleDayString;
+}
+
 - (NSString *)hourString {
     if (!_hourString) {
         if (self.middleText) {
             _hourString = @"";
-            self.middleHourString = [NSBundle localizedStringForKey:@"hourString"];
         }else {
             _hourString = [NSBundle localizedStringForKey:@"hourString"];
         }
@@ -1857,11 +1898,17 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return _hourString;
 }
 
+- (NSString *)middleHourString {
+    if (!_middleHourString) {
+        _middleHourString = [NSBundle localizedStringForKey:@"hourString"];
+    }
+    return _middleHourString;
+}
+
 - (NSString *)minuteString {
     if (!_minuteString) {
         if (self.middleText) {
             _minuteString = @"";
-            self.middleMinuteString = [NSBundle localizedStringForKey:@"minuteString"];
         }else {
             _minuteString = [NSBundle localizedStringForKey:@"minuteString"];
         }
@@ -1869,16 +1916,29 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return _minuteString;
 }
 
+- (NSString *)middleMinuteString {
+    if (!_middleMinuteString) {
+        _middleMinuteString = [NSBundle localizedStringForKey:@"minuteString"];
+    }
+    return _middleMinuteString;
+}
+
 - (NSString *)secondString {
     if (!_secondString) {
         if (self.middleText) {
             _secondString = @"";
-            self.middleSecondString = [NSBundle localizedStringForKey:@"secondString"];
         }else {
             _secondString = [NSBundle localizedStringForKey:@"secondString"];
         }
     }
     return _secondString;
+}
+
+- (NSString *)middleSecondString {
+    if (!_middleSecondString) {
+        _middleSecondString = [NSBundle localizedStringForKey:@"secondString"];
+    }
+    return _middleSecondString;
 }
 
 - (NSString *)mondayString {
