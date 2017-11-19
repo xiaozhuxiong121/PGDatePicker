@@ -28,9 +28,9 @@ datePicker.titleLabel.text = "PGDatePicker"
 //设置线条的颜色
 datePicker.lineBackgroundColor = UIColor.red
 //设置选中行的字体颜色
-datePicker.titleColorForSelectedRow = UIColor.red
+datePicker.textColorOfSelectedRow = UIColor.red
 //设置未选中行的字体颜色
-datePicker.titleColorForOtherRow = UIColor.black
+datePicker.textColorOfOtherRow = UIColor.black
 
 //设置取消按钮的字体颜色
 datePicker.cancelButtonTextColor = UIColor.black

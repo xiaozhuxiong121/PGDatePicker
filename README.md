@@ -49,7 +49,7 @@
 # CocoaPods安装
 
 ```
-pod 'PGDatePicker', '>= 1.4.5'
+pod 'PGDatePicker', '>= 1.5.0'
 ```
 
 # 使用
@@ -86,9 +86,9 @@ datePicker.datePickerMode = PGDatePickerModeYear;
 //设置线条的颜色
 datePicker.lineBackgroundColor = [UIColor redColor];
 //设置选中行的字体颜色
-datePicker.titleColorForSelectedRow = [UIColor redColor];
+datePicker.textColorOfSelectedRow = [UIColor redColor];
 //设置未选中行的字体颜色
-datePicker.titleColorForOtherRow = [UIColor blackColor];
+datePicker.textColorOfOtherRow = [UIColor blackColor];
 
 //设置取消按钮的字体颜色
 datePicker.cancelButtonTextColor = [UIColor blackColor];
