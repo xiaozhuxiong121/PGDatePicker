@@ -29,6 +29,8 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
     PGDatePickerType3,
 };
 
+#define PGDatePickerDeprecated(instead) __attribute__((deprecated(instead)))
+
 @protocol PGDatePickerDelegate;
 
 @interface PGDatePicker : UIControl
@@ -46,7 +48,13 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
  默认是false
  如果设置为true，只会显示中间的文字，其他行的文字则不会显示
  */
-@property(nonatomic, assign) BOOL middleText;
+@property(nonatomic, assign) BOOL middleText PGDatePickerDeprecated("已过时，请使用isHiddenMiddleText进行替换");
+
+/*
+ 默认是true
+ 如果设置为false，只会显示中间的文字，其他行的文字则不会显示
+ */
+@property(nonatomic, assign) BOOL isHiddenMiddleText; // default is true
 @property(nonatomic, copy) UIColor *middleTextColor;
 
 @property (nonatomic, copy) NSString *cancelButtonText;
@@ -59,9 +67,13 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
 
 @property (nonatomic, weak) UILabel *titleLabel;
 
-@property (nonatomic, strong)UIColor *titleColorForSelectedRow;
-@property (nonatomic, strong)UIColor *titleColorForOtherRow;
-@property(nonatomic, strong) UIColor *lineBackgroundColor;          
+@property (nonatomic, strong)UIColor *titleColorForSelectedRow PGDatePickerDeprecated("已过时，请使用textColorOfSelectedRow进行替换");
+@property (nonatomic, strong)UIColor *titleColorForOtherRow PGDatePickerDeprecated("已过时，请使用textColorOfOtherRow进行替换");
+
+@property (nonatomic, strong)UIColor *textColorOfSelectedRow;     //default is #69BDFF
+@property (nonatomic, strong)UIColor *textColorOfOtherRow;        // default is [UIColor grayColor]
+
+@property(nonatomic, strong) UIColor *lineBackgroundColor;       //default is #69BDFF
 
 @property (nonatomic, strong) NSLocale   *locale;   // default is [NSLocale currentLocale]. setting nil returns to default
 @property (nonatomic, copy)   NSCalendar *calendar; // default is [NSCalendar currentCalendar]. setting nil returns to default
@@ -71,6 +83,7 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
 @property (nonatomic, strong) NSDate *maximumDate; // default is nil
 
 - (void)setDate:(NSDate *)date;
+- (void)setDate:(NSDate *)date animated:(BOOL)animated;
 
 - (void)show;
 @end
