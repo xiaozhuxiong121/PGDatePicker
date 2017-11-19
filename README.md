@@ -17,7 +17,7 @@
 # 样式3
 ![year](Images/样式3.png)
 
-> 只显示中间的文字，设置```isHiddenMiddleText```为```false```即可，默认是```false```
+> 只显示中间的文字，设置```isHiddenMiddleText```为```false```即可，默认是```true```
 
 # 年份
 ![year](Images/年.jpg)
