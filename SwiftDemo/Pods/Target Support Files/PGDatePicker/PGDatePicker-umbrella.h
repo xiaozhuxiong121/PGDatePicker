@@ -17,11 +17,6 @@
 #import "PGDatePickerMacros.h"
 #import "PGDatePickerView.h"
 #import "UIColor+PGHex.h"
-#import "PGPickerColumnCell.h"
-#import "PGPickerColumnView.h"
-#import "PGPickerTableView.h"
-#import "PGPickerView.h"
-#import "PGPickerViewMacros.h"
 
 FOUNDATION_EXPORT double PGDatePickerVersionNumber;
 FOUNDATION_EXPORT const unsigned char PGDatePickerVersionString[];

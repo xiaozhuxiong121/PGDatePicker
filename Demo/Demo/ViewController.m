@@ -23,7 +23,6 @@
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     datePicker.datePickerType = PGPickerViewType3;
-    datePicker.middleText = true;
     [datePicker show];
     datePicker.minimumDate = [NSDate setYear:2015];
     datePicker.maximumDate = [NSDate setYear:2030];
@@ -44,8 +43,6 @@
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
-    datePicker.autoSelected = true;
-    datePicker.middleText = true;
     datePicker.datePickerType = PGPickerViewType3;
 //    datePicker.minimumDate = [NSDate setYear:2015 month:8 day:5];
 //    datePicker.maximumDate = [NSDate setYear:2020 month:10 day:20];
@@ -64,7 +61,6 @@
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
-    datePicker.middleText = true;
     datePicker.datePickerType = PGPickerViewType2;
     datePicker.datePickerMode = PGDatePickerModeDateHourMinute;
 //    datePicker.minimumDate = [NSDate setYear:2015 month:5 day:10 hour:18 minute:6];
@@ -75,7 +71,6 @@
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
-    datePicker.middleText = true;
     datePicker.datePickerType = PGPickerViewType3;
     datePicker.datePickerMode = PGDatePickerModeDateHourMinuteSecond;
 //    datePicker.minimumDate = [NSDate setYear:2015 month:5 day:10 hour:18 minute:6 second:10];
@@ -139,9 +134,9 @@
     //设置线条的颜色
     datePicker.lineBackgroundColor = [UIColor redColor];
     //设置选中行的字体颜色
-    datePicker.titleColorForSelectedRow = [UIColor redColor];
+    datePicker.textColorOfSelectedRow = [UIColor redColor];
     //设置未选中行的字体颜色
-    datePicker.titleColorForOtherRow = [UIColor blackColor];
+    datePicker.textColorOfOtherRow = [UIColor blackColor];
     //设置取消按钮的字体颜色
     datePicker.cancelButtonTextColor = [UIColor blackColor];
     //设置取消按钮的字

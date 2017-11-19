@@ -1,0 +1,6 @@
+framework module PGPickerView {
+  umbrella header "PGPickerView-umbrella.h"
+
+  export *
+  module * { export * }
+}

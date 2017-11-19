@@ -32,6 +32,8 @@ class ViewController: UIViewController {
     @IBAction func dateHandler(_ sender: Any) {
         let datePicker = PGDatePicker()
         datePicker.delegate = self
+        datePicker.isHiddenMiddleText = false;
+        datePicker.datePickerType = .type2;
         datePicker.show()
         datePicker.minimumDate = NSDate.setYear(2015, month: 5, day: 10)
         datePicker.maximumDate = NSDate.setYear(2020, month: 10, day: 20)
@@ -89,9 +91,9 @@ class ViewController: UIViewController {
         //设置线条的颜色
         datePicker.lineBackgroundColor = UIColor.red
         //设置选中行的字体颜色
-        datePicker.titleColorForSelectedRow = UIColor.red
+        datePicker.textColorOfSelectedRow = UIColor.red
         //设置未选中行的字体颜色
-        datePicker.titleColorForOtherRow = UIColor.black
+        datePicker.textColorOfOtherRow = UIColor.black
         
         //设置取消按钮的字体颜色
         datePicker.cancelButtonTextColor = UIColor.black
