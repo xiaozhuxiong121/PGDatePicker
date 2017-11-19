@@ -43,7 +43,8 @@
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
     [datePicker show];
-    datePicker.datePickerType = PGPickerViewType3;
+    datePicker.datePickerType = PGPickerViewType2;
+    datePicker.isHiddenMiddleText = false;
 //    datePicker.minimumDate = [NSDate setYear:2015 month:8 day:5];
 //    datePicker.maximumDate = [NSDate setYear:2020 month:10 day:20];
     datePicker.datePickerMode = PGDatePickerModeDate;
