@@ -264,6 +264,9 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
             return fabs(tmp - self.rowHeight);
         }
     }
+//    if (tableView == self.downTableView && [self numberOfRowsInTableView] - 1 == indexPath.row) {
+//        return self.rowHeight / 4;
+//    }
     return self.rowHeight;
 }
 

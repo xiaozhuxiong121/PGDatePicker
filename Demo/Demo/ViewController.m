@@ -49,13 +49,13 @@
 //    datePicker.maximumDate = [NSDate setYear:2020 month:10 day:20];
     datePicker.datePickerMode = PGDatePickerModeDate;
     
-//    NSCalendar *calendar = [NSCalendar currentCalendar];
-//    NSDateComponents *components = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
-//    components.year = 2019;
-//    components.month = 11;
-//    components.day = 15;
-//    NSDate *date = [calendar dateFromComponents:components];
-//    [datePicker setDate:date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:[NSDate date]];
+    components.year = 2019;
+    components.month = 11;
+    components.day = 15;
+    NSDate *date = [calendar dateFromComponents:components];
+    [datePicker setDate:date animated:false];
 }
 
 - (IBAction)dateHourMinuteHandler:(UIButton *)sender {

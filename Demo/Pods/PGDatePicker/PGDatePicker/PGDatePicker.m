@@ -106,8 +106,13 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         [self.confirmButton setTitle:self.confirmButtonText forState:UIControlStateNormal];
         [self.confirmButton setTitleColor:self.confirmButtonTextColor forState:UIControlStateNormal];
         
+        CGFloat bottom = 0;
+        if (@available(iOS 11.0, *)) {
+            bottom = self.safeAreaInsets.bottom;
+        }
+        CGRect headerViewFrame = CGRectMake(0, kScreenHeight - height - kHeaderViewHeight - bottom, kScreenWidth, kHeaderViewHeight);
         [UIView animateWithDuration:0.3 animations:^{
-            self.headerView.frame = CGRectMake(0, kScreenHeight - height - kHeaderViewHeight, kScreenWidth, kHeaderViewHeight);
+            self.headerView.frame = headerViewFrame;
             self.frame = CGRectMake(0, CGRectGetMaxY(self.headerView.frame), kScreenWidth, height);
         }];
     }
@@ -122,6 +127,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (_middleText) {
         self.isHiddenMiddleText = !_middleText;
     }
+    pickerView.rowHeight = kTableViewCellHeight;
     pickerView.isHiddenMiddleText = self.isHiddenMiddleText;
     pickerView.middleTextColor = self.middleTextColor;
     pickerView.lineBackgroundColor = self.lineBackgroundColor;
@@ -193,9 +199,10 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 - (void)cancelButtonHandler {
     self.dismissView.hidden = true;
     CGFloat height = kTableViewHeight;
+    CGRect headerViewFrame = CGRectMake(0, kScreenHeight, kScreenWidth, kHeaderViewHeight);
     [UIView animateWithDuration:0.3 animations:^{
-        self.headerView.frame = CGRectMake(0, kScreenHeight, kScreenWidth, kHeaderViewHeight);
-        self.frame = CGRectMake(0, CGRectGetMaxY(self.headerView.frame), kScreenWidth, height);
+        self.headerView.frame = headerViewFrame;
+        self.pickerView.frame = CGRectMake(0, CGRectGetMaxY(self.headerView.frame), kScreenWidth, height);
     } completion:^(BOOL finished) {
         [self.headerView removeFromSuperview];
         [self.dismissView removeFromSuperview];
