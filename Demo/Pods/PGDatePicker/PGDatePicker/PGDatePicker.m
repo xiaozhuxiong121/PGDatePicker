@@ -16,6 +16,7 @@
     BOOL _isSetDateAnimation;
     BOOL _isDelay;
     NSDate *_setDate;
+    BOOL _isSelectedCancelButton;
 }
 
 @property (nonatomic, weak) PGPickerView *pickerView;
@@ -88,6 +89,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    if (_isSelectedCancelButton) {
+        return;
+    }
     if (self.headerView) {
         UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
         [window bringSubviewToFront:self];
@@ -113,7 +117,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         CGRect headerViewFrame = CGRectMake(0, kScreenHeight - height - kHeaderViewHeight - bottom, kScreenWidth, kHeaderViewHeight);
         [UIView animateWithDuration:0.3 animations:^{
             self.headerView.frame = headerViewFrame;
-            self.frame = CGRectMake(0, CGRectGetMaxY(self.headerView.frame), kScreenWidth, height);
+            self.frame = CGRectMake(0, CGRectGetMaxY(self.headerView.frame), kScreenWidth, height + bottom);
         }];
     }
     _isSubViewLayout = true;
@@ -123,7 +127,12 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 - (void)setupPickerView {
     NSInteger day = [self howManyDaysWithMonthInThisYear:self.currentComponents.year withMonth:self.currentComponents.month];
     [self setDayListForMonthDays:day];
-    PGPickerView *pickerView = [[PGPickerView alloc]initWithFrame:self.bounds];
+    CGFloat bottom = 0;
+    if (@available(iOS 11.0, *)) {
+        bottom = self.safeAreaInsets.bottom;
+    }
+    CGRect frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - bottom);
+    PGPickerView *pickerView = [[PGPickerView alloc]initWithFrame:frame];
     if (_middleText) {
         self.isHiddenMiddleText = !_middleText;
     }
@@ -181,7 +190,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     self.confirmButton = confirm;
     [self.headerView addSubview:confirm];
     
-    UIView *dismissView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - height - kHeaderViewHeight)];
+    CGFloat bottom = 0;
+    if (@available(iOS 11.0, *)) {
+        bottom = self.safeAreaInsets.bottom;
+    }
+    UIView *dismissView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - height - kHeaderViewHeight - bottom)];
     dismissView.backgroundColor = [UIColor clearColor];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cancelButtonHandler)];
     [dismissView addGestureRecognizer:tap];
@@ -198,11 +211,12 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (void)cancelButtonHandler {
     self.dismissView.hidden = true;
+    _isSelectedCancelButton = true;
     CGFloat height = kTableViewHeight;
     CGRect headerViewFrame = CGRectMake(0, kScreenHeight, kScreenWidth, kHeaderViewHeight);
     [UIView animateWithDuration:0.3 animations:^{
         self.headerView.frame = headerViewFrame;
-        self.pickerView.frame = CGRectMake(0, CGRectGetMaxY(self.headerView.frame), kScreenWidth, height);
+        self.frame = CGRectMake(0, CGRectGetMaxY(self.headerView.frame), kScreenWidth, height);
     } completion:^(BOOL finished) {
         [self.headerView removeFromSuperview];
         [self.dismissView removeFromSuperview];

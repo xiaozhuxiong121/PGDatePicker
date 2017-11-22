@@ -188,6 +188,28 @@
     NSMutableArray *downLines = [NSMutableArray arrayWithCapacity:_numberOfComponents];
     CGFloat lineWidth = (self.frame.size.width / _numberOfComponents) - 20;
     CGFloat space = (self.frame.size.width / _numberOfComponents);
+    if (_numberOfComponents == 1) {
+        CGFloat rowHeight = [self rowHeightInComponent:0];
+        CGFloat upLineHeight = [self upLineHeightForComponent:0];
+        upLineHeight = upLineHeight > 1.5 ? upLineHeight: 1.5;
+        CGFloat upLinePosY = kHeight / 2 - rowHeight / 2 - upLineHeight;
+        UIView *upLine = [[UIView alloc]initWithFrame:CGRectMake(self.frame.size.width / 2 - 43, upLinePosY, 90, upLineHeight)];
+        upLine.backgroundColor = self.lineBackgroundColor;
+        [self addSubview:upLine];
+        [upLines addObject:upLine];
+        
+        CGFloat downLineHeight = [self downLineHeightForComponent:0];
+        downLineHeight = downLineHeight > 1.5 ? downLineHeight: 1.5;
+        CGFloat downLinePosY = CGRectGetMaxY(upLine.frame) + rowHeight;
+        UIView *downLine = [[UIView alloc]initWithFrame:CGRectMake(self.frame.size.width / 2 - 43, downLinePosY, 90, downLineHeight)];
+        downLine.backgroundColor = self.lineBackgroundColor;
+        [self addSubview:downLine];
+        [downLines addObject:downLine];
+        
+        self.upLines = upLines;
+        self.downLines = downLines;
+        return;
+    }
     for (int i = 0; i < _numberOfComponents; i++) {
         CGFloat rowHeight = [self rowHeightInComponent:i];
         CGFloat upLineHeight = [self upLineHeightForComponent:i];
