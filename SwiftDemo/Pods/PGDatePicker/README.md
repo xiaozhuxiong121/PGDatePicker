@@ -17,7 +17,7 @@
 # 样式3
 ![year](Images/样式3.png)
 
-> 只显示中间的文字，设置```middleText```为```true```即可，默认是```false```
+> 只显示中间的文字，设置```isHiddenMiddleText```为```false```即可，默认是```true```
 
 # 年份
 ![year](Images/年.jpg)
@@ -49,8 +49,10 @@
 # CocoaPods安装
 
 ```
-pod 'PGDatePicker', '>= 1.4.5'
+pod 'PGDatePicker', '>= 1.5.3'
 ```
+
+> **在`1.5.1`版本中对iPhone X进行了适配** 
 
 # 使用
 ```
@@ -86,9 +88,9 @@ datePicker.datePickerMode = PGDatePickerModeYear;
 //设置线条的颜色
 datePicker.lineBackgroundColor = [UIColor redColor];
 //设置选中行的字体颜色
-datePicker.titleColorForSelectedRow = [UIColor redColor];
+datePicker.textColorOfSelectedRow = [UIColor redColor];
 //设置未选中行的字体颜色
-datePicker.titleColorForOtherRow = [UIColor blackColor];
+datePicker.textColorOfOtherRow = [UIColor blackColor];
 
 //设置取消按钮的字体颜色
 datePicker.cancelButtonTextColor = [UIColor blackColor];

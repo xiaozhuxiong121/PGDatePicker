@@ -15,18 +15,20 @@ class ViewController: UIViewController {
         let datePicker = PGDatePicker()
         datePicker.delegate = self
         datePicker.show()
-        datePicker.minimumDate = NSDate.setYear(2015)
-        datePicker.maximumDate = NSDate.setYear(2020)
         datePicker.datePickerMode = .year
+        
+//        datePicker.minimumDate = NSDate.setYear(2015)
+//        datePicker.maximumDate = NSDate.setYear(2020)
     }
     
     @IBAction func yearAndMonthHandler(_ sender: Any) {
         let datePicker = PGDatePicker()
         datePicker.delegate = self
         datePicker.show()
-//        datePicker.minimumDate = NSDate.setYear(2015, month: 5)
-        datePicker.maximumDate = NSDate.setYear(2020, month: 10)
         datePicker.datePickerMode = .yearAndMonth
+        
+//        datePicker.minimumDate = NSDate.setYear(2015, month: 5)
+//        datePicker.maximumDate = NSDate.setYear(2020, month: 10)
     }
     
     @IBAction func dateHandler(_ sender: Any) {
@@ -35,9 +37,10 @@ class ViewController: UIViewController {
         datePicker.isHiddenMiddleText = false;
         datePicker.datePickerType = .type2;
         datePicker.show()
-        datePicker.minimumDate = NSDate.setYear(2015, month: 5, day: 10)
-        datePicker.maximumDate = NSDate.setYear(2020, month: 10, day: 20)
         datePicker.datePickerMode = .date
+        
+//        datePicker.minimumDate = NSDate.setYear(2015, month: 5, day: 10)
+//        datePicker.maximumDate = NSDate.setYear(2020, month: 10, day: 20)
     }
     
     @IBAction func dateHourMinuteHandler(_ sender: Any) {

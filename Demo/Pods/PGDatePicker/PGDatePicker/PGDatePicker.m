@@ -603,6 +603,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.hour];
+                if (components.hour < 10) {
+                    string = [NSString stringWithFormat:@"0%ld", components.hour];
+                }
                 if ([string integerValue] <= self.hourList.count) {
                     row = [self.hourList indexOfObject:string];
                 }
@@ -655,6 +658,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.hour];
+                if (components.hour < 10) {
+                    string = [NSString stringWithFormat:@"0%ld", components.hour];
+                }
                 if ([string integerValue] <= self.hourList.count) {
                     row = [self.hourList indexOfObject:string];
                 }
@@ -690,6 +696,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 components = self.minimumComponents;
             }
             NSString *string = [NSString stringWithFormat:@"%ld", components.hour];
+            if (components.hour < 10) {
+                string = [NSString stringWithFormat:@"0%ld", components.hour];
+            }
             NSInteger row = [self.hourList indexOfObject:string];
             [self.pickerView selectRow:row inComponent:0 animated:animated];
             {
@@ -711,6 +720,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 components = self.minimumComponents;
             }
             NSString *string = [NSString stringWithFormat:@"%ld", components.hour];
+            if (components.hour < 10) {
+                string = [NSString stringWithFormat:@"0%ld", components.hour];
+            }
             NSInteger row = [self.hourList indexOfObject:string];
             [self.pickerView selectRow:row inComponent:0 animated:animated];
             {
@@ -745,6 +757,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             [self.pickerView selectRow:row inComponent:0 animated:animated];
             {
                 NSString *string = [NSString stringWithFormat:@"%ld", components.hour];
+                if (components.hour < 10) {
+                    string = [NSString stringWithFormat:@"0%ld", components.hour];
+                }
                 NSInteger row = [self.hourList indexOfObject:string];
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
             }
@@ -1913,7 +1928,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         }
         NSMutableArray *hours = [NSMutableArray arrayWithCapacity:index];
         for (NSUInteger i = minimum; i <= maximum; i++) {
-            [hours addObject:[@(i) stringValue]];
+            if (i < 10) {
+                [hours addObject:[NSString stringWithFormat:@"0%ld", i]];
+            }else {
+                [hours addObject:[@(i) stringValue]];
+            }
         }
         _hourList = hours;
     }
