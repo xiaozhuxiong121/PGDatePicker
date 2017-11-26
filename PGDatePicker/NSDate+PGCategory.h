@@ -19,3 +19,4 @@
 + (NSDate *)setMonth:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute;
 - (NSInteger)howManyDaysWithMonth;
 @end
+

@@ -10,7 +10,7 @@
 
 @implementation NSDate (PGCategory)
 
-static const NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday;
+static const NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal | NSCalendarUnitWeekOfMonth;
 
 + (NSDate *)setYear:(NSInteger)year {
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -120,3 +120,4 @@ static const NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth
 }
 
 @end
+

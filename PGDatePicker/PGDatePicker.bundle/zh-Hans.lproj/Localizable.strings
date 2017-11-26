@@ -20,3 +20,5 @@
 "sundayString" = "周日";
 "cancelButtonText" = "取消";
 "confirmButtonText" = "确定";
+"weekText" = "周";
+"theWeekText" = "第";
