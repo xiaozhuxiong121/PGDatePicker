@@ -46,7 +46,7 @@
 - (IBAction)yearAndMonthHandler:(id)sender {
     PGDatePicker *datePicker = [[PGDatePicker alloc]init];
     datePicker.delegate = self;
-    [datePicker show];
+    [datePicker showWithShadeBackgroud];
     datePicker.datePickerType = PGPickerViewType3;
     datePicker.datePickerMode = PGDatePickerModeYearAndMonth;
     

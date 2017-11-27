@@ -1,7 +1,7 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/PGDatePicker" "${PODS_ROOT}/Headers/Public/PGPickerView"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/PGDatePicker" "${PODS_ROOT}/Headers/Public/PGPickerView" "${PODS_ROOT}/Headers/Public/Reveal-SDK"
 LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/PGDatePicker" "$PODS_CONFIGURATION_BUILD_DIR/PGPickerView"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/PGDatePicker" -isystem "${PODS_ROOT}/Headers/Public/PGPickerView"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/PGDatePicker" -isystem "${PODS_ROOT}/Headers/Public/PGPickerView" -isystem "${PODS_ROOT}/Headers/Public/Reveal-SDK"
 OTHER_LDFLAGS = $(inherited) -ObjC -l"PGDatePicker" -l"PGPickerView" -framework "UIKit"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
