@@ -45,6 +45,7 @@
 
 @property (nonatomic, weak) UIView *headerView;
 @property (nonatomic, weak) UIView *dismissView;
+@property (nonatomic, assign) BOOL isDisplayShadeBackgroud;
 
 @property (nonatomic, copy) NSString *yearString;
 @property (nonatomic, copy) NSString *monthString;
@@ -97,7 +98,6 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
         [window bringSubviewToFront:self];
         [window bringSubviewToFront:self.headerView];
-        [window bringSubviewToFront:self.dismissView];
         CGFloat height = kTableViewHeight;
         CGFloat width =  [self.cancelButtonText sizeWithAttributes:@{NSFontAttributeName: self.cancelButtonFont}].width;
         self.cancelButton.titleLabel.font = self.cancelButtonFont;
@@ -117,6 +117,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         }
         CGRect headerViewFrame = CGRectMake(0, kScreenHeight - height - kHeaderViewHeight - bottom, kScreenWidth, kHeaderViewHeight);
         [UIView animateWithDuration:0.3 animations:^{
+            self.dismissView.alpha = 1;
             self.headerView.frame = headerViewFrame;
             self.frame = CGRectMake(0, CGRectGetMaxY(self.headerView.frame), kScreenWidth, height + bottom);
         }];
@@ -168,6 +169,22 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     CGFloat height = kTableViewHeight;
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
     
+    CGFloat bottom = 0;
+    if (@available(iOS 11.0, *)) {
+        bottom = self.safeAreaInsets.bottom;
+    }
+    UIView *dismissView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - bottom)];
+    if (self.isDisplayShadeBackgroud) {
+        dismissView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+    }else {
+        dismissView.backgroundColor = [UIColor clearColor];
+    }
+    dismissView.alpha = 0;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cancelButtonHandler)];
+    [dismissView addGestureRecognizer:tap];
+    [window addSubview:dismissView];
+    self.dismissView = dismissView;
+    
     CGRect frame = CGRectMake(0, CGRectGetMaxY (self.headerView.frame), kScreenWidth, height);
     self.frame = frame;
     self.backgroundColor = [UIColor whiteColor];
@@ -190,17 +207,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     [confirm addTarget:self action:@selector(confirmButtonHandler) forControlEvents:UIControlEventTouchUpInside];
     self.confirmButton = confirm;
     [self.headerView addSubview:confirm];
-    
-    CGFloat bottom = 0;
-    if (@available(iOS 11.0, *)) {
-        bottom = self.safeAreaInsets.bottom;
-    }
-    UIView *dismissView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - height - kHeaderViewHeight - bottom)];
-    dismissView.backgroundColor = [UIColor clearColor];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cancelButtonHandler)];
-    [dismissView addGestureRecognizer:tap];
-    [window addSubview:dismissView];
-    self.dismissView = dismissView;
+}
+
+- (void)showWithShadeBackgroud {
+    self.isDisplayShadeBackgroud = true;
+    [self show];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
@@ -218,6 +229,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     [UIView animateWithDuration:0.3 animations:^{
         self.headerView.frame = headerViewFrame;
         self.frame = CGRectMake(0, CGRectGetMaxY(self.headerView.frame), kScreenWidth, height);
+        self.dismissView.alpha = 0;
     } completion:^(BOOL finished) {
         [self.headerView removeFromSuperview];
         [self.dismissView removeFromSuperview];
