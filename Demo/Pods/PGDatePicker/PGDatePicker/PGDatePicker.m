@@ -906,10 +906,6 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 - (BOOL)setHourListLogic:(PGPickerView *)pickerView dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     BOOL tmp = refresh;
     NSInteger length = 23;
-    NSLog(@"1 == %ld", self.maximumComponents.month);
-    NSLog(@"dateComponents == %ld", dateComponents.month);
-    NSLog(@"day1 == %ld", self.maximumComponents.day);
-    NSLog(@"day2 == %ld", dateComponents.day);
     if (self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day) {
         refresh = true;
         NSInteger index = length - self.minimumComponents.hour;
