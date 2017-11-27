@@ -528,7 +528,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.month];
-                if ([string integerValue] <= self.monthList.count) {
+                BOOL isExist = [self.monthList containsObject:string];
+                if (isExist) {
                     row = [self.monthList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
@@ -553,8 +554,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.month];
-                bool tf = [self.monthList containsObject:string];
-                if (tf) {
+                BOOL isExist = [self.monthList containsObject:string];
+                if (isExist) {
                     row = [self.monthList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
@@ -562,7 +563,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.day];
-                if ([string integerValue] <= self.dayList.count) {
+                BOOL isExist = [self.dayList containsObject:string];
+                if (isExist) {
                     row =[self.dayList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:2 animated:animated];
@@ -587,7 +589,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.month];
-                if ([string integerValue] <= self.monthList.count) {
+                BOOL isExist = [self.monthList containsObject:string];
+                if (isExist) {
                     row = [self.monthList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
@@ -595,7 +598,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.day];
-                if ([string integerValue] <= self.dayList.count) {
+                BOOL isExist = [self.dayList containsObject:string];
+                if (isExist) {
                     row =[self.dayList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:2 animated:animated];
@@ -606,7 +610,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.hour < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.hour];
                 }
-                if ([string integerValue] <= self.hourList.count) {
+                BOOL isExist = [self.hourList containsObject:string];
+                if (isExist) {
                     row = [self.hourList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:3 animated:animated];
@@ -617,7 +622,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.minute < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.minute];
                 }
-                if ([string integerValue] <= self.minuteList.count) {
+                BOOL isExist = [self.minuteList containsObject:string];
+                if (isExist) {
                     row = [self.minuteList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:4 animated:animated];
@@ -642,7 +648,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.month];
-                if ([string integerValue] <= self.monthList.count) {
+                BOOL isExist = [self.monthList containsObject:string];
+                if (isExist) {
                     row = [self.monthList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
@@ -650,7 +657,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.day];
-                if ([string integerValue] <= self.dayList.count) {
+                BOOL isExist = [self.dayList containsObject:string];
+                if (isExist) {
                     row =[self.dayList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:2 animated:animated];
@@ -661,7 +669,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.hour < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.hour];
                 }
-                if ([string integerValue] <= self.hourList.count) {
+                BOOL isExist = [self.hourList containsObject:string];
+                if (isExist) {
                     row = [self.hourList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:3 animated:animated];
@@ -672,7 +681,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.minute < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.minute];
                 }
-                if ([string integerValue] <= self.minuteList.count) {
+                BOOL isExist = [self.minuteList containsObject:string];
+                if (isExist) {
                     row = [self.minuteList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:4 animated:animated];
@@ -682,7 +692,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.second < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.second];
                 }
-                NSInteger row = [self.secondList indexOfObject:string];
+                NSInteger row = 0;
+                BOOL isExist = [self.secondList containsObject:string];
+                if (isExist) {
+                    row = [self.secondList indexOfObject:string];
+                }
                 [self.pickerView selectRow:row inComponent:5 animated:animated];
             }
         }
@@ -699,14 +713,22 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (components.hour < 10) {
                 string = [NSString stringWithFormat:@"0%ld", components.hour];
             }
-            NSInteger row = [self.hourList indexOfObject:string];
+            NSInteger row = 0;
+            BOOL isExist = [self.hourList containsObject:string];
+            if (isExist) {
+                row = [self.hourList indexOfObject:string];
+            }
             [self.pickerView selectRow:row inComponent:0 animated:animated];
             {
                 NSString *string = [NSString stringWithFormat:@"%ld", components.minute];
                 if (components.minute < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.minute];
                 }
-                NSInteger row = [self.minuteList indexOfObject:string];
+                NSInteger row = 0;
+                BOOL isExist = [self.minuteList containsObject:string];
+                if (isExist) {
+                    row = [self.minuteList indexOfObject:string];
+                }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
             }
         }
@@ -723,14 +745,22 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (components.hour < 10) {
                 string = [NSString stringWithFormat:@"0%ld", components.hour];
             }
-            NSInteger row = [self.hourList indexOfObject:string];
+            NSInteger row = 0;
+            BOOL isExist = [self.hourList containsObject:string];
+            if (isExist) {
+                row = [self.hourList indexOfObject:string];
+            }
             [self.pickerView selectRow:row inComponent:0 animated:animated];
             {
                 NSString *string = [NSString stringWithFormat:@"%ld", components.minute];
                 if (components.minute < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.minute];
                 }
-                NSInteger row = [self.minuteList indexOfObject:string];
+                NSInteger row = 0;
+                BOOL isExist = [self.minuteList containsObject:string];
+                if (isExist) {
+                    row = [self.minuteList indexOfObject:string];
+                }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
             }
             {
@@ -738,7 +768,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.second < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.second];
                 }
-                NSInteger row = [self.secondList indexOfObject:string];
+                NSInteger row = 0;
+                BOOL isExist = [self.secondList containsObject:string];
+                if (isExist) {
+                    row = [self.secondList indexOfObject:string];
+                }
                 [self.pickerView selectRow:row inComponent:2 animated:animated];
             }
         }
@@ -753,14 +787,22 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 components = self.minimumComponents;
             }
             NSString *string = [NSString stringWithFormat:@"%ld%@%ld%@ %@ ", components.month, self.monthString, components.day, self.dayString, [self weekMappingFrom:components.weekday]];
-            NSInteger row = [self.dateAndTimeList indexOfObject:string];
+            NSInteger row = 0;
+            BOOL isExist = [self.dateAndTimeList containsObject:string];
+            if (isExist) {
+                row = [self.dateAndTimeList indexOfObject:string];
+            }
             [self.pickerView selectRow:row inComponent:0 animated:animated];
             {
                 NSString *string = [NSString stringWithFormat:@"%ld", components.hour];
                 if (components.hour < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.hour];
                 }
-                NSInteger row = [self.hourList indexOfObject:string];
+                NSInteger row = 0;
+                BOOL isExist = [self.hourList containsObject:string];
+                if (isExist) {
+                    row = [self.hourList indexOfObject:string];
+                }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
             }
             {
@@ -768,7 +810,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.minute < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.minute];
                 }
-                NSInteger row = [self.minuteList indexOfObject:string];
+                NSInteger row = 0;
+                BOOL isExist = [self.minuteList containsObject:string];
+                if (isExist) {
+                    row = [self.minuteList indexOfObject:string];
+                }
                 [self.pickerView selectRow:row inComponent:2 animated:animated];
             }
         }
