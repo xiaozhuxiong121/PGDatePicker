@@ -2,5 +2,5 @@
 platform :ios, ‘8.0’
 
 target 'Demo' do
-  pod 'PGDatePicker', '>= 1.5.4'
+  pod 'PGDatePicker', '>= 1.5.7'
 end

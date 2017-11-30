@@ -28,6 +28,7 @@
 @property (nonatomic, strong) NSDateComponents *minimumComponents;
 @property (nonatomic, strong) NSDateComponents *maximumComponents;
 
+@property (nonatomic, strong) NSDateComponents *selectComponents;
 @property (nonatomic, strong) NSDateComponents *selectedComponents;
 @property (nonatomic, strong) NSDateComponents *currentComponents;
 
@@ -127,8 +128,25 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 }
 
 - (void)setupPickerView {
+    if (_setDate) {
+        self.selectComponents = [self.calendar components:self.unitFlags fromDate:_setDate];
+    }else {
+        self.selectComponents = [self.calendar components:self.unitFlags fromDate:[NSDate date]];
+        if (self.currentComponents.year < self.minimumComponents.year) {
+            self.selectComponents.year = self.minimumComponents.year;
+            self.selectComponents.month = self.minimumComponents.month;
+             self.selectComponents.day = self.minimumComponents.day;
+            self.selectComponents.hour = self.minimumComponents.hour;
+            self.selectComponents.minute = self.minimumComponents.minute;
+            self.selectComponents.second = self.minimumComponents.second;
+        }else if (self.currentComponents.year > self.maximumComponents.year) {
+            self.selectComponents.year = self.maximumComponents.year;
+            self.selectComponents.month = self.minimumComponents.month;
+        }
+    }
     NSInteger day = [self howManyDaysWithMonthInThisYear:self.currentComponents.year withMonth:self.currentComponents.month];
     [self setDayListForMonthDays:day];
+    
     CGFloat bottom = 0;
     if (@available(iOS 11.0, *)) {
         bottom = self.safeAreaInsets.bottom;
@@ -838,16 +856,18 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (void)setDayListForMonthDays:(NSInteger)day {
     NSMutableArray *days = [NSMutableArray arrayWithCapacity:day];
-    NSInteger minDay = self.minimumComponents.day, maxDay = self.maximumComponents.day;
-    if (self.currentComponents.year == self.maximumComponents.year) {
-        if (self.currentComponents.month == self.maximumComponents.month) {
-            day = maxDay;
-        }
+    NSInteger minDay = 1, maxDay = self.maximumComponents.day;
+    if (self.yearList.count == 1 && self.monthList.count == 1) {
+        minDay = self.minimumComponents.day;
+        day = maxDay;
     }
-    if (_setDate) {
-        minDay = 1;
+    if (self.selectComponents.year == self.maximumComponents.year && self.selectComponents.month == self.maximumComponents.month) {
+        day = maxDay;
     }
-    for (NSUInteger i = 1; i <= day; i++) {
+    if (self.selectComponents.year == self.minimumComponents.year && self.selectComponents.month == self.minimumComponents.month) {
+        minDay = self.minimumComponents.day;
+    }
+    for (NSUInteger i = minDay; i <= day; i++) {
         [days addObject:[@(i) stringValue]];
     }
     self.dayList = days;
@@ -1956,6 +1976,12 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         if (self.currentComponents.year > self.minimumComponents.year && self.yearList.count == 1) {
             minimum = self.minimumComponents.month;
         }
+        
+        if (self.yearList.count == 1) {
+            minimum = self.minimumComponents.month;
+            maximum = self.maximumComponents.month;
+        }
+        
         NSMutableArray *months = [NSMutableArray arrayWithCapacity:maximum];
         for (NSUInteger i = minimum; i <= maximum; i++) {
             [months addObject:[@(i) stringValue]];
@@ -1969,6 +1995,19 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (!_hourList) {
         NSInteger minimum = 0;
         NSInteger maximum = 23;
+        
+        if (self.selectComponents.year == self.maximumComponents.year && self.selectComponents.month == self.maximumComponents.month) {
+            
+        }
+        if (self.selectComponents.year == self.minimumComponents.year &&
+            self.selectComponents.month == self.minimumComponents.month &&
+            self.selectComponents.day == self.minimumComponents.day) {
+            minimum = self.minimumComponents.hour;
+        }
+        
+        NSLog(@"year = %ld month = %ld day = %ld", self.selectComponents.year, self.selectComponents.month, self.selectComponents.day);
+        NSLog(@"1-year = %ld month = %ld day = %ld", self.minimumComponents.year, self.minimumComponents.month, self.minimumComponents.day);
+        
         NSInteger index = maximum - minimum;
         if (self.datePickerMode == PGDatePickerModeTime || self.datePickerMode == PGDatePickerModeTimeAndSecond) {
             index = self.maximumComponents.hour - self.minimumComponents.hour;

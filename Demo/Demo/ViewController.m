@@ -73,7 +73,7 @@
     datePicker.datePickerMode = PGDatePickerModeDate;
     
     
-//    datePicker.minimumDate = [NSDate setYear:2015 month:8 day:5];
+//    datePicker.minimumDate = [NSDate setYear:2015 month:5 day:10];
 //    datePicker.maximumDate = [NSDate setYear:2025 month:10 day:20];
 
 
