@@ -1996,18 +1996,17 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         NSInteger minimum = 0;
         NSInteger maximum = 23;
         
-        if (self.selectComponents.year == self.maximumComponents.year && self.selectComponents.month == self.maximumComponents.month) {
-            
+        if (self.selectComponents.year == self.maximumComponents.year &&
+            self.selectComponents.month == self.maximumComponents.month &&
+            self.selectComponents.day == self.maximumComponents.day) {
+            maximum = self.maximumComponents.hour;
         }
         if (self.selectComponents.year == self.minimumComponents.year &&
             self.selectComponents.month == self.minimumComponents.month &&
             self.selectComponents.day == self.minimumComponents.day) {
             minimum = self.minimumComponents.hour;
         }
-        
-        NSLog(@"year = %ld month = %ld day = %ld", self.selectComponents.year, self.selectComponents.month, self.selectComponents.day);
-        NSLog(@"1-year = %ld month = %ld day = %ld", self.minimumComponents.year, self.minimumComponents.month, self.minimumComponents.day);
-        
+
         NSInteger index = maximum - minimum;
         if (self.datePickerMode == PGDatePickerModeTime || self.datePickerMode == PGDatePickerModeTimeAndSecond) {
             index = self.maximumComponents.hour - self.minimumComponents.hour;
@@ -2034,9 +2033,23 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSArray *)minuteList {
     if (!_minuteList) {
-        NSInteger index = 60;
+        NSInteger minimum = 0;
+        NSInteger maximum = 59;
+        if (self.selectComponents.year == self.maximumComponents.year &&
+            self.selectComponents.month == self.maximumComponents.month &&
+            self.selectComponents.day == self.maximumComponents.day &&
+            self.selectComponents.hour == self.maximumComponents.hour) {
+            maximum = self.maximumComponents.minute;
+        }
+        if (self.selectComponents.year == self.minimumComponents.year &&
+            self.selectComponents.month == self.minimumComponents.month &&
+            self.selectComponents.day == self.minimumComponents.day &&
+            self.selectComponents.hour == self.minimumComponents.hour) {
+            minimum = self.minimumComponents.minute;
+        }
+        NSInteger index = maximum - minimum;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = 0; i < index; i++) {
+        for (NSUInteger i = minimum; i <= maximum; i++) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -2050,9 +2063,25 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSArray *)secondList {
     if (!_secondList) {
-        NSInteger index = 60;
+        NSInteger minimum = 0;
+        NSInteger maximum = 59;
+        if (self.selectComponents.year == self.maximumComponents.year &&
+            self.selectComponents.month == self.maximumComponents.month &&
+            self.selectComponents.day == self.maximumComponents.day &&
+            self.selectComponents.hour == self.maximumComponents.hour &&
+            self.selectComponents.minute == self.maximumComponents.minute) {
+            maximum = self.maximumComponents.second;
+        }
+        if (self.selectComponents.year == self.minimumComponents.year &&
+            self.selectComponents.month == self.minimumComponents.month &&
+            self.selectComponents.day == self.minimumComponents.day &&
+            self.selectComponents.hour == self.minimumComponents.hour &&
+            self.selectComponents.minute == self.minimumComponents.minute) {
+            minimum = self.minimumComponents.second;
+        }
+        NSInteger index = maximum - minimum;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = 0; i < index; i++) {
+        for (NSUInteger i = minimum; i <= maximum; i++) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
