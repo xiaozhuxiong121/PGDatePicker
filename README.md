@@ -3,8 +3,6 @@
 
 > 由于使用UIPickerView的话，列表会有个弧度，所以这里用了[PGPickerView](https://github.com/xiaozhuxiong121/PGPickerView)  
 
-![](F734F5F9-FB12-4BA7-B43E-B39D0FF1DA3B.png)  
-
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/PGDatePicker.svg)](https://cocoapods.org/pods/PGDatePicker)
 ![](https://img.shields.io/badge/platform-iOS-red.svg) ![](https://img.shields.io/badge/language-Objective--C-orange.svg)
 ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg) 
@@ -49,7 +47,7 @@
 # CocoaPods安装
 
 ```
-pod 'PGDatePicker', '>= 1.5.6'
+pod 'PGDatePicker', '>= 1.5.9'
 ```
 
 > **在`1.5.1`版本中对iPhone X进行了适配** 
@@ -107,6 +105,9 @@ datePicker.confirmButtonText = @"确定";
 datePicker.confirmButtonFont = [UIFont boldSystemFontOfSize:17];
 
 ```
+
+# 最新版本
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/PGDatePicker.svg)]()
 
 # 许可证
 
