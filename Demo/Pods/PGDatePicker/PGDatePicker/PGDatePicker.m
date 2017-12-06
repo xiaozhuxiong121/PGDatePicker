@@ -147,9 +147,12 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         }else if (self.currentComponents.year == self.minimumComponents.year) {
             self.selectComponents.month = self.minimumComponents.month;
         }
+        NSInteger day = [self howManyDaysWithMonthInThisYear:self.selectComponents.year withMonth:self.selectComponents.month];
+        [self setDayListForMonthDays:day];
+    }else {
+        NSInteger day = [self howManyDaysWithMonthInThisYear:self.currentComponents.year withMonth:self.currentComponents.month];
+        [self setDayListForMonthDays:day];
     }
-    NSInteger day = [self howManyDaysWithMonthInThisYear:self.currentComponents.year withMonth:self.currentComponents.month];
-    [self setDayListForMonthDays:day];
     
     CGFloat bottom = 0;
     if (@available(iOS 11.0, *)) {
