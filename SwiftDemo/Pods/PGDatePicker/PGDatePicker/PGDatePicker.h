@@ -84,8 +84,15 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
 
 - (void)setDate:(NSDate *)date;
 - (void)setDate:(NSDate *)date animated:(BOOL)animated;
-
+/**
+ 不带半透明背景
+ */
 - (void)show;
+
+/**
+ 带半透明背景
+ */
+- (void)showWithShadeBackgroud;
 @end
 
 @protocol PGDatePickerDelegate <NSObject>

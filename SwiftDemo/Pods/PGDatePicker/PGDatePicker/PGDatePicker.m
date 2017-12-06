@@ -28,6 +28,7 @@
 @property (nonatomic, strong) NSDateComponents *minimumComponents;
 @property (nonatomic, strong) NSDateComponents *maximumComponents;
 
+@property (nonatomic, strong) NSDateComponents *selectComponents;
 @property (nonatomic, strong) NSDateComponents *selectedComponents;
 @property (nonatomic, strong) NSDateComponents *currentComponents;
 
@@ -45,6 +46,7 @@
 
 @property (nonatomic, weak) UIView *headerView;
 @property (nonatomic, weak) UIView *dismissView;
+@property (nonatomic, assign) BOOL isDisplayShadeBackgroud;
 
 @property (nonatomic, copy) NSString *yearString;
 @property (nonatomic, copy) NSString *monthString;
@@ -97,7 +99,6 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
         [window bringSubviewToFront:self];
         [window bringSubviewToFront:self.headerView];
-        [window bringSubviewToFront:self.dismissView];
         CGFloat height = kTableViewHeight;
         CGFloat width =  [self.cancelButtonText sizeWithAttributes:@{NSFontAttributeName: self.cancelButtonFont}].width;
         self.cancelButton.titleLabel.font = self.cancelButtonFont;
@@ -117,6 +118,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         }
         CGRect headerViewFrame = CGRectMake(0, kScreenHeight - height - kHeaderViewHeight - bottom, kScreenWidth, kHeaderViewHeight);
         [UIView animateWithDuration:0.3 animations:^{
+            self.dismissView.alpha = 1;
             self.headerView.frame = headerViewFrame;
             self.frame = CGRectMake(0, CGRectGetMaxY(self.headerView.frame), kScreenWidth, height + bottom);
         }];
@@ -126,8 +128,29 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 }
 
 - (void)setupPickerView {
+    if (_setDate) {
+        self.selectComponents = [self.calendar components:self.unitFlags fromDate:_setDate];
+    }else {
+        self.selectComponents = [self.calendar components:self.unitFlags fromDate:[NSDate date]];
+    }
+    if (self.minimumDate || self.maximumDate) {
+        if (self.currentComponents.year < self.minimumComponents.year) {
+            self.selectComponents.year = self.minimumComponents.year;
+            self.selectComponents.month = self.minimumComponents.month;
+            self.selectComponents.day = self.minimumComponents.day;
+            self.selectComponents.hour = self.minimumComponents.hour;
+            self.selectComponents.minute = self.minimumComponents.minute;
+            self.selectComponents.second = self.minimumComponents.second;
+        }else if (self.currentComponents.year > self.maximumComponents.year) {
+            self.selectComponents.year = self.maximumComponents.year;
+            self.selectComponents.month = self.minimumComponents.month;
+        }else if (self.currentComponents.year == self.minimumComponents.year) {
+            self.selectComponents.month = self.minimumComponents.month;
+        }
+    }
     NSInteger day = [self howManyDaysWithMonthInThisYear:self.currentComponents.year withMonth:self.currentComponents.month];
     [self setDayListForMonthDays:day];
+    
     CGFloat bottom = 0;
     if (@available(iOS 11.0, *)) {
         bottom = self.safeAreaInsets.bottom;
@@ -168,6 +191,22 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     CGFloat height = kTableViewHeight;
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
     
+    CGFloat bottom = 0;
+    if (@available(iOS 11.0, *)) {
+        bottom = self.safeAreaInsets.bottom;
+    }
+    UIView *dismissView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - bottom)];
+    if (self.isDisplayShadeBackgroud) {
+        dismissView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+    }else {
+        dismissView.backgroundColor = [UIColor clearColor];
+    }
+    dismissView.alpha = 0;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cancelButtonHandler)];
+    [dismissView addGestureRecognizer:tap];
+    [window addSubview:dismissView];
+    self.dismissView = dismissView;
+    
     CGRect frame = CGRectMake(0, CGRectGetMaxY (self.headerView.frame), kScreenWidth, height);
     self.frame = frame;
     self.backgroundColor = [UIColor whiteColor];
@@ -190,17 +229,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     [confirm addTarget:self action:@selector(confirmButtonHandler) forControlEvents:UIControlEventTouchUpInside];
     self.confirmButton = confirm;
     [self.headerView addSubview:confirm];
-    
-    CGFloat bottom = 0;
-    if (@available(iOS 11.0, *)) {
-        bottom = self.safeAreaInsets.bottom;
-    }
-    UIView *dismissView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - height - kHeaderViewHeight - bottom)];
-    dismissView.backgroundColor = [UIColor clearColor];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cancelButtonHandler)];
-    [dismissView addGestureRecognizer:tap];
-    [window addSubview:dismissView];
-    self.dismissView = dismissView;
+}
+
+- (void)showWithShadeBackgroud {
+    self.isDisplayShadeBackgroud = true;
+    [self show];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
@@ -218,6 +251,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     [UIView animateWithDuration:0.3 animations:^{
         self.headerView.frame = headerViewFrame;
         self.frame = CGRectMake(0, CGRectGetMaxY(self.headerView.frame), kScreenWidth, height);
+        self.dismissView.alpha = 0;
     } completion:^(BOOL finished) {
         [self.headerView removeFromSuperview];
         [self.dismissView removeFromSuperview];
@@ -528,7 +562,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.month];
-                if ([string integerValue] <= self.monthList.count) {
+                BOOL isExist = [self.monthList containsObject:string];
+                if (isExist) {
                     row = [self.monthList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
@@ -553,8 +588,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.month];
-                bool tf = [self.monthList containsObject:string];
-                if (tf) {
+                BOOL isExist = [self.monthList containsObject:string];
+                if (isExist) {
                     row = [self.monthList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
@@ -562,7 +597,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.day];
-                if ([string integerValue] <= self.dayList.count) {
+                BOOL isExist = [self.dayList containsObject:string];
+                if (isExist) {
                     row =[self.dayList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:2 animated:animated];
@@ -587,7 +623,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.month];
-                if ([string integerValue] <= self.monthList.count) {
+                BOOL isExist = [self.monthList containsObject:string];
+                if (isExist) {
                     row = [self.monthList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
@@ -595,7 +632,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.day];
-                if ([string integerValue] <= self.dayList.count) {
+                BOOL isExist = [self.dayList containsObject:string];
+                if (isExist) {
                     row =[self.dayList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:2 animated:animated];
@@ -606,7 +644,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.hour < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.hour];
                 }
-                if ([string integerValue] <= self.hourList.count) {
+                BOOL isExist = [self.hourList containsObject:string];
+                if (isExist) {
                     row = [self.hourList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:3 animated:animated];
@@ -617,7 +656,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.minute < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.minute];
                 }
-                if ([string integerValue] <= self.minuteList.count) {
+                BOOL isExist = [self.minuteList containsObject:string];
+                if (isExist) {
                     row = [self.minuteList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:4 animated:animated];
@@ -642,7 +682,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.month];
-                if ([string integerValue] <= self.monthList.count) {
+                BOOL isExist = [self.monthList containsObject:string];
+                if (isExist) {
                     row = [self.monthList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
@@ -650,7 +691,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             {
                 NSInteger row = 0;
                 NSString *string = [NSString stringWithFormat:@"%ld", components.day];
-                if ([string integerValue] <= self.dayList.count) {
+                BOOL isExist = [self.dayList containsObject:string];
+                if (isExist) {
                     row =[self.dayList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:2 animated:animated];
@@ -661,7 +703,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.hour < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.hour];
                 }
-                if ([string integerValue] <= self.hourList.count) {
+                BOOL isExist = [self.hourList containsObject:string];
+                if (isExist) {
                     row = [self.hourList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:3 animated:animated];
@@ -672,7 +715,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.minute < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.minute];
                 }
-                if ([string integerValue] <= self.minuteList.count) {
+                BOOL isExist = [self.minuteList containsObject:string];
+                if (isExist) {
                     row = [self.minuteList indexOfObject:string];
                 }
                 [self.pickerView selectRow:row inComponent:4 animated:animated];
@@ -682,7 +726,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.second < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.second];
                 }
-                NSInteger row = [self.secondList indexOfObject:string];
+                NSInteger row = 0;
+                BOOL isExist = [self.secondList containsObject:string];
+                if (isExist) {
+                    row = [self.secondList indexOfObject:string];
+                }
                 [self.pickerView selectRow:row inComponent:5 animated:animated];
             }
         }
@@ -699,14 +747,22 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (components.hour < 10) {
                 string = [NSString stringWithFormat:@"0%ld", components.hour];
             }
-            NSInteger row = [self.hourList indexOfObject:string];
+            NSInteger row = 0;
+            BOOL isExist = [self.hourList containsObject:string];
+            if (isExist) {
+                row = [self.hourList indexOfObject:string];
+            }
             [self.pickerView selectRow:row inComponent:0 animated:animated];
             {
                 NSString *string = [NSString stringWithFormat:@"%ld", components.minute];
                 if (components.minute < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.minute];
                 }
-                NSInteger row = [self.minuteList indexOfObject:string];
+                NSInteger row = 0;
+                BOOL isExist = [self.minuteList containsObject:string];
+                if (isExist) {
+                    row = [self.minuteList indexOfObject:string];
+                }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
             }
         }
@@ -723,14 +779,22 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (components.hour < 10) {
                 string = [NSString stringWithFormat:@"0%ld", components.hour];
             }
-            NSInteger row = [self.hourList indexOfObject:string];
+            NSInteger row = 0;
+            BOOL isExist = [self.hourList containsObject:string];
+            if (isExist) {
+                row = [self.hourList indexOfObject:string];
+            }
             [self.pickerView selectRow:row inComponent:0 animated:animated];
             {
                 NSString *string = [NSString stringWithFormat:@"%ld", components.minute];
                 if (components.minute < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.minute];
                 }
-                NSInteger row = [self.minuteList indexOfObject:string];
+                NSInteger row = 0;
+                BOOL isExist = [self.minuteList containsObject:string];
+                if (isExist) {
+                    row = [self.minuteList indexOfObject:string];
+                }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
             }
             {
@@ -738,7 +802,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.second < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.second];
                 }
-                NSInteger row = [self.secondList indexOfObject:string];
+                NSInteger row = 0;
+                BOOL isExist = [self.secondList containsObject:string];
+                if (isExist) {
+                    row = [self.secondList indexOfObject:string];
+                }
                 [self.pickerView selectRow:row inComponent:2 animated:animated];
             }
         }
@@ -753,14 +821,22 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 components = self.minimumComponents;
             }
             NSString *string = [NSString stringWithFormat:@"%ld%@%ld%@ %@ ", components.month, self.monthString, components.day, self.dayString, [self weekMappingFrom:components.weekday]];
-            NSInteger row = [self.dateAndTimeList indexOfObject:string];
+            NSInteger row = 0;
+            BOOL isExist = [self.dateAndTimeList containsObject:string];
+            if (isExist) {
+                row = [self.dateAndTimeList indexOfObject:string];
+            }
             [self.pickerView selectRow:row inComponent:0 animated:animated];
             {
                 NSString *string = [NSString stringWithFormat:@"%ld", components.hour];
                 if (components.hour < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.hour];
                 }
-                NSInteger row = [self.hourList indexOfObject:string];
+                NSInteger row = 0;
+                BOOL isExist = [self.hourList containsObject:string];
+                if (isExist) {
+                    row = [self.hourList indexOfObject:string];
+                }
                 [self.pickerView selectRow:row inComponent:1 animated:animated];
             }
             {
@@ -768,7 +844,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 if (components.minute < 10) {
                     string = [NSString stringWithFormat:@"0%ld", components.minute];
                 }
-                NSInteger row = [self.minuteList indexOfObject:string];
+                NSInteger row = 0;
+                BOOL isExist = [self.minuteList containsObject:string];
+                if (isExist) {
+                    row = [self.minuteList indexOfObject:string];
+                }
                 [self.pickerView selectRow:row inComponent:2 animated:animated];
             }
         }
@@ -780,16 +860,18 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (void)setDayListForMonthDays:(NSInteger)day {
     NSMutableArray *days = [NSMutableArray arrayWithCapacity:day];
-    NSInteger minDay = self.minimumComponents.day, maxDay = self.maximumComponents.day;
-    if (self.currentComponents.year == self.maximumComponents.year) {
-        if (self.currentComponents.month == self.maximumComponents.month) {
-            day = maxDay;
-        }
+    NSInteger minDay = 1, maxDay = self.maximumComponents.day;
+    if (self.yearList.count == 1 && self.monthList.count == 1) {
+        minDay = self.minimumComponents.day;
+        day = maxDay;
     }
-    if (_setDate) {
-        minDay = 1;
+    if (self.selectComponents.year == self.maximumComponents.year && self.selectComponents.month == self.maximumComponents.month) {
+        day = maxDay;
     }
-    for (NSUInteger i = 1; i <= day; i++) {
+    if (self.selectComponents.year == self.minimumComponents.year && self.selectComponents.month == self.minimumComponents.month) {
+        minDay = self.minimumComponents.day;
+    }
+    for (NSUInteger i = minDay; i <= day; i++) {
         [days addObject:[@(i) stringValue]];
     }
     self.dayList = days;
@@ -906,10 +988,6 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 - (BOOL)setHourListLogic:(PGPickerView *)pickerView dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     BOOL tmp = refresh;
     NSInteger length = 23;
-    NSLog(@"1 == %ld", self.maximumComponents.month);
-    NSLog(@"dateComponents == %ld", dateComponents.month);
-    NSLog(@"day1 == %ld", self.maximumComponents.day);
-    NSLog(@"day2 == %ld", dateComponents.day);
     if (self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day) {
         refresh = true;
         NSInteger index = length - self.minimumComponents.hour;
@@ -1902,6 +1980,12 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         if (self.currentComponents.year > self.minimumComponents.year && self.yearList.count == 1) {
             minimum = self.minimumComponents.month;
         }
+        
+        if (self.yearList.count == 1) {
+            minimum = self.minimumComponents.month;
+            maximum = self.maximumComponents.month;
+        }
+        
         NSMutableArray *months = [NSMutableArray arrayWithCapacity:maximum];
         for (NSUInteger i = minimum; i <= maximum; i++) {
             [months addObject:[@(i) stringValue]];
@@ -1915,6 +1999,18 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (!_hourList) {
         NSInteger minimum = 0;
         NSInteger maximum = 23;
+        
+        if (self.selectComponents.year == self.maximumComponents.year &&
+            self.selectComponents.month == self.maximumComponents.month &&
+            self.selectComponents.day == self.maximumComponents.day) {
+            maximum = self.maximumComponents.hour;
+        }
+        if (self.selectComponents.year == self.minimumComponents.year &&
+            self.selectComponents.month == self.minimumComponents.month &&
+            self.selectComponents.day == self.minimumComponents.day) {
+            minimum = self.minimumComponents.hour;
+        }
+
         NSInteger index = maximum - minimum;
         if (self.datePickerMode == PGDatePickerModeTime || self.datePickerMode == PGDatePickerModeTimeAndSecond) {
             index = self.maximumComponents.hour - self.minimumComponents.hour;
@@ -1941,9 +2037,23 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSArray *)minuteList {
     if (!_minuteList) {
-        NSInteger index = 60;
+        NSInteger minimum = 0;
+        NSInteger maximum = 59;
+        if (self.selectComponents.year == self.maximumComponents.year &&
+            self.selectComponents.month == self.maximumComponents.month &&
+            self.selectComponents.day == self.maximumComponents.day &&
+            self.selectComponents.hour == self.maximumComponents.hour) {
+            maximum = self.maximumComponents.minute;
+        }
+        if (self.selectComponents.year == self.minimumComponents.year &&
+            self.selectComponents.month == self.minimumComponents.month &&
+            self.selectComponents.day == self.minimumComponents.day &&
+            self.selectComponents.hour == self.minimumComponents.hour) {
+            minimum = self.minimumComponents.minute;
+        }
+        NSInteger index = maximum - minimum;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = 0; i < index; i++) {
+        for (NSUInteger i = minimum; i <= maximum; i++) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -1957,9 +2067,25 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSArray *)secondList {
     if (!_secondList) {
-        NSInteger index = 60;
+        NSInteger minimum = 0;
+        NSInteger maximum = 59;
+        if (self.selectComponents.year == self.maximumComponents.year &&
+            self.selectComponents.month == self.maximumComponents.month &&
+            self.selectComponents.day == self.maximumComponents.day &&
+            self.selectComponents.hour == self.maximumComponents.hour &&
+            self.selectComponents.minute == self.maximumComponents.minute) {
+            maximum = self.maximumComponents.second;
+        }
+        if (self.selectComponents.year == self.minimumComponents.year &&
+            self.selectComponents.month == self.minimumComponents.month &&
+            self.selectComponents.day == self.minimumComponents.day &&
+            self.selectComponents.hour == self.minimumComponents.hour &&
+            self.selectComponents.minute == self.minimumComponents.minute) {
+            minimum = self.minimumComponents.second;
+        }
+        NSInteger index = maximum - minimum;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = 0; i < index; i++) {
+        for (NSUInteger i = minimum; i <= maximum; i++) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {

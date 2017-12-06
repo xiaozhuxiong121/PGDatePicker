@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "年月日时分"; ObjectID = "AXb-5Q-SkP"; */
+"AXb-5Q-SkP.normalTitle" = "年月日时分";
+
+/* Class = "UIButton"; normalTitle = "时分秒"; ObjectID = "DcG-Ve-bqE"; */
+"DcG-Ve-bqE.normalTitle" = "时分秒";
+
+/* Class = "UIButton"; normalTitle = "年月日时分秒"; ObjectID = "Mcn-UN-KdR"; */
+"Mcn-UN-KdR.normalTitle" = "年月日时分秒";
+
+/* Class = "UIButton"; normalTitle = "年月"; ObjectID = "Nax-WM-03i"; */
+"Nax-WM-03i.normalTitle" = "年月";
+
+/* Class = "UIButton"; normalTitle = "年份"; ObjectID = "U6n-q9-TeT"; */
+"U6n-q9-TeT.normalTitle" = "年份";
+
+/* Class = "UIButton"; normalTitle = "时分"; ObjectID = "Ykh-Ki-1Zi"; */
+"Ykh-Ki-1Zi.normalTitle" = "时分";
+
+/* Class = "UIButton"; normalTitle = "月日周 时分"; ObjectID = "euV-SQ-CXA"; */
+"euV-SQ-CXA.normalTitle" = "月日周 时分";
+
+/* Class = "UIButton"; normalTitle = "带标题"; ObjectID = "mNU-eh-rzf"; */
+"mNU-eh-rzf.normalTitle" = "带标题";
+
+/* Class = "UIButton"; normalTitle = "设置样式"; ObjectID = "naM-dc-lHI"; */
+"naM-dc-lHI.normalTitle" = "设置样式";
+
+/* Class = "UIButton"; normalTitle = "年月日"; ObjectID = "xkd-FF-LcW"; */
+"xkd-FF-LcW.normalTitle" = "年月日";

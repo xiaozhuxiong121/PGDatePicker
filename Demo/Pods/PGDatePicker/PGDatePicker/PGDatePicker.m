@@ -132,15 +132,19 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         self.selectComponents = [self.calendar components:self.unitFlags fromDate:_setDate];
     }else {
         self.selectComponents = [self.calendar components:self.unitFlags fromDate:[NSDate date]];
+    }
+    if (self.minimumDate || self.maximumDate) {
         if (self.currentComponents.year < self.minimumComponents.year) {
             self.selectComponents.year = self.minimumComponents.year;
             self.selectComponents.month = self.minimumComponents.month;
-             self.selectComponents.day = self.minimumComponents.day;
+            self.selectComponents.day = self.minimumComponents.day;
             self.selectComponents.hour = self.minimumComponents.hour;
             self.selectComponents.minute = self.minimumComponents.minute;
             self.selectComponents.second = self.minimumComponents.second;
         }else if (self.currentComponents.year > self.maximumComponents.year) {
             self.selectComponents.year = self.maximumComponents.year;
+            self.selectComponents.month = self.minimumComponents.month;
+        }else if (self.currentComponents.year == self.minimumComponents.year) {
             self.selectComponents.month = self.minimumComponents.month;
         }
     }
