@@ -143,7 +143,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             self.selectComponents.second = self.minimumComponents.second;
         }else if (self.currentComponents.year > self.maximumComponents.year) {
             self.selectComponents.year = self.maximumComponents.year;
-            self.selectComponents.month = self.minimumComponents.month;
+            self.selectComponents.month = self.maximumComponents.month;
         }else if (self.currentComponents.year == self.minimumComponents.year) {
             self.selectComponents.month = self.minimumComponents.month;
         }
@@ -521,7 +521,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (!_isSubViewLayout) {
         return;
     }
-    NSDateComponents *components = [self.calendar components:self.unitFlags fromDate:_setDate];
+    NSDateComponents *components = self.selectComponents;
     if (self.minimumDate == nil && animated && !_isSetDate) {
         NSInteger year = components.year - 10;
         if (year <= self.minimumComponents.year) {
@@ -586,7 +586,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             NSInteger row = components.year - self.minimumComponents.year;
             [self.pickerView selectRow:row inComponent:0 animated:animated];
             if (tf) {
-                return;
+//                return;
             }
             {
                 NSInteger row = 0;

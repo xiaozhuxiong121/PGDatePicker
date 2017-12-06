@@ -73,14 +73,14 @@
     datePicker.datePickerMode = PGDatePickerModeDate;
     
     
-//    datePicker.minimumDate = [NSDate setYear:2015 month:9 day:30];
-//    datePicker.maximumDate = [NSDate setYear:2027 month:10 day:2];
+    datePicker.minimumDate = [NSDate setYear:2015 month:9 day:30];
+    datePicker.maximumDate = [NSDate setYear:2027 month:10 day:2];
 
 
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-//    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm";
-//    NSDate *date = [dateFormatter dateFromString: @"2019-08-10 05:04"];
-//    [datePicker setDate:date animated:true];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm";
+    NSDate *date = [dateFormatter dateFromString: @"2019-08-10 05:04"];
+    [datePicker setDate:date animated:true];
 }
 
 /**
