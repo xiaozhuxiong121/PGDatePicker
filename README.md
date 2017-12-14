@@ -47,7 +47,7 @@
 # CocoaPods安装
 
 ```
-pod 'PGDatePicker', '>= 1.5.9'
+pod 'PGDatePicker', '>= 1.5.12'
 ```
 
 > **在`1.5.1`版本中对iPhone X进行了适配** 
@@ -56,7 +56,7 @@ pod 'PGDatePicker', '>= 1.5.9'
 ```
 PGDatePicker *datePicker = [[PGDatePicker alloc]init];
 datePicker.delegate = self;
-[datePicker show];
+[datePicker showWithShadeBackgroud];
 datePicker.datePickerMode = PGDatePickerModeYear;
  
 #pragma PGDatePickerDelegate
@@ -114,6 +114,6 @@ datePicker.confirmButtonFont = [UIFont boldSystemFontOfSize:17];
 PGDatePicker 使用 MIT 许可证，详情见 [LICENSE](LICENSE) 文件。
 
 # 想说的话
-喜欢的话扔一个免费的[star](https://github.com/xiaozhuxiong121/PGDatePicker)给我，这足以激励我更好的完善
+喜欢的话扔一个免费的[star](https://github.com/xiaozhuxiong121/PGDatePicker)给我，这足以激励我更好的完善。
 
 
