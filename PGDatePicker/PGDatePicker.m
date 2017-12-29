@@ -1970,16 +1970,17 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (!_monthList) {
         NSInteger minimum = 1;
         NSInteger maximum = 12;
-        if (self.currentComponents.year <= self.minimumComponents.year) {
-            minimum = self.minimumComponents.month;
-        }
-        if (self.currentComponents.year >= self.maximumComponents.year) {
+        if (self.selectComponents.year == self.maximumComponents.year ) {
             maximum = self.maximumComponents.month;
+        }
+        if (self.selectComponents.year == self.minimumComponents.year) {
+            minimum = self.minimumComponents.month;
         }
         if (self.datePickerMode == PGDatePickerModeDateAndTime) {
             minimum = 1;
             maximum = 12;
         }
+        
         if (self.currentComponents.year > self.minimumComponents.year && self.yearList.count == 1) {
             minimum = self.minimumComponents.month;
         }
