@@ -67,7 +67,7 @@ ___
 # CocoaPods安装
 
 ```
-pod 'PGDatePicker', '>= 1.5.12'
+pod 'PGDatePicker', '>= 2.0'
 ```
 
 > **在`1.5.1`版本中对iPhone X进行了适配** 
