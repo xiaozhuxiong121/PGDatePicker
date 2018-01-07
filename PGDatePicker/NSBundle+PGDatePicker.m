@@ -1,6 +1,5 @@
 //
 //  NSBundle+PGDatePicker.m
-//  Demo
 //
 //  Created by piggybear on 2017/11/4.
 //  Copyright © 2017年 piggybear. All rights reserved.

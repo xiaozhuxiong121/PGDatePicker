@@ -1,6 +1,5 @@
 //
 //  PGDatePicker.h
-//  HooDatePickerDemo
 //
 //  Created by piggybear on 2017/7/25.
 //  Copyright © 2017年 piggybear. All rights reserved.
@@ -50,22 +49,17 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
  */
 @property(nonatomic, assign) BOOL middleText PGDatePickerDeprecated("已过时，请使用isHiddenMiddleText进行替换");
 
+/**
+ 设置行高
+ */
+@property (nonatomic, assign) CGFloat rowHeight;
+
 /*
  默认是true
  如果设置为false，只会显示中间的文字，其他行的文字则不会显示
  */
 @property(nonatomic, assign) BOOL isHiddenMiddleText; // default is true
 @property(nonatomic, copy) UIColor *middleTextColor;
-
-@property (nonatomic, copy) NSString *cancelButtonText;
-@property (nonatomic, copy) UIFont *cancelButtonFont;
-@property (nonatomic, copy) UIColor *cancelButtonTextColor;
-
-@property (nonatomic, copy) NSString *confirmButtonText;
-@property (nonatomic, copy) UIFont *confirmButtonFont;
-@property (nonatomic, copy) UIColor *confirmButtonTextColor;
-
-@property (nonatomic, weak) UILabel *titleLabel;
 
 @property (nonatomic, strong)UIColor *titleColorForSelectedRow PGDatePickerDeprecated("已过时，请使用textColorOfSelectedRow进行替换");
 @property (nonatomic, strong)UIColor *titleColorForOtherRow PGDatePickerDeprecated("已过时，请使用textColorOfOtherRow进行替换");
@@ -82,17 +76,13 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
 @property (nonatomic, strong) NSDate *minimumDate; // specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer mode
 @property (nonatomic, strong) NSDate *maximumDate; // default is nil
 
+/**
+ 相当于确定按钮，执行此方法PGDatePickerDelegate代理方法会得到值
+ */
+- (void)tapSelectedHandler;
+
 - (void)setDate:(NSDate *)date;
 - (void)setDate:(NSDate *)date animated:(BOOL)animated;
-/**
- 不带半透明背景
- */
-- (void)show;
-
-/**
- 带半透明背景
- */
-- (void)showWithShadeBackgroud;
 @end
 
 @protocol PGDatePickerDelegate <NSObject>
