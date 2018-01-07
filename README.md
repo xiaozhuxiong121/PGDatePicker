@@ -40,6 +40,26 @@
 
 # 月日周 时分
 ![year](Images/月日周时分.jpg)
+# 其他样式
+![屏幕快照1](Images/屏幕快照1.png)
+# 其他样式
+![屏幕快照2](Images/屏幕快照2.png)
+
+# 设置自己的样式
+如果内置的样式都满足不了你的需要，想自己设置样式，也是完全支持的，可以将`PGDatePicker`创建出来添加到你的`View`上。
+
+```
+PGDatePicker *datePicker = [[PGDatePicker alloc]init];
+[self.view addSubview:datePicker];
+```
+
+`PGDatePickManager`类就是一个典型的例子，你可以下载源码查看`PGDatePickManager`的简单实现，或许对你自己封装会有所帮助。
+
+> 注意
+
+___
+**2.x变化有点大，1.x升级到2.x时会报错，可以参考demo适当的改一下**
+___
 
 # Swift使用
 [查看使用文档](Swift.md) 
@@ -54,14 +74,14 @@ pod 'PGDatePicker', '>= 1.5.12'
 
 # 使用
 ```
-PGDatePicker *datePicker = [[PGDatePicker alloc]init];
+PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
+PGDatePicker *datePicker = datePickManager.datePicker;
 datePicker.delegate = self;
-[datePicker showWithShadeBackgroud];
-datePicker.datePickerMode = PGDatePickerModeYear;
- 
+[self presentViewController:datePickManager animated:false completion:nil];
+
 #pragma PGDatePickerDelegate
 - (void)datePicker:(PGDatePicker *)datePicker didSelectDate:(NSDateComponents *)dateComponents {
-    NSLog(@"dateComponents = %@", dateComponents);
+NSLog(@"dateComponents = %@", dateComponents);
 }
 ```
 > 如果不设置```minimumDate```和```maximumDate```默认是无穷小和无穷大
