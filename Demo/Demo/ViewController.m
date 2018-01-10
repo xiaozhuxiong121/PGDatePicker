@@ -207,6 +207,7 @@
  */
 - (IBAction)styleHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
+    datePickManager.headerViewBackgroundColor = [UIColor orangeColor];
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerMode = PGDatePickerModeDate;
