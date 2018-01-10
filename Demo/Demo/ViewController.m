@@ -207,13 +207,16 @@
  */
 - (IBAction)styleHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
-    datePickManager.headerViewBackgroundColor = [UIColor orangeColor];
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerMode = PGDatePickerModeDate;
     [self presentViewController:datePickManager animated:false completion:nil];
     
     datePickManager.titleLabel.text = @"PGDatePicker";
+    //设置半透明的背景颜色
+    datePickManager.isShadeBackgroud = true;
+    //设置头部的背景颜色
+    datePickManager.headerViewBackgroundColor = [UIColor orangeColor];
     //设置线条的颜色
     datePicker.lineBackgroundColor = [UIColor redColor];
     //设置选中行的字体颜色
