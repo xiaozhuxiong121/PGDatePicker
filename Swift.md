@@ -6,8 +6,11 @@ pod 'PGDatePicker'
 
 # 使用
 ```
-let datePicker = PGDatePicker()
-datePicker.show()
+let datePickerManager = PGDatePickManager()
+datePickerManager.isShadeBackgroud = true
+let datePicker = datePickerManager.datePicker!
+datePicker.delegate = self
+self.present(datePickerManager, animated: false, completion: nil)
 ```
 **得到选中的日期**
 > 设置代理
@@ -21,10 +24,15 @@ func datePicker(_ datePicker: PGDatePicker!, didSelectDate dateComponents: DateC
 **设置样式**
 
 ```
-let datePicker = PGDatePicker()
+let datePickerManager = PGDatePickManager()
+let datePicker = datePickerManager.datePicker!
+self.present(datePickerManager, animated: false, completion: nil)
 datePicker.delegate = self
-datePicker.show()
-datePicker.titleLabel.text = "PGDatePicker"
+datePickerManager.titleLabel.text = "PGDatePicker"
+//设置头部的背景颜色
+datePickerManager.headerViewBackgroundColor = UIColor.orange
+//设置半透明背景
+datePickerManager.isShadeBackgroud = true
 //设置线条的颜色
 datePicker.lineBackgroundColor = UIColor.red
 //设置选中行的字体颜色
@@ -33,18 +41,19 @@ datePicker.textColorOfSelectedRow = UIColor.red
 datePicker.textColorOfOtherRow = UIColor.black
 
 //设置取消按钮的字体颜色
-datePicker.cancelButtonTextColor = UIColor.black
+datePickerManager.cancelButtonTextColor = UIColor.black
 //设置取消按钮的字
-datePicker.cancelButtonText = "取消"
+datePickerManager.cancelButtonText = "Cancel"
 //设置取消按钮的字体大小
-datePicker.cancelButtonFont = UIFont.boldSystemFont(ofSize: 17)
+datePickerManager.cancelButtonFont = UIFont.boldSystemFont(ofSize: 17)
 
 //设置确定按钮的字体颜色
-datePicker.confirmButtonTextColor = UIColor.red
+datePickerManager.confirmButtonTextColor = UIColor.red
 //设置确定按钮的字
-datePicker.confirmButtonText = "确定"
+datePickerManager.confirmButtonText = "Sure"
 //设置确定按钮的字体大小
-datePicker.confirmButtonFont = UIFont.boldSystemFont(ofSize: 17)datePicker.datePickerMode = .date
+datePickerManager.confirmButtonFont = UIFont.boldSystemFont(ofSize: 17)
+datePicker.datePickerMode = .date
 
 ```
 
