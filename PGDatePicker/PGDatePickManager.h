@@ -24,4 +24,5 @@
 @property (nonatomic, copy) UIColor *confirmButtonTextColor;
 
 @property (nonatomic, weak) UILabel *titleLabel;
+@property (nonatomic, strong)UIColor *headerViewBackgroundColor;
 @end

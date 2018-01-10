@@ -981,7 +981,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     
     NSInteger length = 59;
     BOOL tmp = refresh;
-    if (self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day && self.minimumComponents.hour == dateComponents.hour) {
+    if (self.minimumComponents.hour == dateComponents.hour) {
         refresh = true;
         NSInteger index = length - self.minimumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
@@ -993,7 +993,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             }
         }
         self.minuteList = minutes;
-    }else if (self.maximumComponents.month == dateComponents.month && self.maximumComponents.day == dateComponents.day && self.maximumComponents.hour == dateComponents.hour) {
+    }else if (self.maximumComponents.hour == dateComponents.hour) {
         refresh = true;
         NSInteger index = self.maximumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
@@ -1134,6 +1134,67 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         self.minuteList = minutes;
     }else{
         tmp = false;
+        NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:length];
+        for (NSUInteger i = 0; i <= length; i++) {
+            if (i < 10) {
+                [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
+            }else {
+                [minutes addObject:[@(i) stringValue]];
+            }
+        }
+        self.minuteList = minutes;
+    }
+    return tmp;
+}
+
+//月日周 时分
+- (BOOL)setMinuteListLogic4:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+    if (self.minimumComponents.month == self.maximumComponents.month && self.minimumComponents.day == self.maximumComponents.day &&self.minimumComponents.hour == self.maximumComponents.hour) {
+        NSInteger min = self.minimumComponents.minute;
+        NSInteger max = self.maximumComponents.minute;
+        if (min > max) {
+            min = 0;
+        }
+        NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
+        for (NSUInteger i = min; i <= max; i++) {
+            if (i < 10) {
+                [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
+            }else {
+                [minutes addObject:[@(i) stringValue]];
+            }
+        }
+        self.minuteList = minutes;
+        return refresh;
+    }
+    
+    NSInteger length = 59;
+    BOOL tmp = refresh;
+    if (self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day && self.minimumComponents.hour == dateComponents.hour) {
+        refresh = true;
+        NSInteger index = length - self.minimumComponents.minute;
+        NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
+        for (NSUInteger i = self.minimumComponents.minute; i <= length; i++) {
+            if (i < 10) {
+                [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
+            }else {
+                [minutes addObject:[@(i) stringValue]];
+            }
+        }
+        self.minuteList = minutes;
+    }else if (self.maximumComponents.month == dateComponents.month && self.maximumComponents.day == dateComponents.day && self.maximumComponents.hour == dateComponents.hour) {
+        refresh = true;
+        NSInteger index = self.maximumComponents.minute;
+        NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
+        for (NSUInteger i = 0; i <= self.maximumComponents.minute; i++) {
+            if (i < 10) {
+                [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
+            }else {
+                [minutes addObject:[@(i) stringValue]];
+            }
+        }
+        self.minuteList = minutes;
+    }else{
+        refresh = false;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:length];
         for (NSUInteger i = 0; i <= length; i++) {
             if (i < 10) {
@@ -1462,7 +1523,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (component != 2) {
                 NSString *hourString = [[self.pickerView textOfSelectedRowInComponent:1] componentsSeparatedByString:self.hourString].firstObject;
                 dateComponents.hour = [hourString integerValue];
-                BOOL refresh = [self setMinuteListLogic:pickerView component:component dateComponents:dateComponents refresh:false];
+                BOOL refresh = [self setMinuteListLogic4:pickerView component:component dateComponents:dateComponents refresh:false];
                 [self.pickerView reloadComponent:2 refresh:refresh];
             }
         }

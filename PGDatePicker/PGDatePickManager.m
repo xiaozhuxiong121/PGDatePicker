@@ -104,7 +104,7 @@
                                         contentViewHeight);
     self.headerView.frame = headerViewFrame;
     self.datePicker.frame = datePickerFrame;
-    self.headerView.backgroundColor = [UIColor colorWithHexString:@"#F1EDF6"];
+    self.headerView.backgroundColor = self.headerViewBackgroundColor;
     self.dismissView.alpha = 0;
     [UIView animateWithDuration:0.2 animations:^{
         self.dismissView.alpha = 1;
@@ -233,6 +233,13 @@
         _headerView = view;
     }
     return _headerView;
+}
+
+- (UIColor *)headerViewBackgroundColor {
+    if (!_headerViewBackgroundColor) {
+        _headerViewBackgroundColor = [UIColor colorWithHexString:@"#F1EDF6"];
+    }
+    return _headerViewBackgroundColor;
 }
 
 - (UIView *)dismissView {
