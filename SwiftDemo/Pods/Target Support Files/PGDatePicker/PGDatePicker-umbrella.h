@@ -14,8 +14,10 @@
 #import "NSCalendar+PGCurrent.h"
 #import "NSDate+PGCategory.h"
 #import "PGDatePicker.h"
-#import "PGDatePickerMacros.h"
 #import "PGDatePickerView.h"
+#import "PGDatePickManager.h"
+#import "PGDatePickManagerHeaderView.h"
+#import "PGEnumeration.h"
 #import "UIColor+PGHex.h"
 
 FOUNDATION_EXPORT double PGDatePickerVersionNumber;

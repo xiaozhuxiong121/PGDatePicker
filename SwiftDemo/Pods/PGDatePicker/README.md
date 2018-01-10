@@ -8,6 +8,10 @@
 ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg) 
  [![](https://img.shields.io/badge/jianshu-piggybear-red.svg)](http://www.jianshu.com/u/3740632b2002)
 ![PGDatePicker](PGDatePicker.gif)    
+
+
+#### 直接看如何使用:[Wiki](https://github.com/xiaozhuxiong121/PGDatePicker/wiki)
+
 # 样式1
 ![year](Images/样式1.png)
 # 样式2
@@ -40,6 +44,26 @@
 
 # 月日周 时分
 ![year](Images/月日周时分.jpg)
+# 其他样式
+![屏幕快照1](Images/屏幕快照1.png)
+# 其他样式
+![屏幕快照2](Images/屏幕快照2.png)
+
+# 设置自己的样式
+如果内置的样式都满足不了你的需要，想自己设置样式，也是完全支持的，可以将`PGDatePicker`创建出来添加到你的`View`上。
+
+```
+PGDatePicker *datePicker = [[PGDatePicker alloc]init];
+[self.view addSubview:datePicker];
+```
+
+`PGDatePickManager`类就是一个典型的例子，你可以下载源码查看`PGDatePickManager`的简单实现，或许对你自己封装会有所帮助。
+
+> 注意
+
+___
+**2.x变化有点大，1.x升级到2.x时会报错，可以参考demo适当的改一下**
+___
 
 # Swift使用
 [查看使用文档](Swift.md) 
@@ -47,21 +71,21 @@
 # CocoaPods安装
 
 ```
-pod 'PGDatePicker', '>= 1.5.9'
+pod 'PGDatePicker', '>= 2.0'
 ```
 
 > **在`1.5.1`版本中对iPhone X进行了适配** 
 
 # 使用
 ```
-PGDatePicker *datePicker = [[PGDatePicker alloc]init];
+PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
+PGDatePicker *datePicker = datePickManager.datePicker;
 datePicker.delegate = self;
-[datePicker show];
-datePicker.datePickerMode = PGDatePickerModeYear;
- 
+[self presentViewController:datePickManager animated:false completion:nil];
+
 #pragma PGDatePickerDelegate
 - (void)datePicker:(PGDatePicker *)datePicker didSelectDate:(NSDateComponents *)dateComponents {
-    NSLog(@"dateComponents = %@", dateComponents);
+NSLog(@"dateComponents = %@", dateComponents);
 }
 ```
 > 如果不设置```minimumDate```和```maximumDate```默认是无穷小和无穷大
@@ -114,6 +138,6 @@ datePicker.confirmButtonFont = [UIFont boldSystemFontOfSize:17];
 PGDatePicker 使用 MIT 许可证，详情见 [LICENSE](LICENSE) 文件。
 
 # 想说的话
-喜欢的话扔一个免费的[star](https://github.com/xiaozhuxiong121/PGDatePicker)给我，这足以激励我更好的完善
+喜欢的话扔一个免费的[star](https://github.com/xiaozhuxiong121/PGDatePicker)给我，这足以激励我更好的完善。
 
 

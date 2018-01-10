@@ -12,85 +12,103 @@ import PGDatePicker
 class ViewController: UIViewController {
 
     @IBAction func yearHandler(_ sender: Any) {
-        let datePicker = PGDatePicker()
+        let datePickerManager = PGDatePickManager()
+        datePickerManager.isShadeBackgroud = true
+        datePickerManager.style = .style2
+        let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
-        datePicker.show()
         datePicker.datePickerMode = .year
-        
+        self.present(datePickerManager, animated: false, completion: nil)
 //        datePicker.minimumDate = NSDate.setYear(2015)
 //        datePicker.maximumDate = NSDate.setYear(2020)
     }
     
     @IBAction func yearAndMonthHandler(_ sender: Any) {
-        let datePicker = PGDatePicker()
+        let datePickerManager = PGDatePickManager()
+        datePickerManager.isShadeBackgroud = true
+        datePickerManager.style = .style3
+        let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
-        datePicker.show()
+        datePicker.datePickerType = .type1
         datePicker.datePickerMode = .yearAndMonth
+        self.present(datePickerManager, animated: false, completion: nil)
         
 //        datePicker.minimumDate = NSDate.setYear(2015, month: 5)
 //        datePicker.maximumDate = NSDate.setYear(2020, month: 10)
     }
     
     @IBAction func dateHandler(_ sender: Any) {
-        let datePicker = PGDatePicker()
+        let datePickerManager = PGDatePickManager()
+        let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
         datePicker.isHiddenMiddleText = false;
         datePicker.datePickerType = .type2;
-        datePicker.show()
         datePicker.datePickerMode = .date
+        self.present(datePickerManager, animated: false, completion: nil)
         
 //        datePicker.minimumDate = NSDate.setYear(2015, month: 5, day: 10)
 //        datePicker.maximumDate = NSDate.setYear(2020, month: 10, day: 20)
     }
     
     @IBAction func dateHourMinuteHandler(_ sender: Any) {
-        let datePicker = PGDatePicker()
+        let datePickerManager = PGDatePickManager()
+        let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
-        datePicker.show()
         datePicker.datePickerMode = .dateHourMinute
+        self.present(datePickerManager, animated: false, completion: nil)
     }
     
     @IBAction func dateHourMinuteSecondHandler(_ sender: Any) {
-        let datePicker = PGDatePicker()
+        let datePickerManager = PGDatePickManager()
+        let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
-        datePicker.show()
         datePicker.datePickerMode = .dateHourMinuteSecond
+        self.present(datePickerManager, animated: false, completion: nil)
     }
     
     @IBAction func timeHandler(_ sender: Any) {
-        let datePicker = PGDatePicker()
+        let datePickerManager = PGDatePickManager()
+        let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
-        datePicker.show()
         datePicker.datePickerMode = .time
+        self.present(datePickerManager, animated: false, completion: nil)
     }
     
     @IBAction func timeAndSecondHandler(_ sender: Any) {
-        let datePicker = PGDatePicker()
+        let datePickerManager = PGDatePickManager()
+        let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
-        datePicker.show()
         datePicker.datePickerMode = .timeAndSecond
+        self.present(datePickerManager, animated: false, completion: nil)
     }
     
     @IBAction func dateAndTimeHandler(_ sender: Any) {
-        let datePicker = PGDatePicker()
+        let datePickerManager = PGDatePickManager()
+        let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
-        datePicker.show()
         datePicker.datePickerMode = .dateAndTime
+        self.present(datePickerManager, animated: false, completion: nil)
     }
     
     @IBAction func titleHandler(_ sender: Any) {
-        let datePicker = PGDatePicker()
+        let datePickerManager = PGDatePickManager()
+        datePickerManager.titleLabel.text = "PGDatePicker"
+        let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
-        datePicker.show()
         datePicker.datePickerMode = .date
-        datePicker.titleLabel.text = "PGDatePicker"
+        self.present(datePickerManager, animated: false, completion: nil)
     }
     
     @IBAction func styleHandler(_ sender: Any) {
-        let datePicker = PGDatePicker()
+        let datePickerManager = PGDatePickManager()
+        let datePicker = datePickerManager.datePicker!
+        self.present(datePickerManager, animated: false, completion: nil)
         datePicker.delegate = self
-        datePicker.show()
-        datePicker.titleLabel.text = "PGDatePicker"
+        datePickerManager.titleLabel.text = "PGDatePicker"
+        //设置头部的背景颜色
+        datePickerManager.headerViewBackgroundColor = UIColor.orange
+        //设置半透明背景
+        datePickerManager.isShadeBackgroud = true
         //设置线条的颜色
         datePicker.lineBackgroundColor = UIColor.red
         //设置选中行的字体颜色
@@ -99,18 +117,18 @@ class ViewController: UIViewController {
         datePicker.textColorOfOtherRow = UIColor.black
         
         //设置取消按钮的字体颜色
-        datePicker.cancelButtonTextColor = UIColor.black
+        datePickerManager.cancelButtonTextColor = UIColor.black
         //设置取消按钮的字
-        datePicker.cancelButtonText = "Cancel"
+        datePickerManager.cancelButtonText = "Cancel"
         //设置取消按钮的字体大小
-        datePicker.cancelButtonFont = UIFont.boldSystemFont(ofSize: 17)
+        datePickerManager.cancelButtonFont = UIFont.boldSystemFont(ofSize: 17)
         
         //设置确定按钮的字体颜色
-        datePicker.confirmButtonTextColor = UIColor.red
+        datePickerManager.confirmButtonTextColor = UIColor.red
         //设置确定按钮的字
-        datePicker.confirmButtonText = "Sure"
+        datePickerManager.confirmButtonText = "Sure"
         //设置确定按钮的字体大小
-        datePicker.confirmButtonFont = UIFont.boldSystemFont(ofSize: 17)
+        datePickerManager.confirmButtonFont = UIFont.boldSystemFont(ofSize: 17)
         datePicker.datePickerMode = .date
     }
 }

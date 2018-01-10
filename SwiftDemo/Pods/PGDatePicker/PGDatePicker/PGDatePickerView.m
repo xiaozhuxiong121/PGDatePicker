@@ -1,6 +1,5 @@
 //
 //  PGDatePickerView.m
-//  HooDatePickerDemo
 //
 //  Created by piggybear on 2017/7/25.
 //  Copyright © 2017年 piggybear. All rights reserved.
@@ -8,7 +7,6 @@
 
 #import "PGDatePickerView.h"
 #import "UIColor+PGHex.h"
-#import "PGDatePickerMacros.h"
 
 @interface PGDatePickerView()
 @property (nonatomic, weak) UILabel *label;
@@ -20,6 +18,14 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    CGSize size = [self.content sizeWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17]}];
+    self.label.frame = (CGRect){{self.contentView.bounds.size.width / 2 - size.width / 2,
+        self.contentView.bounds.size.height / 2 - size.height / 2}, size};
 }
 
 #pragma Setter
@@ -35,8 +41,6 @@
 - (void)setContent:(NSString *)content {
     _content = content;
     self.label.text = content;
-    CGSize size = [content sizeWithAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17]}];
-    self.label.frame = (CGRect){{kScreenWidth / 2 - size.width / 2, kTableViewCellHeight / 2 - size.height / 2}, size};
 }
 
 #pragma Getter
