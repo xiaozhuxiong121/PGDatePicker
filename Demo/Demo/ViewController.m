@@ -185,6 +185,7 @@
 - (IBAction)dateAndTimeHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     PGDatePicker *datePicker = datePickManager.datePicker;
+    datePicker.isHiddenMiddleText = false;
     datePicker.delegate = self;
     datePicker.datePickerMode = PGDatePickerModeDateAndTime;
     [self presentViewController:datePickManager animated:false completion:nil];

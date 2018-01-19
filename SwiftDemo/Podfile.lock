@@ -1,5 +1,5 @@
 PODS:
-  - PGDatePicker (2.0.2):
+  - PGDatePicker (2.0.3):
     - PGPickerView
   - PGPickerView (1.2.1)
 
@@ -7,7 +7,7 @@ DEPENDENCIES:
   - PGDatePicker
 
 SPEC CHECKSUMS:
-  PGDatePicker: 1975655d2c9735108dbb5b8502dcc0894cafe34f
+  PGDatePicker: bfdb0f690382208099e50248dfb5b361f156465e
   PGPickerView: cb49c6b3e2a39148bef9f666fa58bb349e0c3b85
 
 PODFILE CHECKSUM: f8c6d355d123cee6e595015c9e7d0e2770fcf067
