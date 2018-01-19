@@ -715,7 +715,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             if (components.month < self.minimumComponents.month) {
                 components = self.minimumComponents;
             }
-            NSString *string = [NSString stringWithFormat:@"%ld%@%ld%@ %@ ", components.month, self.monthString, components.day, self.dayString, [self weekMappingFrom:components.weekday]];
+            NSString *monthString = [NSBundle localizedStringForKey:@"monthString"];
+            NSString *dayString = [NSBundle localizedStringForKey:@"dayString"];
+            NSString *string = [NSString stringWithFormat:@"%ld%@%ld%@ %@ ", components.month, monthString, components.day, dayString, [self weekMappingFrom:components.weekday]];
             NSInteger row = 0;
             BOOL isExist = [self.dateAndTimeList containsObject:string];
             if (isExist) {
@@ -2054,6 +2056,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         NSMutableArray *array = [NSMutableArray array];
         NSInteger firstIndex = self.minimumComponents.month - 1;
         NSInteger lastIndex = self.maximumComponents.month - 1;
+        NSString *monthString = [NSBundle localizedStringForKey:@"monthString"];
+        NSString *dayString = [NSBundle localizedStringForKey:@"dayString"];
+        
         for (NSInteger i = firstIndex; i <= lastIndex; i++) {
             NSString *month = self.monthList[i];
             NSInteger day = [self howManyDaysWithMonthInThisYear:self.currentComponents.year withMonth:[month integerValue]];
@@ -2074,7 +2079,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             [self.dayList enumerateObjectsUsingBlock:^(NSString*  _Nonnull day, NSUInteger idx, BOOL * _Nonnull stop) {
                 NSInteger weekDay = [self.calendar component:NSCalendarUnitWeekday fromDate:[NSDate setYear:self.currentComponents.year month:[month integerValue] day:[day integerValue]]];
                 
-                NSString *string = [NSString stringWithFormat:@"%@%@%@%@ %@ ", month, self.monthString, day, self.dayString, [self weekMappingFrom:weekDay]];
+                NSString *string = [NSString stringWithFormat:@"%@%@%@%@ %@ ", month, monthString, day, dayString, [self weekMappingFrom:weekDay]];
                 [array addObject:string];
             }];
         }
