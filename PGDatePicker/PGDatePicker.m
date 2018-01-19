@@ -86,6 +86,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (_isSelectedCancelButton) {
         return;
     }
+    if (_isSubViewLayout) {
+        return;
+    }
     self.selectedComponents = [self.calendar components:self.unitFlags fromDate:[NSDate date]];
     _isSubViewLayout = true;
     [self setupPickerView];
