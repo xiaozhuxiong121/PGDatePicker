@@ -107,26 +107,36 @@ NSLog(@"dateComponents = %@", dateComponents);
 
 # 设置样式
 ```
+PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
+PGDatePicker *datePicker = datePickManager.datePicker;
+datePicker.delegate = self;
+datePicker.datePickerMode = PGDatePickerModeDate;
+[self presentViewController:datePickManager animated:false completion:nil];
+
+datePickManager.titleLabel.text = @"PGDatePicker";
+//设置半透明的背景颜色
+datePickManager.isShadeBackgroud = true;
+//设置头部的背景颜色
+datePickManager.headerViewBackgroundColor = [UIColor orangeColor];
 //设置线条的颜色
 datePicker.lineBackgroundColor = [UIColor redColor];
 //设置选中行的字体颜色
 datePicker.textColorOfSelectedRow = [UIColor redColor];
 //设置未选中行的字体颜色
 datePicker.textColorOfOtherRow = [UIColor blackColor];
-
 //设置取消按钮的字体颜色
-datePicker.cancelButtonTextColor = [UIColor blackColor];
+datePickManager.cancelButtonTextColor = [UIColor blackColor];
 //设置取消按钮的字
-datePicker.cancelButtonText = @"取消";
+datePickManager.cancelButtonText = @"Cancel";
 //设置取消按钮的字体大小
-datePicker.cancelButtonFont = [UIFont boldSystemFontOfSize:17];
+datePickManager.cancelButtonFont = [UIFont boldSystemFontOfSize:17];
 
 //设置确定按钮的字体颜色
-datePicker.confirmButtonTextColor = [UIColor redColor];
+datePickManager.confirmButtonTextColor = [UIColor redColor];
 //设置确定按钮的字
-datePicker.confirmButtonText = @"确定";
+datePickManager.confirmButtonText = @"Sure";
 //设置确定按钮的字体大小
-datePicker.confirmButtonFont = [UIFont boldSystemFontOfSize:17];
+datePickManager.confirmButtonFont = [UIFont boldSystemFontOfSize:17];
 
 ```
 
