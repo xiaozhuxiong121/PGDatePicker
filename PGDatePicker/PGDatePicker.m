@@ -413,7 +413,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (!_isSubViewLayout) {
         return;
     }
-    NSDateComponents *components = self.selectComponents;
+    NSDateComponents *components = [self.calendar components:self.unitFlags fromDate:_setDate];
     if (self.minimumDate == nil && animated && !_isSetDate) {
         NSInteger year = components.year - 10;
         if (year <= self.minimumComponents.year) {
