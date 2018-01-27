@@ -26,6 +26,7 @@
     
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.style = PGDatePickManagerStyle2;
+    datePickManager.isShadeBackgroud = true;
     
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.isHiddenMiddleText = false;
@@ -52,9 +53,10 @@
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.style = PGDatePickManagerStyle3;
     datePickManager.isShadeBackgroud = true;
+    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
-    datePicker.datePickerType = PGPickerViewType3;
+    datePicker.datePickerType = PGPickerViewType2;
     datePicker.datePickerMode = PGDatePickerModeYearAndMonth;
     [self presentViewController:datePickManager animated:false completion:nil];
     
@@ -81,7 +83,7 @@
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
-    datePicker.datePickerType = PGPickerViewType2;
+    datePicker.datePickerType = PGPickerViewType3;
     datePicker.isHiddenMiddleText = false;
     datePicker.datePickerMode = PGDatePickerModeDate;
     

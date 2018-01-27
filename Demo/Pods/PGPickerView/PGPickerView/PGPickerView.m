@@ -48,6 +48,7 @@
         return;
     }
     _isSubViewLayout = true;
+    [self setupColumnView];
     [self setupView];
     [self.upLines enumerateObjectsUsingBlock:^(UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self bringSubviewToFront:obj];
@@ -64,9 +65,9 @@
 }
 
 - (void)setup {
-    self.lineBackgroundColor = [UIColor grayColor];
+    self.lineBackgroundColor = [UIColor lightGrayColor];
     self.textColorOfSelectedRow = [UIColor blackColor];
-    self.textColorOfOtherRow = [UIColor grayColor];
+    self.textColorOfOtherRow = [UIColor lightGrayColor];
     self.isHiddenMiddleText = true;
     self.lineHeight = 0.5;
     self.verticalLineWidth = 0.5;
@@ -255,7 +256,7 @@
         }
         label.frame = CGRectMake(lineWidth / 2 + lineWidth * i + space, kHeight / 2 - 15, 30, 30);
         NSString *text = @"";
-        if ([self.delegate respondsToSelector:@selector(pickerView:middleTextSpaceForcomponent:)]) {
+        if ([self.delegate respondsToSelector:@selector(pickerView:middleTextForcomponent:)]) {
             text = [self.delegate pickerView:self middleTextForcomponent:i];
         }
         label.text = text;
@@ -440,7 +441,6 @@
     _dataSource = dataSource;
     if (dataSource && [dataSource respondsToSelector:@selector(numberOfComponentsInPickerView:)]) {
         _numberOfComponents = [dataSource numberOfComponentsInPickerView:self];
-        [self setupColumnView];
     }
 }
 
