@@ -141,8 +141,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         self.textColorOfSelectedRow = _titleColorForSelectedRow;
     }
     pickerView.textColorOfSelectedRow = self.textColorOfSelectedRow;
+    pickerView.textFontOfSelectedRow = self.textFontOfSelectedRow;
     pickerView.textColorOfOtherRow = self.textColorOfOtherRow;
-    
+    pickerView.textFontOfOtherRow = self.textFontOfOtherRow;
     pickerView.type = (PGPickerViewType)self.datePickerType;
     pickerView.delegate = self;
     pickerView.dataSource = self;
@@ -2128,7 +2129,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (UIColor *)textColorOfOtherRow {
     if (!_textColorOfOtherRow) {
-        _textColorOfOtherRow = [UIColor grayColor];
+        _textColorOfOtherRow = [UIColor lightGrayColor];
     }
     return _textColorOfOtherRow;
 }
@@ -2140,16 +2141,30 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return _textColorOfSelectedRow;
 }
 
+- (UIFont *)textFontOfSelectedRow {
+    if (!_textFontOfSelectedRow) {
+        _textFontOfSelectedRow = [UIFont systemFontOfSize:17];
+    }
+    return _textFontOfSelectedRow;
+}
+
+- (UIFont *)textFontOfOtherRow {
+    if (!_textFontOfOtherRow) {
+        _textFontOfOtherRow = [UIFont systemFontOfSize:17];
+    }
+    return _textFontOfOtherRow;
+}
+
 - (CGFloat)rowHeight {
     if (!_rowHeight) {
-        _rowHeight = 44;
+        _rowHeight = 50;
     }
     return _rowHeight;
 }
 
 - (UIColor *)middleTextColor {
     if (!_middleTextColor) {
-        _middleTextColor = [UIColor grayColor];
+        _middleTextColor = [UIColor colorWithHexString:@"#69BDFF"];
     }
     return _middleTextColor;
 }

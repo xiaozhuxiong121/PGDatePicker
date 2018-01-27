@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger, PGDatePickerMode) {
     PGDatePickerModeYear, //年
     PGDatePickerModeYearAndMonth, //年月
     PGDatePickerModeDate, //年月日
-     PGDatePickerModeDateHourMinute, //年月日时分
+    PGDatePickerModeDateHourMinute, //年月日时分
     PGDatePickerModeDateHourMinuteSecond, //年月日时分秒
     PGDatePickerModeTime, //时分
     PGDatePickerModeTimeAndSecond, //时分秒
@@ -52,7 +52,7 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
 /**
  设置行高
  */
-@property (nonatomic, assign) CGFloat rowHeight;
+@property (nonatomic, assign) CGFloat rowHeight; //default is 50
 
 /*
  默认是true
@@ -65,7 +65,10 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
 @property (nonatomic, strong)UIColor *titleColorForOtherRow PGDatePickerDeprecated("已过时，请使用textColorOfOtherRow进行替换");
 
 @property (nonatomic, strong)UIColor *textColorOfSelectedRow;     //default is #69BDFF
-@property (nonatomic, strong)UIColor *textColorOfOtherRow;        // default is [UIColor grayColor]
+@property(nonatomic, strong) UIFont *textFontOfSelectedRow;       //default is 17
+
+@property (nonatomic, strong)UIColor *textColorOfOtherRow;        // default is [UIColor lightGrayColor]
+@property(nonatomic, strong) UIFont *textFontOfOtherRow;          //default is 17
 
 @property(nonatomic, strong) UIColor *lineBackgroundColor;       //default is #69BDFF
 
