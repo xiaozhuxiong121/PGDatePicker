@@ -27,7 +27,7 @@ PGPickerView是将UIPickerView的弯曲弧度变成直列表，可以是单列�
 # CocoaPods安装
 
 ```
-pod 'PGPickerView', '>= 1.2.0'
+pod 'PGPickerView', '>= 1.2.1'
 ```
 
 # 使用

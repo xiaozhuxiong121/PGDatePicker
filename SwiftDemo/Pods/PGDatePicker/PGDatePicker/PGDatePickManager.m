@@ -79,17 +79,16 @@
 }
 
 - (void)setupStyle1 {
-    CGFloat rowHeight = self.datePicker.rowHeight;
-    CGFloat headerViewHeight = 44;
-    CGFloat contentViewHeight = rowHeight * 5 + headerViewHeight;
-    CGFloat datePickerHeight = contentViewHeight - headerViewHeight;
     CGFloat bottom = 0;
     if (@available(iOS 11.0, *)) {
         bottom = self.view.safeAreaInsets.bottom;
     }
-    
+    CGFloat rowHeight = self.datePicker.rowHeight;
+    CGFloat headerViewHeight = self.headerHeight;
+    CGFloat contentViewHeight = rowHeight * 5 + headerViewHeight;
+    CGFloat datePickerHeight = contentViewHeight - headerViewHeight - bottom;
     CGRect contentViewFrame = CGRectMake(0,
-                                         self.view.bounds.size.height - contentViewHeight - bottom,
+                                         self.view.bounds.size.height - contentViewHeight,
                                          self.view.bounds.size.width,
                                          contentViewHeight);
     CGRect headerViewFrame = CGRectMake(0, 0, self.view.bounds.size.width, headerViewHeight);
@@ -118,7 +117,7 @@
 - (void)setupStyle2 {
     CGFloat rowHeight = self.datePicker.rowHeight;
     CGFloat datePickerHeight = rowHeight * 5;
-    CGFloat headerViewHeight = 44;
+    CGFloat headerViewHeight = self.headerHeight;
     CGFloat contentViewMarginLeft = 30;
     CGFloat contentViewWidth = self.view.bounds.size.width - contentViewMarginLeft * 2;
     CGFloat contentViewHeight = datePickerHeight  + headerViewHeight;
@@ -131,6 +130,8 @@
     CGRect datePickerFrame = self.contentView.bounds;
     datePickerFrame.origin.y = CGRectGetMaxY(self.headerView.frame);
     datePickerFrame.size.height = datePickerHeight;
+    self.contentView.layer.cornerRadius = 10;
+    self.datePicker.layer.cornerRadius = 10;
     self.datePicker.frame = datePickerFrame;
     self.contentView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     [UIView animateWithDuration:0.05
@@ -145,7 +146,7 @@
 - (void)setupStyle3 {
     CGFloat rowHeight = self.datePicker.rowHeight;
     CGFloat datePickerHeight = rowHeight * 5;
-    CGFloat headerViewHeight = 44;
+    CGFloat headerViewHeight = self.headerHeight;
     CGFloat contentViewMarginLeft = 30;
     CGFloat contentViewWidth = self.view.bounds.size.width - contentViewMarginLeft * 2;
     CGFloat contentViewHeight = datePickerHeight  + headerViewHeight;
@@ -160,6 +161,8 @@
     CGRect datePickerFrame = self.contentView.bounds;
     datePickerFrame.size.height = datePickerHeight;
     self.datePicker.frame = datePickerFrame;
+    self.contentView.layer.cornerRadius = 10;
+    self.datePicker.layer.cornerRadius = 10;
     self.contentView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     [UIView animateWithDuration:0.05
                      animations:^{
@@ -247,6 +250,13 @@
         _headerViewBackgroundColor = [UIColor colorWithHexString:@"#F1EDF6"];
     }
     return _headerViewBackgroundColor;
+}
+
+- (CGFloat)headerHeight {
+    if (!_headerHeight) {
+        _headerHeight = 50;
+    }
+    return _headerHeight;
 }
 
 - (UIView *)dismissView {

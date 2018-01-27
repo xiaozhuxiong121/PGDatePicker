@@ -25,4 +25,5 @@
 
 @property (nonatomic, weak) UILabel *titleLabel;
 @property (nonatomic, strong)UIColor *headerViewBackgroundColor;
+@property (nonatomic, assign) CGFloat headerHeight;
 @end

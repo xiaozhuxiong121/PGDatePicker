@@ -46,7 +46,7 @@
 }
 
 - (void)setyle1 {
-    CGFloat lineViewHeight = 1;
+    CGFloat lineViewHeight = 0.5;
     self.lineView.frame = CGRectMake(0,
                                      self.bounds.size.height - lineViewHeight,
                                      self.bounds.size.width,
@@ -67,7 +67,7 @@
 }
 
 - (void)setyle2 {
-    CGFloat lineViewHeight = 1;
+    CGFloat lineViewHeight = 0.5;
     self.lineView.frame = CGRectMake(0,
                                      0,
                                      self.bounds.size.width,
@@ -82,17 +82,17 @@
                                           (self.bounds.size.height - buttonHeight) / 2,
                                           buttonWidth,
                                           buttonHeight);
-    self.middleLineView.frame = CGRectMake(self.bounds.size.width / 2, 0, 1, self.bounds.size.height);
+    self.middleLineView.frame = CGRectMake(self.bounds.size.width / 2, 5, 0.5, self.bounds.size.height - 10);
 }
 
 - (void)setupButton {
-    self.cancelButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    self.cancelButton.titleLabel.font = [UIFont systemFontOfSize:18];
     NSString *cancelButtonText = [NSBundle localizedStringForKey:@"cancelButtonText"];
-    [self.cancelButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [self.cancelButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [self.cancelButton setTitle:cancelButtonText forState:UIControlStateNormal];
     [self.cancelButton addTarget:self action:@selector(cancelButtonHandler) forControlEvents:UIControlEventTouchUpInside];
     
-    self.confirmButton.titleLabel.font = [UIFont systemFontOfSize:15];
+    self.confirmButton.titleLabel.font = [UIFont systemFontOfSize:18];
     NSString *confirmButtonText = [NSBundle localizedStringForKey:@"confirmButtonText"];
     [self.confirmButton setTitleColor:[UIColor colorWithHexString:@"#69BDFF"] forState:UIControlStateNormal];
     [self.confirmButton setTitle:confirmButtonText forState:UIControlStateNormal];
@@ -123,7 +123,7 @@
 - (UIView *)lineView {
     if (!_lineView) {
         UIView *view = [[UIView alloc]init];
-        view.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.6];
+        view.backgroundColor = [UIColor lightGrayColor];
         [self addSubview:view];
         _lineView = view;
     }
@@ -145,7 +145,7 @@
 - (UIView *)middleLineView {
     if (!_middleLineView) {
         UIView *view = [[UIView alloc]init];
-        view.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.6];
+        view.backgroundColor = [UIColor lightGrayColor];
         [self addSubview:view];
         _middleLineView = view;
     }
