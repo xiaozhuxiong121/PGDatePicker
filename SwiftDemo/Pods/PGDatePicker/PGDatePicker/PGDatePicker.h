@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger, PGDatePickerMode) {
     PGDatePickerModeDateHourMinuteSecond, //年月日时分秒
     PGDatePickerModeTime, //时分
     PGDatePickerModeTimeAndSecond, //时分秒
+    PGDatePickerModeMinuteAndSecond, //分秒
     PGDatePickerModeDateAndTime, //月日周 时分
 };
 

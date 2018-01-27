@@ -1,11 +1,11 @@
 PODS:
-  - PGPickerView (1.2.4)
+  - PGPickerView (1.2.5)
 
 DEPENDENCIES:
   - PGPickerView
 
 SPEC CHECKSUMS:
-  PGPickerView: eaaaaaf6c4b0bd4991e94af21eb8cf2e1f92583f
+  PGPickerView: 9108fb2b52ba5ec40cccddb1d480fd7ab7b1bb0b
 
 PODFILE CHECKSUM: c5d1539e2d8b54c4aee772d02b2b1344f9e99365
 

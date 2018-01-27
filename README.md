@@ -22,28 +22,30 @@
 > 只显示中间的文字，设置```isHiddenMiddleText```为```false```即可，默认是```true```
 
 # 年份
-![year](Images/年.jpg)
+![year](Images/年.png)
 
 # 年月
-![year](Images/年月.jpg)
+![year](Images/年月.png)
 
 # 年月日
-![year](Images/年月日.jpg)
+![year](Images/年月日.png)
 
 # 年月日时分
-![year](Images/年月日时分.jpg)
+![year](Images/年月日时分.png)
 
 # 年月日时分秒
-![year](Images/年月日时分秒.jpg)
+![year](Images/年月日时分秒.png)
 
 # 时分
-![year](Images/时分.jpg)
+![year](Images/时分.png)
 
 # 时分秒
-![year](Images/时分秒.jpg)
+![year](Images/时分秒.png)
+# 分秒
+![year](Images/分秒.png)
 
 # 月日周 时分
-![year](Images/月日周时分.jpg)
+![year](Images/月日周时分.png)
 # 其他样式
 ![屏幕快照1](Images/屏幕快照1.png)
 # 其他样式

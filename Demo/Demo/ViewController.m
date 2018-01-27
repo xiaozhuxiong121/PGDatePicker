@@ -83,7 +83,7 @@
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
-    datePicker.datePickerType = PGPickerViewType3;
+    datePicker.datePickerType = PGPickerViewType1;
     datePicker.isHiddenMiddleText = false;
     datePicker.datePickerMode = PGDatePickerModeDate;
     [self presentViewController:datePickManager animated:false completion:nil];

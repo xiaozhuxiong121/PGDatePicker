@@ -225,6 +225,11 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
     }
 }
 
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    NSInteger row =  self.centerTableView.contentOffset.y / self.rowHeight +  0.5;
+    self.selectedRow = row;
+}
+
 #pragma mark - row logic
 - (NSUInteger)numberOfRowsInTableView {
     return self.datas.count + self.offsetCount * 2;
@@ -269,18 +274,6 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return self.rowHeight;
-}
-
-- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (!self.refresh) {
-        return;
-    }
-    NSInteger index =  self.centerTableView.contentOffset.y / self.rowHeight + 0.5;
-    NSInteger count = [self numberOfRowsInTableView];
-    if (count > index && self.refresh) {
-        self.refresh = false;
-        [self selectRow:index animated:true];
-    }
 }
 
 #pragma mark - UITableViewDataSource
