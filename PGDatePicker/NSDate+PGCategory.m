@@ -100,6 +100,16 @@ static const NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth
     return date;
 }
 
++ (NSDate *)setMinute:(NSInteger)minute second:(NSInteger)second {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDate *currentDate = [NSDate date];
+    NSDateComponents *components = [calendar components:unitFlags fromDate:currentDate];
+    [components setMinute:minute];
+    [components setSecond:second];
+    NSDate *date = [calendar dateFromComponents:components];
+    return date;
+}
+
 + (NSDate *)setHour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *currentDate = [NSDate date];
