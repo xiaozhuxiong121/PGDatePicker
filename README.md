@@ -91,7 +91,9 @@ datePicker.delegate = self;
 NSLog(@"dateComponents = %@", dateComponents);
 }
 ```
-> 如果不设置```minimumDate```和```maximumDate```默认是无穷小和无穷大
+> 如果不设置```minimumDate```和```maximumDate```默认是无穷小和无穷大 
+
+> 语言跟着手机系统语言走，默认有英文，中文，繁体中文，如果是模拟器的话，将模拟器的系统语言改成中文即显示中文
 
 # 设置Date
 > 建议用NSDate+PGCategory类所定义的方法去设置  
