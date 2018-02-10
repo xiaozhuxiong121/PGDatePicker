@@ -1,8 +1,9 @@
 # PGDatePicker
-日期选择器，支持年、年月、年月日、年月日时分、年月日时分秒、时分、时分秒、月日周 时分等，内置了3种样式。
+日期选择器，支持年、年月、年月日、年月日时分、年月日时分秒、时分、时分秒、分秒、月日周 时分等，内置了3种样式。
 
 > 由于使用UIPickerView的话，列表会有个弧度，所以这里用了[PGPickerView](https://github.com/xiaozhuxiong121/PGPickerView)  
 
+![PGDatePicker](F734F5F9-FB12-4BA7-B43E-B39D0FF1DA3B.png)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/PGDatePicker.svg)](https://cocoapods.org/pods/PGDatePicker)
 ![](https://img.shields.io/badge/platform-iOS-red.svg) ![](https://img.shields.io/badge/language-Objective--C-orange.svg)
 ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg) 
@@ -22,28 +23,30 @@
 > 只显示中间的文字，设置```isHiddenMiddleText```为```false```即可，默认是```true```
 
 # 年份
-![year](Images/年.jpg)
+![year](Images/年.png)
 
 # 年月
-![year](Images/年月.jpg)
+![year](Images/年月.png)
 
 # 年月日
-![year](Images/年月日.jpg)
+![year](Images/年月日.png)
 
 # 年月日时分
-![year](Images/年月日时分.jpg)
+![year](Images/年月日时分.png)
 
 # 年月日时分秒
-![year](Images/年月日时分秒.jpg)
+![year](Images/年月日时分秒.png)
 
 # 时分
-![year](Images/时分.jpg)
+![year](Images/时分.png)
 
 # 时分秒
-![year](Images/时分秒.jpg)
+![year](Images/时分秒.png)
+# 分秒
+![year](Images/分秒.png)
 
 # 月日周 时分
-![year](Images/月日周时分.jpg)
+![year](Images/月日周时分.png)
 # 其他样式
 ![屏幕快照1](Images/屏幕快照1.png)
 # 其他样式
@@ -71,7 +74,7 @@ ___
 # CocoaPods安装
 
 ```
-pod 'PGDatePicker', '>= 2.0.4'
+pod 'PGDatePicker', '>= 2.0.6'
 ```
 
 > **在`1.5.1`版本中对iPhone X进行了适配** 
@@ -88,7 +91,9 @@ datePicker.delegate = self;
 NSLog(@"dateComponents = %@", dateComponents);
 }
 ```
-> 如果不设置```minimumDate```和```maximumDate```默认是无穷小和无穷大
+> 如果不设置```minimumDate```和```maximumDate```默认是无穷小和无穷大 
+
+> 语言跟着手机系统语言走，默认有英文，中文，繁体中文，如果是模拟器的话，将模拟器的系统语言改成中文即显示中文
 
 # 设置Date
 > 建议用NSDate+PGCategory类所定义的方法去设置  
