@@ -169,7 +169,7 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
         [self.centerTableView selectRowAtIndexPath: [NSIndexPath indexPathForRow:row + self.offsetCount inSection:0] animated: _isAnimationOfSelectedRow scrollPosition: UITableViewScrollPositionMiddle];
         
         __block PGPickerColumnView *blockSelf = self;
-        dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.26 * NSEC_PER_SEC));
+        dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC));
         dispatch_after(delayTime, dispatch_get_main_queue(), ^{
             [blockSelf scrollViewDidEndDecelerating:blockSelf.centerTableView];
             _isSelected = false;
@@ -236,9 +236,6 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
 }
 
 - (void)safeReloadData {
-    if (!_isSubViewLayout || _isSelected) {
-        return;
-    }
     [self.centerTableView reloadData];
     [self.upTableView reloadData];
     [self.downTableView reloadData];

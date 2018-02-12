@@ -82,12 +82,12 @@
     datePicker.datePickerMode = PGDatePickerModeDate;
     [self presentViewController:datePickManager animated:false completion:nil];
     
-//    datePicker.minimumDate = [NSDate setYear:2015 month:5 day:10];
-//    datePicker.maximumDate = [NSDate setYear:2017 month:10 day:16];
-//
+//    datePicker.minimumDate = [NSDate setYear:2019 month:1 day:10];
+//    datePicker.maximumDate = [NSDate setYear:2022 month:2 day:16];
+
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
 //    dateFormatter.dateFormat = @"yyyy-MM-dd";
-//    NSDate *date = [dateFormatter dateFromString: @"2015-08-10"];
+//    NSDate *date = [dateFormatter dateFromString: @"2019-01-18"];
 //    [datePicker setDate:date animated:true];
 }
 
@@ -105,8 +105,8 @@
     
 //    datePicker.minimumDate = [NSDate setYear:2018 month:1 day:11 hour:15 minute:18];
 //    datePicker.maximumDate = [NSDate setYear:2018 month:2 day:10 hour:15 minute:18];
-//
-//
+
+
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
 //    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm";
 //    NSDate *date = [dateFormatter dateFromString: @"2018-02-10 05:04"];
@@ -126,8 +126,7 @@
     
 //    datePicker.minimumDate = [NSDate setYear:2018 month:5 day:10 hour:18 minute:6 second:10];
 //    datePicker.maximumDate = [NSDate setYear:2019 month:11 day:27 hour:22 minute:30 second:40];
-    
-    
+//
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
 //    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
 //    NSDate *date = [dateFormatter dateFromString: @"2019-08-10 05:44:55"];
@@ -169,7 +168,7 @@
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
 //    dateFormatter.dateFormat = @"HH:mm:ss";
 //    NSDate *date = [dateFormatter dateFromString: @"10:11:25"];
-//    [datePicker setDate:date animated:false];
+//    [datePicker setDate:date animated:true];
 }
 
 /**
@@ -188,7 +187,7 @@
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
 //    dateFormatter.dateFormat = @"mm:ss";
 //    NSDate *date = [dateFormatter dateFromString: @"04:05"];
-//    [datePicker setDate:date animated:false];
+//    [datePicker setDate:date animated:true];
 }
 
 /**
