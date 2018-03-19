@@ -46,7 +46,7 @@
     NSString *str = [[self.pickerView textOfSelectedRowInComponent:0] componentsSeparatedByString:self.yearString].firstObject;
     dateComponents.year = [str integerValue];
     if (component == 0) {
-        BOOL refresh = [self setMonthListLogic:dateComponents refresh:true];
+        BOOL refresh = [self setMonthListWithComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:1 refresh:refresh];
     }
 }

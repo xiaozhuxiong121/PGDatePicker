@@ -58,7 +58,7 @@
     NSString *str = [[self.pickerView textOfSelectedRowInComponent:0] componentsSeparatedByString:self.minuteString].firstObject;
     dateComponents.minute = [str integerValue];
     if (component == 0) {
-        BOOL refresh = [self setSecondListLogic3:self.pickerView component:component dateComponents:dateComponents refresh:true];
+        BOOL refresh = [self setSecondList3WithComponent:component dateComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:1 refresh:refresh];
     }
 }

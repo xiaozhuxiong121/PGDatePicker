@@ -88,13 +88,13 @@
     str4 = [str4 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     dateComponents.weekday = [self weekDayMappingFrom:str4];
     if (component == 0) {
-        BOOL refresh = [self setHourListLogic:self.pickerView dateComponents:dateComponents refresh:true];
+        BOOL refresh = [self setHourListWithDateComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:1 refresh:refresh];
     }
     if (component != 2) {
         NSString *hourString = [[self.pickerView textOfSelectedRowInComponent:1] componentsSeparatedByString:self.hourString].firstObject;
         dateComponents.hour = [hourString integerValue];
-        BOOL refresh = [self setMinuteListLogic4:self.pickerView component:component dateComponents:dateComponents refresh:false];
+        BOOL refresh = [self setMinuteList4WithComponent:component dateComponents:dateComponents refresh:false];
         [self.pickerView reloadComponent:2 refresh:refresh];
     }
 }

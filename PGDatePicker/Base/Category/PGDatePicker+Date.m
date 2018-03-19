@@ -67,11 +67,11 @@
     if (component == 0) {
         NSString *str = [[self.pickerView textOfSelectedRowInComponent:1] componentsSeparatedByString:self.monthString].firstObject;
         dateComponents.month = [str integerValue];
-        BOOL refresh = [self setMonthListLogic:dateComponents refresh:true];
+        BOOL refresh = [self setMonthListWithComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:1 refresh:refresh];
     }
     if (component != 2) {
-        BOOL refresh = [self setDayListLogic:self.pickerView component:component dateComponents:dateComponents refresh:false];
+        BOOL refresh = [self setDayListWithComponent:component dateComponents:dateComponents refresh:false];
         [self.pickerView reloadComponent:2 refresh:refresh];
     }
 }

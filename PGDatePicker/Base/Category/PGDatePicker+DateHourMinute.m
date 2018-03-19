@@ -99,20 +99,20 @@
     if (component == 0) {
         NSString *monthString = [[self.pickerView textOfSelectedRowInComponent:1] componentsSeparatedByString:self.monthString].firstObject;
         dateComponents.month = [monthString integerValue];
-        BOOL refresh = [self setMonthListLogic:dateComponents refresh:true];
+        BOOL refresh = [self setMonthListWithComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:1 refresh:refresh];
     }
     
     if (component == 0 || component == 1) {
-        BOOL refresh = [self setDayListLogic:self.pickerView component:component dateComponents:dateComponents refresh:true];
+        BOOL refresh = [self setDayListWithComponent:component dateComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:2 refresh:refresh];
     }
     if (component == 0 || component == 1 || component == 2) {
-        BOOL refresh = [self setHourListLogic2:self.pickerView dateComponents:dateComponents refresh:true];
+        BOOL refresh = [self setHourList2WithDateComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:3 refresh:refresh];
     }
     if (component != 4) {
-        BOOL refresh = [self setMinuteListLogic2:self.pickerView component:component dateComponents:dateComponents refresh:true];
+        BOOL refresh = [self setMinuteList2WithComponent:component dateComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:4 refresh:refresh];
     }
 }

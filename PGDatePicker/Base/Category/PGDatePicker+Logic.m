@@ -30,7 +30,7 @@
     self.dayList = days;
 }
 
-- (BOOL)setDayListLogic:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+- (BOOL)setDayListWithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     if (self.minimumComponents.year == self.maximumComponents.year && self.minimumComponents.month == self.maximumComponents.month) {
         NSInteger min = self.minimumComponents.day;
         NSInteger max = self.maximumComponents.day;
@@ -76,7 +76,7 @@
     return tmp;
 }
 
-- (BOOL)setHourListLogic:(PGPickerView *)pickerView dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+- (BOOL)setHourListWithDateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     BOOL tmp = refresh;
     NSInteger length = 23;
     if (self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day) {
@@ -106,7 +106,7 @@
     return  tmp;
 }
 
-- (BOOL)setHourListLogic2:(PGPickerView *)pickerView dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+- (BOOL)setHourList2WithDateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     if (self.minimumComponents.year == self.maximumComponents.year && self.minimumComponents.month == self.maximumComponents.month && self.minimumComponents.day == self.maximumComponents.day) {
         NSInteger min = self.minimumComponents.hour;
         NSInteger max = self.maximumComponents.hour;
@@ -159,7 +159,7 @@
     return tmp;
 }
 
-- (BOOL)setMinuteListLogic:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+- (BOOL)setMinuteListWithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     if (self.minimumComponents.hour == self.maximumComponents.hour) {
         NSInteger min = self.minimumComponents.minute;
         NSInteger max = self.maximumComponents.minute;
@@ -219,7 +219,7 @@
     return tmp;
 }
 
-- (BOOL)setMinuteListLogic2:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+- (BOOL)setMinuteList2WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     if (self.minimumComponents.year == self.maximumComponents.year && self.minimumComponents.month == self.maximumComponents.month && self.minimumComponents.day == self.maximumComponents.day && self.minimumComponents.hour == self.maximumComponents.hour) {
         NSInteger min = self.minimumComponents.minute;
         NSInteger max = self.maximumComponents.minute;
@@ -287,7 +287,7 @@
     return tmp;
 }
 
-- (BOOL)setMinuteListLogic3:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+- (BOOL)setMinuteList3WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     if (self.minimumComponents.hour == self.maximumComponents.hour) {
         NSInteger min = self.minimumComponents.minute;
         NSInteger max = self.maximumComponents.minute;
@@ -346,7 +346,7 @@
 }
 
 //月日周 时分
-- (BOOL)setMinuteListLogic4:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+- (BOOL)setMinuteList4WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     if (self.minimumComponents.month == self.maximumComponents.month && self.minimumComponents.day == self.maximumComponents.day &&self.minimumComponents.hour == self.maximumComponents.hour) {
         NSInteger min = self.minimumComponents.minute;
         NSInteger max = self.maximumComponents.minute;
@@ -406,7 +406,7 @@
     return tmp;
 }
 
-- (BOOL)setSecondListLogic:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+- (BOOL)setSecondListWithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     if (self.minimumComponents.hour == self.maximumComponents.hour && self.minimumComponents.minute == self.maximumComponents.minute) {
         NSInteger min = self.minimumComponents.second;
         NSInteger max = self.maximumComponents.second;
@@ -469,7 +469,7 @@
     return tmp;
 }
 
-- (BOOL)setSecondListLogic2:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+- (BOOL)setSecondList2WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     if (self.minimumComponents.year == self.maximumComponents.year && self.minimumComponents.month == self.maximumComponents.month && self.minimumComponents.day == self.maximumComponents.day && self.minimumComponents.hour == self.maximumComponents.hour && self.minimumComponents.minute == self.maximumComponents.minute) {
         NSInteger min = self.minimumComponents.second;
         NSInteger max = self.maximumComponents.second;
@@ -542,7 +542,7 @@
 }
 
 //分秒
-- (BOOL)setSecondListLogic3:(PGPickerView *)pickerView component:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+- (BOOL)setSecondList3WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     if (self.minimumComponents.minute == self.maximumComponents.minute) {
         NSInteger min = self.minimumComponents.second;
         NSInteger max = self.maximumComponents.second;
@@ -606,7 +606,7 @@
  在临界值的时候(处于最大/最小值)且component=>2(大于等于3列)的时候需要刷新
  年月
  */
-- (BOOL)setMonthListLogic:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+- (BOOL)setMonthListWithComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     if (self.minimumComponents.year == self.maximumComponents.year) {
         NSInteger min = self.minimumComponents.month;
         NSInteger max = self.maximumComponents.month;

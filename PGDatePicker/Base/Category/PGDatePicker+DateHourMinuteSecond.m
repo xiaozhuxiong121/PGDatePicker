@@ -113,23 +113,23 @@
     NSString *str = [[self.pickerView textOfSelectedRowInComponent:0] componentsSeparatedByString:self.yearString].firstObject;
     dateComponents.year = [str integerValue];
     if (component == 0) {
-        BOOL refresh = [self setMonthListLogic:dateComponents refresh:true];
+        BOOL refresh = [self setMonthListWithComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:1 refresh:refresh];
     }
     if (component == 0 || component == 1) {
-        BOOL refresh = [self setDayListLogic:self.pickerView component:component dateComponents:dateComponents refresh:true];
+        BOOL refresh = [self setDayListWithComponent:component dateComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:2 refresh:refresh];
     }
     if (component == 0 || component == 1 || component == 2) {
-        BOOL refresh = [self setHourListLogic2:self.pickerView dateComponents:dateComponents refresh:true];
+        BOOL refresh = [self setHourList2WithDateComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:3 refresh:refresh];
     }
     if (component == 0 || component == 1 || component == 2 || component == 3) {
-        BOOL refresh = [self setMinuteListLogic2:self.pickerView component:component dateComponents:dateComponents refresh:true];
+        BOOL refresh = [self setMinuteList2WithComponent:component dateComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:4 refresh:refresh];
     }
     if (component != 5) {
-        BOOL refresh = [self setSecondListLogic2:self.pickerView component:component dateComponents:dateComponents refresh:true];
+        BOOL refresh = [self setSecondList2WithComponent:component dateComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:5 refresh:refresh];
     }
 }

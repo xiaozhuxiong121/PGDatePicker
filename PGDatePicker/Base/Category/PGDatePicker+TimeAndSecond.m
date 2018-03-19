@@ -74,11 +74,11 @@
     NSString *str = [[self.pickerView textOfSelectedRowInComponent:0] componentsSeparatedByString:self.hourString].firstObject;
     dateComponents.hour = [str integerValue];
     if (component == 0) {
-        BOOL refresh = [self setMinuteListLogic3:self.pickerView component:component dateComponents:dateComponents refresh:true];
+        BOOL refresh = [self setMinuteList3WithComponent:component dateComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:1 refresh:refresh];
     }
     if (component != 2) {
-        BOOL refresh = [self setSecondListLogic:self.pickerView component:component dateComponents:dateComponents refresh:true];
+        BOOL refresh = [self setSecondListWithComponent:component dateComponents:dateComponents refresh:true];
         [self.pickerView reloadComponent:2 refresh:refresh];
     }
 }
