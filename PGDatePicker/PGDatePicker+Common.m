@@ -8,7 +8,6 @@
 
 #import "PGDatePicker+Common.h"
 #import "PGDatePickerHeader.h"
-
 @implementation PGDatePicker (Common)
 - (NSInteger)weekDayMappingFrom:(NSString *)weekString {
     if ([weekString isEqualToString:self.sundayString]) {

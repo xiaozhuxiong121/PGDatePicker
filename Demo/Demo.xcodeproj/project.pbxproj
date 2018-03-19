@@ -12,27 +12,27 @@
 		862DEB891F395BEC00B5AB4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DEB881F395BEC00B5AB4C /* AppDelegate.m */; };
 		862DEB8C1F395BEC00B5AB4C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DEB8B1F395BEC00B5AB4C /* ViewController.m */; };
 		862DEB911F395BEC00B5AB4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 862DEB901F395BEC00B5AB4C /* Assets.xcassets */; };
-		862FB83920025BF600390366 /* PGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 862FB82720025BF600390366 /* PGDatePicker.m */; };
-		862FB83A20025BF600390366 /* UIColor+PGHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 862FB82820025BF600390366 /* UIColor+PGHex.m */; };
-		862FB83B20025BF600390366 /* PGDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 862FB82920025BF600390366 /* PGDatePickerView.m */; };
-		862FB83C20025BF600390366 /* NSCalendar+PGCurrent.m in Sources */ = {isa = PBXBuildFile; fileRef = 862FB82C20025BF600390366 /* NSCalendar+PGCurrent.m */; };
-		862FB83D20025BF600390366 /* PGDatePickManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 862FB82D20025BF600390366 /* PGDatePickManager.m */; };
-		862FB83E20025BF600390366 /* NSBundle+PGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 862FB82F20025BF600390366 /* NSBundle+PGDatePicker.m */; };
-		862FB83F20025BF600390366 /* NSDate+PGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 862FB83220025BF600390366 /* NSDate+PGCategory.m */; };
-		862FB84020025BF600390366 /* PGDatePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 862FB83420025BF600390366 /* PGDatePicker.bundle */; };
-		862FB84120025BF600390366 /* PGDatePickManagerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 862FB83720025BF600390366 /* PGDatePickManagerHeaderView.m */; };
-		866BADC4205E9CB80016E8C0 /* PGDatePicker+Year.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BADC3205E9CB80016E8C0 /* PGDatePicker+Year.m */; };
-		866BADC8205E9FC40016E8C0 /* PGDatePicker+YearAndMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BADC7205E9FC40016E8C0 /* PGDatePicker+YearAndMonth.m */; };
-		866BADCC205EA0BE0016E8C0 /* PGDatePicker+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BADCB205EA0BE0016E8C0 /* PGDatePicker+Date.m */; };
-		866BADCF205EA1820016E8C0 /* PGDatePicker+DateHourMinute.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BADCE205EA1820016E8C0 /* PGDatePicker+DateHourMinute.m */; };
-		866BADD2205EA1FA0016E8C0 /* PGDatePicker+DateHourMinuteSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BADD1205EA1FA0016E8C0 /* PGDatePicker+DateHourMinuteSecond.m */; };
-		866BADD5205EA2380016E8C0 /* PGDatePicker+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BADD4205EA2380016E8C0 /* PGDatePicker+Time.m */; };
-		866BADD8205EA2680016E8C0 /* PGDatePicker+TimeAndSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BADD7205EA2680016E8C0 /* PGDatePicker+TimeAndSecond.m */; };
-		866BADDB205EA2760016E8C0 /* PGDatePicker+MinuteAndSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BADDA205EA2760016E8C0 /* PGDatePicker+MinuteAndSecond.m */; };
-		866BADDE205EA2840016E8C0 /* PGDatePicker+DateAndTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BADDD205EA2840016E8C0 /* PGDatePicker+DateAndTime.m */; };
-		866BADE1205EA8110016E8C0 /* PGDatePicker+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BADE0205EA8110016E8C0 /* PGDatePicker+Common.m */; };
-		866BADE4205EA9320016E8C0 /* PGDatePicker+Logic.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BADE3205EA9320016E8C0 /* PGDatePicker+Logic.m */; };
 		866BADEE205EC6D50016E8C0 /* PGDatePicker.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 866BADED205EC6D40016E8C0 /* PGDatePicker.podspec */; };
+		866BE8F5205F5BAD001943C0 /* NSBundle+PGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8CD205F5BAD001943C0 /* NSBundle+PGDatePicker.m */; };
+		866BE8F6205F5BAD001943C0 /* NSCalendar+PGCurrent.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8CF205F5BAD001943C0 /* NSCalendar+PGCurrent.m */; };
+		866BE8F7205F5BAD001943C0 /* NSDate+PGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8D1205F5BAD001943C0 /* NSDate+PGCategory.m */; };
+		866BE8F8205F5BAD001943C0 /* PGDatePicker+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8D3205F5BAD001943C0 /* PGDatePicker+Common.m */; };
+		866BE8F9205F5BAD001943C0 /* PGDatePicker+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8D5205F5BAD001943C0 /* PGDatePicker+Date.m */; };
+		866BE8FA205F5BAD001943C0 /* PGDatePicker+DateAndTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8D7205F5BAD001943C0 /* PGDatePicker+DateAndTime.m */; };
+		866BE8FB205F5BAD001943C0 /* PGDatePicker+DateHourMinute.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8D9205F5BAD001943C0 /* PGDatePicker+DateHourMinute.m */; };
+		866BE8FC205F5BAD001943C0 /* PGDatePicker+DateHourMinuteSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8DB205F5BAD001943C0 /* PGDatePicker+DateHourMinuteSecond.m */; };
+		866BE8FD205F5BAD001943C0 /* PGDatePicker+Logic.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8DD205F5BAD001943C0 /* PGDatePicker+Logic.m */; };
+		866BE8FE205F5BAD001943C0 /* PGDatePicker+MinuteAndSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8DF205F5BAD001943C0 /* PGDatePicker+MinuteAndSecond.m */; };
+		866BE8FF205F5BAD001943C0 /* PGDatePicker+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8E1205F5BAD001943C0 /* PGDatePicker+Time.m */; };
+		866BE900205F5BAD001943C0 /* PGDatePicker+TimeAndSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8E3205F5BAD001943C0 /* PGDatePicker+TimeAndSecond.m */; };
+		866BE901205F5BAD001943C0 /* PGDatePicker+Year.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8E5205F5BAD001943C0 /* PGDatePicker+Year.m */; };
+		866BE902205F5BAD001943C0 /* PGDatePicker+YearAndMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8E7205F5BAD001943C0 /* PGDatePicker+YearAndMonth.m */; };
+		866BE903205F5BAD001943C0 /* PGDatePicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 866BE8E8205F5BAD001943C0 /* PGDatePicker.bundle */; };
+		866BE904205F5BAD001943C0 /* PGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8EA205F5BAD001943C0 /* PGDatePicker.m */; };
+		866BE905205F5BAD001943C0 /* PGDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8ED205F5BAD001943C0 /* PGDatePickerView.m */; };
+		866BE906205F5BAD001943C0 /* PGDatePickManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8EF205F5BAD001943C0 /* PGDatePickManager.m */; };
+		866BE907205F5BAD001943C0 /* PGDatePickManagerHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8F1205F5BAD001943C0 /* PGDatePickManagerHeaderView.m */; };
+		866BE908205F5BAD001943C0 /* UIColor+PGHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8F4205F5BAD001943C0 /* UIColor+PGHex.m */; };
 		86D350631FADF82B0089617F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D350621FADF82B0089617F /* AudioToolbox.framework */; };
 		86D350E91FAE3D340089617F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D350EB1FAE3D340089617F /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -61,48 +61,48 @@
 		862DEB8B1F395BEC00B5AB4C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		862DEB901F395BEC00B5AB4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		862DEB951F395BEC00B5AB4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		862FB82720025BF600390366 /* PGDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDatePicker.m; sourceTree = "<group>"; };
-		862FB82820025BF600390366 /* UIColor+PGHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PGHex.m"; sourceTree = "<group>"; };
-		862FB82920025BF600390366 /* PGDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDatePickerView.m; sourceTree = "<group>"; };
-		862FB82B20025BF600390366 /* NSDate+PGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+PGCategory.h"; sourceTree = "<group>"; };
-		862FB82C20025BF600390366 /* NSCalendar+PGCurrent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+PGCurrent.m"; sourceTree = "<group>"; };
-		862FB82D20025BF600390366 /* PGDatePickManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDatePickManager.m; sourceTree = "<group>"; };
-		862FB82E20025BF600390366 /* PGDatePickManagerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDatePickManagerHeaderView.h; sourceTree = "<group>"; };
-		862FB82F20025BF600390366 /* NSBundle+PGDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+PGDatePicker.m"; sourceTree = "<group>"; };
-		862FB83020025BF600390366 /* UIColor+PGHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PGHex.h"; sourceTree = "<group>"; };
-		862FB83120025BF600390366 /* PGDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDatePicker.h; sourceTree = "<group>"; };
-		862FB83220025BF600390366 /* NSDate+PGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+PGCategory.m"; sourceTree = "<group>"; };
-		862FB83320025BF600390366 /* PGDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDatePickerView.h; sourceTree = "<group>"; };
-		862FB83420025BF600390366 /* PGDatePicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PGDatePicker.bundle; sourceTree = "<group>"; };
-		862FB83520025BF600390366 /* NSCalendar+PGCurrent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+PGCurrent.h"; sourceTree = "<group>"; };
-		862FB83620025BF600390366 /* NSBundle+PGDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+PGDatePicker.h"; sourceTree = "<group>"; };
-		862FB83720025BF600390366 /* PGDatePickManagerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDatePickManagerHeaderView.m; sourceTree = "<group>"; };
-		862FB83820025BF600390366 /* PGDatePickManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDatePickManager.h; sourceTree = "<group>"; };
-		862FB84220025C3500390366 /* PGEnumeration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGEnumeration.h; sourceTree = "<group>"; };
-		866BADC2205E9CB80016E8C0 /* PGDatePicker+Year.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+Year.h"; sourceTree = "<group>"; };
-		866BADC3205E9CB80016E8C0 /* PGDatePicker+Year.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+Year.m"; sourceTree = "<group>"; };
-		866BADC5205E9DC90016E8C0 /* PGDatePickerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGDatePickerHeader.h; sourceTree = "<group>"; };
-		866BADC6205E9FC40016E8C0 /* PGDatePicker+YearAndMonth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+YearAndMonth.h"; sourceTree = "<group>"; };
-		866BADC7205E9FC40016E8C0 /* PGDatePicker+YearAndMonth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+YearAndMonth.m"; sourceTree = "<group>"; };
-		866BADCA205EA0BE0016E8C0 /* PGDatePicker+Date.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+Date.h"; sourceTree = "<group>"; };
-		866BADCB205EA0BE0016E8C0 /* PGDatePicker+Date.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+Date.m"; sourceTree = "<group>"; };
-		866BADCD205EA1820016E8C0 /* PGDatePicker+DateHourMinute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+DateHourMinute.h"; sourceTree = "<group>"; };
-		866BADCE205EA1820016E8C0 /* PGDatePicker+DateHourMinute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+DateHourMinute.m"; sourceTree = "<group>"; };
-		866BADD0205EA1FA0016E8C0 /* PGDatePicker+DateHourMinuteSecond.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+DateHourMinuteSecond.h"; sourceTree = "<group>"; };
-		866BADD1205EA1FA0016E8C0 /* PGDatePicker+DateHourMinuteSecond.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+DateHourMinuteSecond.m"; sourceTree = "<group>"; };
-		866BADD3205EA2380016E8C0 /* PGDatePicker+Time.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+Time.h"; sourceTree = "<group>"; };
-		866BADD4205EA2380016E8C0 /* PGDatePicker+Time.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+Time.m"; sourceTree = "<group>"; };
-		866BADD6205EA2680016E8C0 /* PGDatePicker+TimeAndSecond.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+TimeAndSecond.h"; sourceTree = "<group>"; };
-		866BADD7205EA2680016E8C0 /* PGDatePicker+TimeAndSecond.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+TimeAndSecond.m"; sourceTree = "<group>"; };
-		866BADD9205EA2760016E8C0 /* PGDatePicker+MinuteAndSecond.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+MinuteAndSecond.h"; sourceTree = "<group>"; };
-		866BADDA205EA2760016E8C0 /* PGDatePicker+MinuteAndSecond.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+MinuteAndSecond.m"; sourceTree = "<group>"; };
-		866BADDC205EA2840016E8C0 /* PGDatePicker+DateAndTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+DateAndTime.h"; sourceTree = "<group>"; };
-		866BADDD205EA2840016E8C0 /* PGDatePicker+DateAndTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+DateAndTime.m"; sourceTree = "<group>"; };
-		866BADDF205EA8110016E8C0 /* PGDatePicker+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+Common.h"; sourceTree = "<group>"; };
-		866BADE0205EA8110016E8C0 /* PGDatePicker+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+Common.m"; sourceTree = "<group>"; };
-		866BADE2205EA9320016E8C0 /* PGDatePicker+Logic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+Logic.h"; sourceTree = "<group>"; };
-		866BADE3205EA9320016E8C0 /* PGDatePicker+Logic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+Logic.m"; sourceTree = "<group>"; };
 		866BADED205EC6D40016E8C0 /* PGDatePicker.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PGDatePicker.podspec; path = ../../PGDatePicker.podspec; sourceTree = "<group>"; };
+		866BE8CC205F5BAD001943C0 /* NSBundle+PGDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+PGDatePicker.h"; sourceTree = "<group>"; };
+		866BE8CD205F5BAD001943C0 /* NSBundle+PGDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+PGDatePicker.m"; sourceTree = "<group>"; };
+		866BE8CE205F5BAD001943C0 /* NSCalendar+PGCurrent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+PGCurrent.h"; sourceTree = "<group>"; };
+		866BE8CF205F5BAD001943C0 /* NSCalendar+PGCurrent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+PGCurrent.m"; sourceTree = "<group>"; };
+		866BE8D0205F5BAD001943C0 /* NSDate+PGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+PGCategory.h"; sourceTree = "<group>"; };
+		866BE8D1205F5BAD001943C0 /* NSDate+PGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+PGCategory.m"; sourceTree = "<group>"; };
+		866BE8D2205F5BAD001943C0 /* PGDatePicker+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+Common.h"; sourceTree = "<group>"; };
+		866BE8D3205F5BAD001943C0 /* PGDatePicker+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+Common.m"; sourceTree = "<group>"; };
+		866BE8D4205F5BAD001943C0 /* PGDatePicker+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+Date.h"; sourceTree = "<group>"; };
+		866BE8D5205F5BAD001943C0 /* PGDatePicker+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+Date.m"; sourceTree = "<group>"; };
+		866BE8D6205F5BAD001943C0 /* PGDatePicker+DateAndTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+DateAndTime.h"; sourceTree = "<group>"; };
+		866BE8D7205F5BAD001943C0 /* PGDatePicker+DateAndTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+DateAndTime.m"; sourceTree = "<group>"; };
+		866BE8D8205F5BAD001943C0 /* PGDatePicker+DateHourMinute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+DateHourMinute.h"; sourceTree = "<group>"; };
+		866BE8D9205F5BAD001943C0 /* PGDatePicker+DateHourMinute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+DateHourMinute.m"; sourceTree = "<group>"; };
+		866BE8DA205F5BAD001943C0 /* PGDatePicker+DateHourMinuteSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+DateHourMinuteSecond.h"; sourceTree = "<group>"; };
+		866BE8DB205F5BAD001943C0 /* PGDatePicker+DateHourMinuteSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+DateHourMinuteSecond.m"; sourceTree = "<group>"; };
+		866BE8DC205F5BAD001943C0 /* PGDatePicker+Logic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+Logic.h"; sourceTree = "<group>"; };
+		866BE8DD205F5BAD001943C0 /* PGDatePicker+Logic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+Logic.m"; sourceTree = "<group>"; };
+		866BE8DE205F5BAD001943C0 /* PGDatePicker+MinuteAndSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+MinuteAndSecond.h"; sourceTree = "<group>"; };
+		866BE8DF205F5BAD001943C0 /* PGDatePicker+MinuteAndSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+MinuteAndSecond.m"; sourceTree = "<group>"; };
+		866BE8E0205F5BAD001943C0 /* PGDatePicker+Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+Time.h"; sourceTree = "<group>"; };
+		866BE8E1205F5BAD001943C0 /* PGDatePicker+Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+Time.m"; sourceTree = "<group>"; };
+		866BE8E2205F5BAD001943C0 /* PGDatePicker+TimeAndSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+TimeAndSecond.h"; sourceTree = "<group>"; };
+		866BE8E3205F5BAD001943C0 /* PGDatePicker+TimeAndSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+TimeAndSecond.m"; sourceTree = "<group>"; };
+		866BE8E4205F5BAD001943C0 /* PGDatePicker+Year.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+Year.h"; sourceTree = "<group>"; };
+		866BE8E5205F5BAD001943C0 /* PGDatePicker+Year.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+Year.m"; sourceTree = "<group>"; };
+		866BE8E6205F5BAD001943C0 /* PGDatePicker+YearAndMonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+YearAndMonth.h"; sourceTree = "<group>"; };
+		866BE8E7205F5BAD001943C0 /* PGDatePicker+YearAndMonth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+YearAndMonth.m"; sourceTree = "<group>"; };
+		866BE8E8205F5BAD001943C0 /* PGDatePicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PGDatePicker.bundle; sourceTree = "<group>"; };
+		866BE8E9205F5BAD001943C0 /* PGDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDatePicker.h; sourceTree = "<group>"; };
+		866BE8EA205F5BAD001943C0 /* PGDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDatePicker.m; sourceTree = "<group>"; };
+		866BE8EB205F5BAD001943C0 /* PGDatePickerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDatePickerHeader.h; sourceTree = "<group>"; };
+		866BE8EC205F5BAD001943C0 /* PGDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDatePickerView.h; sourceTree = "<group>"; };
+		866BE8ED205F5BAD001943C0 /* PGDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDatePickerView.m; sourceTree = "<group>"; };
+		866BE8EE205F5BAD001943C0 /* PGDatePickManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDatePickManager.h; sourceTree = "<group>"; };
+		866BE8EF205F5BAD001943C0 /* PGDatePickManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDatePickManager.m; sourceTree = "<group>"; };
+		866BE8F0205F5BAD001943C0 /* PGDatePickManagerHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGDatePickManagerHeaderView.h; sourceTree = "<group>"; };
+		866BE8F1205F5BAD001943C0 /* PGDatePickManagerHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGDatePickManagerHeaderView.m; sourceTree = "<group>"; };
+		866BE8F2205F5BAD001943C0 /* PGEnumeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGEnumeration.h; sourceTree = "<group>"; };
+		866BE8F3205F5BAD001943C0 /* UIColor+PGHex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PGHex.h"; sourceTree = "<group>"; };
+		866BE8F4205F5BAD001943C0 /* UIColor+PGHex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PGHex.m"; sourceTree = "<group>"; };
 		86D350621FADF82B0089617F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		86D350EA1FAE3D340089617F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		86D350EC1FAE3D3E0089617F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -153,8 +153,8 @@
 		862DEB831F395BEC00B5AB4C /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				866BE8CB205F5BAD001943C0 /* PGDatePicker */,
 				866BADED205EC6D40016E8C0 /* PGDatePicker.podspec */,
-				862FB82620025BF600390366 /* PGDatePicker */,
 				86D350EB1FAE3D340089617F /* Main.storyboard */,
 				862DEB871F395BEC00B5AB4C /* AppDelegate.h */,
 				862DEB881F395BEC00B5AB4C /* AppDelegate.m */,
@@ -175,77 +175,53 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		862FB82620025BF600390366 /* PGDatePicker */ = {
+		866BE8CB205F5BAD001943C0 /* PGDatePicker */ = {
 			isa = PBXGroup;
 			children = (
-				866BADE9205EB0670016E8C0 /* Category */,
-				866BADE8205EB04A0016E8C0 /* Base */,
-				862FB83820025BF600390366 /* PGDatePickManager.h */,
-				862FB82D20025BF600390366 /* PGDatePickManager.m */,
-				862FB83320025BF600390366 /* PGDatePickerView.h */,
-				862FB82920025BF600390366 /* PGDatePickerView.m */,
-				862FB82E20025BF600390366 /* PGDatePickManagerHeaderView.h */,
-				862FB83720025BF600390366 /* PGDatePickManagerHeaderView.m */,
-				862FB84220025C3500390366 /* PGEnumeration.h */,
-				862FB83420025BF600390366 /* PGDatePicker.bundle */,
+				866BE8CC205F5BAD001943C0 /* NSBundle+PGDatePicker.h */,
+				866BE8CD205F5BAD001943C0 /* NSBundle+PGDatePicker.m */,
+				866BE8CE205F5BAD001943C0 /* NSCalendar+PGCurrent.h */,
+				866BE8CF205F5BAD001943C0 /* NSCalendar+PGCurrent.m */,
+				866BE8D0205F5BAD001943C0 /* NSDate+PGCategory.h */,
+				866BE8D1205F5BAD001943C0 /* NSDate+PGCategory.m */,
+				866BE8D2205F5BAD001943C0 /* PGDatePicker+Common.h */,
+				866BE8D3205F5BAD001943C0 /* PGDatePicker+Common.m */,
+				866BE8D4205F5BAD001943C0 /* PGDatePicker+Date.h */,
+				866BE8D5205F5BAD001943C0 /* PGDatePicker+Date.m */,
+				866BE8D6205F5BAD001943C0 /* PGDatePicker+DateAndTime.h */,
+				866BE8D7205F5BAD001943C0 /* PGDatePicker+DateAndTime.m */,
+				866BE8D8205F5BAD001943C0 /* PGDatePicker+DateHourMinute.h */,
+				866BE8D9205F5BAD001943C0 /* PGDatePicker+DateHourMinute.m */,
+				866BE8DA205F5BAD001943C0 /* PGDatePicker+DateHourMinuteSecond.h */,
+				866BE8DB205F5BAD001943C0 /* PGDatePicker+DateHourMinuteSecond.m */,
+				866BE8DC205F5BAD001943C0 /* PGDatePicker+Logic.h */,
+				866BE8DD205F5BAD001943C0 /* PGDatePicker+Logic.m */,
+				866BE8DE205F5BAD001943C0 /* PGDatePicker+MinuteAndSecond.h */,
+				866BE8DF205F5BAD001943C0 /* PGDatePicker+MinuteAndSecond.m */,
+				866BE8E0205F5BAD001943C0 /* PGDatePicker+Time.h */,
+				866BE8E1205F5BAD001943C0 /* PGDatePicker+Time.m */,
+				866BE8E2205F5BAD001943C0 /* PGDatePicker+TimeAndSecond.h */,
+				866BE8E3205F5BAD001943C0 /* PGDatePicker+TimeAndSecond.m */,
+				866BE8E4205F5BAD001943C0 /* PGDatePicker+Year.h */,
+				866BE8E5205F5BAD001943C0 /* PGDatePicker+Year.m */,
+				866BE8E6205F5BAD001943C0 /* PGDatePicker+YearAndMonth.h */,
+				866BE8E7205F5BAD001943C0 /* PGDatePicker+YearAndMonth.m */,
+				866BE8E8205F5BAD001943C0 /* PGDatePicker.bundle */,
+				866BE8E9205F5BAD001943C0 /* PGDatePicker.h */,
+				866BE8EA205F5BAD001943C0 /* PGDatePicker.m */,
+				866BE8EB205F5BAD001943C0 /* PGDatePickerHeader.h */,
+				866BE8EC205F5BAD001943C0 /* PGDatePickerView.h */,
+				866BE8ED205F5BAD001943C0 /* PGDatePickerView.m */,
+				866BE8EE205F5BAD001943C0 /* PGDatePickManager.h */,
+				866BE8EF205F5BAD001943C0 /* PGDatePickManager.m */,
+				866BE8F0205F5BAD001943C0 /* PGDatePickManagerHeaderView.h */,
+				866BE8F1205F5BAD001943C0 /* PGDatePickManagerHeaderView.m */,
+				866BE8F2205F5BAD001943C0 /* PGEnumeration.h */,
+				866BE8F3205F5BAD001943C0 /* UIColor+PGHex.h */,
+				866BE8F4205F5BAD001943C0 /* UIColor+PGHex.m */,
 			);
 			name = PGDatePicker;
 			path = ../../PGDatePicker;
-			sourceTree = "<group>";
-		};
-		866BADC9205E9FE30016E8C0 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				866BADC2205E9CB80016E8C0 /* PGDatePicker+Year.h */,
-				866BADC3205E9CB80016E8C0 /* PGDatePicker+Year.m */,
-				866BADC6205E9FC40016E8C0 /* PGDatePicker+YearAndMonth.h */,
-				866BADC7205E9FC40016E8C0 /* PGDatePicker+YearAndMonth.m */,
-				866BADCA205EA0BE0016E8C0 /* PGDatePicker+Date.h */,
-				866BADCB205EA0BE0016E8C0 /* PGDatePicker+Date.m */,
-				866BADCD205EA1820016E8C0 /* PGDatePicker+DateHourMinute.h */,
-				866BADCE205EA1820016E8C0 /* PGDatePicker+DateHourMinute.m */,
-				866BADD0205EA1FA0016E8C0 /* PGDatePicker+DateHourMinuteSecond.h */,
-				866BADD1205EA1FA0016E8C0 /* PGDatePicker+DateHourMinuteSecond.m */,
-				866BADD3205EA2380016E8C0 /* PGDatePicker+Time.h */,
-				866BADD4205EA2380016E8C0 /* PGDatePicker+Time.m */,
-				866BADD6205EA2680016E8C0 /* PGDatePicker+TimeAndSecond.h */,
-				866BADD7205EA2680016E8C0 /* PGDatePicker+TimeAndSecond.m */,
-				866BADD9205EA2760016E8C0 /* PGDatePicker+MinuteAndSecond.h */,
-				866BADDA205EA2760016E8C0 /* PGDatePicker+MinuteAndSecond.m */,
-				866BADDC205EA2840016E8C0 /* PGDatePicker+DateAndTime.h */,
-				866BADDD205EA2840016E8C0 /* PGDatePicker+DateAndTime.m */,
-				866BADDF205EA8110016E8C0 /* PGDatePicker+Common.h */,
-				866BADE0205EA8110016E8C0 /* PGDatePicker+Common.m */,
-				866BADE2205EA9320016E8C0 /* PGDatePicker+Logic.h */,
-				866BADE3205EA9320016E8C0 /* PGDatePicker+Logic.m */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		866BADE8205EB04A0016E8C0 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				866BADC5205E9DC90016E8C0 /* PGDatePickerHeader.h */,
-				862FB83120025BF600390366 /* PGDatePicker.h */,
-				862FB82720025BF600390366 /* PGDatePicker.m */,
-				866BADC9205E9FE30016E8C0 /* Category */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		866BADE9205EB0670016E8C0 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				862FB82B20025BF600390366 /* NSDate+PGCategory.h */,
-				862FB83220025BF600390366 /* NSDate+PGCategory.m */,
-				862FB83520025BF600390366 /* NSCalendar+PGCurrent.h */,
-				862FB82C20025BF600390366 /* NSCalendar+PGCurrent.m */,
-				862FB83620025BF600390366 /* NSBundle+PGDatePicker.h */,
-				862FB82F20025BF600390366 /* NSBundle+PGDatePicker.m */,
-				862FB83020025BF600390366 /* UIColor+PGHex.h */,
-				862FB82820025BF600390366 /* UIColor+PGHex.m */,
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		A665A7AB72AB1E4CC9E7B989 /* Pods */ = {
@@ -321,7 +297,7 @@
 			files = (
 				86D350E91FAE3D340089617F /* Main.storyboard in Resources */,
 				862DEB911F395BEC00B5AB4C /* Assets.xcassets in Resources */,
-				862FB84020025BF600390366 /* PGDatePicker.bundle in Resources */,
+				866BE903205F5BAD001943C0 /* PGDatePicker.bundle in Resources */,
 				866BADEE205EC6D50016E8C0 /* PGDatePicker.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,28 +366,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				866BADC8205E9FC40016E8C0 /* PGDatePicker+YearAndMonth.m in Sources */,
-				866BADCF205EA1820016E8C0 /* PGDatePicker+DateHourMinute.m in Sources */,
-				862FB83C20025BF600390366 /* NSCalendar+PGCurrent.m in Sources */,
-				866BADDE205EA2840016E8C0 /* PGDatePicker+DateAndTime.m in Sources */,
-				866BADCC205EA0BE0016E8C0 /* PGDatePicker+Date.m in Sources */,
-				862FB83920025BF600390366 /* PGDatePicker.m in Sources */,
-				862FB83E20025BF600390366 /* NSBundle+PGDatePicker.m in Sources */,
-				866BADD2205EA1FA0016E8C0 /* PGDatePicker+DateHourMinuteSecond.m in Sources */,
-				866BADD8205EA2680016E8C0 /* PGDatePicker+TimeAndSecond.m in Sources */,
-				866BADE4205EA9320016E8C0 /* PGDatePicker+Logic.m in Sources */,
-				862FB83F20025BF600390366 /* NSDate+PGCategory.m in Sources */,
-				862FB83B20025BF600390366 /* PGDatePickerView.m in Sources */,
+				866BE907205F5BAD001943C0 /* PGDatePickManagerHeaderView.m in Sources */,
+				866BE8F6205F5BAD001943C0 /* NSCalendar+PGCurrent.m in Sources */,
 				862DEB8C1F395BEC00B5AB4C /* ViewController.m in Sources */,
-				866BADE1205EA8110016E8C0 /* PGDatePicker+Common.m in Sources */,
-				862FB83A20025BF600390366 /* UIColor+PGHex.m in Sources */,
-				862FB83D20025BF600390366 /* PGDatePickManager.m in Sources */,
-				866BADDB205EA2760016E8C0 /* PGDatePicker+MinuteAndSecond.m in Sources */,
+				866BE8FE205F5BAD001943C0 /* PGDatePicker+MinuteAndSecond.m in Sources */,
+				866BE8FF205F5BAD001943C0 /* PGDatePicker+Time.m in Sources */,
+				866BE8F9205F5BAD001943C0 /* PGDatePicker+Date.m in Sources */,
+				866BE906205F5BAD001943C0 /* PGDatePickManager.m in Sources */,
 				862DEB891F395BEC00B5AB4C /* AppDelegate.m in Sources */,
-				866BADD5205EA2380016E8C0 /* PGDatePicker+Time.m in Sources */,
-				866BADC4205E9CB80016E8C0 /* PGDatePicker+Year.m in Sources */,
+				866BE904205F5BAD001943C0 /* PGDatePicker.m in Sources */,
+				866BE902205F5BAD001943C0 /* PGDatePicker+YearAndMonth.m in Sources */,
+				866BE905205F5BAD001943C0 /* PGDatePickerView.m in Sources */,
+				866BE8F7205F5BAD001943C0 /* NSDate+PGCategory.m in Sources */,
+				866BE908205F5BAD001943C0 /* UIColor+PGHex.m in Sources */,
+				866BE8FA205F5BAD001943C0 /* PGDatePicker+DateAndTime.m in Sources */,
+				866BE8FB205F5BAD001943C0 /* PGDatePicker+DateHourMinute.m in Sources */,
+				866BE8FD205F5BAD001943C0 /* PGDatePicker+Logic.m in Sources */,
+				866BE900205F5BAD001943C0 /* PGDatePicker+TimeAndSecond.m in Sources */,
 				862DEB861F395BEC00B5AB4C /* main.m in Sources */,
-				862FB84120025BF600390366 /* PGDatePickManagerHeaderView.m in Sources */,
+				866BE8F8205F5BAD001943C0 /* PGDatePicker+Common.m in Sources */,
+				866BE901205F5BAD001943C0 /* PGDatePicker+Year.m in Sources */,
+				866BE8F5205F5BAD001943C0 /* NSBundle+PGDatePicker.m in Sources */,
+				866BE8FC205F5BAD001943C0 /* PGDatePicker+DateHourMinuteSecond.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
