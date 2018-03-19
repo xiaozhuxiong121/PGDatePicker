@@ -12,17 +12,6 @@ Pod::Spec.new do |s|
   s.frameworks   = "UIKit"
   s.requires_arc = true
   s.dependency 'PGPickerView'
-
-    s.subspec 'Category' do |ss|
-        ss.source_files = 'PGDatePicker/Category/*.{h,m}'
-    end
-
-    s.subspec 'Base' do |ss|
-        ss.source_files = 'PGDatePicker/Base/*.{h,m}'
-        ss.subspec 'Category' do |sss|
-            sss.source_files = 'PGDatePicker/Base/Category/*.{h,m}'
-        end
-    end
 end
  
  
