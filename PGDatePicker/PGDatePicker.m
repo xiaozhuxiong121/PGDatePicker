@@ -59,7 +59,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             self.selectComponents.year = self.maximumComponents.year;
         }
         if (self.currentComponents.year == self.minimumComponents.year) {
-            self.selectComponents.month = self.maximumComponents.month;
+            self.selectComponents.month = self.minimumComponents.month;
         }
         NSInteger day = [self howManyDaysWithMonthInThisYear:self.selectComponents.year withMonth:self.selectComponents.month];
         [self setDayListForMonthDays:day];
