@@ -80,6 +80,11 @@ pod 'PGDatePicker', '>= 2.0.6'
 > **在`1.5.1`版本中对iPhone X进行了适配** 
 
 # 使用
+引入头文件
+
+```
+#import <PGDatePick/PGDatePickManager.h>
+```
 ```
 PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
 PGDatePicker *datePicker = datePickManager.datePicker;
