@@ -79,7 +79,7 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
 @property (nonatomic, strong) NSDate *minimumDate; // specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer mode
 @property (nonatomic, strong) NSDate *maximumDate; // default is nil
 
-@property (nonatomic, strong) void(^selectedDate)(NSDateComponents *dateComponents);
+@property (nonatomic, copy) void(^selectedDate)(NSDateComponents *dateComponents);
 
 /**
  相当于确定按钮，执行此方法PGDatePickerDelegate代理方法会得到值
