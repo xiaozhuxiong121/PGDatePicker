@@ -1,7 +1,7 @@
 # CocoaPods安装
 
 ```
-pod 'PGDatePicker', '>= 2.0.6'
+pod 'PGDatePicker'
 ```
 
 # 使用
