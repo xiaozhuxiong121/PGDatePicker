@@ -36,14 +36,14 @@
     [self presentViewController:datePickManager animated:false completion:nil];
     
     
-//    datePicker.minimumDate = [NSDate setYear:2015];
-//    datePicker.maximumDate = [NSDate setYear:2030];
-//
-//
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-//    dateFormatter.dateFormat = @"yyyy";
-//    NSDate *date = [dateFormatter dateFromString: @"2019"];
-//    [datePicker setDate:date animated:true];
+    //    datePicker.minimumDate = [NSDate setYear:2015];
+    //    datePicker.maximumDate = [NSDate setYear:2030];
+    //
+    //
+    //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    //    dateFormatter.dateFormat = @"yyyy";
+    //    NSDate *date = [dateFormatter dateFromString: @"2019"];
+    //    [datePicker setDate:date animated:true];
 }
 
 /**
