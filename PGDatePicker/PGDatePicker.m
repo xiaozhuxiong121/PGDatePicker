@@ -12,6 +12,7 @@
 #import "PGDatePicker+Year.h"
 #import "PGDatePicker+YearAndMonth.h"
 #import "PGDatePicker+Date.h"
+#import "PGDatePicker+DateHour.h"
 #import "PGDatePicker+DateHourMinute.h"
 #import "PGDatePicker+DateHourMinuteSecond.h"
 #import "PGDatePicker+Time.h"
@@ -127,6 +128,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             [self date_setupSelectedDate];
         }
             break;
+        case PGDatePickerModeDateHour:
+        {
+            [self dateHour_setupSelectedDate];
+        }
+            break;
         case PGDatePickerModeDateHourMinute:
         {
             [self dateHourMinute_setupSelectedDate];
@@ -188,6 +194,21 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 return self.dayList.count;
             }
             return self.yearList.count;
+        }
+        case PGDatePickerModeDateHour:
+        {
+            if (component == 0) {
+                return self.yearList.count;
+            }
+            if (component == 1) {
+                return self.monthList.count;
+            }
+            if (component == 2) {
+                return self.dayList.count;
+            }
+            if (component == 3) {
+                return self.hourList.count;
+            }
         }
         case PGDatePickerModeDateHourMinute:
         {
@@ -319,6 +340,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             [self date_setDateWithComponents:components animated:animated];
         }
             break;
+        case PGDatePickerModeDateHour:
+        {
+            [self dateHour_setDateWithComponents:components animated:animated];
+        }
+            break;
         case PGDatePickerModeDateHourMinute:
         {
             [self dateHourMinute_setDateWithComponents:components animated:animated];
@@ -384,6 +410,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             [self date_didSelectWithComponent:component];
         }
             break;
+        case PGDatePickerModeDateHour:
+        {
+            [self dateHour_didSelectWithComponent:component];
+        }
+            break;
         case PGDatePickerModeDateHourMinute:
         {
             [self dateHourMinute_didSelectWithComponent:component];
@@ -442,6 +473,21 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 return [self.dayList[row] stringByAppendingString:self.dayString];
             }
             return [self.yearList[row] stringByAppendingString:self.yearString];
+        }
+        case PGDatePickerModeDateHour:
+        {
+            if (component == 0) {
+                return [self.yearList[row] stringByAppendingString:self.yearString];
+            }
+            if (component == 1) {
+                return [self.monthList[row] stringByAppendingString:self.monthString];
+            }
+            if (component == 2) {
+                return [self.dayList[row] stringByAppendingString:self.dayString];
+            }
+            if (component == 3) {
+                return [self.hourList[row] stringByAppendingString:self.hourString];
+            }
         }
         case PGDatePickerModeDateHourMinute:
         {
@@ -546,6 +592,21 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 return self.middleDayString;
             }
             return self.middleYearString;
+        }
+        case PGDatePickerModeDateHour:
+        {
+            if (component == 0) {
+                return self.middleYearString;
+            }
+            if (component == 1) {
+                return self.middleMonthString;
+            }
+            if (component == 2) {
+                return self.middleDayString;
+            }
+            if (component == 3) {
+                return self.middleHourString;
+            }
         }
         case PGDatePickerModeDateHourMinute:
         {
@@ -652,6 +713,21 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 return 10;
             }
             if (component == 2) {
+                return 10;
+            }
+        }
+        case PGDatePickerModeDateHour:
+        {
+            if (component == 0) {
+                return 20;
+            }
+            if (component == 1) {
+                return 10;
+            }
+            if (component == 2) {
+                return 10;
+            }
+            if (component == 3) {
                 return 10;
             }
         }
@@ -1036,6 +1112,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             return 2;
         case PGDatePickerModeDate:
             return 3;
+        case PGDatePickerModeDateHour:
+            return 4;
         case PGDatePickerModeDateHourMinute:
             return 5;
         case PGDatePickerModeDateHourMinuteSecond:

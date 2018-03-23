@@ -35,6 +35,7 @@
 		866BE908205F5BAD001943C0 /* UIColor+PGHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8F4205F5BAD001943C0 /* UIColor+PGHex.m */; };
 		86D350631FADF82B0089617F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86D350621FADF82B0089617F /* AudioToolbox.framework */; };
 		86D350E91FAE3D340089617F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86D350EB1FAE3D340089617F /* Main.storyboard */; };
+		C82C7B072064FB0E000C9604 /* PGDatePicker+DateHour.m in Sources */ = {isa = PBXBuildFile; fileRef = C82C7B062064FB0E000C9604 /* PGDatePicker+DateHour.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -108,6 +109,8 @@
 		86D350EC1FAE3D3E0089617F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		8C1AD5D00F6F1B3FE88BE451 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C0D416FA7DDF5516D2FB42 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		C82C7B052064FB0E000C9604 /* PGDatePicker+DateHour.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PGDatePicker+DateHour.h"; sourceTree = "<group>"; };
+		C82C7B062064FB0E000C9604 /* PGDatePicker+DateHour.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PGDatePicker+DateHour.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,8 @@
 				866BE8D5205F5BAD001943C0 /* PGDatePicker+Date.m */,
 				866BE8D6205F5BAD001943C0 /* PGDatePicker+DateAndTime.h */,
 				866BE8D7205F5BAD001943C0 /* PGDatePicker+DateAndTime.m */,
+				C82C7B052064FB0E000C9604 /* PGDatePicker+DateHour.h */,
+				C82C7B062064FB0E000C9604 /* PGDatePicker+DateHour.m */,
 				866BE8D8205F5BAD001943C0 /* PGDatePicker+DateHourMinute.h */,
 				866BE8D9205F5BAD001943C0 /* PGDatePicker+DateHourMinute.m */,
 				866BE8DA205F5BAD001943C0 /* PGDatePicker+DateHourMinuteSecond.h */,
@@ -366,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C82C7B072064FB0E000C9604 /* PGDatePicker+DateHour.m in Sources */,
 				866BE907205F5BAD001943C0 /* PGDatePickManagerHeaderView.m in Sources */,
 				866BE8F6205F5BAD001943C0 /* NSCalendar+PGCurrent.m in Sources */,
 				862DEB8C1F395BEC00B5AB4C /* ViewController.m in Sources */,

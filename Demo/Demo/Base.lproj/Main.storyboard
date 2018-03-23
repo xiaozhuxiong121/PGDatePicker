@@ -142,6 +142,18 @@
                                     <action selector="styleHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CKd-TG-3Xy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSA-w2-Ya1">
+                                <rect key="frame" x="7" y="354" width="148" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="年月日时">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dateHourHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IhA-8t-gH0"/>
+                                    <action selector="dateHourMinuteHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5uh-kU-hIM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.82352941180000006" green="0.89019607840000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
