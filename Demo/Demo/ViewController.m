@@ -92,6 +92,28 @@
 }
 
 /**
+ 年月日时
+ */
+- (IBAction)dateHourHandler:(UIButton *)sender {
+    PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
+    datePickManager.isShadeBackgroud = true;
+    PGDatePicker *datePicker = datePickManager.datePicker;
+    datePicker.delegate = self;
+    datePicker.datePickerType = PGPickerViewType2;
+    datePicker.datePickerMode = PGDatePickerModeDateHour;
+    [self presentViewController:datePickManager animated:false completion:nil];
+    
+    //    datePicker.minimumDate = [NSDate setYear:2018 month:1 day:11 hour:15 minute:18];
+    //    datePicker.maximumDate = [NSDate setYear:2018 month:2 day:10 hour:15 minute:18];
+    
+    
+    //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    //    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm";
+    //    NSDate *date = [dateFormatter dateFromString: @"2018-02-10 05:04"];
+    //    [datePicker setDate:date animated: true];
+}
+
+/**
  年月日时分
  */
 - (IBAction)dateHourMinuteHandler:(UIButton *)sender {
