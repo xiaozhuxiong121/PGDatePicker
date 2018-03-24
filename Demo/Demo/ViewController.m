@@ -23,7 +23,6 @@
  年份
  */
 - (IBAction)yearHandler:(UIButton *)sender {
-    
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.style = PGDatePickManagerStyle2;
     datePickManager.isShadeBackgroud = true;
@@ -35,15 +34,15 @@
     datePicker.datePickerMode = PGDatePickerModeYear;
     [self presentViewController:datePickManager animated:false completion:nil];
     
-    
-    //    datePicker.minimumDate = [NSDate setYear:2015];
-    //    datePicker.maximumDate = [NSDate setYear:2030];
-    //
-    //
-    //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    //    dateFormatter.dateFormat = @"yyyy";
-    //    NSDate *date = [dateFormatter dateFromString: @"2019"];
-    //    [datePicker setDate:date animated:true];
+
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+//    dateFormatter.dateFormat = @"yyyy";
+//
+//    datePicker.minimumDate = [dateFormatter dateFromString: @"2019"];
+//    datePicker.maximumDate = [dateFormatter dateFromString: @"2029"];
+//
+//    NSDate *date = [dateFormatter dateFromString: @"2019"];
+//    [datePicker setDate:date animated:true];
 }
 
 /**
@@ -59,12 +58,13 @@
     datePicker.datePickerType = PGPickerViewType2;
     datePicker.datePickerMode = PGDatePickerModeYearAndMonth;
     [self presentViewController:datePickManager animated:false completion:nil];
-    
-//    datePicker.minimumDate = [NSDate setYear:2019 month:5];
-//    datePicker.maximumDate = [NSDate setYear:2020 month:10];
-//
+
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
 //    dateFormatter.dateFormat = @"yyyy-MM";
+    
+//    datePicker.minimumDate = [dateFormatter dateFromString: @"2018-01"];
+//    datePicker.maximumDate = [dateFormatter dateFromString: @"2020-10"];
+    
 //    NSDate *date = [dateFormatter dateFromString: @"2019-08"];
 //    [datePicker setDate:date animated:false];
 }
@@ -82,11 +82,12 @@
     datePicker.datePickerMode = PGDatePickerModeDate;
     [self presentViewController:datePickManager animated:false completion:nil];
     
-//    datePicker.minimumDate = [NSDate setYear:2019 month:1 day:10];
-//    datePicker.maximumDate = [NSDate setYear:2022 month:2 day:16];
-
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
 //    dateFormatter.dateFormat = @"yyyy-MM-dd";
+    
+//    datePicker.minimumDate = [dateFormatter dateFromString: @"2018-02-18"];
+//    datePicker.maximumDate = [dateFormatter dateFromString: @"2020-01-18"];
+    
 //    NSDate *date = [dateFormatter dateFromString: @"2019-01-18"];
 //    [datePicker setDate:date animated:true];
 }
@@ -103,14 +104,14 @@
     datePicker.datePickerMode = PGDatePickerModeDateHour;
     [self presentViewController:datePickManager animated:false completion:nil];
     
-    //    datePicker.minimumDate = [NSDate setYear:2018 month:1 day:11 hour:15 minute:18];
-    //    datePicker.maximumDate = [NSDate setYear:2018 month:2 day:10 hour:15 minute:18];
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+//    dateFormatter.dateFormat = @"yyyy-MM-dd HH";
+//
+//    datePicker.minimumDate = [dateFormatter dateFromString: @"2018-02-01 05"];
+//    datePicker.maximumDate = [dateFormatter dateFromString: @"2028-02-01 05"];
     
-    
-    //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    //    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm";
-    //    NSDate *date = [dateFormatter dateFromString: @"2018-02-10 05:04"];
-    //    [datePicker setDate:date animated: true];
+//    NSDate *date = [dateFormatter dateFromString: @"2020-02-01 05"];
+//    [datePicker setDate:date animated: true];
 }
 
 /**
@@ -125,13 +126,13 @@
     datePicker.datePickerMode = PGDatePickerModeDateHourMinute;
     [self presentViewController:datePickManager animated:false completion:nil];
     
-//    datePicker.minimumDate = [NSDate setYear:2018 month:1 day:11 hour:15 minute:18];
-//    datePicker.maximumDate = [NSDate setYear:2018 month:2 day:10 hour:15 minute:18];
-
-
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
 //    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm";
-//    NSDate *date = [dateFormatter dateFromString: @"2018-02-10 05:04"];
+    
+//    datePicker.minimumDate = [dateFormatter dateFromString: @"2018-02-01 05:04"];
+//    datePicker.maximumDate = [dateFormatter dateFromString: @"2028-02-01 05:04"];
+    
+//    NSDate *date = [dateFormatter dateFromString: @"2020-02-01 05:04"];
 //    [datePicker setDate:date animated: true];
 }
 
@@ -146,13 +147,14 @@
     datePicker.datePickerMode = PGDatePickerModeDateHourMinuteSecond;
     [self presentViewController:datePickManager animated:false completion:nil];
     
-//    datePicker.minimumDate = [NSDate setYear:2018 month:5 day:10 hour:18 minute:6 second:10];
-//    datePicker.maximumDate = [NSDate setYear:2019 month:11 day:27 hour:22 minute:30 second:40];
-//
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
 //    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-//    NSDate *date = [dateFormatter dateFromString: @"2019-08-10 05:44:55"];
-//    [datePicker setDate:date animated:false];
+    
+//    datePicker.minimumDate = [dateFormatter dateFromString: @"2018-02-01 05:04:23"];
+//    datePicker.maximumDate = [dateFormatter dateFromString: @"2028-02-01 05:04:23"];
+    
+//    NSDate *date = [dateFormatter dateFromString: @"2020-02-01 05:04:23"];
+//    [datePicker setDate:date animated: true];
 }
 
 /**
@@ -164,13 +166,14 @@
     datePicker.delegate = self;
     datePicker.datePickerMode = PGDatePickerModeTime;
     [self presentViewController:datePickManager animated:false completion:nil];
-    
-//    datePicker.minimumDate = [NSDate setHour:10 minute:10];
-//    datePicker.maximumDate = [NSDate setHour:23 minute:25];
-//
+
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
 //    dateFormatter.dateFormat = @"HH:mm";
-//    NSDate *date = [dateFormatter dateFromString: @"23:11"];
+//
+//    datePicker.minimumDate = [dateFormatter dateFromString: @"10:11"];
+//    datePicker.maximumDate = [dateFormatter dateFromString: @"23:11"];
+//
+//    NSDate *date = [dateFormatter dateFromString: @"20:11"];
 //    [datePicker setDate:date animated:false];
 }
 
@@ -184,13 +187,14 @@
     datePicker.datePickerMode = PGDatePickerModeTimeAndSecond;
     [self presentViewController:datePickManager animated:false completion:nil];
     
-//    datePicker.minimumDate = [NSDate setHour:10 minute:10 second:10];
-//    datePicker.maximumDate = [NSDate setHour:23 minute:20 second:40];
-//
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
 //    dateFormatter.dateFormat = @"HH:mm:ss";
-//    NSDate *date = [dateFormatter dateFromString: @"10:11:25"];
-//    [datePicker setDate:date animated:true];
+//
+//    datePicker.minimumDate = [dateFormatter dateFromString: @"10:11:10"];
+//    datePicker.maximumDate = [dateFormatter dateFromString: @"23:11:20"];
+//
+//    NSDate *date = [dateFormatter dateFromString: @"20:11:15"];
+//    [datePicker setDate:date animated:false];
 }
 
 /**
@@ -203,13 +207,14 @@
     datePicker.datePickerMode = PGDatePickerModeMinuteAndSecond;
     [self presentViewController:datePickManager animated:false completion:nil];
     
-//    datePicker.minimumDate = [NSDate setMinute:1 second:10];
-//    datePicker.maximumDate = [NSDate setMinute:6 second:20];
-//
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
 //    dateFormatter.dateFormat = @"mm:ss";
-//    NSDate *date = [dateFormatter dateFromString: @"04:05"];
-//    [datePicker setDate:date animated:true];
+//
+//    datePicker.minimumDate = [dateFormatter dateFromString: @"05:10"];
+//    datePicker.maximumDate = [dateFormatter dateFromString: @"23:20"];
+//
+//    NSDate *date = [dateFormatter dateFromString: @"11:15"];
+//    [datePicker setDate:date animated:false];
 }
 
 /**
