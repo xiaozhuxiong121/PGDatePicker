@@ -76,6 +76,49 @@
     return tmp;
 }
 
+//月开头的需要使用
+- (BOOL)setDayList2WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+    if (self.minimumComponents.month == self.maximumComponents.month) {
+        NSInteger min = self.minimumComponents.day;
+        NSInteger max = self.maximumComponents.day;
+        if (min > max) {
+            min = 1;
+        }
+        NSMutableArray *days = [NSMutableArray array];
+        for (NSUInteger i = min; i <= max; i++) {
+            [days addObject:[@(i) stringValue]];
+        }
+        self.dayList = days;
+        return refresh;
+    }
+    BOOL tmp = refresh;
+    NSString *monthString = [[self.pickerView textOfSelectedRowInComponent:0] componentsSeparatedByString:self.monthString].firstObject;
+    dateComponents.month = [monthString integerValue];
+    NSInteger day = [self howManyDaysWithMonthInThisYear:dateComponents.year withMonth:[monthString integerValue]];
+    [self setDayListForMonthDays:day];
+    if (self.minimumComponents.month == dateComponents.month) {
+        NSMutableArray *days = [NSMutableArray array];
+        for (NSUInteger i = self.minimumComponents.day; i <= day; i++) {
+            [days addObject:[@(i) stringValue]];
+        }
+        self.dayList = days;
+    }else if (self.maximumComponents.month == dateComponents.month) {
+        NSMutableArray *days = [NSMutableArray array];
+        for (NSUInteger i = 1; i <= self.maximumComponents.day; i++) {
+            [days addObject:[@(i) stringValue]];
+        }
+        self.dayList = days;
+    }else{
+        tmp = false;
+        NSMutableArray *days = [NSMutableArray arrayWithCapacity:day];
+        for (NSUInteger i = 1; i <= day; i++) {
+            [days addObject:[@(i) stringValue]];
+        }
+        self.dayList = days;
+    }
+    return tmp;
+}
+
 - (BOOL)setHourListWithDateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     BOOL tmp = refresh;
     NSInteger length = 23;
@@ -141,6 +184,56 @@
         }
         self.hourList = hours;
     }else if (self.maximumComponents.year == dateComponents.year && self.maximumComponents.month == dateComponents.month && self.maximumComponents.day == dateComponents.day) {
+        refresh = true;
+        NSInteger index = self.maximumComponents.hour;
+        NSMutableArray *hours = [NSMutableArray arrayWithCapacity:index];
+        for (NSUInteger i = 0; i <= self.maximumComponents.hour; i++) {
+            [hours addObject:[@(i) stringValue]];
+        }
+        self.hourList = hours;
+    }else{
+        tmp = false;
+        NSMutableArray *hours = [NSMutableArray arrayWithCapacity:length];
+        for (NSUInteger i = 0; i <= length; i++) {
+            [hours addObject:[@(i) stringValue]];
+        }
+        self.hourList = hours;
+    }
+    return tmp;
+}
+
+- (BOOL)setHourList3WithDateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+    if (self.minimumComponents.month == self.maximumComponents.month && self.minimumComponents.day == self.maximumComponents.day) {
+        NSInteger min = self.minimumComponents.hour;
+        NSInteger max = self.maximumComponents.hour;
+        if (min > max) {
+            min = 0;
+        }
+        NSMutableArray *hours = [NSMutableArray arrayWithCapacity:max-min];
+        for (NSUInteger i = min; i <= max; i++) {
+            [hours addObject:[@(i) stringValue]];
+        }
+        self.hourList = hours;
+        return refresh;
+    }
+    
+    NSString *monthString = [[self.pickerView textOfSelectedRowInComponent:0] componentsSeparatedByString:self.monthString].firstObject;
+    dateComponents.month = [monthString integerValue];
+    
+    NSString *dayString = [[self.pickerView textOfSelectedRowInComponent:1] componentsSeparatedByString:self.dayString].firstObject;
+    dateComponents.day = [dayString integerValue];
+    
+    BOOL tmp = refresh;
+    NSInteger length = 23;
+    if (self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day) {
+        refresh = true;
+        NSInteger index = length - self.minimumComponents.hour;
+        NSMutableArray *hours = [NSMutableArray arrayWithCapacity:index];
+        for (NSUInteger i = self.minimumComponents.hour; i <= length; i++) {
+            [hours addObject:[@(i) stringValue]];
+        }
+        self.hourList = hours;
+    }else if (self.maximumComponents.month == dateComponents.month && self.maximumComponents.day == dateComponents.day) {
         refresh = true;
         NSInteger index = self.maximumComponents.hour;
         NSMutableArray *hours = [NSMutableArray arrayWithCapacity:index];
@@ -406,6 +499,72 @@
     return tmp;
 }
 
+- (BOOL)setMinuteList5WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+    if (self.minimumComponents.month == self.maximumComponents.month && self.minimumComponents.day == self.maximumComponents.day && self.minimumComponents.hour == self.maximumComponents.hour) {
+        NSInteger min = self.minimumComponents.minute;
+        NSInteger max = self.maximumComponents.minute;
+        if (min > max) {
+            min = 0;
+        }
+        NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
+        for (NSUInteger i = min; i <= max; i++) {
+            if (i < 10) {
+                [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
+            }else {
+                [minutes addObject:[@(i) stringValue]];
+            }
+        }
+        self.minuteList = minutes;
+        return refresh;
+    }
+    BOOL tmp = refresh;
+    NSString *monthString = [[self.pickerView textOfSelectedRowInComponent:0] componentsSeparatedByString:self.monthString].firstObject;
+    dateComponents.month = [monthString integerValue];
+    
+    NSString *dayString = [[self.pickerView textOfSelectedRowInComponent:1] componentsSeparatedByString:self.dayString].firstObject;
+    dateComponents.day = [dayString integerValue];
+    
+    NSString *hourString = [[self.pickerView textOfSelectedRowInComponent:2] componentsSeparatedByString:self.hourString].firstObject;
+    dateComponents.hour = [hourString integerValue];
+    
+    NSInteger length = 59;
+    if (self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day && self.minimumComponents.hour == dateComponents.hour) {
+        NSInteger index = length - self.minimumComponents.minute;
+        NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
+        for (NSUInteger i = self.minimumComponents.minute; i <= length; i++) {
+            if (i < 10) {
+                [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
+            }else {
+                [minutes addObject:[@(i) stringValue]];
+            }
+        }
+        self.minuteList = minutes;
+    }else if (self.maximumComponents.month == dateComponents.month && self.maximumComponents.day == dateComponents.day && self.maximumComponents.hour == dateComponents.hour) {
+        NSInteger index = self.maximumComponents.minute;
+        NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
+        for (NSUInteger i = 0; i <= self.maximumComponents.minute; i++) {
+            if (i < 10) {
+                [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
+            }else {
+                [minutes addObject:[@(i) stringValue]];
+            }
+        }
+        self.minuteList = minutes;
+    }else{
+        tmp = false;
+        NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:length];
+        for (NSUInteger i = 0; i <= length; i++) {
+            if (i < 10) {
+                [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
+            }else {
+                [minutes addObject:[@(i) stringValue]];
+            }
+        }
+        self.minuteList = minutes;
+    }
+    return tmp;
+}
+
 - (BOOL)setSecondListWithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
     if (self.minimumComponents.hour == self.maximumComponents.hour && self.minimumComponents.minute == self.maximumComponents.minute) {
         NSInteger min = self.minimumComponents.second;
@@ -577,6 +736,84 @@
         }
         self.secondList = seconds;
     }else if (self.maximumComponents.minute == dateComponents.minute) {
+        NSInteger index = self.maximumComponents.second;
+        NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
+        for (NSUInteger i = 0; i <= self.maximumComponents.second; i++) {
+            if (i < 10) {
+                [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
+            }else {
+                [seconds addObject:[@(i) stringValue]];
+            }
+        }
+        self.secondList = seconds;
+    }else{
+        tmp = false;
+        NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:length];
+        for (NSUInteger i = 0; i <= length; i++) {
+            if (i < 10) {
+                [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
+            }else {
+                [seconds addObject:[@(i) stringValue]];
+            }
+        }
+        self.secondList = seconds;
+    }
+    return tmp;
+}
+
+- (BOOL)setSecondList4WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+    if (self.minimumComponents.month == self.maximumComponents.month &&
+        self.minimumComponents.day == self.maximumComponents.day &&
+        self.minimumComponents.hour == self.maximumComponents.hour &&
+        self.minimumComponents.minute == self.maximumComponents.minute) {
+        NSInteger min = self.minimumComponents.second;
+        NSInteger max = self.maximumComponents.second;
+        if (min > max) {
+            min = 0;
+        }
+        NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:max-min];
+        for (NSUInteger i = min; i <= max; i++) {
+            if (i < 10) {
+                [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
+            }else {
+                [seconds addObject:[@(i) stringValue]];
+            }
+        }
+        self.secondList = seconds;
+        return refresh;
+    }
+    BOOL tmp = refresh;
+    NSString *monthString = [[self.pickerView textOfSelectedRowInComponent:0] componentsSeparatedByString:self.monthString].firstObject;
+    dateComponents.month = [monthString integerValue];
+    
+    NSString *dayString = [[self.pickerView textOfSelectedRowInComponent:1] componentsSeparatedByString:self.dayString].firstObject;
+    dateComponents.day = [dayString integerValue];
+    
+    NSString *hourString = [[self.pickerView textOfSelectedRowInComponent:2] componentsSeparatedByString:self.hourString].firstObject;
+    dateComponents.hour = [hourString integerValue];
+    
+    NSString *minuteString = [[self.pickerView textOfSelectedRowInComponent:3] componentsSeparatedByString:self.minuteString].firstObject;
+    dateComponents.minute = [minuteString integerValue];
+    
+    NSInteger length = 59;
+    if (self.minimumComponents.month == dateComponents.month &&
+        self.minimumComponents.day == dateComponents.day &&
+        self.minimumComponents.hour == dateComponents.hour &&
+        self.minimumComponents.minute == dateComponents.minute) {
+        NSInteger index = length - self.minimumComponents.second;
+        NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
+        for (NSUInteger i = self.minimumComponents.second; i <= length; i++) {
+            if (i < 10) {
+                [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
+            }else {
+                [seconds addObject:[@(i) stringValue]];
+            }
+        }
+        self.secondList = seconds;
+    }else if (self.maximumComponents.month == dateComponents.month &&
+              self.maximumComponents.day == dateComponents.day &&
+              self.maximumComponents.hour == dateComponents.hour &&
+              self.maximumComponents.minute == dateComponents.minute) {
         NSInteger index = self.maximumComponents.second;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
         for (NSUInteger i = 0; i <= self.maximumComponents.second; i++) {

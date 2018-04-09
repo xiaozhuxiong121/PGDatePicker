@@ -16,6 +16,14 @@
     3、年月日 (PGDatePickerModeDate)
  */
 - (BOOL)setDayListWithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh;
+
+/*
+ PGDatePickerModeMonthDay, //月日
+ PGDatePickerModeMonthDayHour, //月日时
+ PGDatePickerModeMonthDayHourMinute, //月日时分
+ PGDatePickerModeMonthDayHourMinuteSecond, //月日时分秒
+ */
+- (BOOL)setDayList2WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh;
 /*
     PGDatePickerModeDateAndTime, //月日周 时分
  */
@@ -25,6 +33,13 @@
     2、PGDatePickerModeDateHourMinute, //年月日时分
  */
 - (BOOL)setHourList2WithDateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh;
+
+/*
+ PGDatePickerModeMonthDayHour, //月日时
+ PGDatePickerModeMonthDayHourMinute, //月日时分
+ PGDatePickerModeMonthDayHourMinuteSecond, //月日时分秒
+ */
+- (BOOL)setHourList3WithDateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh;
 /*
     PGDatePickerModeTime, //时分
  */
@@ -39,9 +54,14 @@
  */
 - (BOOL)setMinuteList3WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh;
 /*
-    PGDatePickerModeDateAndTime, //月日周 时分
+ PGDatePickerModeTimeAndSecond, //时分秒
  */
 - (BOOL)setMinuteList4WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh;
+/*
+ PGDatePickerModeMonthDayHourMinute, //月日时分
+ PGDatePickerModeMonthDayHourMinuteSecond, //月日时分秒
+ */
+- (BOOL)setMinuteList5WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh;
 /*
     PGDatePickerModeTimeAndSecond, //时分秒
  */
@@ -54,6 +74,10 @@
     PGDatePickerModeMinuteAndSecond, //分秒
  */
 - (BOOL)setSecondList3WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh;
+/*
+    PGDatePickerModeMonthDayHourMinuteSecond, //月日时分秒
+ */
+- (BOOL)setSecondList4WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh;
 /*
      PGDatePickerModeYearAndMonth, //年月
      PGDatePickerModeDate, //年月日
