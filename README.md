@@ -1,5 +1,5 @@
 # PGDatePicker
-日期选择器，支持年、年月、年月日、年月日时、年月日时分、年月日时分秒、时分、时分秒、分秒、月日周 时分等，内置了3种样式。
+日期选择器，支持年、年月、年月日、年月日时、年月日时分、年月日时分秒、月日、月日时、月日时分、月日时分秒、时分、时分秒、分秒、月日周 时分等，内置了3种样式。
 
 > 由于使用UIPickerView的话，列表会有个弧度，所以这里用了[PGPickerView](https://github.com/xiaozhuxiong121/PGPickerView)  
 
@@ -39,6 +39,15 @@
 
 # 年月日时分秒
 ![year](Images/年月日时分秒.png)
+# 月日
+![year](Images/月日.png)
+# 月日时
+![year](Images/月日时.png)
+# 月日时分
+![year](Images/月日时分.png)
+# 月日时分秒
+![year](Images/月日时分秒.png)
+
 
 # 时分
 ![year](Images/时分.png)
