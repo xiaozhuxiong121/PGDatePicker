@@ -1,5 +1,5 @@
 # PGDatePicker
-日期选择器，支持年、年月、年月日、年月日时分、年月日时分秒、时分、时分秒、分秒、月日周 时分等，内置了3种样式。
+日期选择器，支持年、年月、年月日、年月日时、年月日时分、年月日时分秒、时分、时分秒、分秒、月日周 时分等，内置了3种样式。
 
 > 由于使用UIPickerView的话，列表会有个弧度，所以这里用了[PGPickerView](https://github.com/xiaozhuxiong121/PGPickerView)  
 
@@ -30,6 +30,9 @@
 
 # 年月日
 ![year](Images/年月日.png)
+
+# 年月日时
+![year](Images/年月日时.png)
 
 # 年月日时分
 ![year](Images/年月日时分.png)
@@ -74,12 +77,17 @@ ___
 # CocoaPods安装
 
 ```
-pod 'PGDatePicker', '>= 2.0.6'
+pod 'PGDatePicker'
 ```
 
 > **在`1.5.1`版本中对iPhone X进行了适配** 
 
 # 使用
+引入头文件
+
+```
+#import <PGDatePick/PGDatePickManager.h>
+```
 ```
 PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
 PGDatePicker *datePicker = datePickManager.datePicker;
@@ -94,21 +102,6 @@ NSLog(@"dateComponents = %@", dateComponents);
 > 如果不设置```minimumDate```和```maximumDate```默认是无穷小和无穷大 
 
 > 语言跟着手机系统语言走，默认有英文，中文，繁体中文，如果是模拟器的话，将模拟器的系统语言改成中文即显示中文
-
-# 设置Date
-> 建议用NSDate+PGCategory类所定义的方法去设置  
-
-```
-+ (NSDate *)setYear:(NSInteger)year;
-+ (NSDate *)setYear:(NSInteger)year month:(NSInteger)month;
-+ (NSDate *)setYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day;
-+ (NSDate *)setYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute;
-+ (NSDate *)setYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second;
-+ (NSDate *)setHour:(NSInteger)hour minute:(NSInteger)minute;
-+ (NSDate *)setHour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second;
-+ (NSDate *)setMonth:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute;
-```  
-比如：```datePicker.maximumDate = [NSDate setYear:2017];```
 
 # 设置样式
 ```

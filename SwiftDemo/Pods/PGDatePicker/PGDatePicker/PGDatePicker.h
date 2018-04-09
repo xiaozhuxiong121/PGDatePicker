@@ -15,8 +15,13 @@ typedef NS_ENUM(NSInteger, PGDatePickerMode) {
     PGDatePickerModeYear, //年
     PGDatePickerModeYearAndMonth, //年月
     PGDatePickerModeDate, //年月日
+    PGDatePickerModeDateHour, //年月日时
     PGDatePickerModeDateHourMinute, //年月日时分
     PGDatePickerModeDateHourMinuteSecond, //年月日时分秒
+    PGDatePickerModeMonthDay, //月日
+    PGDatePickerModeMonthDayHour, //月日时
+    PGDatePickerModeMonthDayHourMinute, //月日时分
+    PGDatePickerModeMonthDayHourMinuteSecond, //月日时分秒
     PGDatePickerModeTime, //时分
     PGDatePickerModeTimeAndSecond, //时分秒
     PGDatePickerModeMinuteAndSecond, //分秒
@@ -37,7 +42,6 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
 @property (nonatomic, weak) id<PGDatePickerDelegate> delegate;
 @property (nonatomic, assign) PGDatePickerMode datePickerMode; // default is PGDatePickerModeYear
 @property(nonatomic, assign) PGDatePickerType datePickerType;
-
 /*
  默认是false
  如果设置为true，则不用按下确定按钮也可以得到选中的日期
@@ -80,7 +84,7 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
 @property (nonatomic, strong) NSDate *minimumDate; // specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer mode
 @property (nonatomic, strong) NSDate *maximumDate; // default is nil
 
-@property (nonatomic, strong) void(^selectedDate)(NSDateComponents *dateComponents);
+@property (nonatomic, copy) void(^selectedDate)(NSDateComponents *dateComponents);
 
 /**
  相当于确定按钮，执行此方法PGDatePickerDelegate代理方法会得到值
