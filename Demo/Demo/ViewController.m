@@ -157,6 +157,98 @@
 }
 
 /**
+ 月日
+ */
+- (IBAction)monthAndDayHandler:(id)sender {
+    PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
+    datePickManager.isShadeBackgroud = true;
+    PGDatePicker *datePicker = datePickManager.datePicker;
+    datePicker.delegate = self;
+    datePicker.datePickerType = PGPickerViewType1;
+    datePicker.isHiddenMiddleText = false;
+    datePicker.datePickerMode = PGDatePickerModeMonthDay;
+    [self presentViewController:datePickManager animated:false completion:nil];
+    
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+//    dateFormatter.dateFormat = @"MM-dd";
+//
+//    datePicker.minimumDate = [dateFormatter dateFromString: @"02-10"];
+//    datePicker.maximumDate = [dateFormatter dateFromString: @"10-18"];
+//
+//    NSDate *date = [dateFormatter dateFromString: @"05-15"];
+//    [datePicker setDate:date animated:true];
+}
+
+/**
+ 月日时
+ */
+- (IBAction)monthDayAndHourHandler:(id)sender {
+    PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
+    datePickManager.isShadeBackgroud = true;
+    PGDatePicker *datePicker = datePickManager.datePicker;
+    datePicker.delegate = self;
+    datePicker.datePickerType = PGPickerViewType1;
+    datePicker.isHiddenMiddleText = true;
+    datePicker.datePickerMode = PGDatePickerModeMonthDayHour;
+    [self presentViewController:datePickManager animated:false completion:nil];
+    
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+//    dateFormatter.dateFormat = @"MM-dd-HH";
+//
+//    datePicker.minimumDate = [dateFormatter dateFromString: @"02-10-10"];
+//    datePicker.maximumDate = [dateFormatter dateFromString: @"10-18-20"];
+//
+//    NSDate *date = [dateFormatter dateFromString: @"05-15-17"];
+//    [datePicker setDate:date animated:true];
+}
+
+/**
+ 月日时分
+ */
+- (IBAction)monthDayHourAndMinuteHandler:(id)sender {
+    PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
+    datePickManager.isShadeBackgroud = true;
+    PGDatePicker *datePicker = datePickManager.datePicker;
+    datePicker.delegate = self;
+    datePicker.datePickerType = PGPickerViewType1;
+    datePicker.isHiddenMiddleText = false;
+    datePicker.datePickerMode = PGDatePickerModeMonthDayHourMinute;
+    [self presentViewController:datePickManager animated:false completion:nil];
+    
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+//    dateFormatter.dateFormat = @"MM-dd-HH-mm";
+//
+//    datePicker.minimumDate = [dateFormatter dateFromString: @"02-10-10-15"];
+//    datePicker.maximumDate = [dateFormatter dateFromString: @"10-18-20-50"];
+//
+//    NSDate *date = [dateFormatter dateFromString: @"05-15-17-30"];
+//    [datePicker setDate:date animated:true];
+}
+
+/**
+ 月日时分秒
+ */
+- (IBAction)monthDayHourMinuteSecondHandler:(id)sender {
+    PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
+    datePickManager.isShadeBackgroud = true;
+    PGDatePicker *datePicker = datePickManager.datePicker;
+    datePicker.delegate = self;
+    datePicker.datePickerType = PGPickerViewType1;
+    datePicker.isHiddenMiddleText = true;
+    datePicker.datePickerMode = PGDatePickerModeMonthDayHourMinuteSecond;
+    [self presentViewController:datePickManager animated:false completion:nil];
+    
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+//    dateFormatter.dateFormat = @"MM-dd-HH-mm-ss";
+//
+//    datePicker.minimumDate = [dateFormatter dateFromString: @"02-10-10-15-10"];
+//    datePicker.maximumDate = [dateFormatter dateFromString: @"10-18-20-50-30"];
+//
+//    NSDate *date = [dateFormatter dateFromString: @"05-15-17-30-20"];
+//    [datePicker setDate:date animated:true];
+}
+
+/**
  时分
  */
 - (IBAction)timeHandler:(id)sender {
