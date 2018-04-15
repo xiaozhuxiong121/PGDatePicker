@@ -14,13 +14,18 @@
 
 @implementation PGDatePicker (DateAndTime)
 - (void)dateAndTime_setupSelectedDate {
+    NSString *monthString = [NSBundle localizedStringForKey:@"monthString"];
+    NSString *dayString = [NSBundle localizedStringForKey:@"dayString"];
+    
     NSString *string = [self.pickerView textOfSelectedRowInComponent:0];
-    NSString *str = [string componentsSeparatedByString:self.monthString].firstObject;
+    NSString *str = [string componentsSeparatedByString:monthString].firstObject;
     self.selectedComponents.month = [str integerValue];
-    NSString *str2 = [string componentsSeparatedByString:self.monthString].lastObject;
-    NSString *str3 = [str2 componentsSeparatedByString:self.dayString].firstObject;
+    
+    NSString *str2 = [string componentsSeparatedByString:monthString].lastObject;
+    NSString *str3 = [str2 componentsSeparatedByString:dayString].firstObject;
     self.selectedComponents.day = [str3 integerValue];
-    NSString *str4 = [str2 componentsSeparatedByString:self.dayString].lastObject;
+    
+    NSString *str4 = [str2 substringWithRange:NSMakeRange(str2.length - 3, 2)];
     str4 = [str4 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     self.selectedComponents.weekday = [self weekDayMappingFrom:str4];
     
