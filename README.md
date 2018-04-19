@@ -73,12 +73,6 @@ PGDatePicker *datePicker = [[PGDatePicker alloc]init];
 
 `PGDatePickManager`类就是一个典型的例子，你可以下载源码查看`PGDatePickManager`的简单实现，或许对你自己封装会有所帮助。
 
-> 注意
-
-___
-**2.x变化有点大，1.x升级到2.x时会报错，可以参考demo适当的改一下**
-___
-
 # Swift使用
 [查看使用文档](Swift.md) 
 
