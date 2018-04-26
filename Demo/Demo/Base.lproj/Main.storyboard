@@ -29,7 +29,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="yearHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cX3-fI-Ch2"/>
+                                    <action selector="yearHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u7l-NS-xHF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nax-WM-03i">
@@ -40,7 +40,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="yearAndMonthHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PsK-fS-l5B"/>
+                                    <action selector="yearAndMonthHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="irH-aF-FcE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkd-FF-LcW">
@@ -51,7 +51,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dateHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SnQ-Zl-YtC"/>
+                                    <action selector="dateHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ltC-8N-Rmj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ykh-Ki-1Zi">
@@ -62,7 +62,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="timeHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gvP-eT-QKm"/>
+                                    <action selector="timeHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UFg-Hn-XIE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcG-Ve-bqE">
@@ -73,7 +73,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="timeAndSecondHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A2q-cw-2eR"/>
+                                    <action selector="timeAndSecondHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l58-JH-K3l"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bB-tg-phE">
@@ -84,7 +84,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="minuteAndSecondHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oDB-Cb-ETs"/>
+                                    <action selector="minuteAndSecondHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L3K-Od-QpL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNU-eh-rzf">
@@ -95,7 +95,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="titleHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nsx-t6-yDc"/>
+                                    <action selector="titleHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aLo-0U-RxP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euV-SQ-CXA">
@@ -106,7 +106,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dateAndTimeHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DgU-gm-XPz"/>
+                                    <action selector="dateAndTimeHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8FF-62-PSi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXb-5Q-SkP">
@@ -117,7 +117,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dateHourMinuteHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pRX-hz-vIo"/>
+                                    <action selector="dateHourMinuteHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c8c-oM-UFy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcn-UN-KdR">
@@ -128,7 +128,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dateHourMinuteSecondHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mhc-Ot-xa4"/>
+                                    <action selector="dateHourMinuteSecondHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KZM-Ro-nQ7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bK0-EJ-Sca">
@@ -139,7 +139,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="monthDayHourAndMinuteHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2YL-JS-laz"/>
+                                    <action selector="monthDayHourAndMinuteHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pac-2J-m9M"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFc-aJ-bgY">
@@ -150,7 +150,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="monthDayAndHourHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XGj-ZV-xMS"/>
+                                    <action selector="monthDayAndHourHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yqf-IB-7O2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTm-xs-51Y">
@@ -161,7 +161,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="monthAndDayHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qCY-qd-aeo"/>
+                                    <action selector="monthAndDayHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3JL-4E-ryC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naM-dc-lHI">
@@ -172,7 +172,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="styleHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CKd-TG-3Xy"/>
+                                    <action selector="styleHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gfd-SW-Quu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSA-w2-Ya1">
@@ -183,8 +183,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dateHourHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IhA-8t-gH0"/>
-                                    <action selector="dateHourMinuteHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5uh-kU-hIM"/>
+                                    <action selector="dateHourHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TTc-x7-e3B"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emX-i1-WuF">
@@ -195,7 +194,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="monthDayHourMinuteSecondHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2D8-2c-z6R"/>
+                                    <action selector="monthDayHourMinuteSecondHandle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hlm-5Z-DQp"/>
                                 </connections>
                             </button>
                         </subviews>

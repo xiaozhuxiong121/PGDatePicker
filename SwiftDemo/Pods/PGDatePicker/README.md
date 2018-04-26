@@ -1,5 +1,5 @@
 # PGDatePicker
-日期选择器，支持年、年月、年月日、年月日时、年月日时分、年月日时分秒、时分、时分秒、分秒、月日周 时分等，内置了3种样式。
+日期选择器，支持年、年月、年月日、年月日时、年月日时分、年月日时分秒、月日、月日时、月日时分、月日时分秒、时分、时分秒、分秒、月日周 时分等，内置了3种样式。
 
 > 由于使用UIPickerView的话，列表会有个弧度，所以这里用了[PGPickerView](https://github.com/xiaozhuxiong121/PGPickerView)  
 
@@ -7,8 +7,7 @@
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/PGDatePicker.svg)](https://cocoapods.org/pods/PGDatePicker)
 ![](https://img.shields.io/badge/platform-iOS-red.svg) ![](https://img.shields.io/badge/language-Objective--C-orange.svg)
 ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg) 
- [![](https://img.shields.io/badge/jianshu-piggybear-red.svg)](http://www.jianshu.com/u/3740632b2002)
-![PGDatePicker](PGDatePicker.gif)    
+ [![](https://img.shields.io/badge/jianshu-piggybear-red.svg)](http://www.jianshu.com/u/3740632b2002)   
 
 
 #### 直接看如何使用:[Wiki](https://github.com/xiaozhuxiong121/PGDatePicker/wiki)
@@ -39,6 +38,15 @@
 
 # 年月日时分秒
 ![year](Images/年月日时分秒.png)
+# 月日
+![year](Images/月日.png)
+# 月日时
+![year](Images/月日时.png)
+# 月日时分
+![year](Images/月日时分.png)
+# 月日时分秒
+![year](Images/月日时分秒.png)
+
 
 # 时分
 ![year](Images/时分.png)
@@ -64,12 +72,6 @@ PGDatePicker *datePicker = [[PGDatePicker alloc]init];
 ```
 
 `PGDatePickManager`类就是一个典型的例子，你可以下载源码查看`PGDatePickManager`的简单实现，或许对你自己封装会有所帮助。
-
-> 注意
-
-___
-**2.x变化有点大，1.x升级到2.x时会报错，可以参考demo适当的改一下**
-___
 
 # Swift使用
 [查看使用文档](Swift.md) 
@@ -144,8 +146,5 @@ datePickManager.confirmButtonFont = [UIFont boldSystemFontOfSize:17];
 # 许可证
 
 PGDatePicker 使用 MIT 许可证，详情见 [LICENSE](LICENSE) 文件。
-
-# 想说的话
-喜欢的话扔一个免费的[star](https://github.com/xiaozhuxiong121/PGDatePicker)给我，这足以激励我更好的完善。
 
 
