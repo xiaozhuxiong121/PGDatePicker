@@ -95,11 +95,19 @@ PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
 PGDatePicker *datePicker = datePickManager.datePicker;
 datePicker.delegate = self;
 [self presentViewController:datePickManager animated:false completion:nil];
-
+```
+#### Delegate
+```
 #pragma PGDatePickerDelegate
 - (void)datePicker:(PGDatePicker *)datePicker didSelectDate:(NSDateComponents *)dateComponents {
 NSLog(@"dateComponents = %@", dateComponents);
 }
+```
+#### Block
+```
+datePicker.selectedDate = ^(NSDateComponents *dateComponents) {
+    NSLog(@"dateComponents = %@", dateComponents);
+};
 ```
 > 如果不设置```minimumDate```和```maximumDate```默认是无穷小和无穷大 
 
