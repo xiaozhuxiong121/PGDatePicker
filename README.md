@@ -155,4 +155,8 @@ datePickManager.confirmButtonFont = [UIFont boldSystemFontOfSize:17];
 
 PGDatePicker 使用 MIT 许可证，详情见 [LICENSE](LICENSE) 文件。
 
+# 想说的话
+
+由于本人的烂工作，整天忙的要命，所以大家的问题我都会第一时间改，提的功能性的需求，只能等有时间了在加，望理解🤝 
+
 
