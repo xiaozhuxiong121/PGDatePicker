@@ -11,7 +11,7 @@ import PGDatePicker
 
 class ViewController: UIViewController {
 
-    @IBAction func yearHandle(_ sender: Any) {
+    @IBAction func yearHandler(_ sender: Any) {
         let datePickerManager = PGDatePickManager()
         datePickerManager.isShadeBackgroud = true
         datePickerManager.style = .style2
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
 //        datePicker.maximumDate = NSDate.setYear(2020)
     }
     
-    @IBAction func yearAndMonthHandle(_ sender: Any) {
+    @IBAction func yearAndMonthHandler(_ sender: Any) {
         let datePickerManager = PGDatePickManager()
         datePickerManager.isShadeBackgroud = true
         datePickerManager.style = .style3
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
 //        datePicker.maximumDate = NSDate.setYear(2020, month: 10)
     }
     
-    @IBAction func dateHandle(_ sender: Any) {
+    @IBAction func dateHandler(_ sender: Any) {
         let datePickerManager = PGDatePickManager()
         let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
 //        datePicker.maximumDate = NSDate.setYear(2020, month: 10, day: 20)
     }
     
-    @IBAction func dateHourMinuteHandle(_ sender: Any) {
+    @IBAction func dateHourMinuteHandler(_ sender: Any) {
         let datePickerManager = PGDatePickManager()
         let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         self.present(datePickerManager, animated: false, completion: nil)
     }
     
-    @IBAction func dateHourMinuteSecondHandle(_ sender: Any) {
+    @IBAction func dateHourMinuteSecondHandler(_ sender: Any) {
         let datePickerManager = PGDatePickManager()
         let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         self.present(datePickerManager, animated: false, completion: nil)
     }
     
-    @IBAction func timeHandle(_ sender: Any) {
+    @IBAction func timeHandler(_ sender: Any) {
         let datePickerManager = PGDatePickManager()
         let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
         self.present(datePickerManager, animated: false, completion: nil)
     }
     
-    @IBAction func timeAndSecondHandle(_ sender: Any) {
+    @IBAction func timeAndSecondHandler(_ sender: Any) {
         let datePickerManager = PGDatePickManager()
         let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
@@ -82,7 +82,7 @@ class ViewController: UIViewController {
         self.present(datePickerManager, animated: false, completion: nil)
     }
     
-    @IBAction func dateAndTimeHandle(_ sender: Any) {
+    @IBAction func dateAndTimeHandler(_ sender: Any) {
         let datePickerManager = PGDatePickManager()
         let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
         self.present(datePickerManager, animated: false, completion: nil)
     }
     
-    @IBAction func titleHandle(_ sender: Any) {
+    @IBAction func titleHandler(_ sender: Any) {
         let datePickerManager = PGDatePickManager()
         datePickerManager.titleLabel.text = "PGDatePicker"
         let datePicker = datePickerManager.datePicker!
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
         self.present(datePickerManager, animated: false, completion: nil)
     }
     
-    @IBAction func styleHandle(_ sender: Any) {
+    @IBAction func styleHandler(_ sender: Any) {
         let datePickerManager = PGDatePickManager()
         let datePicker = datePickerManager.datePicker!
         self.present(datePickerManager, animated: false, completion: nil)

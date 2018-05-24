@@ -22,7 +22,7 @@
 /**
  年份
  */
-- (IBAction)yearHandle:(UIButton *)sender {
+- (IBAction)yearHandler:(UIButton *)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.style = PGDatePickManagerStyle2;
     datePickManager.isShadeBackgroud = true;
@@ -48,7 +48,7 @@
 /**
  年月
  */
-- (IBAction)yearAndMonthHandle:(id)sender {
+- (IBAction)yearAndMonthHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.style = PGDatePickManagerStyle3;
     datePickManager.isShadeBackgroud = true;
@@ -72,9 +72,10 @@
 /**
  年月日
  */
-- (IBAction)dateHandle:(id)sender {
+- (IBAction)dateHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
+    datePickManager.style = PGDatePickManagerStyle3;
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerType = PGPickerViewType1;
@@ -95,7 +96,7 @@
 /**
  年月日时
  */
-- (IBAction)dateHourHandle:(UIButton *)sender {
+- (IBAction)dateHourHandler:(UIButton *)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
@@ -116,7 +117,7 @@
 /**
  年月日时分
  */
-- (IBAction)dateHourMinuteHandle:(UIButton *)sender {
+- (IBAction)dateHourMinuteHandler:(UIButton *)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
@@ -138,7 +139,7 @@
 /**
  年月日时分秒
  */
-- (IBAction)dateHourMinuteSecondHandle:(UIButton *)sender {
+- (IBAction)dateHourMinuteSecondHandler:(UIButton *)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
@@ -159,7 +160,7 @@
 /**
  月日
  */
-- (IBAction)monthAndDayHandle:(id)sender {
+- (IBAction)monthAndDayHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
@@ -182,7 +183,7 @@
 /**
  月日时
  */
-- (IBAction)monthDayAndHourHandle:(id)sender {
+- (IBAction)monthDayAndHourHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
@@ -205,7 +206,7 @@
 /**
  月日时分
  */
-- (IBAction)monthDayHourAndMinuteHandle:(id)sender {
+- (IBAction)monthDayHourAndMinuteHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
@@ -228,7 +229,7 @@
 /**
  月日时分秒
  */
-- (IBAction)monthDayHourMinuteSecondHandle:(id)sender {
+- (IBAction)monthDayHourMinuteSecondHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
@@ -251,7 +252,7 @@
 /**
  时分
  */
-- (IBAction)timeHandle:(id)sender {
+- (IBAction)timeHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
@@ -271,7 +272,7 @@
 /**
  时分秒
  */
-- (IBAction)timeAndSecondHandle:(id)sender {
+- (IBAction)timeAndSecondHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
@@ -291,7 +292,7 @@
 /**
  分秒
  */
-- (IBAction)minuteAndSecondHandle:(id)sender {
+- (IBAction)minuteAndSecondHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
@@ -311,7 +312,7 @@
 /**
  月日周 时分
  */
-- (IBAction)dateAndTimeHandle:(id)sender {
+- (IBAction)dateAndTimeHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.isHiddenMiddleText = false;
@@ -323,7 +324,7 @@
 /**
  显示标题
  */
-- (IBAction)titleHandle:(UIButton *)sender {
+- (IBAction)titleHandler:(UIButton *)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
@@ -335,7 +336,7 @@
 /**
  设置样式
  */
-- (IBAction)styleHandle:(id)sender {
+- (IBAction)styleHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
