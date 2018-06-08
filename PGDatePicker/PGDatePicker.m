@@ -63,7 +63,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         if (self.currentComponents.year > self.maximumComponents.year && self.selectComponents.year != self.minimumComponents.year) {
             self.selectComponents.year = self.maximumComponents.year;
         }
-        if (self.currentComponents.year == self.minimumComponents.year && self.currentComponents.month != self.minimumComponents.month) {
+        if (self.currentComponents.year == self.minimumComponents.year && self.currentComponents.month > self.maximumComponents.month) {
             self.selectComponents.month = self.maximumComponents.month;
         }
         if (self.currentComponents.year == self.minimumComponents.year && self.currentComponents.month<= self.minimumComponents.month) {
