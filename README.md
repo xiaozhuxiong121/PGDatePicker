@@ -4,10 +4,10 @@
 > 由于使用UIPickerView的话，列表会有个弧度，所以这里用了[PGPickerView](https://github.com/xiaozhuxiong121/PGPickerView)  
 
 ![PGDatePicker](F734F5F9-FB12-4BA7-B43E-B39D0FF1DA3B.png)
-[![CocoaPods compatible](https://img.shields.io/cocoapods/v/PGDatePicker.svg)](https://cocoapods.org/pods/PGDatePicker)
-![](https://img.shields.io/badge/platform-iOS-red.svg) ![](https://img.shields.io/badge/language-Objective--C-orange.svg)
-![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg) 
- [![](https://img.shields.io/badge/jianshu-piggybear-red.svg)](http://www.jianshu.com/u/3740632b2002)   
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/PGDatePicker.svg?style=for-the-badge)](https://cocoapods.org/pods/PGDatePicker)
+![](https://img.shields.io/badge/platform-iOS-red.svg?style=for-the-badge) ![](https://img.shields.io/badge/language-Objective--C-orange.svg?style=for-the-badge)
+![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg?style=for-the-badge) 
+ [![](https://img.shields.io/badge/jianshu-piggybear-red.svg?style=for-the-badge)](http://www.jianshu.com/u/3740632b2002)   
 
 
 #### 直接看如何使用:[Wiki](https://github.com/xiaozhuxiong121/PGDatePicker/wiki)
