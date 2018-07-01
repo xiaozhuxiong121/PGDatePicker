@@ -64,9 +64,6 @@ pickerView.textColorOfOtherRow = [UIColor blackColor];
 
 **更多的使用方法请下载[demo](https://github.com/xiaozhuxiong121/PGPickerView)查看**
 
-# 想要所的话
-喜欢的话扔一个免费的[star](https://github.com/xiaozhuxiong121/PGPickerView)，谢谢啦🌺
-
 # 许可证
 
 PGPickerView 使用 MIT 许可证，详情见 [LICENSE](LICENSE) 文件。

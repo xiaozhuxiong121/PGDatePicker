@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03FFB25674F6F78873656F67129C1214 /* PGPickerColumnView.h in Headers */ = {isa = PBXBuildFile; fileRef = E87BCEE321297521AE298BBFC3D84B52 /* PGPickerColumnView.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		05A21AC6A9C4098BAF0043BFD58DC768 /* PGPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF265241FD236C3F502AC468000D13D /* PGPickerView.m */; };
 		0B2F40F0CF3559CABC834358345121AC /* PGPickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6542F9C741D4F48606EBD5A129072EA /* PGPickerView-dummy.m */; };
-		101B517FE531F0C7165CB6F9BC051310 /* PGPickerColumnCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F43DA840540EFD4453011691C69886 /* PGPickerColumnCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		125B1B0FA43B86134A35FB40AA199E75 /* PGPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = F021679028D45041F5DA5CD13E026EE1 /* PGPickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		46D36A1E9A44F038746596D712F49DEF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
 		4D65700163524AF982C2E32885A44D81 /* PGPickerColumnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E2C3F5DB32B7A9810043CBDFE59B2E13 /* PGPickerColumnCell.m */; };
+		9191245C2A9A830A50C018290424D598 /* PGPickerTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 386EC601CB70A5DA57AE7B2A21183A3A /* PGPickerTableView.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9E343CE779E26428B0E9BA520F4771CE /* PGPickerColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7ADAB8FEDF5D4DE201A6752DF37DB0 /* PGPickerColumnView.m */; };
 		BB418962EDC49EEC6A1D13E8744BF9F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88AAE1F92055A60CC2FC970D7D34634 /* Foundation.framework */; };
-		BB6BC9E689704127EC379F6CBCF5EA92 /* PGPickerColumnView.h in Headers */ = {isa = PBXBuildFile; fileRef = E87BCEE321297521AE298BBFC3D84B52 /* PGPickerColumnView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C156B4A8A224810BD8FDE7F93C7F0E7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63C6A64CF66340668996F78DA6BB482 /* UIKit.framework */; };
-		DB19A22A1EDD1D6E65372F660E3FDB99 /* PGPickerTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 386EC601CB70A5DA57AE7B2A21183A3A /* PGPickerTableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF06632ABD3FB2FA27EDFEF6E8FCF8D6 /* PGPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = F021679028D45041F5DA5CD13E026EE1 /* PGPickerView.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E45F61D4BE11405C896630E0129D749E /* PGPickerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7EF0A202D5095EBFC6AC104ED47FE9 /* PGPickerTableView.m */; };
 		F2AB0BEBADF5DE0A55885019F9563BDA /* Pods-Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA944E1D5D966DBCA7EB7C661855A95 /* Pods-Demo-dummy.m */; };
+		F5F757D10280B5E48D12F7A70FD2FECF /* PGPickerColumnCell.h in Headers */ = {isa = PBXBuildFile; fileRef = D1F43DA840540EFD4453011691C69886 /* PGPickerColumnCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,10 +182,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				101B517FE531F0C7165CB6F9BC051310 /* PGPickerColumnCell.h in Headers */,
-				BB6BC9E689704127EC379F6CBCF5EA92 /* PGPickerColumnView.h in Headers */,
-				DB19A22A1EDD1D6E65372F660E3FDB99 /* PGPickerTableView.h in Headers */,
-				125B1B0FA43B86134A35FB40AA199E75 /* PGPickerView.h in Headers */,
+				F5F757D10280B5E48D12F7A70FD2FECF /* PGPickerColumnCell.h in Headers */,
+				03FFB25674F6F78873656F67129C1214 /* PGPickerColumnView.h in Headers */,
+				9191245C2A9A830A50C018290424D598 /* PGPickerTableView.h in Headers */,
+				CF06632ABD3FB2FA27EDFEF6E8FCF8D6 /* PGPickerView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,8 +232,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -286,7 +286,31 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		27A052B71AFA5B1A83AB880CC7E603BC /* Debug */ = {
+		0D32F379F9F421DA71ECF8E80683F80B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0A4DB911EDA147AECDC6D69075D2407 /* PGPickerView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/PGPickerView/PGPickerView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = PGPickerView;
+				PRODUCT_NAME = PGPickerView;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1EE19F5DD95931924296F637BF18BD8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -296,10 +320,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -307,6 +333,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -315,6 +342,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -339,36 +367,39 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		5AF099F20199E7465DBD5D605D1A7324 /* Debug */ = {
+		2D7CFE5447DA939BE97C1284FCB54143 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A0A4DB911EDA147AECDC6D69075D2407 /* PGPickerView.xcconfig */;
+			baseConfigurationReference = BC6F318B8C726435B2FF8566E7AC50B9 /* Pods-Demo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/PGPickerView/PGPickerView-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		9D9D2C2990F6F5F7A1FDF6670BCE9EC2 /* Debug */ = {
+		92FD553FE1391510832D361B96555E1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E61E2F2E514A86FEC211F0AD10D8AC1 /* Pods-Demo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -385,7 +416,7 @@
 			};
 			name = Debug;
 		};
-		AFA96F0F27F82C1CFA723C86DA08EA78 /* Release */ = {
+		DAEB4B9326B63E9898D096D15E53A6A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A0A4DB911EDA147AECDC6D69075D2407 /* PGPickerView.xcconfig */;
 			buildSettings = {
@@ -398,15 +429,17 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = PGPickerView;
+				PRODUCT_NAME = PGPickerView;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
-		B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */ = {
+		F4568DEE257655D290C2B9CEAB37C934 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -416,10 +449,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -427,6 +462,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -435,6 +471,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -455,30 +492,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		D38BA9904F7D1DE4BAB9CCBCEB5BB6F3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC6F318B8C726435B2FF8566E7AC50B9 /* Pods-Demo.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -488,8 +503,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				27A052B71AFA5B1A83AB880CC7E603BC /* Debug */,
-				B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */,
+				1EE19F5DD95931924296F637BF18BD8F /* Debug */,
+				F4568DEE257655D290C2B9CEAB37C934 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -497,8 +512,8 @@
 		603D33CB0F567F748CAFE6230B19CF80 /* Build configuration list for PBXNativeTarget "PGPickerView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5AF099F20199E7465DBD5D605D1A7324 /* Debug */,
-				AFA96F0F27F82C1CFA723C86DA08EA78 /* Release */,
+				DAEB4B9326B63E9898D096D15E53A6A7 /* Debug */,
+				0D32F379F9F421DA71ECF8E80683F80B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -506,8 +521,8 @@
 		69AA96A9FE7A56CB6123AEDAEE384417 /* Build configuration list for PBXNativeTarget "Pods-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9D9D2C2990F6F5F7A1FDF6670BCE9EC2 /* Debug */,
-				D38BA9904F7D1DE4BAB9CCBCEB5BB6F3 /* Release */,
+				92FD553FE1391510832D361B96555E1C /* Debug */,
+				2D7CFE5447DA939BE97C1284FCB54143 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

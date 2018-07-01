@@ -25,6 +25,8 @@
 @property (nonatomic, strong)UIColor *textColorOfOtherRow;       
 @property(nonatomic, strong) UIFont *textFontOfOtherRow;
 
+@property(nonatomic, assign) BOOL isHiddenWheels;
+
 - (instancetype)initWithFrame:(CGRect)frame rowHeight:(CGFloat)rowHeight upLineHeight:(CGFloat)upLineHeight downLineHeight:(CGFloat)downLineHeight;
 - (void)selectRow:(NSInteger)row animated:(BOOL)animated;
 @end

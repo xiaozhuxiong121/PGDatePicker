@@ -10,12 +10,7 @@
 #import "PGPickerColumnCell.h"
 #import "PGPickerTableView.h"
 
-@interface PGPickerColumnView()<UITableViewDelegate, UITableViewDataSource> {
-    BOOL _isSubViewLayout;
-    BOOL _isAnimationOfSelectedRow;
-    NSUInteger _numberOfSelectedRow;
-    BOOL _isSelected;
-}
+@interface PGPickerColumnView()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic) CGFloat rowHeight;
 
 @property (nonatomic, weak) UIView *upView;
@@ -32,6 +27,16 @@
 
 @property (nonatomic, assign) CGFloat upLineHeight;
 @property (nonatomic, assign) CGFloat downLineHeight;
+
+@property (nonatomic, assign) CGFloat showCount;
+
+@property (nonatomic, assign) CGFloat isSubViewLayouted;
+@property (nonatomic, assign) CGFloat isAnimationOfSelectedRow;
+@property (nonatomic, assign) CGFloat numberOfSelectedRow;
+@property (nonatomic, assign) CGFloat isSelected;
+
+@property (nonatomic, assign) CGFloat circumference;
+@property (nonatomic, assign) CGFloat radius;
 @end
 
 #define kWidth self.frame.size.width
@@ -55,6 +60,9 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
             self.offset = 0;
             self.offsetCount -= 1;
         }
+        self.showCount = (frame.size.height / self.rowHeight - 1) / 2;
+        self.circumference = self.rowHeight * self.showCount * 2 - 25;
+        self.radius = self.circumference / M_PI * 2;
         [self setupView];
     }
     return self;
@@ -62,18 +70,18 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    if (_isSubViewLayout) {
+    if (self.isSubViewLayouted) {
         return;
     }
-    _isSubViewLayout = true;
-    if (!_isSelected) {
+    self.isSubViewLayouted = true;
+    if (!self.isSelected) {
         return;
     }
     if (_isAnimationOfSelectedRow) {
         __block id blockSelf = self;
         dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.26 * NSEC_PER_SEC));
         dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-            [blockSelf selectRow:_numberOfSelectedRow animated:_isAnimationOfSelectedRow];
+            [blockSelf selectRow:self.numberOfSelectedRow animated:self.isAnimationOfSelectedRow];
             blockSelf = nil;
         });
     }
@@ -149,7 +157,7 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
     _isAnimationOfSelectedRow = animated;
     _isSelected = true;
     if (!animated) {
-        if (_isSubViewLayout) {
+        if (self.isSubViewLayouted) {
             self.centerTableView.contentOffset = CGPointMake(0, row * self.rowHeight);
             _isSelected = false;
             self.selectedRow = row;
@@ -158,21 +166,21 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
             dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC));
             dispatch_after(delayTime, dispatch_get_main_queue(), ^{
                 blockSelf.centerTableView.contentOffset = CGPointMake(0, row * blockSelf.rowHeight);
-                _isSelected = false;
+                blockSelf.isSelected = false;
                 blockSelf.selectedRow = row;
                 blockSelf = nil;
             });
         }
         return;
     }
-    if (_isSubViewLayout) {
+    if (self.isSubViewLayouted) {
         [self.centerTableView selectRowAtIndexPath: [NSIndexPath indexPathForRow:row + self.offsetCount inSection:0] animated: _isAnimationOfSelectedRow scrollPosition: UITableViewScrollPositionMiddle];
         
         __block PGPickerColumnView *blockSelf = self;
         dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC));
         dispatch_after(delayTime, dispatch_get_main_queue(), ^{
             [blockSelf scrollViewDidEndDecelerating:blockSelf.centerTableView];
-            _isSelected = false;
+            blockSelf.isSelected = false;
             blockSelf.selectedRow = row;
             blockSelf = nil;
         });
@@ -196,6 +204,10 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UITableView *)tableView {
     CGPoint offset = tableView.contentOffset;
+    NSInteger rowHeight = self.rowHeight;
+    NSInteger posY = offset.y;
+    NSInteger value = posY % rowHeight;
+    CGFloat itemAngle = value * ((rowHeight / self.radius) / rowHeight);
     
     if (self.centerTableView == tableView) {
         self.upTableView.contentOffset = CGPointMake(0, offset.y);
@@ -204,10 +216,28 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
     }
     if (tableView == self.downTableView) {
         self.centerTableView.contentOffset = CGPointMake(0, offset.y);
+        if (!self.isHiddenWheels) {
+            [tableView.visibleCells enumerateObjectsUsingBlock:^(__kindof PGPickerColumnCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                NSUInteger index = idx - self.showCount;
+                NSInteger length = index * rowHeight;
+                CGFloat angle = length / self.radius - itemAngle;
+                CGFloat scale = cos(angle / 2);
+                [obj transformWith:angle scale:scale];
+            }];
+        }
         return;
     }
     if (tableView == self.upTableView) {
         self.centerTableView.contentOffset = CGPointMake(0, offset.y);
+        if (!self.isHiddenWheels) {
+            [tableView.visibleCells enumerateObjectsUsingBlock:^(__kindof PGPickerColumnCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                NSUInteger index = self.showCount - idx;
+                NSInteger length = index * rowHeight;
+                CGFloat angle = length / self.radius + itemAngle;
+                CGFloat scale = cos(angle / 2);
+                [obj transformWith:angle scale: scale];
+            }];
+        }
     }
 }
 
@@ -281,14 +311,29 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     PGPickerColumnCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuseIdentifier];
-    NSUInteger index = indexPath.row;
-    NSInteger row = index - self.offsetCount;
-    if (index < self.offsetCount || row >= self.datas.count) {
+    NSInteger row = indexPath.row - self.offsetCount;
+    if (indexPath.row < self.offsetCount || row >= self.datas.count) {
         cell.label.attributedText = [[NSAttributedString alloc] initWithString: @""];
         cell.contentView.backgroundColor = [UIColor clearColor];
     }else {
         cell.label.attributedText = self.datas[row];
         cell.contentView.backgroundColor = self.viewBackgroundColors[row];
+        
+        if (!self.isHiddenWheels) {
+            if (tableView == self.downTableView) {
+                NSUInteger index = row - self.selectedRow;
+                NSInteger length = index * self.rowHeight;
+                CGFloat angle = length / self.radius;
+                CGFloat scale = cos(angle / 2);
+                [cell transformWith:angle scale:scale];
+            }else if (tableView == self.upTableView) {
+                NSUInteger index = self.selectedRow - row;
+                NSInteger length = index * self.rowHeight;
+                CGFloat angle = length / self.radius;
+                CGFloat scale = cos(angle / 2);
+                [cell transformWith:angle scale:scale];
+            }
+        }
     }
     if (tableView == self.centerTableView) {
         cell.label.textColor = self.textColorOfSelectedRow;
@@ -301,7 +346,6 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
 }
 
 #pragma mark - Setter
-
 - (void)setSelectedRow:(NSUInteger)selectedRow {
     _selectedRow = selectedRow;
     if (self.datas.count > selectedRow) {

@@ -41,6 +41,9 @@ typedef NS_ENUM(NSUInteger, PGPickerViewType) {
 @property(nonatomic, strong) UIColor *middleTextColor;
 @property(nonatomic, strong) UIFont *middleTextFont;
 
+@property(nonatomic, assign) BOOL isHiddenWheels; // default is true  true -> hidden
+
+
 - (NSInteger)numberOfRowsInComponent:(NSInteger)component;
 
 // selection. in this case, it means showing the appropriate row in the middle

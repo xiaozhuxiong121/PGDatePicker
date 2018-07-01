@@ -75,11 +75,11 @@
 - (IBAction)dateHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
-    datePickManager.style = PGDatePickManagerStyle3;
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerType = PGPickerViewType1;
     datePicker.isHiddenMiddleText = false;
+    datePicker.isHiddenWheels = false;
     datePicker.datePickerMode = PGDatePickerModeDate;
     [self presentViewController:datePickManager animated:false completion:nil];
     
