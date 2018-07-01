@@ -14,8 +14,8 @@ typedef void(^handlerBlock)();
 
 @property (nonatomic, assign) PGDatePickManagerStyle style;
 
-@property (nonatomic, strong)  handlerBlock cancelButtonHandlerBlock;
-@property (nonatomic, strong)  handlerBlock confirmButtonHandlerBlock;
+@property (nonatomic, copy)  handlerBlock cancelButtonHandlerBlock;
+@property (nonatomic, copy)  handlerBlock confirmButtonHandlerBlock;
 
 @property (nonatomic, weak) UIButton *cancelButton;
 @property (nonatomic, weak) UIButton *confirmButton;

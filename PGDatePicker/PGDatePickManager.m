@@ -46,15 +46,18 @@
 }
 
 - (void)setupDismissViewTapHandler {
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(cancelButtonHandler)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissViewTapMonitor)];
     [self.dismissView addGestureRecognizer:tap];
 }
 
 - (void)headerViewButtonHandler {
     __weak id weak_self = self;
     self.headerView.cancelButtonHandlerBlock = ^{
-        __strong id strong_self = weak_self;
+        __strong PGDatePickManager *strong_self = weak_self;
         [strong_self cancelButtonHandler];
+        if (strong_self.cancelButtonMonitor) {
+            strong_self.cancelButtonMonitor();
+        }
     };
     self.headerView.confirmButtonHandlerBlock =^{
         __strong PGDatePickManager *strong_self = weak_self;
@@ -75,6 +78,13 @@
         }];
     }else {
         [self dismissViewControllerAnimated:false completion:nil];
+    }
+}
+
+- (void)dismissViewTapMonitor {
+    [self cancelButtonHandler];
+    if (self.cancelButtonMonitor) {
+        self.cancelButtonMonitor();
     }
 }
 
