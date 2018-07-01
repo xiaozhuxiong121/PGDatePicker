@@ -33,6 +33,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 - (instancetype)init {
     if (self = [super init]) {
         self.isHiddenMiddleText = true;
+        self.isHiddenWheels = true;
     }
     return self;
 }
@@ -70,6 +71,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     pickerView.rowHeight = self.rowHeight;
     pickerView.isHiddenMiddleText = self.isHiddenMiddleText;
     pickerView.middleTextColor = self.middleTextColor;
+    pickerView.isHiddenWheels = self.isHiddenWheels;
     pickerView.lineBackgroundColor = self.lineBackgroundColor;
     if (_titleColorForOtherRow) {
         self.textColorOfOtherRow = _titleColorForOtherRow;
