@@ -13,7 +13,7 @@
 #### 直接看如何使用:[Wiki](https://github.com/xiaozhuxiong121/PGDatePicker/wiki)
 
 # 带弧度的样式
-> 如果想要设置带弧度的样式，`datePicker.isHiddenWheels = false;` 即可
+> 如果想要设置带弧度的样式，``` datePicker.isHiddenWheels = false; ``` 即可
 
 # 年月日
 ![](Images/wheels_年月日.png)
