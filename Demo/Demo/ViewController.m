@@ -79,7 +79,6 @@
     datePicker.delegate = self;
     datePicker.datePickerType = PGPickerViewType1;
     datePicker.isHiddenMiddleText = false;
-    datePicker.isHiddenWheels = false;
     datePicker.datePickerMode = PGDatePickerModeDate;
     [self presentViewController:datePickManager animated:false completion:nil];
     
