@@ -9,5 +9,7 @@
 
 @interface NSBundle (PGDatePicker)
 + (NSString *)localizedStringForKey:(NSString *)key;
++ (NSString *)localizedStringForKey:(NSString *)key language:(NSString *)language;
 + (NSString *)localizedStringForKey:(NSString *)key value:(NSString *)value;
++ (NSString *)localizedStringForKey:(NSString *)key value:(NSString *)value language:(NSString *)language;
 @end

@@ -20,5 +20,5 @@ typedef void(^handlerBlock)();
 @property (nonatomic, weak) UIButton *cancelButton;
 @property (nonatomic, weak) UIButton *confirmButton;
 @property (nonatomic, weak) UILabel *titleLabel;
-
+@property(nonatomic, copy) NSString *language;
 @end

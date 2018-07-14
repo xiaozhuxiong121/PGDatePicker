@@ -30,6 +30,12 @@
     self.view.backgroundColor = [UIColor clearColor];
 }
 
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    self.headerView.language = self.datePicker.language;
+}
+
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     

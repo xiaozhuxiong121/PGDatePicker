@@ -87,7 +87,12 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
 @property (nonatomic, copy) void(^selectedDate)(NSDateComponents *dateComponents);
 
 @property(nonatomic, assign) BOOL isHiddenWheels; // default is true  true -> hidden
-
+/*
+ 简体中文  language = zh-Hans
+ 繁体中文  language = zh-Hant
+ 英语     language = en
+ */
+@property(nonatomic, copy) NSString *language;
 /**
  相当于确定按钮，执行此方法PGDatePickerDelegate代理方法会得到值
  */

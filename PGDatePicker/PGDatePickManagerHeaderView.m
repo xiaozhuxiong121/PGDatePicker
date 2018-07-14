@@ -13,6 +13,7 @@
 @property (nonatomic, weak) UIView *lineView;
 @property (nonatomic, weak) UIView *middleLineView;
 @property (nonatomic, assign) CGSize titleLabelSize;
+@property (nonatomic, assign) BOOL isSubViewLayouted;
 @end
 
 @implementation PGDatePickManagerHeaderView
@@ -31,6 +32,12 @@
 }
 
 - (void)layoutSubviews {
+    [super layoutSubviews];
+    if (self.isSubViewLayouted) {
+        return;
+    }
+    self.isSubViewLayouted = true;
+    [self setupButton];
     self.titleLabel.frame = CGRectMake((self.bounds.size.width - self.titleLabelSize.width) / 2,
                                        0,
                                        self.titleLabelSize.width,
@@ -87,13 +94,13 @@
 
 - (void)setupButton {
     self.cancelButton.titleLabel.font = [UIFont systemFontOfSize:18];
-    NSString *cancelButtonText = [NSBundle localizedStringForKey:@"cancelButtonText"];
+    NSString *cancelButtonText = [NSBundle localizedStringForKey:@"cancelButtonText" language:self.language];
     [self.cancelButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [self.cancelButton setTitle:cancelButtonText forState:UIControlStateNormal];
     [self.cancelButton addTarget:self action:@selector(cancelButtonHandler) forControlEvents:UIControlEventTouchUpInside];
     
     self.confirmButton.titleLabel.font = [UIFont systemFontOfSize:18];
-    NSString *confirmButtonText = [NSBundle localizedStringForKey:@"confirmButtonText"];
+    NSString *confirmButtonText = [NSBundle localizedStringForKey:@"confirmButtonText" language:self.language];
     [self.confirmButton setTitleColor:[UIColor colorWithHexString:@"#69BDFF"] forState:UIControlStateNormal];
     [self.confirmButton setTitle:confirmButtonText forState:UIControlStateNormal];
     [self.confirmButton addTarget:self action:@selector(confirmButtonHandler) forControlEvents:UIControlEventTouchUpInside];
@@ -116,6 +123,17 @@
     NSString *newString = change[@"new"];
     CGSize size = [newString sizeWithAttributes:@{NSFontAttributeName: [label font]}];
     self.titleLabelSize = size;
+}
+
+#pragma Setter
+
+- (void)setLanguage:(NSString *)language {
+    _language = language;
+    NSString *cancelButtonText = [NSBundle localizedStringForKey:@"cancelButtonText" language:self.language];
+    [self.cancelButton setTitle:cancelButtonText forState:UIControlStateNormal];
+    
+    NSString *confirmButtonText = [NSBundle localizedStringForKey:@"confirmButtonText" language:self.language];
+    [self.confirmButton setTitle:confirmButtonText forState:UIControlStateNormal];
 }
 
 #pragma Getter
