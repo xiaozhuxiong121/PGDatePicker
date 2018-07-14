@@ -12,18 +12,6 @@
 
 #### 直接看如何使用:[Wiki](https://github.com/xiaozhuxiong121/PGDatePicker/wiki)
 
-# 带弧度的样式（还在优化中）
-> 如果想要设置带弧度的样式， ``` datePicker.isHiddenWheels = false; ``` 即可
-
-# 年月日
-![](Images/wheels_年月日.png)
-# 时分
-![](Images/wheels_时分.png)
-# 分秒
-![](Images/wheels_分秒.png)
-# 时分秒
-![](Images/wheels_时分秒.png)
-
 # 样式1
 ![year](Images/样式1.png)
 # 样式2
