@@ -14,8 +14,8 @@
 
 @implementation PGDatePicker (DateAndTime)
 - (void)dateAndTime_setupSelectedDate {
-    NSString *monthString = [NSBundle localizedStringForKey:@"monthString" language:self.language];
-    NSString *dayString = [NSBundle localizedStringForKey:@"dayString" language:self.language];
+    NSString *monthString = [NSBundle pg_localizedStringForKey:@"monthString" language:self.language];
+    NSString *dayString = [NSBundle pg_localizedStringForKey:@"dayString" language:self.language];
     
     NSString *string = [self.pickerView textOfSelectedRowInComponent:0];
     NSString *str = [string componentsSeparatedByString:monthString].firstObject;
@@ -46,8 +46,8 @@
     if (components.month < self.minimumComponents.month) {
         components = self.minimumComponents;
     }
-    NSString *monthString = [NSBundle localizedStringForKey:@"monthString" language:self.language];
-    NSString *dayString = [NSBundle localizedStringForKey:@"dayString" language:self.language];
+    NSString *monthString = [NSBundle pg_localizedStringForKey:@"monthString" language:self.language];
+    NSString *dayString = [NSBundle pg_localizedStringForKey:@"dayString" language:self.language];
     NSString *string = [NSString stringWithFormat:@"%ld%@%ld%@ %@ ", components.month, monthString, components.day, dayString, [self weekMappingFrom:components.weekday]];
     NSInteger row = 0;
     BOOL isExist = [self.dateAndTimeList containsObject:string];

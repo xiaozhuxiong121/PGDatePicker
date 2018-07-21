@@ -1305,8 +1305,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         NSMutableArray *array = [NSMutableArray array];
         NSInteger firstIndex = self.minimumComponents.month - 1;
         NSInteger lastIndex = self.maximumComponents.month - 1;
-        NSString *monthString = [NSBundle localizedStringForKey:@"monthString" language:self.language];
-        NSString *dayString = [NSBundle localizedStringForKey:@"dayString" language:self.language];
+        NSString *monthString = [NSBundle pg_localizedStringForKey:@"monthString" language:self.language];
+        NSString *dayString = [NSBundle pg_localizedStringForKey:@"dayString" language:self.language];
         
         for (NSInteger i = firstIndex; i <= lastIndex; i++) {
             NSString *month = self.monthList[i];
@@ -1434,7 +1434,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         if (!self.isHiddenMiddleText) {
             _yearString = @"";
         }else {
-            _yearString = [NSBundle localizedStringForKey:@"yearString" language:self.language];
+            _yearString = [NSBundle pg_localizedStringForKey:@"yearString" language:self.language];
         }
     }
     return _yearString;
@@ -1442,7 +1442,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSString *)middleYearString {
     if (!_middleYearString) {
-        _middleYearString = [NSBundle localizedStringForKey:@"yearString" language:self.language];
+        _middleYearString = [NSBundle pg_localizedStringForKey:@"yearString" language:self.language];
     }
     return _middleYearString;
 }
@@ -1452,7 +1452,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         if (!self.isHiddenMiddleText) {
             _monthString = @"";
         }else {
-            _monthString = [NSBundle localizedStringForKey:@"monthString" language:self.language];
+            _monthString = [NSBundle pg_localizedStringForKey:@"monthString" language:self.language];
         }
     }
     return _monthString;
@@ -1460,7 +1460,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSString *)middleMonthString {
     if (!_middleMonthString) {
-        _middleMonthString = [NSBundle localizedStringForKey:@"monthString" language:self.language];
+        _middleMonthString = [NSBundle pg_localizedStringForKey:@"monthString" language:self.language];
     }
     return _middleMonthString;
 }
@@ -1470,7 +1470,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         if (!self.isHiddenMiddleText) {
             _dayString = @"";
         }else {
-            _dayString = [NSBundle localizedStringForKey:@"dayString" language:self.language];
+            _dayString = [NSBundle pg_localizedStringForKey:@"dayString" language:self.language];
         }
     }
     return _dayString;
@@ -1478,7 +1478,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSString *)middleDayString {
     if (!_middleDayString) {
-        _middleDayString = [NSBundle localizedStringForKey:@"dayString" language:self.language];
+        _middleDayString = [NSBundle pg_localizedStringForKey:@"dayString" language:self.language];
     }
     return _middleDayString;
 }
@@ -1488,7 +1488,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         if (!self.isHiddenMiddleText) {
             _hourString = @"";
         }else {
-            _hourString = [NSBundle localizedStringForKey:@"hourString" language:self.language];
+            _hourString = [NSBundle pg_localizedStringForKey:@"hourString" language:self.language];
         }
     }
     return _hourString;
@@ -1496,7 +1496,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSString *)middleHourString {
     if (!_middleHourString) {
-        _middleHourString = [NSBundle localizedStringForKey:@"hourString" language:self.language];
+        _middleHourString = [NSBundle pg_localizedStringForKey:@"hourString" language:self.language];
     }
     return _middleHourString;
 }
@@ -1506,7 +1506,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         if (!self.isHiddenMiddleText) {
             _minuteString = @"";
         }else {
-            _minuteString = [NSBundle localizedStringForKey:@"minuteString" language:self.language];
+            _minuteString = [NSBundle pg_localizedStringForKey:@"minuteString" language:self.language];
         }
     }
     return _minuteString;
@@ -1514,7 +1514,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSString *)middleMinuteString {
     if (!_middleMinuteString) {
-        _middleMinuteString = [NSBundle localizedStringForKey:@"minuteString" language:self.language];
+        _middleMinuteString = [NSBundle pg_localizedStringForKey:@"minuteString" language:self.language];
     }
     return _middleMinuteString;
 }
@@ -1524,7 +1524,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         if (!self.isHiddenMiddleText) {
             _secondString = @"";
         }else {
-            _secondString = [NSBundle localizedStringForKey:@"secondString" language:self.language];
+            _secondString = [NSBundle pg_localizedStringForKey:@"secondString" language:self.language];
         }
     }
     return _secondString;
@@ -1532,56 +1532,56 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSString *)middleSecondString {
     if (!_middleSecondString) {
-        _middleSecondString = [NSBundle localizedStringForKey:@"secondString" language:self.language];
+        _middleSecondString = [NSBundle pg_localizedStringForKey:@"secondString" language:self.language];
     }
     return _middleSecondString;
 }
 
 - (NSString *)mondayString {
     if (!_mondayString) {
-        _mondayString = [NSBundle localizedStringForKey:@"mondayString" language:self.language];
+        _mondayString = [NSBundle pg_localizedStringForKey:@"mondayString" language:self.language];
     }
     return _mondayString;
 }
 
 - (NSString *)tuesdayString {
     if (!_tuesdayString) {
-        _tuesdayString = [NSBundle localizedStringForKey:@"tuesdayString" language:self.language];
+        _tuesdayString = [NSBundle pg_localizedStringForKey:@"tuesdayString" language:self.language];
     }
     return _tuesdayString;
 }
 
 - (NSString *)wednesdayString {
     if (!_wednesdayString) {
-        _wednesdayString = [NSBundle localizedStringForKey:@"wednesdayString" language:self.language];
+        _wednesdayString = [NSBundle pg_localizedStringForKey:@"wednesdayString" language:self.language];
     }
     return _wednesdayString;
 }
 
 - (NSString *)thursdayString {
     if (!_thursdayString) {
-        _thursdayString = [NSBundle localizedStringForKey:@"thursdayString" language:self.language];
+        _thursdayString = [NSBundle pg_localizedStringForKey:@"thursdayString" language:self.language];
     }
     return _thursdayString;
 }
 
 - (NSString *)fridayString {
     if (!_fridayString) {
-        _fridayString = [NSBundle localizedStringForKey:@"fridayString" language:self.language];
+        _fridayString = [NSBundle pg_localizedStringForKey:@"fridayString" language:self.language];
     }
     return _fridayString;
 }
 
 - (NSString *)saturdayString {
     if (!_saturdayString) {
-        _saturdayString = [NSBundle localizedStringForKey:@"saturdayString" language:self.language];
+        _saturdayString = [NSBundle pg_localizedStringForKey:@"saturdayString" language:self.language];
     }
     return _saturdayString;
 }
 
 - (NSString *)sundayString {
     if (!_sundayString) {
-        _sundayString = [NSBundle localizedStringForKey:@"sundayString" language:self.language];
+        _sundayString = [NSBundle pg_localizedStringForKey:@"sundayString" language:self.language];
     }
     return _sundayString;
 }

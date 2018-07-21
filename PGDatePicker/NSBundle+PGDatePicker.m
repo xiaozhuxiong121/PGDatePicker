@@ -17,18 +17,18 @@
     return bundle;
 }
 
-+ (NSString *)localizedStringForKey:(NSString *)key {
-    return [self localizedStringForKey:key value:nil];
++ (NSString *)pg_localizedStringForKey:(NSString *)key {
+    return [self pg_localizedStringForKey:key value:nil];
 }
 
-+ (NSString *)localizedStringForKey:(NSString *)key language:(NSString *)language {
++ (NSString *)pg_localizedStringForKey:(NSString *)key language:(NSString *)language {
     if (language == nil) {
-        return [self localizedStringForKey:key value:nil];
+        return [self pg_localizedStringForKey:key value:nil];
     }
-    return [self localizedStringForKey:key value:nil language:language];
+    return [self pg_localizedStringForKey:key value:nil language:language];
 }
 
-+ (NSString *)localizedStringForKey:(NSString *)key value:(NSString *)value {
++ (NSString *)pg_localizedStringForKey:(NSString *)key value:(NSString *)value {
     NSString *language = [NSLocale preferredLanguages].firstObject;
     if ([language hasPrefix:@"en"]) {
         language = @"en";
@@ -41,10 +41,10 @@
     } else {
         language = @"en";
     }
-    return [self localizedStringForKey:key value:value language:language];
+    return [self pg_localizedStringForKey:key value:value language:language];
 }
 
-+ (NSString *)localizedStringForKey:(NSString *)key value:(NSString *)value language:(NSString *)language {
++ (NSString *)pg_localizedStringForKey:(NSString *)key value:(NSString *)value language:(NSString *)language {
     NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle safeBundle] pathForResource:language ofType:@"lproj"]];
     value = [bundle localizedStringForKey:key value:value table:nil];
     return [[NSBundle mainBundle] localizedStringForKey:key value:value table:nil];
