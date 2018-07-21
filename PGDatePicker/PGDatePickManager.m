@@ -263,7 +263,7 @@
 
 - (UIColor *)headerViewBackgroundColor {
     if (!_headerViewBackgroundColor) {
-        _headerViewBackgroundColor = [UIColor colorWithHexString:@"#F1EDF6"];
+        _headerViewBackgroundColor = [UIColor pg_colorWithHexString:@"#F1EDF6"];
     }
     return _headerViewBackgroundColor;
 }

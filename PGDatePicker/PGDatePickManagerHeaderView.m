@@ -101,7 +101,7 @@
     
     self.confirmButton.titleLabel.font = [UIFont systemFontOfSize:18];
     NSString *confirmButtonText = [NSBundle localizedStringForKey:@"confirmButtonText" language:self.language];
-    [self.confirmButton setTitleColor:[UIColor colorWithHexString:@"#69BDFF"] forState:UIControlStateNormal];
+    [self.confirmButton setTitleColor:[UIColor pg_colorWithHexString:@"#69BDFF"] forState:UIControlStateNormal];
     [self.confirmButton setTitle:confirmButtonText forState:UIControlStateNormal];
     [self.confirmButton addTarget:self action:@selector(confirmButtonHandler) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -152,7 +152,7 @@
     if (!_titleLabel) {
         UILabel *label = [[UILabel alloc]init];
         [self addSubview:label];
-        label.textColor = [UIColor colorWithHexString:@"#848484"];
+        label.textColor = [UIColor pg_colorWithHexString:@"#848484"];
         label.font = [UIFont boldSystemFontOfSize:17];
         [label addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:nil];
         _titleLabel = label;
