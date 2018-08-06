@@ -202,32 +202,32 @@
 
 - (void)setCancelButtonFont:(UIFont *)cancelButtonFont {
     _cancelButtonFont = cancelButtonFont;
-    self.headerView.cancelButton.titleLabel.font = cancelButtonFont;
+    self.headerView.cancelButtonFont = cancelButtonFont;
 }
 
 - (void)setCancelButtonText:(NSString *)cancelButtonText {
     _cancelButtonText = cancelButtonText;
-    [self.headerView.cancelButton setTitle:cancelButtonText forState:UIControlStateNormal];
+    self.headerView.cancelButtonText = cancelButtonText;
 }
 
 - (void)setCancelButtonTextColor:(UIColor *)cancelButtonTextColor {
     _cancelButtonTextColor = cancelButtonTextColor;
-    [self.headerView.cancelButton setTitleColor:cancelButtonTextColor forState:UIControlStateNormal];
+    self.headerView.cancelButtonTextColor = cancelButtonTextColor;
 }
 
 - (void)setConfirmButtonFont:(UIFont *)confirmButtonFont {
     _confirmButtonFont = confirmButtonFont;
-    self.headerView.confirmButton.titleLabel.font = confirmButtonFont;
+    self.headerView.confirmButtonFont = confirmButtonFont;
 }
 
 - (void)setConfirmButtonText:(NSString *)confirmButtonText {
     _confirmButtonText = confirmButtonText;
-    [self.headerView.confirmButton setTitle:confirmButtonText forState:UIControlStateNormal];
+    self.headerView.confirmButtonText = confirmButtonText;
 }
 
 - (void)setConfirmButtonTextColor:(UIColor *)confirmButtonTextColor {
     _confirmButtonTextColor = confirmButtonTextColor;
-    [self.headerView.confirmButton setTitleColor:confirmButtonTextColor forState:UIControlStateNormal];
+    self.headerView.confirmButtonTextColor = confirmButtonTextColor;
 }
 
 #pragma Getter

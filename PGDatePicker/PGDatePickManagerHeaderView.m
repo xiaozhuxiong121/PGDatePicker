@@ -93,16 +93,14 @@
 }
 
 - (void)setupButton {
-    self.cancelButton.titleLabel.font = [UIFont systemFontOfSize:18];
-    NSString *cancelButtonText = [NSBundle pg_localizedStringForKey:@"cancelButtonText" language:self.language];
-    [self.cancelButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [self.cancelButton setTitle:cancelButtonText forState:UIControlStateNormal];
+    self.cancelButton.titleLabel.font = self.cancelButtonFont;
+    [self.cancelButton setTitleColor:self.cancelButtonTextColor forState:UIControlStateNormal];
+    [self.cancelButton setTitle:self.cancelButtonText forState:UIControlStateNormal];
     [self.cancelButton addTarget:self action:@selector(cancelButtonHandler) forControlEvents:UIControlEventTouchUpInside];
     
-    self.confirmButton.titleLabel.font = [UIFont systemFontOfSize:18];
-    NSString *confirmButtonText = [NSBundle pg_localizedStringForKey:@"confirmButtonText" language:self.language];
-    [self.confirmButton setTitleColor:[UIColor pg_colorWithHexString:@"#69BDFF"] forState:UIControlStateNormal];
-    [self.confirmButton setTitle:confirmButtonText forState:UIControlStateNormal];
+    self.confirmButton.titleLabel.font = self.confirmButtonFont;
+    [self.confirmButton setTitleColor:self.confirmButtonTextColor forState:UIControlStateNormal];
+    [self.confirmButton setTitle:self.confirmButtonText forState:UIControlStateNormal];
     [self.confirmButton addTarget:self action:@selector(confirmButtonHandler) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -186,6 +184,50 @@
         _cancelButton = button;
     }
     return _cancelButton;
+}
+
+- (NSString *)cancelButtonText {
+    if (!_cancelButtonText) {
+        NSString *cancelButtonText = [NSBundle pg_localizedStringForKey:@"cancelButtonText" language:self.language];
+        _cancelButtonText = cancelButtonText;
+    }
+    return _cancelButtonText;
+}
+
+- (UIFont *)cancelButtonFont {
+    if (!_cancelButtonFont) {
+        _cancelButtonFont = [UIFont systemFontOfSize:18];
+    }
+    return _cancelButtonFont;
+}
+
+- (UIColor *)cancelButtonTextColor {
+    if (!_cancelButtonTextColor) {
+        _cancelButtonTextColor = [UIColor lightGrayColor];
+    }
+    return _cancelButtonTextColor;
+}
+
+- (NSString *)confirmButtonText {
+    if (!_confirmButtonText) {
+        NSString *confirmButtonText = [NSBundle pg_localizedStringForKey:@"confirmButtonText" language:self.language];
+        _confirmButtonText = confirmButtonText;
+    }
+    return _confirmButtonText;
+}
+
+- (UIFont *)confirmButtonFont {
+    if (!_confirmButtonFont) {
+        _confirmButtonFont = [UIFont systemFontOfSize:18];
+    }
+    return _confirmButtonFont;
+}
+
+- (UIColor *)confirmButtonTextColor {
+    if (!_confirmButtonTextColor) {
+        _confirmButtonTextColor = [UIColor pg_colorWithHexString:@"#69BDFF"];
+    }
+    return _confirmButtonTextColor;
 }
 
 @end
