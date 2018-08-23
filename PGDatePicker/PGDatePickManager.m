@@ -41,6 +41,7 @@
     
     self.headerView.style = self.style;
     self.dismissView.frame = self.view.bounds;
+    self.contentView.backgroundColor = self.datePicker.backgroundColor;
     if (self.style == PGDatePickManagerStyle1) {
         [self setupStyle1];
     }else if (self.style == PGDatePickManagerStyle2) {
@@ -235,7 +236,6 @@
 - (UIView *)contentView {
     if (!_contentView) {
         UIView *view = [[UIView alloc]init];
-        view.backgroundColor = [UIColor whiteColor];
         [self.view addSubview:view];
         _contentView =view;
     }
