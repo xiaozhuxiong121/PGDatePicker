@@ -1367,7 +1367,10 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         case PGDatePickerModeMonthDayHourMinuteSecond:
             return 5;
         case PGDatePickerModeTime:
-            return 2;
+            if(!self.isOnlyHourFlag) {
+                return 2;
+            }
+            else return 1;
         case PGDatePickerModeTimeAndSecond:
             return 3;
         case PGDatePickerModeMinuteAndSecond:

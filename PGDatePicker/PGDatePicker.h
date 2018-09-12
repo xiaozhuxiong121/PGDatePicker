@@ -100,6 +100,10 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
 
 - (void)setDate:(NSDate *)date;
 - (void)setDate:(NSDate *)date animated:(BOOL)animated;
+
+//在时分的时候，只显示时
+@property (nonatomic) BOOL isOnlyHourFlag;
+
 @end
 
 @protocol PGDatePickerDelegate <NSObject>

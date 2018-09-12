@@ -254,6 +254,7 @@
 - (IBAction)timeHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     PGDatePicker *datePicker = datePickManager.datePicker;
+    datePicker.isOnlyHourFlag = YES;
     datePicker.delegate = self;
     datePicker.datePickerMode = PGDatePickerModeTime;
     [self presentViewController:datePickManager animated:false completion:nil];
