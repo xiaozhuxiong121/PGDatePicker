@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, PGPickerViewType) {
-    PGPickerViewType1,
-    PGPickerViewType2,
-    PGPickerViewType3,
+typedef NS_ENUM(NSUInteger, PGPickerViewLineType) {
+    PGPickerViewLineTypeline,
+    PGPickerViewLineTypelineSegment,
+    PGPickerViewLineTypelineVertical,
 };
 
 @protocol PGPickerViewDataSource, PGPickerViewDelegate;
 @interface PGPickerView : UIView
-@property(nonatomic, assign) PGPickerViewType type;
+@property(nonatomic, assign) PGPickerViewLineType type;
 @property(nonatomic,weak) id<PGPickerViewDataSource> dataSource;    // default is nil. weak reference
 @property(nonatomic,weak) id<PGPickerViewDelegate>   delegate;      // default is nil. weak reference
 
@@ -83,7 +83,7 @@ typedef NS_ENUM(NSUInteger, PGPickerViewType) {
 - (NSString *)pickerView:(PGPickerView *)pickerView middleTextForcomponent:(NSInteger)component;
 - (CGFloat)pickerView:(PGPickerView *)pickerView middleTextSpaceForcomponent:(NSInteger)component;
 
-// type is PGPickerViewType3 vertical line
+// type is PGPickerViewLineTypelineVertical vertical line
 - (UIColor *)pickerView:(PGPickerView *)pickerView verticalLineBackgroundColorForComponent:(NSInteger)component;
 - (CGFloat)pickerView:(PGPickerView *)pickerView verticalLineWidthForComponent:(NSInteger)component;
 

@@ -9,8 +9,8 @@
 #define PGEnumeration_h
 
 typedef NS_ENUM(NSUInteger, PGDatePickManagerStyle) {
-    PGDatePickManagerStyle1,
-    PGDatePickManagerStyle2,
+    PGDatePickManagerStyleSheet,
+    PGDatePickManagerStyleAlert,
     PGDatePickManagerStyle3
 };
 
