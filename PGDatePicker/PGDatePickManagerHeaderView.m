@@ -42,10 +42,10 @@
                                        0,
                                        self.titleLabelSize.width,
                                        self.bounds.size.height);
-    if (self.style == PGDatePickManagerStyle1) {
+    if (self.style == PGDatePickManagerStyleSheet) {
         self.lineView.hidden = true;
         [self setyle1];
-    }else if (self.style == PGDatePickManagerStyle2) {
+    }else if (self.style == PGDatePickManagerStyleAlert) {
         [self setyle1];
     }else if (self.style == PGDatePickManagerStyle3) {
         [self setyle2];

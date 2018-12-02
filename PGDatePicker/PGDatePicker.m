@@ -83,7 +83,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     pickerView.textFontOfSelectedRow = self.textFontOfSelectedRow;
     pickerView.textColorOfOtherRow = self.textColorOfOtherRow;
     pickerView.textFontOfOtherRow = self.textFontOfOtherRow;
-    pickerView.type = (PGPickerViewType)self.datePickerType;
+    pickerView.type = (PGPickerViewLineType)self.datePickerType;
     pickerView.delegate = self;
     pickerView.dataSource = self;
     [self addSubview:pickerView];
@@ -728,6 +728,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 }
 
 - (NSString *)pickerView:(PGPickerView *)pickerView middleTextForcomponent:(NSInteger)component {
+    if (_showUnit == PGShowUnitTypeNone) {
+        return @"";
+    }
     switch (self.datePickerMode) {
         case PGDatePickerModeYear:
             return self.middleYearString;
@@ -1109,6 +1112,15 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         _locale = [NSLocale currentLocale];
     }
     return _locale;
+}
+
+- (BOOL)isHiddenMiddleText{
+    if (_showUnit == PGShowUnitTypeCenter) {
+        return NO;
+    }else if (_showUnit == PGShowUnitTypeAll){
+        return YES;
+    }
+    return _isHiddenMiddleText;
 }
 
 - (NSArray *)yearList {

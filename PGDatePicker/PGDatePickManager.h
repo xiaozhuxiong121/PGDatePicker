@@ -19,13 +19,26 @@
 @property (nonatomic, copy) UIFont *cancelButtonFont;
 @property (nonatomic, copy) UIColor *cancelButtonTextColor;
 
+/**
+ set confirmButton title ,default is Sure
+ */
 @property (nonatomic, copy) NSString *confirmButtonText;
+
 @property (nonatomic, copy) UIFont *confirmButtonFont;
+/**
+ set confirButton titleColor ,default is
+ */
 @property (nonatomic, copy) UIColor *confirmButtonTextColor;
 
 @property (nonatomic, weak) UILabel *titleLabel;
 @property (nonatomic, strong)UIColor *headerViewBackgroundColor;
 @property (nonatomic, assign) CGFloat headerHeight;
 
+/**
+ 
+ */
+@property (nonatomic, assign) BOOL isShowUnit;
 @property (nonatomic, copy)  void(^cancelButtonMonitor)();
+
+
 @end
