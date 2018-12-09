@@ -299,6 +299,8 @@
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerMode = PGDatePickerModeMinuteAndSecond;
+    datePicker.secondInterval = 5;
+//    datePicker.minuteInterval = 5;
     [self presentViewController:datePickManager animated:false completion:nil];
     
 //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
