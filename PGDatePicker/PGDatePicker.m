@@ -86,7 +86,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     pickerView.textFontOfSelectedRow = self.textFontOfSelectedRow;
     pickerView.textColorOfOtherRow = self.textColorOfOtherRow;
     pickerView.textFontOfOtherRow = self.textFontOfOtherRow;
-    pickerView.type = (PGPickerViewLineType)self.datePickerType;
+    pickerView.type = (PGPickerViewType)self.datePickerType;
     pickerView.delegate = self;
     pickerView.dataSource = self;
     [self addSubview:pickerView];

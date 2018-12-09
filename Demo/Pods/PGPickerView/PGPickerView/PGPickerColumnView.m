@@ -30,21 +30,21 @@
 
 @property (nonatomic, assign) CGFloat showCount;
 
-@property (nonatomic, assign) CGFloat isSubViewLayouted;
-@property (nonatomic, assign) CGFloat isAnimationOfSelectedRow;
+@property (nonatomic, assign) BOOL isSubViewLayouted;
+@property (nonatomic, assign) BOOL isAnimationOfSelectedRow;
 @property (nonatomic, assign) CGFloat numberOfSelectedRow;
-@property (nonatomic, assign) CGFloat isSelected;
+@property (nonatomic, assign) BOOL isSelected;
 
 @property (nonatomic, assign) CGFloat circumference;
 @property (nonatomic, assign) CGFloat radius;
 @end
 
+@implementation PGPickerColumnView
+
 #define kWidth self.frame.size.width
 #define kHeight self.frame.size.height
 
 static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
-
-@implementation PGPickerColumnView
 
 - (instancetype)initWithFrame:(CGRect)frame rowHeight:(CGFloat)rowHeight upLineHeight:(CGFloat)upLineHeight downLineHeight:(CGFloat)downLineHeight {
     if (self = [super initWithFrame:frame]) {
@@ -77,14 +77,16 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
     if (!self.isSelected) {
         return;
     }
+    CGFloat time = 0.15;
     if (_isAnimationOfSelectedRow) {
-        __block id blockSelf = self;
-        dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.26 * NSEC_PER_SEC));
-        dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-            [blockSelf selectRow:self.numberOfSelectedRow animated:self.isAnimationOfSelectedRow];
-            blockSelf = nil;
-        });
+        time = 0.26;
     }
+    __block id blockSelf = self;
+    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC));
+    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+        [blockSelf selectRow:self.numberOfSelectedRow animated:self.isAnimationOfSelectedRow];
+        blockSelf = nil;
+    });
 }
 
 - (void)setupView {
