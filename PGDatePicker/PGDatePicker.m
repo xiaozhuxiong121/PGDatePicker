@@ -34,6 +34,9 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     if (self = [super init]) {
         self.isHiddenMiddleText = true;
         self.isHiddenWheels = true;
+        
+        self.secondInterval = 1;
+        self.minuteInterval = 1;
     }
     return self;
 }
@@ -1250,7 +1253,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
             }
         }
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = minimum; i <= maximum; i++) {
+        for (NSUInteger i = minimum; i <= maximum; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -1300,7 +1303,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         }
         NSInteger index = maximum - minimum;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = minimum; i <= maximum; i++) {
+        for (NSUInteger i = minimum; i <= maximum; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {

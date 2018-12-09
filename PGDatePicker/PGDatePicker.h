@@ -112,6 +112,12 @@ typedef NS_ENUM(NSUInteger, PGShowUnitType) {
 //在时分的时候，只显示时
 @property (nonatomic) BOOL isOnlyHourFlag;
 
+//分间隔 默认时1
+@property (nonatomic) NSInteger minuteInterval;
+
+//秒间隔 默认时1
+@property (nonatomic) NSInteger secondInterval;
+
 @end
 
 @protocol PGDatePickerDelegate <NSObject>

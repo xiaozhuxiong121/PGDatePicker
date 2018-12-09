@@ -260,7 +260,7 @@
             min = 0;
         }
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
-        for (NSUInteger i = min; i <= max; i++) {
+        for (NSUInteger i = min; i <= max; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -277,7 +277,7 @@
         refresh = true;
         NSInteger index = length - self.minimumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = self.minimumComponents.minute; i <= length; i++) {
+        for (NSUInteger i = self.minimumComponents.minute; i <= length; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -289,7 +289,7 @@
         refresh = true;
         NSInteger index = self.maximumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = 0; i <= self.maximumComponents.minute; i++) {
+        for (NSUInteger i = 0; i <= self.maximumComponents.minute; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -300,7 +300,7 @@
     }else{
         refresh = false;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:length];
-        for (NSUInteger i = 0; i <= length; i++) {
+        for (NSUInteger i = 0; i <= length; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -320,7 +320,7 @@
             min = 0;
         }
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
-        for (NSUInteger i = min; i <= max; i++) {
+        for (NSUInteger i = min; i <= max; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -346,7 +346,7 @@
     if (self.minimumComponents.year == dateComponents.year && self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day && self.minimumComponents.hour == dateComponents.hour) {
         NSInteger index = length - self.minimumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = self.minimumComponents.minute; i <= length; i++) {
+        for (NSUInteger i = self.minimumComponents.minute; i <= length; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -357,7 +357,7 @@
     }else if (self.maximumComponents.year == dateComponents.year && self.maximumComponents.month == dateComponents.month && self.maximumComponents.day == dateComponents.day && self.maximumComponents.hour == dateComponents.hour) {
         NSInteger index = self.maximumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = 0; i <= self.maximumComponents.minute; i++) {
+        for (NSUInteger i = 0; i <= self.maximumComponents.minute; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -368,7 +368,7 @@
     }else{
         tmp = false;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:length];
-        for (NSUInteger i = 0; i <= length; i++) {
+        for (NSUInteger i = 0; i <= length; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -388,7 +388,7 @@
             min = 0;
         }
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
-        for (NSUInteger i = min; i <= max; i++) {
+        for (NSUInteger i = min; i <= max; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -404,7 +404,7 @@
     if (self.minimumComponents.hour == dateComponents.hour) {
         NSInteger index = length - self.minimumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = self.minimumComponents.minute; i <= length; i++) {
+        for (NSUInteger i = self.minimumComponents.minute; i <= length; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -415,7 +415,7 @@
     }else if (self.maximumComponents.hour == dateComponents.hour) {
         NSInteger index = self.maximumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = 0; i <= self.maximumComponents.minute; i++) {
+        for (NSUInteger i = 0; i <= self.maximumComponents.minute; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -426,7 +426,7 @@
     }else{
         tmp = false;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:length];
-        for (NSUInteger i = 0; i <= length; i++) {
+        for (NSUInteger i = 0; i <= length; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -447,7 +447,7 @@
             min = 0;
         }
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
-        for (NSUInteger i = min; i <= max; i++) {
+        for (NSUInteger i = min; i <= max; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -464,7 +464,7 @@
         refresh = true;
         NSInteger index = length - self.minimumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = self.minimumComponents.minute; i <= length; i++) {
+        for (NSUInteger i = self.minimumComponents.minute; i <= length; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -476,7 +476,7 @@
         refresh = true;
         NSInteger index = self.maximumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = 0; i <= self.maximumComponents.minute; i++) {
+        for (NSUInteger i = 0; i <= self.maximumComponents.minute; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -487,7 +487,7 @@
     }else{
         refresh = false;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:length];
-        for (NSUInteger i = 0; i <= length; i++) {
+        for (NSUInteger i = 0; i <= length; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -507,7 +507,7 @@
             min = 0;
         }
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
-        for (NSUInteger i = min; i <= max; i++) {
+        for (NSUInteger i = min; i <= max; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -531,7 +531,7 @@
     if (self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day && self.minimumComponents.hour == dateComponents.hour) {
         NSInteger index = length - self.minimumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = self.minimumComponents.minute; i <= length; i++) {
+        for (NSUInteger i = self.minimumComponents.minute; i <= length; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -542,7 +542,7 @@
     }else if (self.maximumComponents.month == dateComponents.month && self.maximumComponents.day == dateComponents.day && self.maximumComponents.hour == dateComponents.hour) {
         NSInteger index = self.maximumComponents.minute;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = 0; i <= self.maximumComponents.minute; i++) {
+        for (NSUInteger i = 0; i <= self.maximumComponents.minute; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -553,7 +553,7 @@
     }else{
         tmp = false;
         NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:length];
-        for (NSUInteger i = 0; i <= length; i++) {
+        for (NSUInteger i = 0; i <= length; i+=self.minuteInterval) {
             if (i < 10) {
                 [minutes addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -573,7 +573,7 @@
             min = 0;
         }
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:max-min];
-        for (NSUInteger i = min; i <= max; i++) {
+        for (NSUInteger i = min; i <= max; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -594,7 +594,7 @@
     if (self.minimumComponents.hour == dateComponents.hour && self.minimumComponents.minute == dateComponents.minute) {
         NSInteger index = length - self.minimumComponents.second;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = self.minimumComponents.second; i <= length; i++) {
+        for (NSUInteger i = self.minimumComponents.second; i <= length; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -605,7 +605,7 @@
     }else if (self.maximumComponents.hour == dateComponents.hour && self.maximumComponents.minute == dateComponents.minute) {
         NSInteger index = self.maximumComponents.second;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = 0; i <= self.maximumComponents.second; i++) {
+        for (NSUInteger i = 0; i <= self.maximumComponents.second; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -616,7 +616,7 @@
     }else{
         tmp = false;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:length];
-        for (NSUInteger i = 0; i <= length; i++) {
+        for (NSUInteger i = 0; i <= length; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -636,7 +636,7 @@
             min = 0;
         }
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:max-min];
-        for (NSUInteger i = min; i <= max; i++) {
+        for (NSUInteger i = min; i <= max; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -666,7 +666,7 @@
     if (self.minimumComponents.year == dateComponents.year && self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day && self.minimumComponents.hour == dateComponents.hour && self.minimumComponents.minute == dateComponents.minute) {
         NSInteger index = length - self.minimumComponents.second;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = self.minimumComponents.second; i <= length; i++) {
+        for (NSUInteger i = self.minimumComponents.second; i <= length; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -677,7 +677,7 @@
     }else if (self.maximumComponents.year == dateComponents.year && self.maximumComponents.month == dateComponents.month && self.maximumComponents.day == dateComponents.day && self.maximumComponents.hour == dateComponents.hour && self.maximumComponents.minute == dateComponents.minute) {
         NSInteger index = self.maximumComponents.second;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = 0; i <= self.maximumComponents.second; i++) {
+        for (NSUInteger i = 0; i <= self.maximumComponents.second; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -688,7 +688,7 @@
     }else{
         tmp = false;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:length];
-        for (NSUInteger i = 0; i <= length; i++) {
+        for (NSUInteger i = 0; i <= length; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -709,7 +709,7 @@
             min = 0;
         }
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:max-min];
-        for (NSUInteger i = min; i <= max; i++) {
+        for (NSUInteger i = min; i <= max; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -727,7 +727,7 @@
     if (self.minimumComponents.minute == dateComponents.minute) {
         NSInteger index = length - self.minimumComponents.second;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = self.minimumComponents.second; i <= length; i++) {
+        for (NSUInteger i = self.minimumComponents.second; i <= length; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -738,7 +738,7 @@
     }else if (self.maximumComponents.minute == dateComponents.minute) {
         NSInteger index = self.maximumComponents.second;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = 0; i <= self.maximumComponents.second; i++) {
+        for (NSUInteger i = 0; i <= self.maximumComponents.second; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -749,7 +749,7 @@
     }else{
         tmp = false;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:length];
-        for (NSUInteger i = 0; i <= length; i++) {
+        for (NSUInteger i = 0; i <= length; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -772,7 +772,7 @@
             min = 0;
         }
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:max-min];
-        for (NSUInteger i = min; i <= max; i++) {
+        for (NSUInteger i = min; i <= max; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -802,7 +802,7 @@
         self.minimumComponents.minute == dateComponents.minute) {
         NSInteger index = length - self.minimumComponents.second;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = self.minimumComponents.second; i <= length; i++) {
+        for (NSUInteger i = self.minimumComponents.second; i <= length; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -816,7 +816,7 @@
               self.maximumComponents.minute == dateComponents.minute) {
         NSInteger index = self.maximumComponents.second;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
-        for (NSUInteger i = 0; i <= self.maximumComponents.second; i++) {
+        for (NSUInteger i = 0; i <= self.maximumComponents.second; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
@@ -827,7 +827,7 @@
     }else{
         tmp = false;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:length];
-        for (NSUInteger i = 0; i <= length; i++) {
+        for (NSUInteger i = 0; i <= length; i+=self.secondInterval) {
             if (i < 10) {
                 [seconds addObject:[NSString stringWithFormat:@"0%ld", i]];
             }else {
