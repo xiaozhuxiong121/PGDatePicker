@@ -152,7 +152,8 @@ datePickManager.confirmButtonFont = [UIFont boldSystemFontOfSize:17];
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/PGDatePicker.svg?style=for-the-badge)]()
 
 # 想说的话
-大家有好的idea欢迎随时提交PR，共同维护。
+1，大家有好的idea欢迎随时提交PR，共同维护。
+2、如果有人想共同维护的话，可以发我邮箱(piggybear_net@163.com)，我帮你加进去，共同去维护它。
 
 # 许可证
 

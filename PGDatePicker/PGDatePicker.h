@@ -34,6 +34,12 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
     PGDatePickerType3,
 };
 
+typedef NS_ENUM(NSUInteger, PGShowUnitType) {
+    PGShowUnitTypeAll,
+    PGShowUnitTypeCenter,
+    PGShowUnitTypeNone,
+};
+
 #define PGDatePickerDeprecated(instead) __attribute__((deprecated(instead)))
 
 @protocol PGDatePickerDelegate;
@@ -64,6 +70,8 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
  如果设置为false，只会显示中间的文字，其他行的文字则不会显示
  */
 @property(nonatomic, assign) BOOL isHiddenMiddleText; // default is true
+
+@property(nonatomic, assign) PGShowUnitType showUnit;
 @property(nonatomic, copy) UIColor *middleTextColor;
 
 @property (nonatomic, strong)UIColor *titleColorForSelectedRow PGDatePickerDeprecated("已过时，请使用textColorOfSelectedRow进行替换");

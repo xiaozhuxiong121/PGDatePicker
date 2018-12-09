@@ -42,10 +42,10 @@
     self.headerView.style = self.style;
     self.dismissView.frame = self.view.bounds;
     self.contentView.backgroundColor = self.datePicker.backgroundColor;
-    if (self.style == PGDatePickManagerStyle1) {
-        [self setupStyle1];
-    }else if (self.style == PGDatePickManagerStyle2) {
-        [self setupStyle2];
+    if (self.style == PGDatePickManagerStyleSheet) {
+        [self setupStyleSheet];
+    }else if (self.style == PGDatePickManagerStyleAlert) {
+        [self setupStyleAlert];
     }else {
         [self setupStyle3];
     }
@@ -74,7 +74,7 @@
 }
 
 - (void)cancelButtonHandler {
-    if (self.style == PGDatePickManagerStyle1) {
+    if (self.style == PGDatePickManagerStyleSheet) {
         CGRect contentViewFrame = self.contentView.frame;
         contentViewFrame.origin.y = self.view.bounds.size.height;
         [UIView animateWithDuration:0.2 animations:^{
@@ -95,7 +95,7 @@
     }
 }
 
-- (void)setupStyle1 {
+- (void)setupStyleSheet {
     CGFloat bottom = 0;
     if (@available(iOS 11.0, *)) {
         bottom = self.view.safeAreaInsets.bottom;
@@ -131,7 +131,7 @@
     }];
 }
 
-- (void)setupStyle2 {
+- (void)setupStyleAlert {
     CGFloat rowHeight = self.datePicker.rowHeight;
     CGFloat datePickerHeight = rowHeight * 5;
     CGFloat headerViewHeight = self.headerHeight;
