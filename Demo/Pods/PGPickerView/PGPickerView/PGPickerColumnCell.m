@@ -8,12 +8,10 @@
 
 #import "PGPickerColumnCell.h"
 
-@interface PGPickerColumnCell()
-
-@end
+@implementation PGPickerColumnCell
 
 #define kContentFont 17
-@implementation PGPickerColumnCell
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;

@@ -20,13 +20,14 @@
 @property (nonatomic, assign) NSUInteger numberOfRows;
 @property (nonatomic, strong) NSArray<PGPickerColumnView *> *columnViewList;
 
-@property (nonatomic, assign) CGFloat isSubViewLayouted;
-@property (nonatomic, assign) CGFloat isSelected;
+@property (nonatomic, assign) BOOL isSubViewLayouted;
+@property (nonatomic, assign) BOOL isSelected;
 @end
+
+@implementation PGPickerView
 
 #define kWidth self.frame.size.width
 #define kHeight self.frame.size.height
-@implementation PGPickerView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -144,17 +145,17 @@
         [self setupMiddleTextLogic];
     }
     switch (self.type) {
-        case PGPickerViewLineTypeline:
+        case PGPickerViewType1:
         {
             [self setupLineView1];
             return;
         }
-        case PGPickerViewLineTypelineSegment:
+        case PGPickerViewType2:
         {
             [self setupLineView2];
             return;
         }
-        case PGPickerViewLineTypelineVertical:
+        case PGPickerViewType3:
         {
             [self setupLineView3];
             return;
