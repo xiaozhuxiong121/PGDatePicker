@@ -162,7 +162,7 @@ typedef NS_ENUM(NSUInteger, PGShowUnitType) {
     PGShowUnitTypeNone,     //什么字都不显示
 };
 ````
-非常感谢[sujiewen](https://github.com/sujiewen)添加的如下功能   
+非常感谢[sujiewen](https://github.com/sujiewen)添加的如下功能   
 1、增加一个只显示时的方案   
 2、增加对时分间隔自定义支持
 ```
