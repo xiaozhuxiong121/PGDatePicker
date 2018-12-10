@@ -148,6 +148,34 @@ datePickManager.confirmButtonFont = [UIFont boldSystemFontOfSize:17];
 
 ```
 
+非常感谢[xyhuangjia](https://github.com/xyhuangjia)添加隐藏字的功能   
+```
+//首先将isHiddenMiddleText设置为false
+datePicker.isHiddenMiddleText = false;
+
+//然后设置showUnit
+datePicker.showUnit = PGShowUnitTypeNone;
+
+typedef NS_ENUM(NSUInteger, PGShowUnitType) {
+    PGShowUnitTypeAll,      //显示全部的字
+    PGShowUnitTypeCenter,   //只显示中间的字
+    PGShowUnitTypeNone,     //什么字都不显示
+};
+````
+非常感谢[sujiewen](https://github.com/sujiewen)添加的如下功能   
+1、增加一个只显示时的方案   
+2、增加对时分间隔自定义支持
+```
+//在时分的时候，只显示时
+@property (nonatomic) BOOL isOnlyHourFlag;
+
+//分间隔 默认时1
+@property (nonatomic) NSInteger minuteInterval;
+
+//秒间隔 默认时1
+@property (nonatomic) NSInteger secondInterval;
+```
+
 # 最新版本
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/PGDatePicker.svg?style=for-the-badge)]()
 
