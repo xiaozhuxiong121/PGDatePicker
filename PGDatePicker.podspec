@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SPGDatePicker"
-  s.version      = "2.5.7.2"
+  s.version      = "2.6.0"
   s.summary      = "日期选择器"
   s.homepage     = "https://github.com/sujiewen/PGDatePicker"
   s.license      = "MIT"
