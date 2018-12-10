@@ -145,17 +145,17 @@
         [self setupMiddleTextLogic];
     }
     switch (self.type) {
-        case PGPickerViewType1:
+        case PGPickerViewLineTypeline:
         {
             [self setupLineView1];
             return;
         }
-        case PGPickerViewType2:
+        case PGPickerViewLineTypelineSegment:
         {
             [self setupLineView2];
             return;
         }
-        case PGPickerViewType3:
+        case PGPickerViewLineTypelineVertical:
         {
             [self setupLineView3];
             return;

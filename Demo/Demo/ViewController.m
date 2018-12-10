@@ -29,9 +29,9 @@
     
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.showUnit = PGShowUnitTypeNone;
-//    datePicker.isHiddenMiddleText = false;
+    datePicker.isHiddenMiddleText = false;
     datePicker.delegate = self;
-    datePicker.datePickerType = PGPickerViewType3;
+    datePicker.datePickerType = PGDatePickerType3;
     datePicker.datePickerMode = PGDatePickerModeYear;
     [self presentViewController:datePickManager animated:false completion:nil];
     
@@ -57,7 +57,7 @@
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.isHiddenMiddleText = false;
     datePicker.delegate = self;
-    datePicker.datePickerType = PGPickerViewType2;
+    datePicker.datePickerType = PGDatePickerType2;
     datePicker.datePickerMode = PGDatePickerModeYearAndMonth;
     [self presentViewController:datePickManager animated:false completion:nil];
 
@@ -79,7 +79,7 @@
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
-    datePicker.datePickerType = PGPickerViewType3;
+    datePicker.datePickerType = PGDatePickerType3;
     datePicker.isHiddenMiddleText = false;
     datePicker.datePickerMode = PGDatePickerModeDate;
     [self presentViewController:datePickManager animated:false completion:nil];
@@ -123,7 +123,7 @@
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
-    datePicker.datePickerType = PGPickerViewType2;
+    datePicker.datePickerType = PGDatePickerType2;
     datePicker.datePickerMode = PGDatePickerModeDateHourMinute;
     [self presentViewController:datePickManager animated:false completion:nil];
     
@@ -144,7 +144,7 @@
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
-    datePicker.datePickerType = PGPickerViewType3;
+    datePicker.datePickerType = PGDatePickerType3;
     datePicker.datePickerMode = PGDatePickerModeDateHourMinuteSecond;
     [self presentViewController:datePickManager animated:false completion:nil];
     
@@ -166,7 +166,7 @@
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
-    datePicker.datePickerType = PGPickerViewType1;
+    datePicker.datePickerType = PGDatePickerType1;
     datePicker.isHiddenMiddleText = true;
     datePicker.datePickerMode = PGDatePickerModeMonthDay;
     [self presentViewController:datePickManager animated:false completion:nil];
@@ -189,7 +189,7 @@
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
-    datePicker.datePickerType = PGPickerViewType1;
+    datePicker.datePickerType = PGDatePickerType1;
     datePicker.isHiddenMiddleText = true;
     datePicker.datePickerMode = PGDatePickerModeMonthDayHour;
     [self presentViewController:datePickManager animated:false completion:nil];
@@ -212,7 +212,7 @@
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
-    datePicker.datePickerType = PGPickerViewType1;
+    datePicker.datePickerType = PGDatePickerType1;
     datePicker.isHiddenMiddleText = true;
     datePicker.datePickerMode = PGDatePickerModeMonthDayHourMinute;
     [self presentViewController:datePickManager animated:false completion:nil];
@@ -235,7 +235,7 @@
     datePickManager.isShadeBackgroud = true;
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
-    datePicker.datePickerType = PGPickerViewType1;
+    datePicker.datePickerType = PGDatePickerType1;
     datePicker.isHiddenMiddleText = true;
     datePicker.datePickerMode = PGDatePickerModeMonthDayHourMinuteSecond;
     [self presentViewController:datePickManager animated:false completion:nil];
