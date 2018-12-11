@@ -113,6 +113,8 @@ datePicker.selectedDate = ^(NSDateComponents *dateComponents) {
 
 > 语言跟着手机系统语言走，默认有英文，中文，繁体中文，如果是模拟器的话，将模拟器的系统语言改成中文即显示中文
 
+如果想要弧度的话可以设置`datePicker.isHiddenWheels = false;`目前弧度还是不太好，待优化中。
+
 # 设置样式
 ```
 PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
