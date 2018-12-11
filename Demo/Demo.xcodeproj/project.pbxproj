@@ -12,7 +12,6 @@
 		862DEB891F395BEC00B5AB4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DEB881F395BEC00B5AB4C /* AppDelegate.m */; };
 		862DEB8C1F395BEC00B5AB4C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 862DEB8B1F395BEC00B5AB4C /* ViewController.m */; };
 		862DEB911F395BEC00B5AB4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 862DEB901F395BEC00B5AB4C /* Assets.xcassets */; };
-		866BADEE205EC6D50016E8C0 /* SPGDatePicker.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 866BADED205EC6D40016E8C0 /* SPGDatePicker.podspec */; };
 		866BE8F5205F5BAD001943C0 /* NSBundle+PGDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8CD205F5BAD001943C0 /* NSBundle+PGDatePicker.m */; };
 		866BE8F6205F5BAD001943C0 /* NSCalendar+PGCurrent.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8CF205F5BAD001943C0 /* NSCalendar+PGCurrent.m */; };
 		866BE8F7205F5BAD001943C0 /* NSDate+PGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 866BE8D1205F5BAD001943C0 /* NSDate+PGCategory.m */; };
@@ -66,7 +65,6 @@
 		862DEB8B1F395BEC00B5AB4C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		862DEB901F395BEC00B5AB4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		862DEB951F395BEC00B5AB4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		866BADED205EC6D40016E8C0 /* SPGDatePicker.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SPGDatePicker.podspec; path = ../../SPGDatePicker.podspec; sourceTree = "<group>"; };
 		866BE8CC205F5BAD001943C0 /* NSBundle+PGDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+PGDatePicker.h"; sourceTree = "<group>"; };
 		866BE8CD205F5BAD001943C0 /* NSBundle+PGDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+PGDatePicker.m"; sourceTree = "<group>"; };
 		866BE8CE205F5BAD001943C0 /* NSCalendar+PGCurrent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+PGCurrent.h"; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				866BE8CB205F5BAD001943C0 /* PGDatePicker */,
-				866BADED205EC6D40016E8C0 /* SPGDatePicker.podspec */,
 				86D350EB1FAE3D340089617F /* Main.storyboard */,
 				862DEB871F395BEC00B5AB4C /* AppDelegate.h */,
 				862DEB881F395BEC00B5AB4C /* AppDelegate.m */,
@@ -321,7 +318,6 @@
 				86D350E91FAE3D340089617F /* Main.storyboard in Resources */,
 				862DEB911F395BEC00B5AB4C /* Assets.xcassets in Resources */,
 				866BE903205F5BAD001943C0 /* PGDatePicker.bundle in Resources */,
-				866BADEE205EC6D50016E8C0 /* SPGDatePicker.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
