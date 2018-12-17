@@ -86,9 +86,13 @@
     NSString *string = [self.pickerView textOfSelectedRowInComponent:0];
     NSString *str = [string componentsSeparatedByString:self.monthString].firstObject;
     dateComponents.month = [str integerValue];
+    if ([string containsString:@"Mon"]) {
+        string = [string componentsSeparatedByString:@"Mon"].firstObject;
+    }
     NSString *str2 = [string componentsSeparatedByString:self.monthString].lastObject;
     NSString *str3 = [str2 componentsSeparatedByString:self.dayString].firstObject;
     dateComponents.day = [str3 integerValue];
+
     NSString *str4 = [str2 componentsSeparatedByString:self.dayString].lastObject;
     str4 = [str4 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     dateComponents.weekday = [self weekDayMappingFrom:str4];

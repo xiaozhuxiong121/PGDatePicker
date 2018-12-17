@@ -120,6 +120,20 @@
 }
 
 - (BOOL)setHourListWithDateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+    if (self.minimumComponents.month == self.maximumComponents.month && self.minimumComponents.day == dateComponents.day) {
+        NSInteger min = self.minimumComponents.hour;
+        NSInteger max = self.maximumComponents.hour;
+        if (min > max) {
+            min = 0;
+        }
+        NSMutableArray *hours = [NSMutableArray arrayWithCapacity:max-min];
+        for (NSUInteger i = min; i <= max; i++) {
+            [hours addObject:[@(i) stringValue]];
+        }
+        self.hourList = hours;
+        return refresh;
+    }
+    
     BOOL tmp = refresh;
     NSInteger length = 23;
     if (self.minimumComponents.month == dateComponents.month && self.minimumComponents.day == dateComponents.day) {
@@ -440,6 +454,19 @@
 
 //月日周 时分
 - (BOOL)setMinuteList4WithComponent:(NSInteger)component dateComponents:(NSDateComponents *)dateComponents refresh:(BOOL)refresh {
+    if (self.minimumComponents.month == self.maximumComponents.month && dateComponents.hour == self.minimumComponents.hour) {
+        NSInteger min = self.minimumComponents.minute;
+        NSInteger max = self.maximumComponents.minute;
+        if (min > max) {
+            min = 0;
+        }
+        NSMutableArray *minutes = [NSMutableArray arrayWithCapacity:max-min];
+        for (NSUInteger i = min; i <= max; i++) {
+            [minutes addObject:[@(i) stringValue]];
+        }
+        self.minuteList = minutes;
+        return refresh;
+    }
     if (self.minimumComponents.month == self.maximumComponents.month && self.minimumComponents.day == self.maximumComponents.day &&self.minimumComponents.hour == self.maximumComponents.hour) {
         NSInteger min = self.minimumComponents.minute;
         NSInteger max = self.maximumComponents.minute;

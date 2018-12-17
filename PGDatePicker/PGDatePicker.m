@@ -1322,7 +1322,10 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         NSInteger lastIndex = self.maximumComponents.month - 1;
         NSString *monthString = [NSBundle pg_localizedStringForKey:@"monthString" language:self.language];
         NSString *dayString = [NSBundle pg_localizedStringForKey:@"dayString" language:self.language];
-        
+        if (firstIndex == lastIndex) {
+            firstIndex = 0;
+            lastIndex = 0;
+        }
         for (NSInteger i = firstIndex; i <= lastIndex; i++) {
             NSString *month = self.monthList[i];
             NSInteger day = [self howManyDaysWithMonthInThisYear:self.currentComponents.year withMonth:[month integerValue]];
