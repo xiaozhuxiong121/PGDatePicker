@@ -24,19 +24,8 @@
  */
 - (IBAction)yearHandler:(UIButton *)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
-    datePickManager.style = PGDatePickManagerStyleAlert;
+    datePickManager.style = PGDatePickManagerStyleAlertTopButton;
     datePickManager.isShadeBackgroud = true;
-    
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.showUnit = PGShowUnitTypeNone;
     datePicker.isHiddenMiddleText = false;
@@ -61,19 +50,8 @@
  */
 - (IBAction)yearAndMonthHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
-    datePickManager.style = PGDatePickManagerStyleSheet;
+    datePickManager.style = PGDatePickManagerStyleAlertBottomButton;
     datePickManager.isShadeBackgroud = true;
-    
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.isHiddenMiddleText = false;
     datePicker.delegate = self;
@@ -97,17 +75,6 @@
 - (IBAction)dateHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
-    
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerType = PGDatePickerType3;
@@ -131,17 +98,6 @@
 - (IBAction)dateHourHandler:(UIButton *)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
-    
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerMode = PGDatePickerModeDateHour;
@@ -163,17 +119,6 @@
 - (IBAction)dateHourMinuteHandler:(UIButton *)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
-    
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerType = PGDatePickerType2;
@@ -195,17 +140,6 @@
  */
 - (IBAction)dateHourMinuteSecondHandler:(UIButton *)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
-    
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerType = PGDatePickerType3;
@@ -228,17 +162,6 @@
 - (IBAction)monthAndDayHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
-
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerType = PGDatePickerType1;
@@ -262,17 +185,6 @@
 - (IBAction)monthDayAndHourHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
-
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerType = PGDatePickerType1;
@@ -296,17 +208,6 @@
 - (IBAction)monthDayHourAndMinuteHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
-
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerType = PGDatePickerType1;
@@ -330,17 +231,6 @@
 - (IBAction)monthDayHourMinuteSecondHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     datePickManager.isShadeBackgroud = true;
-    
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerType = PGDatePickerType1;
@@ -363,17 +253,6 @@
  */
 - (IBAction)timeHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
-    
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.isOnlyHourFlag = YES;
     datePicker.delegate = self;
@@ -395,17 +274,6 @@
  */
 - (IBAction)timeAndSecondHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
-    
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerMode = PGDatePickerModeTimeAndSecond;
@@ -426,17 +294,6 @@
  */
 - (IBAction)minuteAndSecondHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
-    
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.delegate = self;
     datePicker.datePickerMode = PGDatePickerModeMinuteAndSecond;
@@ -459,17 +316,6 @@
  */
 - (IBAction)dateAndTimeHandler:(id)sender {
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
-    
-    ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
-    
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.isHiddenMiddleText = false;
     datePicker.delegate = self;
@@ -523,6 +369,17 @@
     datePickManager.confirmButtonText = @"Sure";
     //设置确定按钮的字体大小
     datePickManager.confirmButtonFont = [UIFont boldSystemFontOfSize:17];
+    
+    
+    // 自定义收起动画逻辑
+    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
+        NSUInteger duration = 1.0f;
+        [UIView animateWithDuration:duration animations:^{
+            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
+        } completion:^(BOOL finished) {
+        }];
+        return duration;
+    };
 }
 
 #pragma PGDatePickerDelegate
