@@ -45,9 +45,9 @@
     if (self.style == PGDatePickManagerStyleSheet) {
         self.lineView.hidden = true;
         [self setyle1];
-    }else if (self.style == PGDatePickManagerStyleAlert) {
+    }else if (self.style == PGDatePickManagerStyleAlertTopButton) {
         [self setyle1];
-    }else if (self.style == PGDatePickManagerStyle3) {
+    }else if (self.style == PGDatePickManagerStyleAlertBottomButton) {
         [self setyle2];
     }
 }
