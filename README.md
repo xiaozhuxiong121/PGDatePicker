@@ -178,6 +178,14 @@ typedef NS_ENUM(NSUInteger, PGShowUnitType) {
 @property (nonatomic) NSInteger secondInterval;
 ```
 
+非常感谢[Graphicooooone](https://github.com/Graphicooooone)添加的自定义收起动画接口的功能
+```
+/**
+ custom dismiss controller animation, return the total duration of the custom animation, default is nil
+ */
+@property (nonatomic, copy) NSUInteger(^customDismissAnimation)(UIView* dismissView, UIView* contentView ); 
+```
+
 # 最新版本
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/PGDatePicker.svg?style=for-the-badge)]()
 
