@@ -19,6 +19,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.modalPresentationStyle = UIModalPresentationCustom;
+        self.customDismissAnimation = nil;
         [self setupDismissViewTapHandler];
         [self headerViewButtonHandler];
     }
@@ -74,17 +75,26 @@
 }
 
 - (void)cancelButtonHandler {
-    if (self.style == PGDatePickManagerStyleSheet) {
-        CGRect contentViewFrame = self.contentView.frame;
-        contentViewFrame.origin.y = self.view.bounds.size.height;
-        [UIView animateWithDuration:0.2 animations:^{
-            self.dismissView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
-            self.contentView.frame = contentViewFrame;
-        }completion:^(BOOL finished) {
+    if (self.customDismissAnimation) {
+        NSUInteger duration = self.customDismissAnimation(self.dismissView, self.contentView);
+        if (duration && duration != NSNotFound) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self dismissViewControllerAnimated:false completion:nil];
+            });
+        }
+    } else {
+        if (self.style == PGDatePickManagerStyleSheet) {
+            CGRect contentViewFrame = self.contentView.frame;
+            contentViewFrame.origin.y = self.view.bounds.size.height;
+            [UIView animateWithDuration:0.2 animations:^{
+                self.dismissView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
+                self.contentView.frame = contentViewFrame;
+            }completion:^(BOOL finished) {
+                [self dismissViewControllerAnimated:false completion:nil];
+            }];
+        }else {
             [self dismissViewControllerAnimated:false completion:nil];
-        }];
-    }else {
-        [self dismissViewControllerAnimated:false completion:nil];
+        }
     }
 }
 
