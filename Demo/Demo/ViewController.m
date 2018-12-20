@@ -28,14 +28,14 @@
     datePickManager.isShadeBackgroud = true;
     
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
-//        [UIView animateWithDuration:duration animations:^{
-//            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
-//        } completion:^(BOOL finished) {
-//        }];
-//        return duration;
-//    };
+    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView) {
+        NSTimeInterval duration = 0.2f;
+        [UIView animateWithDuration:duration animations:^{
+            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
+        } completion:^(BOOL finished) {
+        }];
+        return duration;
+    };
     
     PGDatePicker *datePicker = datePickManager.datePicker;
     datePicker.showUnit = PGShowUnitTypeNone;
@@ -65,8 +65,8 @@
     datePickManager.isShadeBackgroud = true;
     
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
+//    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView){
+//        NSTimeInterval duration = 3.0f;
 //        [UIView animateWithDuration:duration animations:^{
 //            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
 //        } completion:^(BOOL finished) {
@@ -99,8 +99,8 @@
     datePickManager.isShadeBackgroud = true;
     
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
+//    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView){
+//        NSTimeInterval duration = 3.0f;
 //        [UIView animateWithDuration:duration animations:^{
 //            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
 //        } completion:^(BOOL finished) {
@@ -133,8 +133,8 @@
     datePickManager.isShadeBackgroud = true;
     
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
+//    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView){
+//        NSTimeInterval duration = 3.0f;
 //        [UIView animateWithDuration:duration animations:^{
 //            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
 //        } completion:^(BOOL finished) {
@@ -165,8 +165,8 @@
     datePickManager.isShadeBackgroud = true;
     
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
+//    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView){
+//        NSTimeInterval duration = 3.0f;
 //        [UIView animateWithDuration:duration animations:^{
 //            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
 //        } completion:^(BOOL finished) {
@@ -197,8 +197,8 @@
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
+//    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView){
+//        NSTimeInterval duration = 3.0f;
 //        [UIView animateWithDuration:duration animations:^{
 //            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
 //        } completion:^(BOOL finished) {
@@ -230,8 +230,8 @@
     datePickManager.isShadeBackgroud = true;
 
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
+//    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView){
+//        NSTimeInterval duration = 3.0f;
 //        [UIView animateWithDuration:duration animations:^{
 //            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
 //        } completion:^(BOOL finished) {
@@ -264,8 +264,8 @@
     datePickManager.isShadeBackgroud = true;
 
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
+//    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView){
+//        NSTimeInterval duration = 3.0f;
 //        [UIView animateWithDuration:duration animations:^{
 //            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
 //        } completion:^(BOOL finished) {
@@ -298,8 +298,8 @@
     datePickManager.isShadeBackgroud = true;
 
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
+//    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView){
+//        NSTimeInterval duration = 3.0f;
 //        [UIView animateWithDuration:duration animations:^{
 //            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
 //        } completion:^(BOOL finished) {
@@ -332,8 +332,8 @@
     datePickManager.isShadeBackgroud = true;
     
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
+//    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView){
+//        NSTimeInterval duration = 3.0f;
 //        [UIView animateWithDuration:duration animations:^{
 //            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
 //        } completion:^(BOOL finished) {
@@ -365,8 +365,8 @@
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
+//    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView){
+//        NSTimeInterval duration = 3.0f;
 //        [UIView animateWithDuration:duration animations:^{
 //            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
 //        } completion:^(BOOL finished) {
@@ -397,8 +397,8 @@
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
+//    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView){
+//        NSTimeInterval duration = 3.0f;
 //        [UIView animateWithDuration:duration animations:^{
 //            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
 //        } completion:^(BOOL finished) {
@@ -428,8 +428,8 @@
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
+//    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView){
+//        NSTimeInterval duration = 3.0f;
 //        [UIView animateWithDuration:duration animations:^{
 //            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
 //        } completion:^(BOOL finished) {
@@ -461,8 +461,8 @@
     PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
     
     ///< 自定义收起动画逻辑
-//    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-//        NSUInteger duration = 3.0f;
+//    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView){
+//        NSTimeInterval duration = 3.0f;
 //        [UIView animateWithDuration:duration animations:^{
 //            contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
 //        } completion:^(BOOL finished) {

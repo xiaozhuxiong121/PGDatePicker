@@ -76,7 +76,7 @@
 
 - (void)cancelButtonHandler {
     if (self.customDismissAnimation) {
-        NSUInteger duration = self.customDismissAnimation(self.dismissView, self.contentView);
+        NSTimeInterval duration = self.customDismissAnimation(self.dismissView, self.contentView);
         if (duration && duration != NSNotFound) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self dismissViewControllerAnimated:false completion:nil];
