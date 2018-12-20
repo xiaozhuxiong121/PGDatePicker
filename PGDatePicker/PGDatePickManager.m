@@ -45,7 +45,7 @@
     self.contentView.backgroundColor = self.datePicker.backgroundColor;
     if (self.style == PGDatePickManagerStyleSheet) {
         [self setupStyleSheet];
-    }else if (self.style == PGDatePickManagerStyleAlert) {
+    }else if (self.style == PGDatePickManagerStyleAlertTopButton) {
         [self setupStyleAlert];
     }else {
         [self setupStyle3];
