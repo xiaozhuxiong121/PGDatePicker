@@ -372,8 +372,8 @@
     
     
     // 自定义收起动画逻辑
-    datePickManager.customDismissAnimation = ^NSUInteger(UIView *dismissView, UIView *contentView) {
-        NSUInteger duration = 1.0f;
+    datePickManager.customDismissAnimation = ^NSTimeInterval(UIView *dismissView, UIView *contentView) {
+        NSTimeInterval duration = 1.0f;
         [UIView animateWithDuration:duration animations:^{
             contentView.frame = (CGRect){{contentView.frame.origin.x, CGRectGetMaxY(self.view.bounds)}, contentView.bounds.size};
         } completion:^(BOOL finished) {
