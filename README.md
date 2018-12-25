@@ -183,7 +183,7 @@ typedef NS_ENUM(NSUInteger, PGShowUnitType) {
 /**
  custom dismiss controller animation, return the total duration of the custom animation, default is nil
  */
-@property (nonatomic, copy) NSUInteger(^customDismissAnimation)(UIView* dismissView, UIView* contentView ); 
+@property (nonatomic, copy) NSTimeInterval(^customDismissAnimation)(UIView* dismissView, UIView* contentView ); 
 ```
 
 # 最新版本
