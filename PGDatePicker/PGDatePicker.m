@@ -41,6 +41,17 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     return self;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        self.isHiddenMiddleText = true;
+        self.isHiddenWheels = true;
+        
+        self.secondInterval = 1;
+        self.minuteInterval = 1;
+    }
+    return self;
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     if (_isSelectedCancelButton) {
