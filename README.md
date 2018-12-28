@@ -115,7 +115,7 @@ datePicker.selectedDate = ^(NSDateComponents *dateComponents) {
 
 设置弧度(目前还是不太好，待优化)
 ```
-`datePicker.isHiddenWheels = false;`
+datePicker.isHiddenWheels = false;
 ```
 
 设置循环滚动
