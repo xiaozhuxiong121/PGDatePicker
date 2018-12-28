@@ -95,6 +95,7 @@ typedef NS_ENUM(NSUInteger, PGShowUnitType) {
 @property (nonatomic, copy) void(^selectedDate)(NSDateComponents *dateComponents);
 
 @property(nonatomic, assign) BOOL isHiddenWheels; // default is true  true -> hidden
+@property(nonatomic, assign) BOOL isCycleScroll; //default is false
 /*
  简体中文  language = zh-Hans
  繁体中文  language = zh-Hant

@@ -86,6 +86,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     pickerView.isHiddenMiddleText = self.isHiddenMiddleText;
     pickerView.middleTextColor = self.middleTextColor;
     pickerView.isHiddenWheels = self.isHiddenWheels;
+    pickerView.isCycleScroll = self.isCycleScroll;
     pickerView.lineBackgroundColor = self.lineBackgroundColor;
     if (_titleColorForOtherRow) {
         self.textColorOfOtherRow = _titleColorForOtherRow;
