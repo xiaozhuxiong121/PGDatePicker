@@ -1140,7 +1140,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSArray *)yearList {
     if (!_yearList) {
-        NSInteger index = self.maximumComponents.year - self.minimumComponents.year;
+        NSUInteger index = self.maximumComponents.year - self.minimumComponents.year;
         NSMutableArray *years = [NSMutableArray arrayWithCapacity:index];
         for (NSUInteger i = self.minimumComponents.year; i <= self.maximumComponents.year; i++) {
             [years addObject:[@(i) stringValue]];
@@ -1152,8 +1152,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSArray *)monthList {
     if (!_monthList) {
-        NSInteger minimum = 1;
-        NSInteger maximum = 12;
+        NSUInteger minimum = 1;
+        NSUInteger maximum = 12;
         if (_setDate == nil && self.maximumComponents.year <= self.currentComponents.year) {
             maximum = self.maximumComponents.month;
         }
@@ -1179,8 +1179,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSArray *)hourList {
     if (!_hourList) {
-        NSInteger minimum = 0;
-        NSInteger maximum = 23;
+        NSUInteger minimum = 0;
+        NSUInteger maximum = 23;
         
         if (self.selectComponents.year == self.maximumComponents.year &&
             self.selectComponents.month == self.maximumComponents.month &&
@@ -1224,8 +1224,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSArray *)minuteList {
     if (!_minuteList) {
-        NSInteger minimum = 0;
-        NSInteger maximum = 59;
+        NSUInteger minimum = 0;
+        NSUInteger maximum = 59;
         if (self.selectComponents.year == self.maximumComponents.year &&
             self.selectComponents.month == self.maximumComponents.month &&
             self.selectComponents.day == self.maximumComponents.day &&
@@ -1279,8 +1279,8 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (NSArray *)secondList {
     if (!_secondList) {
-        NSInteger minimum = 0;
-        NSInteger maximum = 59;
+        NSUInteger minimum = 0;
+        NSUInteger maximum = 59;
         if (self.selectComponents.year == self.maximumComponents.year &&
             self.selectComponents.month == self.maximumComponents.month &&
             self.selectComponents.day == self.maximumComponents.day &&
@@ -1313,7 +1313,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 maximum = self.maximumComponents.second;
             }
         }
-        NSInteger index = maximum - minimum;
+        NSUInteger index = maximum - minimum;
         NSMutableArray *seconds = [NSMutableArray arrayWithCapacity:index];
         for (NSUInteger i = minimum; i <= maximum; i+=self.secondInterval) {
             if (i < 10) {
@@ -1330,24 +1330,25 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 - (NSArray *)dateAndTimeList {
     if (!_dateAndTimeList) {
         NSMutableArray *array = [NSMutableArray array];
-        NSInteger firstIndex = self.minimumComponents.month - 1;
-        NSInteger lastIndex = self.maximumComponents.month - 1;
+        NSUInteger firstIndex = self.minimumComponents.month - 1;
+        NSUInteger lastIndex = self.maximumComponents.month - 1;
         NSString *monthString = [NSBundle pg_localizedStringForKey:@"monthString" language:self.language];
         NSString *dayString = [NSBundle pg_localizedStringForKey:@"dayString" language:self.language];
         if (firstIndex == lastIndex) {
             firstIndex = 0;
             lastIndex = 0;
         }
-        for (NSInteger i = firstIndex; i <= lastIndex; i++) {
-            NSString *month = self.monthList[i];
-            NSInteger day = [self howManyDaysWithMonthInThisYear:self.currentComponents.year withMonth:[month integerValue]];
+        for (NSUInteger i = firstIndex; i <= lastIndex; i++) {
+            NSUInteger index = i - firstIndex;
+            NSString *month = self.monthList[index];
+            NSUInteger day = [self howManyDaysWithMonthInThisYear:self.currentComponents.year withMonth:[month integerValue]];
             {
                 NSMutableArray *days = [NSMutableArray arrayWithCapacity:day];
                 NSInteger minDay = 1, maxDay = day;
                 if (i == firstIndex) {
                     minDay = self.minimumComponents.day;
                 }
-                if (i == lastIndex && self.maximumComponents.day != 1) {
+                if (i == lastIndex) {
                     maxDay = self.maximumComponents.day;
                 }
                 for (NSUInteger i = minDay; i <= maxDay; i++) {
