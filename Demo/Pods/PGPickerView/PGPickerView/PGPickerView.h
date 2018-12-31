@@ -42,7 +42,7 @@ typedef NS_ENUM(NSUInteger, PGPickerViewLineType) {
 @property(nonatomic, strong) UIFont *middleTextFont;
 
 @property(nonatomic, assign) BOOL isHiddenWheels; // default is true  true -> hidden
-
+@property(nonatomic, assign) BOOL isCycleScroll; //default is false
 
 - (NSInteger)numberOfRowsInComponent:(NSInteger)component;
 

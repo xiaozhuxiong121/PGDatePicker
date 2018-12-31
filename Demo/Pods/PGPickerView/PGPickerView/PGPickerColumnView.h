@@ -22,12 +22,13 @@
 @property (nonatomic, strong)UIColor *textColorOfSelectedRow;
 @property(nonatomic, strong) UIFont *textFontOfSelectedRow;
 
-@property (nonatomic, strong)UIColor *textColorOfOtherRow;       
+@property (nonatomic, strong)UIColor *textColorOfOtherRow;
 @property(nonatomic, strong) UIFont *textFontOfOtherRow;
 
 @property(nonatomic, assign) BOOL isHiddenWheels;
+@property(nonatomic, assign) BOOL isCycleScroll;
 
-- (instancetype)initWithFrame:(CGRect)frame rowHeight:(CGFloat)rowHeight upLineHeight:(CGFloat)upLineHeight downLineHeight:(CGFloat)downLineHeight;
+- (instancetype)initWithFrame:(CGRect)frame rowHeight:(CGFloat)rowHeight upLineHeight:(CGFloat)upLineHeight downLineHeight:(CGFloat)downLineHeight isCycleScroll:(BOOL)isCycleScroll datas:(NSArray *)datas;
 - (void)selectRow:(NSInteger)row animated:(BOOL)animated;
 @end
 
