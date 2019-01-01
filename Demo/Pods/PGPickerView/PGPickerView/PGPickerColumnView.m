@@ -36,6 +36,8 @@
 
 @property(nonatomic, assign) BOOL copyCycleScroll;
 @property (nonatomic, assign) NSInteger copyOffsetCount;
+
+@property(nonatomic, assign) BOOL isSelectedRow;
 @end
 
 @implementation PGPickerColumnView
@@ -184,12 +186,10 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
         newRow = row - self.copyOffsetCount;
     }
     if (animated) {
-        __block PGPickerColumnView *blockSelf = self;
-        dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC));
-        dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-            [blockSelf.centerTableView setContentOffset:CGPointMake(0, newRow * blockSelf.rowHeight) animated:animated];
-            blockSelf = nil;
-        });
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:newRow inSection:0];
+        [self.centerTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:true];
+        self.selectedRow = row;
+        self.isSelectedRow = true;
     }else {
         self.centerTableView.contentOffset = CGPointMake(0, newRow * self.rowHeight);
         [self scrollViewDidEndDecelerating: self.centerTableView];
@@ -258,8 +258,15 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UITableView *)tableView {
-    [self setupTableViewScroll:tableView animated:false];
-    self.selectedRow = [self setupSelectedRow];
+    if (!self.isSelectedRow) {
+        [self setupTableViewScroll:tableView animated:false];
+        NSUInteger row = [self setupSelectedRow];
+        self.selectedRow = row;
+    }
+    if (self.isSelectedRow) {
+        self.isSelectedRow = false;
+    }
+    
 }
 
 #pragma mark - row logic
@@ -394,5 +401,6 @@ static NSString *const cellReuseIdentifier = @"PGPickerColumnCell";
         self.textOfSelectedRow = attriString.string;
     }
 }
+
 
 @end
