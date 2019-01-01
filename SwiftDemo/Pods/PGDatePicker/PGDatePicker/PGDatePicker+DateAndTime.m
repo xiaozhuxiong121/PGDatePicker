@@ -14,8 +14,8 @@
 
 @implementation PGDatePicker (DateAndTime)
 - (void)dateAndTime_setupSelectedDate {
-    NSString *monthString = [NSBundle localizedStringForKey:@"monthString"];
-    NSString *dayString = [NSBundle localizedStringForKey:@"dayString"];
+    NSString *monthString = [NSBundle pg_localizedStringForKey:@"monthString" language:self.language];
+    NSString *dayString = [NSBundle pg_localizedStringForKey:@"dayString" language:self.language];
     
     NSString *string = [self.pickerView textOfSelectedRowInComponent:0];
     NSString *str = [string componentsSeparatedByString:monthString].firstObject;
@@ -46,8 +46,8 @@
     if (components.month < self.minimumComponents.month) {
         components = self.minimumComponents;
     }
-    NSString *monthString = [NSBundle localizedStringForKey:@"monthString"];
-    NSString *dayString = [NSBundle localizedStringForKey:@"dayString"];
+    NSString *monthString = [NSBundle pg_localizedStringForKey:@"monthString" language:self.language];
+    NSString *dayString = [NSBundle pg_localizedStringForKey:@"dayString" language:self.language];
     NSString *string = [NSString stringWithFormat:@"%ld%@%ld%@ %@ ", components.month, monthString, components.day, dayString, [self weekMappingFrom:components.weekday]];
     NSInteger row = 0;
     BOOL isExist = [self.dateAndTimeList containsObject:string];
@@ -86,9 +86,13 @@
     NSString *string = [self.pickerView textOfSelectedRowInComponent:0];
     NSString *str = [string componentsSeparatedByString:self.monthString].firstObject;
     dateComponents.month = [str integerValue];
+    if ([string containsString:@"Mon"]) {
+        string = [string componentsSeparatedByString:@"Mon"].firstObject;
+    }
     NSString *str2 = [string componentsSeparatedByString:self.monthString].lastObject;
     NSString *str3 = [str2 componentsSeparatedByString:self.dayString].firstObject;
     dateComponents.day = [str3 integerValue];
+
     NSString *str4 = [str2 componentsSeparatedByString:self.dayString].lastObject;
     str4 = [str4 stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     dateComponents.weekday = [self weekDayMappingFrom:str4];

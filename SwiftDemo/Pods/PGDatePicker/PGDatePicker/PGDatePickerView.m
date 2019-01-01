@@ -32,9 +32,9 @@
 - (void)setCurrentDate:(BOOL)currentDate {
     _currentDate = currentDate;
     if (currentDate) {
-        self.label.textColor = [UIColor colorWithHexString:@"#FAD9A2"];
+        self.label.textColor = [UIColor pg_colorWithHexString:@"#FAD9A2"];
     }else {
-        self.label.textColor = [UIColor colorWithHexString:@"#838383"];
+        self.label.textColor = [UIColor pg_colorWithHexString:@"#838383"];
     }
 }
 

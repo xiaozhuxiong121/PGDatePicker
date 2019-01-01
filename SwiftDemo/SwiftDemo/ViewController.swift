@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBAction func yearHandler(_ sender: Any) {
         let datePickerManager = PGDatePickManager()
         datePickerManager.isShadeBackgroud = true
-        datePickerManager.style = .style2
+        datePickerManager.style = .alertTopButton
         let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
         datePicker.datePickerMode = .year
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     @IBAction func yearAndMonthHandler(_ sender: Any) {
         let datePickerManager = PGDatePickManager()
         datePickerManager.isShadeBackgroud = true
-        datePickerManager.style = .style3
+        datePickerManager.style = .alertBottomButton
         let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
         datePicker.datePickerType = .type1

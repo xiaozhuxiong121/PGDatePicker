@@ -34,6 +34,12 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
     PGDatePickerType3,
 };
 
+typedef NS_ENUM(NSUInteger, PGShowUnitType) {
+    PGShowUnitTypeAll,
+    PGShowUnitTypeCenter,
+    PGShowUnitTypeNone,
+};
+
 #define PGDatePickerDeprecated(instead) __attribute__((deprecated(instead)))
 
 @protocol PGDatePickerDelegate;
@@ -64,6 +70,8 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
  如果设置为false，只会显示中间的文字，其他行的文字则不会显示
  */
 @property(nonatomic, assign) BOOL isHiddenMiddleText; // default is true
+
+@property(nonatomic, assign) PGShowUnitType showUnit;
 @property(nonatomic, copy) UIColor *middleTextColor;
 
 @property (nonatomic, strong)UIColor *titleColorForSelectedRow PGDatePickerDeprecated("已过时，请使用textColorOfSelectedRow进行替换");
@@ -86,6 +94,14 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
 
 @property (nonatomic, copy) void(^selectedDate)(NSDateComponents *dateComponents);
 
+@property(nonatomic, assign) BOOL isHiddenWheels; // default is true  true -> hidden
+@property(nonatomic, assign) BOOL isCycleScroll; //default is false
+/*
+ 简体中文  language = zh-Hans
+ 繁体中文  language = zh-Hant
+ 英语     language = en
+ */
+@property(nonatomic, copy) NSString *language;
 /**
  相当于确定按钮，执行此方法PGDatePickerDelegate代理方法会得到值
  */
@@ -93,6 +109,16 @@ typedef NS_ENUM(NSUInteger, PGDatePickerType) {
 
 - (void)setDate:(NSDate *)date;
 - (void)setDate:(NSDate *)date animated:(BOOL)animated;
+
+//在时分的时候，只显示时
+@property (nonatomic) BOOL isOnlyHourFlag;
+
+//分间隔 默认时1
+@property (nonatomic) NSInteger minuteInterval;
+
+//秒间隔 默认时1
+@property (nonatomic) NSInteger secondInterval;
+
 @end
 
 @protocol PGDatePickerDelegate <NSObject>

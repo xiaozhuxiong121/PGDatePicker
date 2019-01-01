@@ -4,10 +4,10 @@
 > 由于使用UIPickerView的话，列表会有个弧度，所以这里用了[PGPickerView](https://github.com/xiaozhuxiong121/PGPickerView)  
 
 ![PGDatePicker](F734F5F9-FB12-4BA7-B43E-B39D0FF1DA3B.png)
-[![CocoaPods compatible](https://img.shields.io/cocoapods/v/PGDatePicker.svg)](https://cocoapods.org/pods/PGDatePicker)
-![](https://img.shields.io/badge/platform-iOS-red.svg) ![](https://img.shields.io/badge/language-Objective--C-orange.svg)
-![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg) 
- [![](https://img.shields.io/badge/jianshu-piggybear-red.svg)](http://www.jianshu.com/u/3740632b2002)   
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/PGDatePicker.svg?style=for-the-badge)](https://cocoapods.org/pods/PGDatePicker)
+![](https://img.shields.io/badge/platform-iOS-red.svg?style=for-the-badge) ![](https://img.shields.io/badge/language-Objective--C-orange.svg?style=for-the-badge)
+![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg?style=for-the-badge) 
+ [![](https://img.shields.io/badge/jianshu-piggybear-red.svg?style=for-the-badge)](http://www.jianshu.com/u/3740632b2002)   
 
 
 #### 直接看如何使用:[Wiki](https://github.com/xiaozhuxiong121/PGDatePicker/wiki)
@@ -95,15 +95,33 @@ PGDatePickManager *datePickManager = [[PGDatePickManager alloc]init];
 PGDatePicker *datePicker = datePickManager.datePicker;
 datePicker.delegate = self;
 [self presentViewController:datePickManager animated:false completion:nil];
-
+```
+#### Delegate
+```
 #pragma PGDatePickerDelegate
 - (void)datePicker:(PGDatePicker *)datePicker didSelectDate:(NSDateComponents *)dateComponents {
 NSLog(@"dateComponents = %@", dateComponents);
 }
 ```
+#### Block
+```
+datePicker.selectedDate = ^(NSDateComponents *dateComponents) {
+    NSLog(@"dateComponents = %@", dateComponents);
+};
+```
 > 如果不设置```minimumDate```和```maximumDate```默认是无穷小和无穷大 
 
 > 语言跟着手机系统语言走，默认有英文，中文，繁体中文，如果是模拟器的话，将模拟器的系统语言改成中文即显示中文
+
+设置弧度(目前还是不太好，待优化)
+```
+datePicker.isHiddenWheels = false;
+```
+
+设置循环滚动
+```
+datePicker.isCycleScroll = true;
+```
 
 # 设置样式
 ```
@@ -140,8 +158,48 @@ datePickManager.confirmButtonFont = [UIFont boldSystemFontOfSize:17];
 
 ```
 
+非常感谢[xyhuangjia](https://github.com/xyhuangjia)添加隐藏字的功能   
+```
+//首先将isHiddenMiddleText设置为false
+datePicker.isHiddenMiddleText = false;
+
+//然后设置showUnit
+datePicker.showUnit = PGShowUnitTypeNone;
+
+typedef NS_ENUM(NSUInteger, PGShowUnitType) {
+    PGShowUnitTypeAll,      //显示全部的字
+    PGShowUnitTypeCenter,   //只显示中间的字
+    PGShowUnitTypeNone,     //什么字都不显示
+};
+````
+非常感谢[sujiewen](https://github.com/sujiewen)添加的如下功能   
+1、增加一个只显示时的方案   
+2、增加对时分间隔自定义支持
+```
+//在时分的时候，只显示时
+@property (nonatomic) BOOL isOnlyHourFlag;
+
+//分间隔 默认时1
+@property (nonatomic) NSInteger minuteInterval;
+
+//秒间隔 默认时1
+@property (nonatomic) NSInteger secondInterval;
+```
+
+非常感谢[Graphicooooone](https://github.com/Graphicooooone)添加的自定义收起动画接口的功能
+```
+/**
+ custom dismiss controller animation, return the total duration of the custom animation, default is nil
+ */
+@property (nonatomic, copy) NSTimeInterval(^customDismissAnimation)(UIView* dismissView, UIView* contentView ); 
+```
+
 # 最新版本
-[![CocoaPods compatible](https://img.shields.io/cocoapods/v/PGDatePicker.svg)]()
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/PGDatePicker.svg?style=for-the-badge)]()
+
+# 想说的话
+1，大家有好的idea欢迎随时提交PR，共同维护。   
+2、如果有人想共同维护的话，可以发我邮箱(piggybear_net@163.com)，我帮你加进去，共同去维护它。
 
 # 许可证
 

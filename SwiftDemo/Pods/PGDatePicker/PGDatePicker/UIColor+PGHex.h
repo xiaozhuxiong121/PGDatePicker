@@ -8,5 +8,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (PGHex)
-+ (UIColor *)colorWithHexString:(NSString *)hexString;
++ (UIColor *)pg_colorWithHexString:(NSString *)hexString;
 @end
