@@ -489,13 +489,6 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 }
 
 - (void)pickerView:(PGPickerView *)pickerView title:(NSString *)title didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    if (!_isDelay && _isSetDateAnimation) {
-        dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.40 * NSEC_PER_SEC));
-        dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-            _isDelay = true;
-        });
-        return;
-    }
     row = row + 1;
     switch (self.datePickerMode) {
         case PGDatePickerModeYearAndMonth:
