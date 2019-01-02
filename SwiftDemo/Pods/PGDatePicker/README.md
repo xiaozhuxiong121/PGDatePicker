@@ -1,5 +1,5 @@
 # PGDatePicker
-日期选择器，支持年、年月、年月日、年月日时、年月日时分、年月日时分秒、月日、月日时、月日时分、月日时分秒、时分、时分秒、分秒、月日周 时分等，内置了3种样式。
+日期选择器，支持年、年月、年月日、年月日时、年月日时分、年月日时分秒、月日、月日时、月日时分、月日时分秒、时、时分、时分秒、分秒、月日周 时分等，内置了3种样式。
 
 > 由于使用UIPickerView的话，列表会有个弧度，所以这里用了[PGPickerView](https://github.com/xiaozhuxiong121/PGPickerView)  
 
@@ -173,8 +173,8 @@ typedef NS_ENUM(NSUInteger, PGShowUnitType) {
 };
 ````
 非常感谢[sujiewen](https://github.com/sujiewen)添加的如下功能   
-1、增加一个只显示时的方案   
-2、增加对时分间隔自定义支持
+1、只显示时的功能   
+2、对时分间隔自定义支持
 ```
 //在时分的时候，只显示时
 @property (nonatomic) BOOL isOnlyHourFlag;
@@ -204,5 +204,4 @@ typedef NS_ENUM(NSUInteger, PGShowUnitType) {
 # 许可证
 
 PGDatePicker 使用 MIT 许可证，详情见 [LICENSE](LICENSE) 文件。
-
 

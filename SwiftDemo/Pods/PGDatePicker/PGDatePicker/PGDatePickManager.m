@@ -132,7 +132,7 @@
     self.datePicker.frame = datePickerFrame;
     self.headerView.backgroundColor = self.headerViewBackgroundColor;
     [UIView animateWithDuration:0.2 animations:^{
-        if (self.isShadeBackgroud) {
+        if (self.isShadeBackground) {
             self.dismissView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
         }
         self.contentView.frame = contentViewFrame;
@@ -163,7 +163,7 @@
     self.contentView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     [UIView animateWithDuration:0.05
                      animations:^{
-                         if (self.isShadeBackgroud) {
+                         if (self.isShadeBackground) {
                              self.dismissView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
                          }
                          self.contentView.transform = CGAffineTransformMakeScale(1.0, 1.0);
@@ -193,7 +193,7 @@
     self.contentView.transform = CGAffineTransformMakeScale(0.5, 0.5);
     [UIView animateWithDuration:0.05
                      animations:^{
-                         if (self.isShadeBackgroud) {
+                         if (self.isShadeBackground) {
                              self.dismissView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
                          }
                          self.contentView.transform = CGAffineTransformMakeScale(1.0, 1.0);
@@ -202,9 +202,9 @@
 
 #pragma Setter
 
-- (void)setIsShadeBackgroud:(BOOL)isShadeBackgroud {
-    _isShadeBackgroud = isShadeBackgroud;
-    if (isShadeBackgroud) {
+- (void)setIsShadeBackground:(BOOL)isShadeBackground {
+    _isShadeBackground = isShadeBackground;
+    if (isShadeBackground) {
         self.dismissView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
     }else {
         self.dismissView.backgroundColor = [UIColor clearColor];
