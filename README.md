@@ -173,8 +173,8 @@ typedef NS_ENUM(NSUInteger, PGShowUnitType) {
 };
 ````
 非常感谢[sujiewen](https://github.com/sujiewen)添加的如下功能   
-1、增加一个只显示时的方案   
-2、增加对时分间隔自定义支持
+1、只显示时的功能   
+2、对时分间隔自定义支持
 ```
 //在时分的时候，只显示时
 @property (nonatomic) BOOL isOnlyHourFlag;
