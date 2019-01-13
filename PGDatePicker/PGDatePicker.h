@@ -10,35 +10,9 @@
 #import "UIColor+PGHex.h"
 #import "NSCalendar+PGCurrent.h"
 #import <PGPickerView/PGPickerView.h>
+#import "PGEnumeration.h"
 
-typedef NS_ENUM(NSInteger, PGDatePickerMode) {
-    PGDatePickerModeYear, //年
-    PGDatePickerModeYearAndMonth, //年月
-    PGDatePickerModeDate, //年月日
-    PGDatePickerModeDateHour, //年月日时
-    PGDatePickerModeDateHourMinute, //年月日时分
-    PGDatePickerModeDateHourMinuteSecond, //年月日时分秒
-    PGDatePickerModeMonthDay, //月日
-    PGDatePickerModeMonthDayHour, //月日时
-    PGDatePickerModeMonthDayHourMinute, //月日时分
-    PGDatePickerModeMonthDayHourMinuteSecond, //月日时分秒
-    PGDatePickerModeTime, //时分
-    PGDatePickerModeTimeAndSecond, //时分秒
-    PGDatePickerModeMinuteAndSecond, //分秒
-    PGDatePickerModeDateAndTime, //月日周 时分
-};
-
-typedef NS_ENUM(NSUInteger, PGDatePickerType) {
-    PGDatePickerType1,
-    PGDatePickerType2,
-    PGDatePickerType3,
-};
-
-typedef NS_ENUM(NSUInteger, PGShowUnitType) {
-    PGShowUnitTypeAll,
-    PGShowUnitTypeCenter,
-    PGShowUnitTypeNone,
-};
+typedef void(^SelectedDateComponents)(NSDateComponents *dateComponents);
 
 #define PGDatePickerDeprecated(instead) __attribute__((deprecated(instead)))
 
@@ -47,7 +21,7 @@ typedef NS_ENUM(NSUInteger, PGShowUnitType) {
 @interface PGDatePicker : UIControl
 @property (nonatomic, weak) id<PGDatePickerDelegate> delegate;
 @property (nonatomic, assign) PGDatePickerMode datePickerMode; // default is PGDatePickerModeYear
-@property(nonatomic, assign) PGDatePickerType datePickerType;
+@property(nonatomic, assign) PGDatePickerSeparate datePickerSeparate;
 /*
  默认是false
  如果设置为true，则不用按下确定按钮也可以得到选中的日期
@@ -92,7 +66,8 @@ typedef NS_ENUM(NSUInteger, PGShowUnitType) {
 @property (nonatomic, strong) NSDate *minimumDate; // specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer mode
 @property (nonatomic, strong) NSDate *maximumDate; // default is nil
 
-@property (nonatomic, copy) void(^selectedDate)(NSDateComponents *dateComponents);
+@property (nonatomic, copy) void(^selectedDate)(NSDateComponents *dateComponents)PGDatePickerDeprecated("已过时，请使用selectedDateComponents进行替换");;
+@property (nonatomic ,copy) SelectedDateComponents selectedDateComponents;
 
 @property(nonatomic, assign) BOOL isHiddenWheels; // default is true  true -> hidden
 @property(nonatomic, assign) BOOL isCycleScroll; //default is false

@@ -32,7 +32,7 @@
 @property (nonatomic, strong) NSArray *secondList;
 @property (nonatomic, strong) NSArray *dateAndTimeList;
 
-@property (nonatomic, assign) NSCalendarUnit unitFlags;
+//@property (nonatomic, assign) NSCalendarUnit unitFlags;
 @property (nonatomic, assign) NSInteger components;
 @property (nonatomic, assign) BOOL isCurrent;
 

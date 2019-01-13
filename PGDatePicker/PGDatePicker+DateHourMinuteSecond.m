@@ -109,7 +109,7 @@
 }
 
 - (void)dateHourMinuteSecond_didSelectWithComponent:(NSInteger)component {
-    NSDateComponents *dateComponents = [self.calendar components:self.unitFlags fromDate:[NSDate date]];
+    NSDateComponents *dateComponents = [self.calendar components:unitFlags fromDate:[NSDate date]];
     NSString *str = [[self.pickerView textOfSelectedRowInComponent:0] componentsSeparatedByString:self.yearString].firstObject;
     dateComponents.year = [str integerValue];
     if (component == 0) {

@@ -7,6 +7,7 @@
 
 #import "NSCalendar+PGCurrent.h"
 #import <objc/runtime.h>
+#import "PGEnumeration.h"
 
 @implementation NSCalendar (PGCurrent)
 static const char currentComponentsKey = '\0';
@@ -17,7 +18,7 @@ static const char currentComponentsKey = '\0';
 - (NSDateComponents *)currentComponents {
     NSDateComponents *components = objc_getAssociatedObject(self, &currentComponentsKey);
     if (components == nil) {
-        NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday;
+//        NSCalendarUnit unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday;
         [self setCurrentComponents:[self components:unitFlags fromDate:[NSDate date]]];
     }
     return objc_getAssociatedObject(self, &currentComponentsKey);

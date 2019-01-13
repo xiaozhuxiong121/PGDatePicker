@@ -35,6 +35,7 @@
         components.year = self.minimumComponents.year;
         tf = true;
     }
+    
     NSInteger row = components.year - self.minimumComponents.year;
     [self.pickerView selectRow:row inComponent:0 animated:animated];
     if (tf) {
@@ -61,7 +62,7 @@
 }
 
 - (void)date_didSelectWithComponent:(NSInteger)component {
-    NSDateComponents *dateComponents = [self.calendar components:self.unitFlags fromDate:[NSDate date]];
+    NSDateComponents *dateComponents = [self.calendar components:unitFlags fromDate:[NSDate date]];
     NSString *str = [[self.pickerView textOfSelectedRowInComponent:0] componentsSeparatedByString:self.yearString].firstObject;
     dateComponents.year = [str integerValue];
     if (component == 0) {

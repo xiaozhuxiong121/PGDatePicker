@@ -82,7 +82,7 @@
 }
 
 - (void)dateAndTime_didSelectWithComponent:(NSInteger)component {
-    NSDateComponents *dateComponents = [self.calendar components:self.unitFlags fromDate:[NSDate date]];
+    NSDateComponents *dateComponents = [self.calendar components:unitFlags fromDate:[NSDate date]];
     NSString *string = [self.pickerView textOfSelectedRowInComponent:0];
     NSString *str = [string componentsSeparatedByString:self.monthString].firstObject;
     dateComponents.month = [str integerValue];

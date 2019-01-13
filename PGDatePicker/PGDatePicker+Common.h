@@ -11,5 +11,5 @@
 @interface PGDatePicker (Common)
 - (NSInteger)weekDayMappingFrom:(NSString *)weekString;
 - (NSString *)weekMappingFrom:(NSInteger)weekDay;
-- (NSInteger)howManyDaysWithMonthInThisYear:(NSInteger)year withMonth:(NSInteger)month;
+- (NSInteger)daysWithMonthInThisYear:(NSInteger)year withMonth:(NSInteger)month;
 @end
