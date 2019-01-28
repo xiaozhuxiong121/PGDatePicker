@@ -51,7 +51,7 @@
     
     NSString *monthString = [[self.pickerView textOfSelectedRowInComponent:1] componentsSeparatedByString:self.monthString].firstObject;
     dateComponents.month = [monthString integerValue];
-    NSInteger day = [self howManyDaysWithMonthInThisYear:[yearString integerValue] withMonth:[monthString integerValue]];
+    NSInteger day = [self daysWithMonthInThisYear:[yearString integerValue] withMonth:[monthString integerValue]];
     [self setDayListForMonthDays:day];
     if (self.minimumComponents.year == dateComponents.year && self.minimumComponents.month == dateComponents.month) {
         NSMutableArray *days = [NSMutableArray array];
@@ -94,7 +94,7 @@
     BOOL tmp = refresh;
     NSString *monthString = [[self.pickerView textOfSelectedRowInComponent:0] componentsSeparatedByString:self.monthString].firstObject;
     dateComponents.month = [monthString integerValue];
-    NSInteger day = [self howManyDaysWithMonthInThisYear:dateComponents.year withMonth:[monthString integerValue]];
+    NSInteger day = [self daysWithMonthInThisYear:dateComponents.year withMonth:[monthString integerValue]];
     [self setDayListForMonthDays:day];
     if (self.minimumComponents.month == dateComponents.month) {
         NSMutableArray *days = [NSMutableArray array];

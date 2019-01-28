@@ -71,7 +71,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     }else {
         self.selectComponents = [self.calendar components:self.unitFlags fromDate:[NSDate date]];
     }
-    NSInteger day = [self howManyDaysWithMonthInThisYear:self.selectComponents.year withMonth:self.selectComponents.month];
+    NSInteger day = [self daysWithMonthInThisYear:self.selectComponents.year withMonth:self.selectComponents.month];
     [self setDayListForMonthDays:day];
     CGFloat bottom = 0;
     if (@available(iOS 11.0, *)) {
@@ -1089,7 +1089,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         _maximumComponents = [self.calendar components:self.unitFlags fromDate:self.maximumDate];
     }else {
         _maximumComponents = [self.calendar components:self.unitFlags fromDate:[NSDate distantFuture]];
-        NSInteger day = [self howManyDaysWithMonthInThisYear:self.currentComponents.year withMonth:self.currentComponents.month];
+        NSInteger day = [self daysWithMonthInThisYear:self.currentComponents.year withMonth:self.currentComponents.month];
         _maximumComponents.day = day;
         _maximumComponents.month = 12;
         _maximumComponents.hour = 23;
@@ -1334,7 +1334,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         for (NSUInteger i = firstIndex; i <= lastIndex; i++) {
             NSUInteger index = i - firstIndex;
             NSString *month = self.monthList[index];
-            NSUInteger day = [self howManyDaysWithMonthInThisYear:self.currentComponents.year withMonth:[month integerValue]];
+            NSUInteger day = [self daysWithMonthInThisYear:self.currentComponents.year withMonth:[month integerValue]];
             {
                 NSMutableArray *days = [NSMutableArray arrayWithCapacity:day];
                 NSInteger minDay = 1, maxDay = day;
@@ -1350,8 +1350,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
                 self.dayList = days;
             }
             [self.dayList enumerateObjectsUsingBlock:^(NSString*  _Nonnull day, NSUInteger idx, BOOL * _Nonnull stop) {
-                NSInteger weekDay = [self.calendar component:NSCalendarUnitWeekday fromDate:[NSDate setYear:self.currentComponents.year month:[month integerValue] day:[day integerValue]]];
-                
+                NSDateComponents *dateComponents = [[NSDateComponents alloc]init];
+                dateComponents.year = self.currentComponents.year;
+                dateComponents.month = [month integerValue];
+                dateComponents.day = [day integerValue];
+                NSInteger weekDay = [self.calendar component:NSCalendarUnitWeekday fromDate:[NSDate dateFromComponents:dateComponents]];
                 NSString *string = [NSString stringWithFormat:@"%@%@%@%@ %@ ", month, monthString, day, dayString, [self weekMappingFrom:weekDay]];
                 [array addObject:string];
             }];
