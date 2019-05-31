@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.frameworks   = "UIKit"
   s.requires_arc = true
   s.dependency 'PGPickerView'
-  s.module_name  = 'PGDatePickerFix'
+  s.module_name  = 'PGDatePicker'
 end
  
  
