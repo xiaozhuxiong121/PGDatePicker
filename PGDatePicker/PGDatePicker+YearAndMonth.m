@@ -20,6 +20,13 @@
     
     self.selectedComponents.year = [yearString integerValue];
     self.selectedComponents.month = [monthString integerValue];
+    
+    /// 当选了年和月，把日时分秒设置为最小值，防止因为day太大，导致出现6月31日的情况(6月没有31日)
+    self.selectedComponents.day = 1;
+    self.selectedComponents.hour = 0;
+    self.selectedComponents.minute = 0;
+    self.selectedComponents.second = 0;
+    
 }
 
 - (void)yearAndMonth_setDateWithComponents:(NSDateComponents *)components animated:(BOOL)animated {
