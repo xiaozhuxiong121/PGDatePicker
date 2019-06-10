@@ -35,7 +35,7 @@
 @property (nonatomic, assign) CGFloat headerHeight;
 
 @property (nonatomic, assign) BOOL isShowUnit;
-@property (nonatomic, copy)  void(^cancelButtonMonitor)();
+@property (nonatomic, copy)  void(^cancelButtonMonitor)(void);
 
 /**
  custom dismiss controller animation, return the total duration of the custom animation, default is nil

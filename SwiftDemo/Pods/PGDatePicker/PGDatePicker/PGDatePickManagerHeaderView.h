@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "PGEnumeration.h"
 
-typedef void(^handlerBlock)();
+typedef void(^handlerBlock)(void);
 
 @interface PGDatePickManagerHeaderView : UIView
 
