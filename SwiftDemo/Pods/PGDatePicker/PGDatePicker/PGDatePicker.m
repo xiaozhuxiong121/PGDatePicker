@@ -399,7 +399,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
         animated = false;
         dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC));
         dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-            [self setDate:_setDate animated:_isSetDateAnimation];
+            [self setDate:self->_setDate animated:self->_isSetDateAnimation];
         });
     }
     switch (self.datePickerMode) {
