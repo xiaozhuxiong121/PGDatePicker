@@ -127,11 +127,15 @@
 
 - (void)setLanguage:(NSString *)language {
     _language = language;
-    NSString *cancelButtonText = [NSBundle pg_localizedStringForKey:@"cancelButtonText" language:self.language];
-    [self.cancelButton setTitle:cancelButtonText forState:UIControlStateNormal];
+    if (!_cancelButtonText || _cancelButtonText.length <= 0) {
+        NSString *cancelButtonText = [NSBundle pg_localizedStringForKey:@"cancelButtonText" language:self.language];
+        [self.cancelButton setTitle:cancelButtonText forState:UIControlStateNormal];
+    }
     
-    NSString *confirmButtonText = [NSBundle pg_localizedStringForKey:@"confirmButtonText" language:self.language];
-    [self.confirmButton setTitle:confirmButtonText forState:UIControlStateNormal];
+    if (!_confirmButtonText || _confirmButtonText.length <= 0) {
+        NSString *confirmButtonText = [NSBundle pg_localizedStringForKey:@"confirmButtonText" language:self.language];
+        [self.confirmButton setTitle:confirmButtonText forState:UIControlStateNormal];
+    }
 }
 
 #pragma Getter
