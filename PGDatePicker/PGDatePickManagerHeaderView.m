@@ -220,7 +220,7 @@
 
 - (UIColor *)cancelButtonTextColor {
     if (!_cancelButtonTextColor) {
-        _cancelButtonTextColor = [UIColor lightGrayColor];
+        _cancelButtonTextColor = [UIColor pg_colorWithHexString:@"#3573BB"];
     }
     return _cancelButtonTextColor;
 }
@@ -242,7 +242,7 @@
 
 - (UIColor *)confirmButtonTextColor {
     if (!_confirmButtonTextColor) {
-        _confirmButtonTextColor = [UIColor pg_colorWithHexString:@"#69BDFF"];
+        _confirmButtonTextColor = [UIColor pg_colorWithHexString:@"#3573BB"];
     }
     return _confirmButtonTextColor;
 }
@@ -272,7 +272,7 @@
 
 - (UIColor *)todayButtonTextColor {
     if (!_todayButtonTextColor) {
-        _todayButtonTextColor = [UIColor lightGrayColor];
+        _todayButtonTextColor = [UIColor pg_colorWithHexString:@"#3573BB"];
     }
     return _todayButtonTextColor;
 }
