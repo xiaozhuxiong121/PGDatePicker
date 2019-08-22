@@ -19,6 +19,10 @@
 @property (nonatomic, copy) UIFont *cancelButtonFont;
 @property (nonatomic, copy) UIColor *cancelButtonTextColor;
 
+@property (nonatomic, copy) NSString *todayButtonText;
+@property (nonatomic, copy) UIFont *todayButtonFont;
+@property (nonatomic, copy) UIColor *todayButtonTextColor;
+
 /**
  set confirmButton title ,default is Sure
  */
