@@ -20,3 +20,5 @@
 "sundayString" = "周日";
 "cancelButtonText" = "取消";
 "confirmButtonText" = "確定";
+"todayButtonText" = "今天";
+
