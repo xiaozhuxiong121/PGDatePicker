@@ -257,8 +257,7 @@
 
 - (NSString *)todayButtonText {
     if (!_todayButtonText) {
-        NSString *cancelButtonText= @"今天";
-//        [NSBundle pg_localizedStringForKey:@"confirmButtonText" language:self.language];
+        NSString *cancelButtonText= [NSBundle pg_localizedStringForKey:@"todayButtonText" language:self.language];
         _todayButtonText = cancelButtonText;
     }
     return _todayButtonText;
