@@ -48,16 +48,24 @@
 @property (nonatomic, strong)UIColor *titleColorForSelectedRow PGDatePickerDeprecated("已过时，请使用textColorOfSelectedRow进行替换");
 @property (nonatomic, strong)UIColor *titleColorForOtherRow PGDatePickerDeprecated("已过时，请使用textColorOfOtherRow进行替换");
 
-@property (nonatomic, strong)UIColor *textColorOfSelectedRow;     //default is #69BDFF
+@property (nonatomic, strong)UIColor *textColorOfSelectedRow;     //default is #3573BB
 @property(nonatomic, strong) UIFont *textFontOfSelectedRow;       //default is 17
 
 @property (nonatomic, strong)UIColor *textColorOfOtherRow;        // default is [UIColor lightGrayColor]
 @property(nonatomic, strong) UIFont *textFontOfOtherRow;          //default is 17
 
-@property(nonatomic, strong) UIColor *lineBackgroundColor;       //default is #69BDFF
+@property(nonatomic, strong) UIColor *lineBackgroundColor;       //default is #3573BB
 
 @property (nonatomic, strong) NSLocale   *locale;   // default is [NSLocale currentLocale]. setting nil returns to default
-@property (nonatomic, copy)   NSCalendar *calendar; // default is [NSCalendar currentCalendar]. setting nil returns to default
+@property (nonatomic, copy)   NSCalendar *calendar; // default is [NSCalendar c
+
+
+
+
+
+
+
+urrentCalendar]. setting nil returns to default
 @property (nonatomic, strong) NSTimeZone *timeZone; // default is nil. use current time zone or time zone from calendar
 
 @property (nonatomic, strong) NSDate *minimumDate; // specify min/max date range. default is nil. When min > max, the values are ignored. Ignored in countdown timer mode
