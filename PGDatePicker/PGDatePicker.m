@@ -1412,7 +1412,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (UIColor *)lineBackgroundColor {
     if (!_lineBackgroundColor) {
-        _lineBackgroundColor = [UIColor pg_colorWithHexString:@"#69BDFF"];
+        _lineBackgroundColor = [UIColor pg_colorWithHexString:@"#3573BB"];
     }
     return _lineBackgroundColor;
 }
@@ -1426,7 +1426,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (UIColor *)textColorOfSelectedRow {
     if (!_textColorOfSelectedRow) {
-        _textColorOfSelectedRow = [UIColor pg_colorWithHexString:@"#69BDFF"];
+        _textColorOfSelectedRow = [UIColor pg_colorWithHexString:@"#3573BB"];
     }
     return _textColorOfSelectedRow;
 }
@@ -1454,7 +1454,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 
 - (UIColor *)middleTextColor {
     if (!_middleTextColor) {
-        _middleTextColor = [UIColor pg_colorWithHexString:@"#69BDFF"];
+        _middleTextColor = [UIColor pg_colorWithHexString:@"#3573BB"];
     }
     return _middleTextColor;
 }
