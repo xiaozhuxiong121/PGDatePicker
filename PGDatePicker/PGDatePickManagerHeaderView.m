@@ -58,7 +58,7 @@
                                      self.bounds.size.height - lineViewHeight,
                                      self.bounds.size.width,
                                      lineViewHeight);
-    CGFloat buttonWidth = 80;
+    CGFloat buttonWidth = 60;
     CGFloat buttonHeight = 30;
     CGFloat space = 15;
     self.cancelButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -108,6 +108,11 @@
     [self.confirmButton setTitleColor:self.confirmButtonTextColor forState:UIControlStateNormal];
     [self.confirmButton setTitle:self.confirmButtonText forState:UIControlStateNormal];
     [self.confirmButton addTarget:self action:@selector(confirmButtonHandler) forControlEvents:UIControlEventTouchUpInside];
+    
+     self.todayButton.titleLabel.font = self.todayButtonFont;
+    [self.todayButton setTitleColor:self.todayButtonTextColor forState:UIControlStateNormal];
+    [self.todayButton setTitle:self.todayButtonText forState:UIControlStateNormal];
+    [self.todayButton addTarget:self action:@selector(todayButtonHandler) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)cancelButtonHandler {
