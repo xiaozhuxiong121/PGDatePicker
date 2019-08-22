@@ -16,6 +16,7 @@ typedef void(^handlerBlock)();
 
 @property (nonatomic, copy)  handlerBlock cancelButtonHandlerBlock;
 @property (nonatomic, copy)  handlerBlock confirmButtonHandlerBlock;
+@property (nonatomic, copy)  handlerBlock todayButtonHandlerBlock;
 
 @property (nonatomic, weak) UIButton *cancelButton;
 @property (nonatomic, weak) UIButton *confirmButton;
@@ -29,4 +30,9 @@ typedef void(^handlerBlock)();
 @property (nonatomic, copy) NSString *confirmButtonText;
 @property (nonatomic, copy) UIFont *confirmButtonFont;
 @property (nonatomic, copy) UIColor *confirmButtonTextColor;
+
+@property (nonatomic,weak) UIButton *todayButton;
+@property (nonatomic,copy) NSString  *todayButtonText;
+@property (nonatomic,copy) UIFont  *todayButtonFont;
+@property (nonatomic,copy) UIColor  *todayButtonTextColor;
 @end
