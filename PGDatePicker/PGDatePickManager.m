@@ -72,6 +72,11 @@
         [strong_self.datePicker tapSelectedHandler];
         [strong_self cancelButtonHandler];
     };
+       self.headerView.todayButtonHandlerBlock =^{
+        __strong PGDatePickManager *strong_self = weak_self;
+        [strong_self.datePicker setDate:[NSDate date] animated:YES];
+        
+    };
 }
 
 - (void)cancelButtonHandler {
@@ -240,7 +245,18 @@
     _confirmButtonTextColor = confirmButtonTextColor;
     self.headerView.confirmButtonTextColor = confirmButtonTextColor;
 }
-
+-(void)setTodayButtonFont:(UIFont *)todayButtonFont{
+    _todayButtonFont=todayButtonFont;
+    self.headerView.todayButtonFont=todayButtonFont;
+}
+-(void)setTodayButtonText:(NSString *)todayButtonText{
+    _todayButtonText=todayButtonText;
+    self.headerView.todayButtonText=todayButtonText;
+}
+-(void)setTodayButtonTextColor:(UIColor *)todayButtonTextColor{
+    _todayButtonTextColor=todayButtonTextColor;
+    self.headerView.todayButtonTextColor=todayButtonTextColor;
+}
 #pragma Getter
 
 - (UIView *)contentView {
