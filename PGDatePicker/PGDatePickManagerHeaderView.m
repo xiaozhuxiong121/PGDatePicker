@@ -63,6 +63,8 @@
     CGFloat space = 15;
     self.cancelButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     self.confirmButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    self.todayButton.contentHorizontalAlignment=UIControlContentHorizontalAlignmentCenter;
+
     self.cancelButton.frame = CGRectMake(space,
                                          (self.bounds.size.height - buttonHeight) / 2,
                                          buttonWidth,
@@ -71,6 +73,10 @@
                                           (self.bounds.size.height - buttonHeight) / 2,
                                           buttonWidth,
                                           buttonHeight);
+    self.todayButton.frame=CGRectMake(CGRectGetMinX(self.confirmButton.frame)-buttonWidth-10,
+                                      (self.bounds.size.height - buttonHeight) / 2,
+                                      buttonWidth,
+                                      buttonHeight);
 }
 
 - (void)setyle2 {
@@ -115,6 +121,12 @@
         self.confirmButtonHandlerBlock();
     }
 }
+-(void)todayButtonHandler{
+    if (self.todayButtonHandlerBlock) {
+        self.todayButtonHandlerBlock();
+    }
+}
+
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     UILabel *label = object;
@@ -229,5 +241,37 @@
     }
     return _confirmButtonTextColor;
 }
+- (UIButton *)todayButton {
+    if (!_todayButton) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self addSubview:button];
+        _todayButton = button;
+    }
+    return _todayButton;
+}
+
+- (NSString *)todayButtonText {
+    if (!_todayButtonText) {
+        NSString *cancelButtonText= @"今天";
+//        [NSBundle pg_localizedStringForKey:@"confirmButtonText" language:self.language];
+        _todayButtonText = cancelButtonText;
+    }
+    return _todayButtonText;
+}
+
+- (UIFont *)todayButtonFont {
+    if (!_todayButtonFont) {
+        _todayButtonFont = [UIFont systemFontOfSize:18];
+    }
+    return _todayButtonFont;
+}
+
+- (UIColor *)todayButtonTextColor {
+    if (!_todayButtonTextColor) {
+        _todayButtonTextColor = [UIColor lightGrayColor];
+    }
+    return _todayButtonTextColor;
+}
+
 
 @end
