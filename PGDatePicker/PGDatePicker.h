@@ -93,7 +93,10 @@
 @end
 
 @protocol PGDatePickerDelegate <NSObject>
+@optional
 
 - (void)datePicker:(PGDatePicker *)datePicker didSelectDate:(NSDateComponents *)dateComponents;
+- (void)didClearDatePicker:(PGDatePicker *)datePicker;
+
 @end
 
