@@ -18,6 +18,6 @@
 "fridayString" = " Fri";
 "saturdayString" = " Sat";
 "sundayString" = " Sun";
-"cancelButtonText" = "Cancel";
+"cancelButtonText" = "Clear";
 "confirmButtonText" = "Sure";
 "todayButtonText" = "Today";
