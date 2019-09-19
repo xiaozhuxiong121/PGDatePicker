@@ -62,10 +62,12 @@
     __weak id weak_self = self;
     self.headerView.cancelButtonHandlerBlock = ^{
         __strong PGDatePickManager *strong_self = weak_self;
+        [strong_self.datePicker clearHandler];
+
         [strong_self cancelButtonHandler];
-        if (strong_self.cancelButtonMonitor) {
-            strong_self.cancelButtonMonitor();
-        }
+//         if (strong_self.cancelButtonMonitor) {
+//             strong_self.cancelButtonMonitor();
+//         }
     };
     self.headerView.confirmButtonHandlerBlock =^{
         __strong PGDatePickManager *strong_self = weak_self;
@@ -105,9 +107,9 @@
 
 - (void)dismissViewTapMonitor {
     [self cancelButtonHandler];
-    if (self.cancelButtonMonitor) {
-        self.cancelButtonMonitor();
-    }
+//     if (self.cancelButtonMonitor) {
+//         self.cancelButtonMonitor();
+//     }
 }
 
 - (void)setupStyleSheet {
