@@ -77,6 +77,7 @@
  相当于确定按钮，执行此方法PGDatePickerDelegate代理方法会得到值
  */
 - (void)tapSelectedHandler;
+- (void)clearHandler;
 
 - (void)setDate:(NSDate *)date;
 - (void)setDate:(NSDate *)date animated:(BOOL)animated;
