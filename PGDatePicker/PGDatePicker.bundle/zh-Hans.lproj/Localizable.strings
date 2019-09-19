@@ -18,7 +18,7 @@
 "fridayString" = "周五";
 "saturdayString" = "周六";
 "sundayString" = "周日";
-"cancelButtonText" = "取消";
+"cancelButtonText" = "清空";
 "confirmButtonText" = "确定";
 "todayButtonText" = "今天";
 
