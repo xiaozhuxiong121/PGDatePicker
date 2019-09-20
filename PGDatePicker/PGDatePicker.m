@@ -123,6 +123,12 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     }
 }
 
+-(void)dismissHandler{
+    if ([self.delegate respondsToSelector:@selector(didDismissDatePicker:)]) {
+        [self.delegate didDismissDatePicker:self];
+    }
+}
+
 - (void)selectedDateLogic {
     switch (self.datePickerMode) {
         case PGDatePickerModeYear:
