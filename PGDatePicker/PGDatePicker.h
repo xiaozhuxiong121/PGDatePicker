@@ -78,6 +78,7 @@
  */
 - (void)tapSelectedHandler;
 - (void)clearHandler;
+-(void)dismissHandler;
 
 - (void)setDate:(NSDate *)date;
 - (void)setDate:(NSDate *)date animated:(BOOL)animated;
@@ -98,6 +99,6 @@
 
 - (void)datePicker:(PGDatePicker *)datePicker didSelectDate:(NSDateComponents *)dateComponents;
 - (void)didClearDatePicker:(PGDatePicker *)datePicker;
-
+-(void)didDismissDatePicker:(PGDatePicker *)datePicker;
 @end
 
