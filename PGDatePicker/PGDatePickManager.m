@@ -103,6 +103,8 @@
             [self dismissViewControllerAnimated:false completion:nil];
         }
     }
+    
+    [self.datePicker dismissHandler];
 }
 
 - (void)dismissViewTapMonitor {
