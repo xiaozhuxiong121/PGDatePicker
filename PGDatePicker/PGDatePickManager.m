@@ -131,9 +131,9 @@
     self.headerView.frame = headerViewFrame;
     self.datePicker.frame = datePickerFrame;
     self.headerView.backgroundColor = self.headerViewBackgroundColor;
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:.001f animations:^{
         if (self.isShadeBackground) {
-            self.dismissView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+            self.dismissView.backgroundColor = [UIColor colorWithWhite:0.01 alpha:0.4];
         }
         self.contentView.frame = contentViewFrame;
         self.headerView.frame = headerViewFrame;
