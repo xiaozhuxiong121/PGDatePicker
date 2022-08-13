@@ -7,6 +7,15 @@
 
 #import "PGDatePickManager.h"
 #import "PGDatePickManagerHeaderView.h"
+#import "PGEnumeration.h""
+#define IPHONE_X \
+({BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(isPhoneX);})
+
+#define KBOTTOM_SPACE_HEIGHT (IPHONE_X?34.0f:0.0f)
 
 @interface PGDatePickManager ()
 @property (nonatomic, weak) UIView *contentView;
@@ -34,7 +43,7 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    self.headerView.language = self.datePicker.language;
+//    self.headerView.language = self.datePicker.language;
 }
 
 - (void)viewWillLayoutSubviews {
@@ -72,6 +81,37 @@
         [strong_self.datePicker tapSelectedHandler];
         [strong_self cancelButtonHandler];
     };
+    
+    
+    UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectZero];
+    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+    [cancelButton setTitleColor:RGBAlpha(0x333333) forState:UIControlStateNormal];
+    [cancelButton setBackgroundColor:RGBAlpha(0xF8F8F8)];
+    [cancelButton ug_radius:22 *KWIDTH];
+    [cancelButton addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
+    cancelButton.titleLabel.font = fontWeight(14, UIFontWeightRegular);
+    [_alertView addSubview:cancelButton];
+    [cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.alertView.mas_left).offset(43 *KWIDTH);
+        make.bottom.mas_equalTo(self.alertView.mas_bottom).offset(- (25 *KWIDTH + KBOTTOM_SPACE_HEIGHT));
+        make.size.mas_equalTo(CGSizeMake((SCREEN_WIDTH - 90 *KWIDTH)/2, 44 *KWIDTH));
+    }];
+
+    UIButton *confirmButton = [[UIButton alloc] initWithFrame:CGRectZero];
+    [confirmButton setTitle:@"完成" forState:UIControlStateNormal];
+    [confirmButton setTitleColor:RGBAlpha(0xffffff) forState:UIControlStateNormal];
+    [confirmButton setBackgroundColor:RGBAlpha(0x7B5CF3)];
+    [confirmButton ug_radius:22 *KWIDTH];
+    [confirmButton addTarget:self action:@selector(confirm) forControlEvents:UIControlEventTouchUpInside];
+    confirmButton.titleLabel.font = fontWeight(14, UIFontWeightRegular);
+    [_alertView addSubview:confirmButton];
+    [confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(self.alertView.mas_right).offset(-43 *KWIDTH);
+        make.bottom.mas_equalTo(self.alertView.mas_bottom).offset(- (25 *KWIDTH + KBOTTOM_SPACE_HEIGHT));
+        make.size.mas_equalTo(CGSizeMake((SCREEN_WIDTH - 90 *KWIDTH)/2, 44 *KWIDTH));
+    }];
+    
+    
 }
 
 - (void)cancelButtonHandler {
@@ -112,8 +152,8 @@
     }
     CGFloat rowHeight = self.datePicker.rowHeight;
     CGFloat headerViewHeight = self.headerHeight;
-    CGFloat contentViewHeight = rowHeight * 5 + headerViewHeight;
-    CGFloat datePickerHeight = contentViewHeight - headerViewHeight - bottom;
+    CGFloat contentViewHeight = rowHeight * 5 + headerViewHeight + 90 *([UIScreen mainScreen].bounds.size.width/375) + bottom;
+    CGFloat datePickerHeight = rowHeight * 5 ;
     CGRect contentViewFrame = CGRectMake(0,
                                          self.view.bounds.size.height - contentViewHeight,
                                          self.view.bounds.size.width,
@@ -131,9 +171,10 @@
     self.headerView.frame = headerViewFrame;
     self.datePicker.frame = datePickerFrame;
     self.headerView.backgroundColor = self.headerViewBackgroundColor;
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:.001f animations:^{
         if (self.isShadeBackground) {
-            self.dismissView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+            self.dismissView.backgroundColor = [UIColor colorWithWhite:0.01 alpha:0.4];
+
         }
         self.contentView.frame = contentViewFrame;
         self.headerView.frame = headerViewFrame;
@@ -246,6 +287,7 @@
 - (UIView *)contentView {
     if (!_contentView) {
         UIView *view = [[UIView alloc]init];
+        view.layer.cornerRadius = 16 *([UIScreen mainScreen].bounds.size.width/375);
         [self.view addSubview:view];
         _contentView =view;
     }
