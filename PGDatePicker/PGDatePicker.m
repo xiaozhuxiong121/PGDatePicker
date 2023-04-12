@@ -912,7 +912,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 - (CGFloat)pickerView:(PGPickerView *)pickerView middleTextSpaceForcomponent:(NSInteger)component {
     switch (self.datePickerMode) {
         case PGDatePickerModeYear:
-            return 20;
+            return 25;
         case PGDatePickerModeYearAndMonth:
         {
             if (component == 0) {
