@@ -18,6 +18,10 @@ class ViewController: UIViewController {
         let datePicker = datePickerManager.datePicker!
         datePicker.delegate = self
         datePicker.datePickerMode = .year
+        datePicker.isHiddenMiddleText = false
+        datePicker.showUnit = .center
+        datePicker.textFontOfSelectedRow = UIFont .boldSystemFont(ofSize: 20)
+        datePicker.textFontOfOtherRow = UIFont.boldSystemFont(ofSize: 14)
         self.present(datePickerManager, animated: false, completion: nil)
 //        datePicker.minimumDate = NSDate.setYear(2015)
 //        datePicker.maximumDate = NSDate.setYear(2020)

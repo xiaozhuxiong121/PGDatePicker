@@ -741,6 +741,7 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
     }
     switch (self.datePickerMode) {
         case PGDatePickerModeYear:
+            NSLog(@"lwd---:%@", self.middleYearString);
             return self.middleYearString;
         case PGDatePickerModeYearAndMonth:
         {
@@ -912,7 +913,11 @@ static NSString *const reuseIdentifier = @"PGDatePickerView";
 - (CGFloat)pickerView:(PGPickerView *)pickerView middleTextSpaceForcomponent:(NSInteger)component {
     switch (self.datePickerMode) {
         case PGDatePickerModeYear:
-            return 20;
+        {
+            NSDictionary *attributes = @{NSFontAttributeName : self.textFontOfSelectedRow};
+            CGSize size = [@"2023" boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
+            return ceil(size.width / 2);
+        }
         case PGDatePickerModeYearAndMonth:
         {
             if (component == 0) {
